@@ -1,2 +1,5 @@
 # dz-leetcode
-Learning algorithm &amp; doing leetcode prantice
+
+Back to the leetcode game!!! Not my wish!
+
+Phase 1: sort already done questions
