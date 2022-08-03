@@ -8,7 +8,7 @@ Phase 1: sort already done questions
 ## Catelog
 
 ``` text
-├── data-structure
+├── data-structure          数据结构
 │   ├── array               数组
 │   ├── linkedlist          链表
 │   ├── tree                树
@@ -17,8 +17,8 @@ Phase 1: sort already done questions
 │   ├── queue               队列
 │   ├── graph               图
 │   ├── hash-table          哈希表
-├── data-design
-├── algorithm
+├── data-design             设计题
+├── algorithm               常见算法
 │   ├── sort                排序
 │   ├── binary-search       二分
 │   ├── recursion           递归
