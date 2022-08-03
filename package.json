@@ -1,0 +1,22 @@
+{
+  "name": "dz-leetcode",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Dylan Zhang",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielzhang183/dz-leetcode"
+  },
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.25.2",
+    "eslint": "^8.21.0",
+    "typescript": "^4.7.4"
+  }
+}
