@@ -1,0 +1,16 @@
+{
+  "leetcode": {
+    "Easy": {
+      "bg": "#c7f5b1",
+      "color": "#000000"
+    },
+    "Medium": {
+      "bg": "#ffe5b7",
+      "color": "#000000"
+    },
+    "Hard": {
+      "bg": "#ffd1c8",
+      "color": "#000000"
+    }
+  }
+}

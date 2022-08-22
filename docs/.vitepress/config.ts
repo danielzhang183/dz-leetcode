@@ -1,9 +1,32 @@
+// import { resolve } from 'path'
 import { defineConfig } from 'vitepress'
+// import Vue from '@vitejs/plugin-vue'
+import Unocss from 'unocss/vite'
+import { presetAttributify, presetUno } from 'unocss'
 
 export default defineConfig({
   lang: 'en-US',
   title: 'Leetcode CN',
   lastUpdated: true,
+  vite: {
+    // resolve: {
+    //   alias: [
+    //     { find: '/~theme', replacement: `${resolve(__dirname, '/docs/.vitepress/theme')}/` },
+    //   ],
+    // },
+    plugins: [
+      Unocss({
+        presets: [
+          presetAttributify(),
+          presetUno(),
+        ],
+      }),
+
+      // Vue({
+      //   include: [/\.vue$/, /\.md$/],
+      // }),
+    ],
+  },
   themeConfig: {
     nav: nav(),
     // sidebar: {

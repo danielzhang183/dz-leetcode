@@ -1,0 +1,50 @@
+[
+  {
+    "name": "leetcode",
+    "display_name": "Leetcode CN",
+    "path_name": "leetcode",
+    "home_page": "/leetcode/index",
+    "color": {
+      "bg": "#0052cc",
+      "text": "rgba(233, 236, 239)"
+    },
+    "questions": [
+      {
+        "name": "cate",
+        "type": "list",
+        "message": "choose a type",
+        "choices": [
+          "Structure",
+          "Algorithm",
+          "Framework",
+          "Interview"
+        ]
+      },
+      {
+        "name": "difficulty",
+        "type": "list",
+        "message": "choose a difficulty",
+        "choices": [
+          "Easy",
+          "Medium",
+          "Hard"
+        ]
+      },
+      {
+        "name": "origin",
+        "type": "input",
+        "message": "原题链接"
+      },
+      {
+        "name": "name",
+        "type": "input",
+        "message": "题目名称"
+      },
+      {
+        "name": "specify_number",
+        "type": "input",
+        "message": "指定题号"
+      }
+    ]
+  }
+]
