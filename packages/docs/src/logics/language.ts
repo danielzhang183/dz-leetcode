@@ -1,1 +1,1 @@
-export const englishOnly = useStorage('antfu-english-only', false)
+export const englishOnly = useStorage('dz-leetcode-english-only', false)

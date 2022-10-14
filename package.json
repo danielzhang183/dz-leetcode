@@ -5,7 +5,7 @@
   "description": "300 questions of leetcode",
   "scripts": {
     "build": "pnpm -r run build",
-    "dev": "vite docs",
+    "dev": "nr -C packages/docs dev",
     "lint": "eslint .",
     "test": "vitest",
     "prepublishOnly": "nr build",

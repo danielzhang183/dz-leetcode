@@ -18,6 +18,9 @@ import SVG from 'vite-svg-loader'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
 import { slugify } from './scripts/slugify'
+import { getQuestions } from './src/logics/questions'
+
+getQuestions('algorithm', 'back-tracking').then(res => console.log(res))
 
 export default defineConfig({
   resolve: {
@@ -101,9 +104,7 @@ export default defineConfig({
         '@vueuse/core',
         '@vueuse/head',
       ],
-      dirs: [
-        './src/logics',
-      ],
+      dts: true,
     }),
 
     Components({

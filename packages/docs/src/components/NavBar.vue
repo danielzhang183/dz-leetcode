@@ -15,26 +15,17 @@ import { isDark } from '~/logics'
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
-        <router-link to="/posts" title="Blog">
-          <span class="lt-md:hidden">Blog</span>
+        <router-link to="/structure" title="Blog">
+          <span class="lt-md:hidden">Structure</span>
           <div i-ri-article-line md:hidden />
         </router-link>
-        <router-link to="/projects" title="Projects">
-          <span class="lt-md:hidden">Projects</span>
-          <div i-ri-lightbulb-line class="md:hidden" />
+        <router-link to="/algorithm" title="Projects">
+          <span class="lt-md:hidden">Algorithm</span>
+          <div i-ri-lightbulb-line md:hidden />
         </router-link>
-        <!-- <router-link to="/bookmarks" title="Bookmarks">
-          <div i-ri-bookmark-line />
-        </router-link> -->
-        <!-- <router-link to="/notes" title="Notes">
-          <div i-ri-sticky-note-line />
-        </router-link> -->
         <a href="https://github.com/danielzhang183" target="_blank" title="GitHub" class="lt-md:hidden">
           <div i-uil-github-alt />
         </a>
-        <!-- <a href="/feed.xml" target="_blank" title="RSS" class="lt-md:hidden">
-          <div i-la-rss-square style="font-size:1.25rem; margin: 0 -0.125rem;" />
-        </a> -->
         <ToggleTheme />
       </div>
     </nav>

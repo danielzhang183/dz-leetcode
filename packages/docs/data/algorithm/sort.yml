@@ -1,0 +1,9 @@
+questions:
+  - name: 'sortArray'
+    id: 912
+    link: '/sort/912'
+    rank: 'easy'
+  - name: '3Sum'
+    id: 15
+    link: '/sort/015'
+    rank: 'medium'

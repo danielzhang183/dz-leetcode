@@ -8,10 +8,10 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppLink: typeof import('./src/components/AppLink.vue')['default']
-    FeatherTwitter: typeof import('~icons/feather/twitter')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
+    ListAllQuestions: typeof import('./src/components/ListAllQuestions.vue')['default']
     ListPosts: typeof import('./src/components/ListPosts.vue')['default']
-    ListProjects: typeof import('./src/components/ListProjects.vue')['default']
+    ListQuestions: typeof import('./src/components/ListQuestions.vue')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     Plum: typeof import('./src/components/Plum.vue')['default']
     Post: typeof import('./src/components/Post.vue')['default']

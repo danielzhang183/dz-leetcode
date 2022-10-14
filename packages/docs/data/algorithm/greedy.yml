@@ -1,0 +1,33 @@
+questions:
+  - name: '跳跃游戏'
+    id: 55
+    link: '/greedy/055'
+    rank: 'easy'
+  - name: '跳跃游戏-ii'
+    id: 45
+    link: '/greedy/045'
+    rank: 'easy'
+  - name: '最长递增子序列'
+    id: 300
+    link: '/greedy/300'
+    rank: 'easy'
+  - name: '柠檬水找零'
+    id: 860
+    link: '/greedy/860'
+    rank: 'easy'
+  - name: '用最少数量的箭引爆气球'
+    id: 452
+    link: '/greedy/452'
+    rank: 'easy'
+  - name: '无重叠区间'
+    id: 435
+    link: '/greedy/435'
+    rank: 'easy'
+  - name: '任务调度器'
+    id: 621
+    link: '/greedy/621'
+    rank: 'easy'
+  - name: 'dota-2-参议院'
+    id: 649
+    link: '/greedy/649'
+    rank: 'easy'
