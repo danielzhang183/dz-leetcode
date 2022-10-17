@@ -1,45 +1,45 @@
 questions:
-  - name: '全排列'
+  - name: 全排列
     id: 46
-    link: '/back-tracking/046'
-    rank: 'easy'
-  - name: '79.单词搜索'
+    link: /back-tracking/046
+    rank: easy
+  - name: 单词搜索
     id: 79
-    link: '/back-tracking/079'
-    rank: 'easy'
-  - name: '17.电话号码的字母组合'
+    link: /back-tracking/079
+    rank: easy
+  - name: 电话号码的字母组合
     id: 17
-    link: '/back-tracking/017'
-    rank: 'easy'
-  - name: '组合总和'
+    link: /back-tracking/017
+    rank: easy
+  - name: 组合总和
     id: 39
-    link: '/back-tracking/039'
-    rank: 'easy'
-  - name: 'n-皇后'
+    link: /back-tracking/039
+    rank: easy
+  - name: n-皇后
     id: 51
-    link: '/back-tracking/051'
-    rank: 'easy'
-  - name: '解数独'
+    link: /back-tracking/051
+    rank: easy
+  - name: 解数独
     id: 37
-    link: '/back-tracking/037'
-    rank: 'easy'
-  - name: '组合'
+    link: /back-tracking/037
+    rank: easy
+  - name: 组合
     id: 77
-    link: '/back-tracking/077'
-    rank: 'easy'
-  - name: '子集'
+    link: /back-tracking/077
+    rank: easy
+  - name: 子集
     id: 78
-    link: '/back-tracking/078'
-    rank: 'easy'
-  - name: '分割回文串'
+    link: /back-tracking/078
+    rank: easy
+  - name: 分割回文串
     id: 131
-    link: '/back-tracking/131'
-    rank: 'easy'
-  - name: '复原-ip-地址'
+    link: /back-tracking/131
+    rank: easy
+  - name: 复原-ip-地址
     id: 93
-    link: '/back-tracking/093'
-    rank: 'easy'
-  - name: '全排列-ii'
+    link: /back-tracking/093
+    rank: easy
+  - name: 全排列-ii
     id: 47
-    link: '/back-tracking/047'
-    rank: 'easy'
+    link: /back-tracking/047
+    rank: easy

@@ -43,4 +43,10 @@ export interface Question {
   id?: number
   link: string
   rank: 'easy' | 'medium' | 'hard'
+  origin?: string // source link
+}
+
+export interface SubNav {
+  name: string
+  link: string
 }

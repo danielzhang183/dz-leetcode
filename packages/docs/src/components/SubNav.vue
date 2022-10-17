@@ -1,24 +1,37 @@
 <script setup lang="ts">
-interface SubNav {
-  name: string
-  link: string
-}
+import type { Module, SubNav } from '../types'
+import { easy, getNavs, hard, medium } from '~/logics'
 
-defineProps<{
+const props = defineProps<{
+  module: Module
   navs: SubNav[]
 }>()
 
 const inactiveStyle = 'opacity-20 hover:opacity-50'
 
 const route = useRoute()
+
+const navs = props.navs || getNavs(props.module)
 </script>
 
 <template>
   <div class="prose m-auto mb-8 select-none">
-    <!-- <button flex="~ gap1" items-center mb2 op30 text-sm @click="englishOnly = !englishOnly">
-      <div :i="englishOnly ? 'carbon-checkbox-checked' : 'carbon-checkbox'" />
-      English Only
-    </button> -->
+    <div flex="~ gap3">
+      <button flex="~ gap1" items-center mb2 op30 text-sm @click="easy = !easy">
+        <div :i="easy ? 'carbon-checkbox-checked' : 'carbon-checkbox'" />
+        Easy
+      </button>
+
+      <button flex="~ gap1" items-center mb2 op30 text-sm @click="medium = !medium">
+        <div :i="medium ? 'carbon-checkbox-checked' : 'carbon-checkbox'" />
+        Medium
+      </button>
+
+      <button flex="~ gap1" items-center mb2 op30 text-sm @click="hard = !hard">
+        <div :i="hard ? 'carbon-checkbox-checked' : 'carbon-checkbox'" />
+        Hard
+      </button>
+    </div>
 
     <div mb-0 flex="~ gap2 sm:gap3 wrap" text-xl sm:text-3xl>
       <router-link

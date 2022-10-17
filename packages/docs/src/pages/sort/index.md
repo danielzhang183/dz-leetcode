@@ -6,6 +6,6 @@ description: List of questions that I am aware of
 plum: true
 ---
 
-<SubNav :navs="frontmatter.navs" />
+<SubNav module="algorithm" />
 
-<!-- <ListQuestions :questions="frontmatter.questions"/> -->
+<ListQuestions module="algorithm" tag="sort" />

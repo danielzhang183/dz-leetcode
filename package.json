@@ -12,6 +12,9 @@
     "release": "bumpp --commit --push --tag && pnpm publish",
     "typecheck": "vsc-tsc --noEmit"
   },
+  "dependencies": {
+    "fast-glob": "^3.2.12"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
     "@antfu/ni": "^0.18.0",

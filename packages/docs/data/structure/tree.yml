@@ -1,0 +1,137 @@
+questions:
+  - name: 二叉树的最大深度
+    id: 10
+    link: /tree/104
+    rank: easy
+  - name: 翻转二叉树
+    id: 226
+    link: /tree/226
+    rank: easy
+  - name: 中序遍历
+    id: 94
+    link: /tree/94
+    rank: easy
+  - name: 前序
+    id: 144
+    link: /tree/144
+    rank: easy
+  - name: 后序
+    id: 145
+    link: /tree/145
+    rank: easy
+  - name: 相同的树
+    id: 100
+    link: /tree/100
+    rank: easy
+  - name: 对称二叉树
+    id: 101
+    link: /tree/101
+    rank: easy
+  - name: 二叉树的最小深度
+    id: 111
+    link: /tree/111
+    rank: easy
+  - name: 二叉树展开为链表
+    id: 114
+    link: /tree/114
+    rank: easy
+  - name: 合并二叉树
+    id: 617
+    link: /tree/617
+    rank: easy
+  - name: 二叉树的最近公共祖先
+    id: 236
+    link: /tree/236
+    rank: easy
+  - name: 二叉树的直径
+    id: 543
+    link: /tree/543
+    rank: easy
+  - name: 另一棵树的子树
+    id: 572
+    link: /tree/572
+    rank: easy
+  - name: 平衡二叉树
+    id: 110
+    link: /tree/110
+    rank: easy
+  - name: 完全二叉树的节点个数
+    id: 222
+    link: /tree/222
+    rank: easy
+  - name: 二叉树的所有路径
+    id: 257
+    link: /tree/257
+    rank: easy
+  - name: 二叉树的层序遍历
+    id: 102
+    link: /tree/102
+    rank: easy
+  - name: 二叉树的层序遍历
+    id: 107
+    link: /tree/107
+    rank: easy II
+  - name: 二叉树的右视图.js
+    id: 199
+    link: /tree/199
+    rank: easy
+  - name: 二叉树的层平均值
+    id: 637
+    link: /tree/637
+    rank: easy
+  - name: 填充每个节点的下一个右侧节点指针
+    id: 116
+    link: /tree/116
+    rank: easy
+  - name: 填充每个节点的下一个右侧节点指针-ii
+    id: 117
+    link: /tree/117
+    rank: easy
+  - name: n-叉树的层序遍历
+    id: 429
+    link: /tree/429
+    rank: easy
+  - name: 在每个树行中找最大值
+    id: 515
+    link: /tree/515
+    rank: easy
+  - name: 路径总和
+    id: 112
+    link: /tree/112
+    rank: easy
+  - name: 左叶子之和
+    id: 404
+    link: /tree/404
+    rank: easy
+  - name: 验证二叉搜索树
+    id: 98
+    link: /tree/98
+    rank: easy
+  - name: 恢复二叉搜索树
+    id: 99
+    link: /tree/99
+    rank: easy
+  - name: 将有序数组转换为二叉搜索树
+    id: 108
+    link: /tree/108
+    rank: easy
+  - name: 有序链表转换二叉搜索树
+    id: 109
+    link: /tree/109
+    rank: easy
+  - name: 最大二叉树
+    id: 654
+    link: /tree/654
+    rank: easy
+  - name: 二叉搜索树中第k小的元素
+    id: 230
+    link: /tree/230
+    rank: easy
+  - name: 二叉搜索树中的搜索
+    id: 700
+    link: /tree/700
+    rank: easy
+  - name: 二叉搜索树中的插入操作
+    id: 701
+    link: /tree/701
+    rank: easy

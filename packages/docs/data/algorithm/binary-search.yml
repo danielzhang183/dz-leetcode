@@ -1,20 +1,20 @@
 questions:
-  - name: 'Quick Sort'
-    link: '/binary-search/quick-sort'
-    rank: 'easy'
-  - name: '二分查找'
+  - name: Quick Sort
+    link: /binary-search/quick-sort
+    rank: easy
+  - name: 二分查找
     id: 704
-    link: '/binary-search/703'
-    rank: 'easy'
-  - name: '搜索插入位置'
+    link: /binary-search/703
+    rank: easy
+  - name: 搜索插入位置
     id: 35
-    link: '/binary-search/035'
-    rank: 'easy'
-  - name: '寻找旋转排序数组中的最小值'
+    link: /binary-search/035
+    rank: easy
+  - name: 寻找旋转排序数组中的最小值
     id: 153
-    link: '/binary-search/153'
-    rank: 'easy'
-  - name: 'x的平方根'
+    link: /binary-search/153
+    rank: easy
+  - name: x的平方根
     id: 69
-    link: '/binary-search/069'
-    rank: 'easy'
+    link: /binary-search/069
+    rank: easy

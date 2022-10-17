@@ -1,20 +1,26 @@
 <script setup lang="ts">
 import type { Module, Tag } from '~/types'
-import { getQuestions } from '~/logics/questions'
+import { easy, getTagQuestions, hard, medium } from '~/logics'
 
 const props = defineProps<{
   module: Module
   tag: Tag
 }>()
 
-console.log(props)
-const questions = await getQuestions(props.module, props.tag)
-console.log(questions)
+const rank = computed(() => Object.entries({
+  easy: easy.value,
+  hard: hard.value,
+  medium: medium.value,
+}).map(([key, val]) => val && key).filter(Boolean))
+
+const questions = computed(() => {
+  const questions = getTagQuestions(props.module, props.tag)
+  return rank.value.length ? questions.filter(i => rank.value.includes(i.rank)) : questions
+})
 </script>
 
 <template>
-  123
-  <!-- <div class="project-grid py-2 -mx-3 gap-2">
+  <div class="project-grid py-2 -mx-3 gap-2">
     <a
       v-for="item, idx in questions"
       :key="idx"
@@ -29,10 +35,13 @@ console.log(questions)
       </div>
       <div class="flex-auto">
         <div cla ss="text-normal">{{ item.name }}</div>
-        <div class="desc text-sm opacity-50 font-normal" v-html="item.rank" />
+        <div class="flex gap-2 desc text-sm opacity-50 font-normal">
+          <div v-text="item.rank" />
+          <a v-if="item.origin" :href="item.origin">view source</a>
+        </div>
       </div>
     </a>
-  </div> -->
+  </div>
 </template>
 
 <style scoped>

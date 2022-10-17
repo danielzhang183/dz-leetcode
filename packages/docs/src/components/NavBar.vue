@@ -23,6 +23,14 @@ import { isDark } from '~/logics'
           <span class="lt-md:hidden">Algorithm</span>
           <div i-ri-lightbulb-line md:hidden />
         </router-link>
+        <router-link to="/design" title="Design">
+          <span class="lt-md:hidden">Design</span>
+          <div i-ri-lightbulb-line md:hidden />
+        </router-link>
+        <router-link to="/interview" title="Interview">
+          <span class="lt-md:hidden">Interview</span>
+          <div i-ri-lightbulb-line md:hidden />
+        </router-link>
         <a href="https://github.com/danielzhang183" target="_blank" title="GitHub" class="lt-md:hidden">
           <div i-uil-github-alt />
         </a>

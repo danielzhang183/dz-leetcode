@@ -1,9 +1,11 @@
 ---
-title: Algorithm
-display: Algorithm
+title: Tree
+display: Tree
 subtitle: List of questions that I am aware of
 description: List of questions that I am aware of
 plum: true
 ---
 
-<ListAllQuestions module="algorithm" />
+<SubNav module="structure" />
+
+<ListQuestions module="structure" tag="tree" />

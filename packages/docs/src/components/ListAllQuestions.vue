@@ -1,11 +1,17 @@
 <script setup lang="ts">
-defineProps<{ questions: Record<string, any[]> }>()
+import type { Module } from '~/types'
+import { getModuleQuestions } from '~/logics'
+
+const props = defineProps<{
+  module: Module
+}>()
+const questions = getModuleQuestions(props.module)
 </script>
 
 <template>
   <template v-for="key in Object.keys(questions)" :key="key">
     <h4 class="mt-10 font-bold">
-      {{ key }}
+      <a :href="`/${key}`">{{ key }}</a>
     </h4>
     <div class="project-grid py-2 -mx-3 gap-2">
       <a

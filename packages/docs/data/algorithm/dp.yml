@@ -1,69 +1,69 @@
 questions:
-  - name: '斐波那契数'
+  - name: 斐波那契数
     id: 509
-    link: '/dp/509'
-    rank: 'easy'
-  - name: '爬楼梯'
+    link: /dp/509
+    rank: easy
+  - name: 爬楼梯
     id: 70
-    link: '/dp/070'
-    rank: 'easy'
-  - name: '使用最小花费爬楼梯'
+    link: /dp/070
+    rank: easy
+  - name: 使用最小花费爬楼梯
     id: 746
-    link: '/dp/746'
-    rank: 'easy'
-  - name: '不同路径i~ii'
+    link: /dp/746
+    rank: easy
+  - name: 不同路径i~ii
     id: 62
-    link: '/dp/062'
-    rank: 'easy'
-  - name: '解数独'
+    link: /dp/062
+    rank: easy
+  - name: 解数独
     id: 37
-    link: '/dp/037'
-    rank: 'easy'
-  - name: '零钱兑换'
+    link: /dp/037
+    rank: easy
+  - name: 零钱兑换
     id: 322
-    link: '/dp/322'
-    rank: 'easy'
-  - name: '零钱兑换ii'
+    link: /dp/322
+    rank: easy
+  - name: 零钱兑换ii
     id: 518
-    link: '/dp/518'
-    rank: 'easy'
-  - name: '打家劫舍i~iii'
+    link: /dp/518
+    rank: easy
+  - name: 打家劫舍i~iii
     id: 198
-    link: '/dp/198'
-    rank: 'easy'
-  - name: '买卖股票的最佳时机i~iii'
+    link: /dp/198
+    rank: easy
+  - name: 买卖股票的最佳时机i~iii
     id: 121
-    link: '/dp/121'
-    rank: 'easy'
-  - name: '买卖股票的最佳时机含手续费'
+    link: /dp/121
+    rank: easy
+  - name: 买卖股票的最佳时机含手续费
     id: 714
-    link: '/dp/714'
-    rank: 'easy'
-  - name: '最大子序和'
+    link: /dp/714
+    rank: easy
+  - name: 最大子序和
     id: 53
-    link: '/dp/53'
-    rank: 'easy'
-  - name: '最长连续递增序列'
+    link: /dp/53
+    rank: easy
+  - name: 最长连续递增序列
     id: 674
-    link: '/dp/674'
-    rank: 'easy'
-  - name: '判断子序列'
+    link: /dp/674
+    rank: easy
+  - name: 判断子序列
     id: 392
-    link: '/dp/392'
-    rank: 'easy'
-  - name: '最长公共子序列'
+    link: /dp/392
+    rank: easy
+  - name: 最长公共子序列
     id: 1143
-    link: '/dp/1143'
-    rank: 'easy'
-  - name: '不同的子序列'
+    link: /dp/1143
+    rank: easy
+  - name: 不同的子序列
     id: 115
-    link: '/dp/115'
-    rank: 'easy'
-  - name: '两个字符串的删除操作'
+    link: /dp/115
+    rank: easy
+  - name: 两个字符串的删除操作
     id: 583
-    link: '/dp/583'
-    rank: 'easy'
-  - name: '编辑距离'
+    link: /dp/583
+    rank: easy
+  - name: 编辑距离
     id: 72
-    link: '/dp/072'
-    rank: 'easy'
+    link: /dp/072
+    rank: easy
