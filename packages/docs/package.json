@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "test": "vitest"
   },
   "peerDependencies": {
     "fs-extra": "^10.1.0"
@@ -13,9 +14,13 @@
   "dependencies": {
     "@vueuse/core": "^9.3.0",
     "@vueuse/head": "^0.7.13",
+    "consola": "^2.15.3",
     "dayjs": "^1.11.5",
     "js-yaml": "^4.1.0",
+    "magic-string": "^0.26.7",
     "nprogress": "^0.2.0",
+    "ohmyfetch": "^0.4.19",
+    "vitest": "^0.23.4",
     "vue": "^3.2.40",
     "vue-router": "^4.1.5"
   },

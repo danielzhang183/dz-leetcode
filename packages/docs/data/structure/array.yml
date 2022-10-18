@@ -1,7 +1,7 @@
 questions:
   - name: 两数之和
-    id: 46
-    link: /array/
+    id: 1
+    link: /array/001
     rank: easy
   - name: 删除有序数组中的重复项
     id: 26
