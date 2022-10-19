@@ -9,11 +9,11 @@ export const hyphenate = (str: string): string => str.replace(hyphenateRE, '-$1'
 
 export const capitalize = (str: string): string => str.charAt(0).toUpperCase() + str.slice(1)
 
-export function pad<T extends number | string>(num: T, len = 3): T {
+export function pad(num: string | number, len = 3): number {
   const length = String(num).length || 0
   if (length > len)
-    return num
-  return <T>('0'.repeat(len - length) + num)
+    return Number(num)
+  return Number('0'.repeat(len - length) + num)
 }
 
 export async function readFile(file: string) {

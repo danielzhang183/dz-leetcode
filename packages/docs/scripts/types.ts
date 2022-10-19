@@ -1,4 +1,4 @@
-import type { Tag } from '~/types'
+import type { Category, Difficulty, Question, Tag } from '~/types'
 
 export interface RawQuestion {
   questionId: string
@@ -15,24 +15,26 @@ export interface RawQuestion {
   tag: Tag
 }
 
-export type Difficulty = 'Easy' | 'Medium' | 'Hard'
-
-export interface Question {
-  name: string
-  title: string
-  difficulty: Difficulty
-  tag: Tag
+export interface ResolvedQuestion {
+  questionId: string
   category: string
-  id: number | string
-  link: string
-  origin: string
+  title: string
+  titleSlug: string
+  content: string
+  difficulty: Difficulty
+  exampleTestcases: string
+  code: string
+  functionName: string
+}
+
+export interface ImportableQuestionOptions {
+  name: string
+  category?: Category
+  tag?: Tag
 }
 
 export interface ImportableQuestions {
-  questions: Array<{
-    name: string
-    tag?: Tag
-  }>
+  questions: Array<ImportableQuestionOptions>
 }
 
 export interface WritableQuestions {

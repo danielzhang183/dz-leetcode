@@ -1,13 +1,10 @@
 questions:
   - name: 快乐数
-    id: 202
-    link: /hash-table/202
-    rank: easy
+    category: structure
+    tag: hash-table
   - name: 有效的字母异位词
-    id: 242
-    link: /hash-table/242
-    rank: easy
+    category: structure
+    tag: hash-table
   - name: 赎金信
-    id: 383
-    link: /hash-table/383
-    rank: easy
+    category: structure
+    tag: hash-table

@@ -13,7 +13,7 @@ export interface Post {
   recording?: string
 }
 
-export type Module =
+export type Category =
   | 'algorithm'
   | 'structure'
   | 'interview'
@@ -38,12 +38,17 @@ export type StructureTag =
 
 export type Tag = AlgorithmTag | StructureTag
 
+export type Difficulty = 'Easy' | 'Medium' | 'Hard'
+
 export interface Question {
   name: string
-  id?: number
+  title: string
+  id: number | string
+  difficulty: Difficulty
+  category: Category | string
+  tag: Tag
   link: string
-  rank: 'easy' | 'medium' | 'hard'
-  origin?: string // source link
+  origin: string
 }
 
 export interface SubNav {

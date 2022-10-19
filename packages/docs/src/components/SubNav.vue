@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Module, SubNav } from '../types'
+import type { Category, SubNav } from '../types'
 import { easy, getNavs, hard, medium } from '~/logics'
 
 const props = defineProps<{
-  module: Module
+  module: Category
   navs: SubNav[]
 }>()
 

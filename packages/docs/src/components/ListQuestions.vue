@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { Module, Tag } from '~/types'
+import type { Category, Tag } from '~/types'
 import { easy, getTagQuestions, hard, medium } from '~/logics'
 
 const props = defineProps<{
-  module: Module
+  module: Category
   tag: Tag
 }>()
 
-const rank = computed(() => Object.entries({
+const difficulty = computed(() => Object.entries({
   easy: easy.value,
   hard: hard.value,
   medium: medium.value,
@@ -15,7 +15,7 @@ const rank = computed(() => Object.entries({
 
 const questions = computed(() => {
   const questions = getTagQuestions(props.module, props.tag)
-  return rank.value.length ? questions.filter(i => rank.value.includes(i.rank)) : questions
+  return difficulty.value.length ? questions.filter(i => difficulty.value.includes(i.difficulty)) : questions
 })
 </script>
 
@@ -36,7 +36,7 @@ const questions = computed(() => {
       <div class="flex-auto">
         <div cla ss="text-normal">{{ item.name }}</div>
         <div class="flex gap-2 desc text-sm opacity-50 font-normal">
-          <div v-text="item.rank" />
+          <div v-text="item.difficulty" />
           <a v-if="item.origin" :href="item.origin">view source</a>
         </div>
       </div>

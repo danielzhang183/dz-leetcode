@@ -1,17 +1,13 @@
 questions:
   - name: 四数之和
-    id: 18
-    link: /math/018
-    rank: easy
+    category: algorithm
+    tag: math
   - name: min
-    id: 292
-    link: /math/292
-    rank: easy
+    category: algorithm
+    tag: math
   - name: 石子
-    id: 877
-    link: /math/877
-    rank: easy
+    category: algorithm
+    tag: math
   - name: 3的幂
-    id: 326
-    link: /math/326
-    rank: easy
+    category: algorithm
+    tag: math

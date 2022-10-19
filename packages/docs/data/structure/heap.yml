@@ -1,17 +1,13 @@
 questions:
   - name: 数组中的第k个最大元素
-    id: 215
-    link: /heap/215
-    rank: easy
+    category: structure
+    tag: heap
   - name: 数据流的中位数
-    id: 295
-    link: /heap/295
-    rank: easy
+    category: structure
+    tag: heap
   - name: 前-k-个高频元素
-    id: 347
-    link: /heap/347
-    rank: easy
+    category: structure
+    tag: heap
   - name: ipo
-    id: 502
-    link: /heap/502
-    rank: easy
+    category: structure
+    tag: heap

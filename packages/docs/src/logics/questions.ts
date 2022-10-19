@@ -1,9 +1,9 @@
 import { load } from 'js-yaml'
-import type { Module, Question, SubNav, Tag } from '~/types'
+import type { Category, Question, SubNav, Tag } from '~/types'
 
-const genRE = (module: Module) => new RegExp(`..\/..\/data\/${module}\/(.*?).yml`, 'i')
+const genRE = (module: Category) => new RegExp(`..\/..\/data\/${module}\/(.*?).yml`, 'i')
 
-export function getNavs(module: Module): SubNav[] {
+export function getNavs(module: Category): SubNav[] {
   const re = genRE(module)
 
   return Object.keys(getModules())
@@ -17,7 +17,7 @@ export function getNavs(module: Module): SubNav[] {
     })
 }
 
-export function getModuleQuestions(module: Module): Record<string, Question[]> {
+export function getModuleQuestions(module: Category): Record<string, Question[]> {
   const re = genRE(module)
 
   return Object.entries(getModules())
@@ -29,7 +29,7 @@ export function getModuleQuestions(module: Module): Record<string, Question[]> {
     }, {} as Record<string, Question[]>)
 }
 
-export function getTagQuestions(module: Module, tag: Tag): Question[] {
+export function getTagQuestions(module: Category, tag: Tag): Question[] {
   const modules = getModules()
   const moduleKey = `../../data/${module}/${tag}.yml`
   return getQuestions(modules[moduleKey])

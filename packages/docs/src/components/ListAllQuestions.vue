@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Module } from '~/types'
+import type { Category } from '~/types'
 import { getModuleQuestions } from '~/logics'
 
 const props = defineProps<{
-  module: Module
+  module: Category
 }>()
 const questions = getModuleQuestions(props.module)
 </script>
@@ -28,7 +28,7 @@ const questions = getModuleQuestions(props.module)
         </div>
         <div class="flex-auto">
           <div cla ss="text-normal">{{ item.name }}</div>
-          <div class="desc text-sm opacity-50 font-normal" v-html="item.rank" />
+          <div class="desc text-sm opacity-50 font-normal" v-html="item.difficulty" />
         </div>
       </a>
     </div>
