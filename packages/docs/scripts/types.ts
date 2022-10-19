@@ -12,7 +12,7 @@ export interface RawQuestion {
     lang: string
     code: string
   }>
-  tag?: Tag
+  tag: Tag
 }
 
 export type Difficulty = 'Easy' | 'Medium' | 'Hard'

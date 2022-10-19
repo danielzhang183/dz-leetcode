@@ -47,4 +47,4 @@ export const getQuestionPath = (
   `${pad(questionId)}${ext ?? ''}`,
 )
 
-export const getQuestionOrigin = (titleSlug: string) => LEETCODE_QUESTION_URL + titleSlug
+export const getQuestionOrigin = (titleSlug: string) => `${LEETCODE_QUESTION_URL}/${titleSlug}`

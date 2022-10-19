@@ -17,6 +17,8 @@ export function pad<T extends number | string>(num: T, len = 3): T {
 }
 
 export async function readFile(file: string) {
+  if (!existsSync(file))
+    return undefined
   return await fs.readFile(file, 'utf-8')
 }
 

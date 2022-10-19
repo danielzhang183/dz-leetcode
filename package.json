@@ -10,7 +10,8 @@
     "test": "vitest",
     "prepublishOnly": "nr build",
     "release": "bumpp --commit --push --tag && pnpm publish",
-    "typecheck": "vsc-tsc --noEmit"
+    "typecheck": "vsc-tsc --noEmit",
+    "gen": "pnpm -r run gen:all"
   },
   "dependencies": {
     "fast-glob": "^3.2.12"

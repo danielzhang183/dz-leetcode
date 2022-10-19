@@ -6,7 +6,7 @@ import { hyphenate, readFile, writeFile } from './utils'
 import { parse, stringify } from './parse'
 import type { Tag } from '~/types'
 
-export const root = resolve(process.cwd(), './packages')
+export const root = resolve(process.cwd(), '../..', './packages')
 export const pathCode = join(root, './code')
 export const pathDocs = join(root, './docs')
 
@@ -59,24 +59,24 @@ export function genMarkdown(question: RawQuestion): GenerateReturn {
     outFile: join(
       pathDocs,
       'src/pages',
-      getQuestionPath(categoryTitle, tag!, questionId, '.md'),
+      getQuestionPath(categoryTitle, tag, questionId, '.md'),
     ),
     content: s.toString(),
   }
 }
 
-export async function genCategory(question: RawQuestion): Promise<GenerateReturn> {
+export async function genCatelog(question: RawQuestion): Promise<GenerateReturn> {
   const { categoryTitle, tag, title } = question
-  const path = join(pathDocs, 'data', hyphenate(categoryTitle), `${hyphenate(tag!)}.yml`)
-  const questions = parse<WritableQuestions>(await readFile(path)) || { questions: [] }
+  const path = join(pathDocs, 'data', hyphenate(categoryTitle), `${hyphenate(tag)}.yml`)
+  const questions = parse<WritableQuestions>(await readFile(path) || '') || { questions: [] }
   questions.questions.push({
     name: title,
     title: question.titleSlug,
     difficulty: question.difficulty,
     id: question.questionId,
-    link: `/${getQuestionPath(categoryTitle, tag!, question.questionId)}`,
+    link: `/${getQuestionPath(categoryTitle, tag, question.questionId)}`,
     origin: getQuestionOrigin(question.titleSlug),
-    tag: question.tag!,
+    tag: question.tag,
     category: hyphenate(categoryTitle),
   })
 
@@ -96,7 +96,7 @@ export function genCode(question: RawQuestion): GenerateReturn {
     outFile: join(
       pathCode,
       'src',
-      getQuestionPath(categoryTitle, tag!, questionId),
+      getQuestionPath(categoryTitle, tag, questionId, '.ts'),
     ),
     content: `export ${code}`,
   }
@@ -138,14 +138,14 @@ export function genTestCase(question: RawQuestion): GenerateReturn {
     type: 'testcase',
     outFile: join(
       pathCode,
-      'src',
-      getQuestionPath(categoryTitle, tag!, questionId),
+      'test',
+      getQuestionPath(categoryTitle, tag, questionId, '.test.ts'),
     ),
     content: s.toString(),
   }
 }
 
-export async function generate(file: string, options: GenerateOptions) {
+export async function generate(file: string, options: GenerateOptions = {}) {
   const {
     root = process.cwd(),
   } = options
@@ -154,11 +154,12 @@ export async function generate(file: string, options: GenerateOptions) {
   // const { ext } = parsePath(absolute)
   // const useYaml = options.useYaml || /ya?ml/.test(ext)
   const questions = parse(await readFile(absolute) || '')?.questions
-  if (!questions || questions.length)
+  if (!questions || !questions.length)
     throw new Error(`Please ensure that ${absolute} has import data!`)
 
+  console.log(process.cwd())
   for (const question of questions)
-    run(question.name, question.tag)
+    await run(question.name, question.tag)
 }
 
 export async function run(titleSlug: string, tag?: Tag) {
@@ -168,12 +169,14 @@ export async function run(titleSlug: string, tag?: Tag) {
 
   Promise.all([
     genMarkdown(question),
-    genCategory(question),
+    genCatelog(question),
     genCode(question),
     genTestCase(question),
-  ]).then(modules => modules.forEach(({ type, outFile, content }) => {
+  ]).then(modules => modules.forEach(async ({ type, outFile, content }) => {
     console.log(`DZ LEETCODE: ${type} Generating....`)
-    writeFile(outFile, content)
+    await writeFile(outFile, content)
     console.log(`DZ LEETCODE: ${type} Done....`)
   }))
 }
+
+generate('./data/questions.yml', {})

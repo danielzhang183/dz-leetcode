@@ -1,0 +1,9 @@
+questions:
+  - name: Two Sum
+    title: two-sum
+    difficulty: Easy
+    id: '1'
+    link: /algorithms/array/001
+    origin: https://leetcode.cn/problems/two-sum
+    tag: array
+    category: algorithms
