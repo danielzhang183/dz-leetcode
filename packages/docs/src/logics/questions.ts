@@ -17,7 +17,7 @@ export function getNavs(module: Module): SubNav[] {
     })
 }
 
-export function getModuleQuestions(module: Module): Record<Tag, Question[]> {
+export function getModuleQuestions(module: Module): Record<string, Question[]> {
   const re = genRE(module)
 
   return Object.entries(getModules())

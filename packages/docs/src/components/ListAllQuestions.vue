@@ -23,7 +23,7 @@ const questions = getModuleQuestions(props.module)
         :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
         :title="item.name"
       >
-        <div v-if="item.icon" class="pt-2 pr-5">
+        <div class="pt-2 pr-5">
           <div class="text-3xl opacity-50" i-carbon-3d-curve-auto-colon />
         </div>
         <div class="flex-auto">
