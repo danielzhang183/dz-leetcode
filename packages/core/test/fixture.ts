@@ -1,4 +1,4 @@
-import { getQuestion, normalizeRawQuestion, normalizeResolvedQuestion } from '../scripts'
+import { getQuestion, normalizeRawQuestion, normalizeResolvedQuestion } from '../src'
 
 export const questionName = 'two-sum'
 

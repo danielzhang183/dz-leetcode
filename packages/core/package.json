@@ -1,5 +1,5 @@
 {
-  "name": "dz-leetcode",
+  "name": "@dz-leetcode/core",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@7.13.4",
@@ -34,5 +34,20 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "scripts": {
+    "build": "rimraf dist && unbind",
+    "dev": "unbuild --stub",
+    "prepublishOnly": "pnpm run build",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "consola": "^2.15.3",
+    "js-yaml": "^4.1.0",
+    "magic-string": "^0.26.7",
+    "ohmyfetch": "^0.4.20"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.5"
+  }
 }

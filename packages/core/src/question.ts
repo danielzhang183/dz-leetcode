@@ -1,11 +1,11 @@
 import { join } from 'path'
 import { $fetch } from 'ohmyfetch'
+import type { Category, Question, Tag } from '../../docs/src/types'
 import { hyphenate, pad } from './utils'
 import type { CodeSnippet, RawQuestion, ResolvedQuestion, TestCase, TopicTag } from './types'
-import type { Category, Question, Tag } from '~/types'
 
 const LEETCODE_FETCH_URL = 'https://leetcode.cn/graphql/'
-export const LEETCODE_QUESTION_URL = 'https://leetcode.cn/problems'
+const LEETCODE_QUESTION_URL = 'https://leetcode.cn/problems'
 
 export async function getQuestion(titleSlug: string): Promise<RawQuestion> {
   const query = [

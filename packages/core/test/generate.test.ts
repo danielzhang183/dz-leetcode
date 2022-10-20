@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { genCatelog, genCode, genMarkdown, genTestCase } from '../scripts'
+import { genCatelog, genCode, genMarkdown, genTestCase } from '../src'
 import { resolvedQuestion } from './fixture'
 
 describe('generate content', () => {

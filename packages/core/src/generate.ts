@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { join, resolve } from 'path'
 import MagicString from 'magic-string'
 import { getQuestion, normalizeRawQuestion, normalizeResolvedQuestion } from './question'
@@ -148,5 +149,3 @@ export async function run(options: ImportableQuestionOptions) {
     console.log(`DZ LEETCODE: ${type} Done....`)
   }))
 }
-
-// generate('./data/questions.yml', {})
