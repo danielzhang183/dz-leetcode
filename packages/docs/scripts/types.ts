@@ -1,5 +1,20 @@
 import type { Category, Difficulty, Question, Tag } from '~/types'
 
+export interface CodeSnippet {
+  lang: string
+  code: string
+}
+
+export interface TestCase {
+  toBe: string
+  expect: string
+}
+
+export interface TopicTag {
+  slug: string
+  translatedName: string
+}
+
 export interface RawQuestion {
   questionId: string
   categoryTitle: string
@@ -8,11 +23,8 @@ export interface RawQuestion {
   content: string
   difficulty: Difficulty
   exampleTestcases: string
-  codeSnippets: Array<{
-    lang: string
-    code: string
-  }>
-  tag: Tag
+  codeSnippets: Array<CodeSnippet>
+  topicTags: Array<TopicTag>
 }
 
 export interface ResolvedQuestion {
@@ -22,9 +34,12 @@ export interface ResolvedQuestion {
   titleSlug: string
   content: string
   difficulty: Difficulty
-  exampleTestcases: string
+  testcases: Array<TestCase>
   code: string
   functionName: string
+  tag: Tag | string
+  path: string
+  origin: string
 }
 
 export interface ImportableQuestionOptions {

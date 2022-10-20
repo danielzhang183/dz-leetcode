@@ -1,8 +1,8 @@
 import { join } from 'path'
 import { $fetch } from 'ohmyfetch'
 import { hyphenate, pad } from './utils'
-import type { RawQuestion, ResolvedQuestion } from './types'
-import type { Category, Tag } from '~/types'
+import type { CodeSnippet, RawQuestion, ResolvedQuestion, TestCase, TopicTag } from './types'
+import type { Category, Question, Tag } from '~/types'
 
 const LEETCODE_FETCH_URL = 'https://leetcode.cn/graphql/'
 export const LEETCODE_QUESTION_URL = 'https://leetcode.cn/problems'
@@ -22,6 +22,10 @@ export async function getQuestion(titleSlug: string): Promise<RawQuestion> {
     'lang',
     'code',
     '}',
+    'topicTags {',
+    'slug',
+    'translatedName',
+    '}',
     '}',
     '}',
   ].join('\n')
@@ -38,7 +42,7 @@ export async function getQuestion(titleSlug: string): Promise<RawQuestion> {
 
 export const getQuestionPath = (
   category: string,
-  tag: Tag,
+  tag: Tag | string,
   questionId: string | number,
   ext?: '.md' | '.ts' | '.test.ts' | '.yml' | '.yaml' | '.json',
 ) => join(
@@ -49,16 +53,13 @@ export const getQuestionPath = (
 
 export const getQuestionOrigin = (titleSlug: string) => `${LEETCODE_QUESTION_URL}/${titleSlug}`
 
-export function normalizeQuestion(
-  rawQuestion: RawQuestion,
+export function normalizeRawQuestion(
+  question: RawQuestion,
   category?: Category,
   tag?: Tag,
 ): ResolvedQuestion {
-  function normalizeTestCases(exampleTestcases: string): Array<{
-    expect: string
-    toBe: string
-  }> {
-    const res = []
+  function normalizeTestCases(exampleTestcases: string): TestCase[] {
+    const res: TestCase[] = []
     const testcases = exampleTestcases.split('\n')
     for (let i = 0; i < testcases.length - 1; i += 2)
       res.push({ expect: testcases[i], toBe: testcases[i + 1] })
@@ -66,20 +67,48 @@ export function normalizeQuestion(
     return res
   }
 
-  function normalizeCode(codeSnippets): string {
+  function normalizeCode(codeSnippets: CodeSnippet[]): string {
     return codeSnippets.find(i => i.lang === 'TypeScript')?.code || ''
   }
 
+  function normalizeFunctionName(code: string): string {
+    const re = /function \*?(\w+)\(/
+    return code?.match(re)![1] || 'fn'
+  }
+
+  function normalizeTag(tag: string | TopicTag[]): string {
+    return hyphenate(Array.isArray(tag) ? tag[0].slug : tag)
+  }
+
+  const code = normalizeCode(question.codeSnippets)
+  const normalizedCategory = hyphenate(category || question.categoryTitle)
+  const normalizedTag = normalizeTag(tag || question.topicTags)
+
   return {
-    questionId: rawQuestion.questionId,
-    category: category ?? hyphenate(rawQuestion.categoryTitle),
-    tag,
-    title: rawQuestion.title,
-    titleSlug: rawQuestion.titleSlug,
-    content: rawQuestion.content,
-    difficulty: rawQuestion.difficulty,
-    testcases: normalizeTestCases(rawQuestion.exampleTestcases),
-    code: normalizeCode(rawQuestion.codeSnippets),
-    functionName: 'string',
+    questionId: question.questionId,
+    category: normalizedCategory,
+    tag: normalizedTag,
+    title: question.title,
+    titleSlug: question.titleSlug,
+    content: question.content,
+    difficulty: question.difficulty,
+    testcases: normalizeTestCases(question.exampleTestcases),
+    code,
+    functionName: normalizeFunctionName(code),
+    path: getQuestionPath(normalizedCategory, normalizedTag, question.questionId),
+    origin: getQuestionOrigin(question.titleSlug),
+  }
+}
+
+export function normalizeResolvedQuestion(question: ResolvedQuestion): Question {
+  return {
+    name: question.title,
+    title: question.titleSlug,
+    difficulty: question.difficulty,
+    id: Number(question.questionId),
+    link: `/${question.path}`,
+    origin: question.origin,
+    tag: question.tag as Tag,
+    category: question.category,
   }
 }

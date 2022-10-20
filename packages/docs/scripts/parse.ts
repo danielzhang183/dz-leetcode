@@ -5,7 +5,7 @@ export function parse<T extends ImportableQuestions | WritableQuestions>(raw: st
   raw = raw.trim()
   if (!raw)
     return undefined
-  return (raw.startsWith('{'))
+  return (raw.startsWith('['))
     ? JSON.parse(raw)
     : YAML.load(raw)
 }

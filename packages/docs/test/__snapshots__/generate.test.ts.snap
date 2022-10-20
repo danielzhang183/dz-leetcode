@@ -1,0 +1,115 @@
+// Vitest Snapshot v1
+
+exports[`generate content > catelog > catelog 1`] = `
+{
+  "content": "questions:
+  - name: Two Sum
+    title: two-sum
+    difficulty: Easy
+    id: 1
+    link: /algorithms/array/001
+    origin: https://leetcode.cn/problems/two-sum
+    tag: array
+    category: algorithms",
+  "outFile": "/home/t04857/packages/docs/data/algorithms/array.yml",
+  "type": "category",
+}
+`;
+
+exports[`generate content > code > code 1`] = `
+{
+  "content": "export function twoSum(nums: number[], target: number): number[] {
+
+};",
+  "outFile": "/home/t04857/packages/code/src/algorithms/array/001.ts",
+  "type": "code",
+}
+`;
+
+exports[`generate content > markdown > markdown 1`] = `
+{
+  "content": "---
+title: Two Sum
+display: 1. Two Sum
+difficulty: Easy
+origin: https://leetcode.cn/problems/two-sum
+---
+
+[[toc]]
+
+## Problem
+
+Given an array of integers nums and an integer target, return <em>indices of the two numbers such that they add up to target</em>.
+
+You may assume that each input would have <strong><em>exactly</em> one solution</strong>, and you may not use the <em>same</em> element twice.
+
+You can return the answer in any order.
+
+ 
+<strong>Example 1:</strong>
+
+<pre>
+<strong>Input:</strong> nums = [2,7,11,15], target = 9
+<strong>Output:</strong> [0,1]
+<strong>Explanation:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].
+</pre>
+
+<strong>Example 2:</strong>
+
+<pre>
+<strong>Input:</strong> nums = [3,2,4], target = 6
+<strong>Output:</strong> [1,2]
+</pre>
+
+<strong>Example 3:</strong>
+
+<pre>
+<strong>Input:</strong> nums = [3,3], target = 6
+<strong>Output:</strong> [0,1]
+</pre>
+
+ 
+<strong>Constraints:</strong>
+
+<ul>
+  <li>2 &lt;= nums.length &lt;= 10<sup>4</sup></li>
+  <li>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></li>
+  <li>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></li>
+  <li><strong>Only one valid answer exists.</strong></li>
+</ul>
+
+ 
+<strong>Follow-up: </strong>Can you come up with an algorithm that is less than O(n<sup>2</sup>) time complexity?
+
+## Solution
+
+\`\`\`ts
+function twoSum(nums: number[], target: number): number[] {
+
+};
+\`\`\`
+
+[view source](https://leetcode.cn/problems/two-sum)
+",
+  "outFile": "/home/t04857/packages/docs/src/pages/algorithms/array/001.md",
+  "type": "markdown",
+}
+`;
+
+exports[`generate content > testcases > testcases 1`] = `
+{
+  "content": "import { describe, expect, it } from 'vitest'
+import { twoSum } from '../../../src/algorithms/array/001'
+
+describe('twoSum', () => {
+  it('exported', () => {
+    expect(twoSum([2,7,11,15])).toBe(9)
+    expect(twoSum([3,2,4])).toBe(6)
+    expect(twoSum([3,3])).toBe(6)
+  })
+})
+",
+  "outFile": "/home/t04857/packages/code/test/algorithms/array/001.test.ts",
+  "type": "testcase",
+}
+`;

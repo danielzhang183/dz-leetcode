@@ -1,17 +1,24 @@
 import { join, resolve } from 'path'
 import MagicString from 'magic-string'
-import { getQuestion, getQuestionOrigin, getQuestionPath, normalizeQuestion } from './question'
-import type { GenerateOptions, GenerateReturn, ImportableQuestionOptions, RawQuestion as ReslovedQuestion, WritableQuestions } from './types'
-import { hyphenate, readFile, writeFile } from './utils'
+import { getQuestion, normalizeRawQuestion, normalizeResolvedQuestion } from './question'
+import type { GenerateOptions, GenerateReturn, ImportableQuestionOptions, ImportableQuestions, ResolvedQuestion, WritableQuestions } from './types'
+import { readFile, writeFile } from './utils'
 import { parse, stringify } from './parse'
 
 export const root = resolve(process.cwd(), '../..', './packages')
 export const pathCode = join(root, './code')
 export const pathDocs = join(root, './docs')
 
-export function genMarkdown(question: ReslovedQuestion): GenerateReturn {
-  const { content, category, questionId, title, difficulty, titleSlug, tag } = question
-  const origin = getQuestionOrigin(titleSlug)
+export function genMarkdown(question: ResolvedQuestion): GenerateReturn {
+  const {
+    code,
+    content,
+    questionId,
+    title,
+    difficulty,
+    origin,
+    path,
+  } = question
 
   function genMarkdownPre(s: MagicString) {
     [
@@ -32,7 +39,7 @@ export function genMarkdown(question: ReslovedQuestion): GenerateReturn {
     [
       '\n\n## Solution\n',
       '```ts',
-      genCode(question).content,
+      code,
       '```\n',
       `[view source](${origin})`,
     ]
@@ -41,7 +48,7 @@ export function genMarkdown(question: ReslovedQuestion): GenerateReturn {
 
   function transformMarkdown(s: MagicString) {
     s
-      .replace('&nbsp;', ' ')
+      .replaceAll('&nbsp;', ' ')
       .replaceAll(/\t/g, '  ')
       .replaceAll(/<\/?p>/g, '')
       .replaceAll(/<\/?code>/g, '')
@@ -55,65 +62,45 @@ export function genMarkdown(question: ReslovedQuestion): GenerateReturn {
 
   return {
     type: 'markdown',
-    outFile: join(
-      pathDocs,
-      'src/pages',
-      getQuestionPath(category, tag, questionId, '.md'),
-    ),
+    outFile: join(pathDocs, 'src/pages', `${path}.md`),
     content: s.toString(),
   }
 }
 
-export async function genCatelog(question: ReslovedQuestion): Promise<GenerateReturn> {
-  const { category, tag, title } = question
-  const path = join(pathDocs, 'data', hyphenate(category), `${hyphenate(tag)}.yml`)
-  const questions = parse<WritableQuestions>(await readFile(path) || '') || { questions: [] }
-  questions.questions.push({
-    name: title,
-    title: question.titleSlug,
-    difficulty: question.difficulty,
-    id: question.questionId,
-    link: `/${getQuestionPath(category, tag, question.questionId)}`,
-    origin: getQuestionOrigin(question.titleSlug),
-    tag: question.tag,
-    category: hyphenate(category),
-  })
+export async function genCatelog(question: ResolvedQuestion): Promise<GenerateReturn> {
+  const path = join(pathDocs, 'data', `${question.path.replace(/(\/\d+$)/g, '')}.yml`)
+  const content = parse<WritableQuestions>(await readFile(path) || '') || { questions: [] }
+  if (!content.questions.find(i => i.title === question.titleSlug))
+    content.questions.push(normalizeResolvedQuestion(question))
 
   return {
     type: 'category',
     outFile: path,
-    content: stringify(questions)!,
+    content: stringify(content)!,
   }
 }
 
-export function genCode(question: ReslovedQuestion): GenerateReturn {
-  const { code, category, questionId, tag } = question
+export function genCode(question: ResolvedQuestion): GenerateReturn {
+  const { code, path } = question
 
   return {
     type: 'code',
-    outFile: join(
-      pathCode,
-      'src',
-      getQuestionPath(category, tag, questionId, '.ts'),
-    ),
+    outFile: join(pathCode, 'src', `${path}.ts`),
     content: `export ${code}`,
   }
 }
 
-export function genTestCase(question: ReslovedQuestion): GenerateReturn {
-  const { category, questionId, testcases, tag } = question
-  const { content } = genCode(question)
-  const re = /function \*?(\w+)\(/
-  const fn = content.match(re)![1]
+export function genTestCase(question: ResolvedQuestion): GenerateReturn {
+  const { testcases, functionName, path } = question
 
   const s = new MagicString('')
   ;[
     'import { describe, expect, it } from \'vitest\'',
-    `import { ${fn} } from '../../../src'\n`,
-    `describe('${fn}', () => {`,
+    `import { ${functionName} } from '../../../src/${path}'\n`,
+    `describe('${functionName}', () => {`,
     '  it(\'exported\', () => {',
     ...testcases.map(
-      ({ expect, toBe }) => `    expect(${fn}(${expect})).toBe(${toBe})`,
+      ({ expect, toBe }) => `    expect(${functionName}(${expect})).toBe(${toBe})`,
     ),
     '  })',
     '})',
@@ -122,11 +109,7 @@ export function genTestCase(question: ReslovedQuestion): GenerateReturn {
 
   return {
     type: 'testcase',
-    outFile: join(
-      pathCode,
-      'test',
-      getQuestionPath(category, tag, questionId, '.test.ts'),
-    ),
+    outFile: join(pathCode, 'test', `${path}.test.ts`),
     content: s.toString(),
   }
 }
@@ -137,15 +120,12 @@ export async function generate(file: string, options: GenerateOptions = {}) {
   } = options
 
   const absolute = resolve(root, file)
-  // const { ext } = parsePath(absolute)
-  // const useYaml = options.useYaml || /ya?ml/.test(ext)
-  const questions = parse(await readFile(absolute) || '')?.questions
-  if (!questions?.length)
+  const questions = parse<ImportableQuestions>(await readFile(absolute) || '')?.questions
+  if (!questions || !questions.length)
     throw new Error(`Please ensure that ${absolute} has import data!`)
 
-  console.log(process.cwd())
   for (const question of questions)
-    await run(question)
+    run(question)
 }
 
 export async function run(options: ImportableQuestionOptions) {
@@ -155,7 +135,7 @@ export async function run(options: ImportableQuestionOptions) {
     tag,
   } = options
   const rawQuestion = await getQuestion(name)
-  const question = normalizeQuestion(rawQuestion, category, tag)
+  const question = normalizeRawQuestion(rawQuestion, category, tag)
 
   Promise.all([
     genMarkdown(question),
@@ -169,4 +149,4 @@ export async function run(options: ImportableQuestionOptions) {
   }))
 }
 
-generate('./data/questions.yml', {})
+// generate('./data/questions.yml', {})
