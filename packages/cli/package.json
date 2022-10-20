@@ -46,7 +46,6 @@
     "cli-cursor": "^4.0.0",
     "cli-highlight": "^2.1.11",
     "log-update": "^5.0.1",
-    "picocolors": "^1.0.0",
-    "simple-git": "^3.14.1"
+    "picocolors": "^1.0.0"
   }
 }

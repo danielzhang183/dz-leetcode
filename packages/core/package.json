@@ -1,5 +1,5 @@
 {
-  "name": "@dz-leetcode/core",
+  "name": "dz-leetcode",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@7.13.5",
@@ -36,9 +36,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && unbind",
-    "dev": "unbuild --stub",
-    "prepublishOnly": "pnpm run build",
+    "build": "rimraf dist && unbuild",
+    "stub": "unbuild --stub",
+    "prepublishOnly": "nr build",
     "test": "vitest"
   },
   "dependencies": {

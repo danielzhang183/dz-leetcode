@@ -1,3 +1,5 @@
 export * from './generate'
 export * from './question'
+export * from './parse'
+export * from './utils'
 export * from './types'

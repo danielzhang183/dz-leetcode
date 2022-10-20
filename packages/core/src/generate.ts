@@ -6,7 +6,7 @@ import type { GenerateReturn, ImportableQuestionOption, ImportableQuestions, Res
 import { readFile, writeFile } from './utils'
 import { parse, stringify } from './parse'
 
-export const root = resolve(process.cwd(), '../..', './packages')
+export const root = resolve(process.cwd(), './packages')
 export const pathCode = join(root, './code')
 export const pathDocs = join(root, './docs')
 
