@@ -1,0 +1,52 @@
+{
+  "name": "@dz-leetcode/cli",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.13.5",
+  "description": "dz-leetcode CLI",
+  "author": "Daniel Zhang <danielzhang182@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/danielzhang183/dz-leetcode#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielzhang183/dz-leetcode.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/danielzhang183/dz-leetcode/issues"
+  },
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "dz-leetcode": "./bin/dz-leetcode.mjs"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "build": "rimraf dist && unbuild",
+    "stub": "unbuild --stub",
+    "prepublishOnly": "nr build"
+  },
+  "peerDependencies": {
+    "dz-leetcode": "workspace:../core"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "cli-cursor": "^4.0.0",
+    "cli-highlight": "^2.1.11",
+    "log-update": "^5.0.1",
+    "picocolors": "^1.0.0",
+    "simple-git": "^3.14.1"
+  }
+}

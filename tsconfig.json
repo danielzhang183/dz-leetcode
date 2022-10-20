@@ -9,6 +9,14 @@
     "strict": true, /* Enable all strict type-checking options. */
     "strictNullChecks": true, /* When type checking, take into account 'null' and 'undefined'. */
     "skipDefaultLibCheck": true, /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  }
+    "skipLibCheck": true, /* Skip type checking all .d.ts files. */
+    "paths": {
+      "dz-leetcode": [
+        "./packages/core/src/index.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "./examples/**/*"
+  ]
 }

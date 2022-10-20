@@ -26,6 +26,6 @@ export async function readFile(file: string) {
 export async function writeFile(outFile: string, content: string) {
   const dir = dirname(outFile)
   if (!existsSync(dir))
-    fs.mkdir(dir, { recursive: true })
+    await fs.mkdir(dir, { recursive: true })
   await fs.writeFile(outFile, content, 'utf-8')
 }

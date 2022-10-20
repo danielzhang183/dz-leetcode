@@ -1,4 +1,4 @@
-import type { Category, Difficulty, Question, Tag } from '~/types'
+import type { Category, Difficulty, Question, Tag } from '../../docs/src/types'
 
 export interface CodeSnippet {
   lang: string
@@ -42,23 +42,18 @@ export interface ResolvedQuestion {
   origin: string
 }
 
-export interface ImportableQuestionOptions {
+export interface ImportableQuestionOption {
   name: string
-  category?: Category
-  tag?: Tag
+  category?: Category | string | undefined
+  tag?: Tag | string | undefined
 }
 
 export interface ImportableQuestions {
-  questions: Array<ImportableQuestionOptions>
+  questions: Array<ImportableQuestionOption>
 }
 
 export interface WritableQuestions {
   questions: Array<Question>
-}
-
-export interface GenerateOptions {
-  root?: string
-  useYaml?: boolean
 }
 
 export interface GenerateReturn {

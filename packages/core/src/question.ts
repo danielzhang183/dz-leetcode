@@ -55,8 +55,8 @@ export const getQuestionOrigin = (titleSlug: string) => `${LEETCODE_QUESTION_URL
 
 export function normalizeRawQuestion(
   question: RawQuestion,
-  category?: Category,
-  tag?: Tag,
+  category?: Category | string | undefined,
+  tag?: Tag | string | undefined,
 ): ResolvedQuestion {
   function normalizeTestCases(exampleTestcases: string): TestCase[] {
     const res: TestCase[] = []

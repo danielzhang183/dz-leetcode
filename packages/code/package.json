@@ -1,8 +1,8 @@
 {
-  "name": "dz-leetcode",
+  "name": "@dz-leetcode/code",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@7.13.4",
+  "packageManager": "pnpm@7.13.5",
   "description": "",
   "author": "Daniel Zhang",
   "license": "MIT",

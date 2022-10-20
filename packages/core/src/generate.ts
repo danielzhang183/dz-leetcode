@@ -2,7 +2,7 @@
 import { join, resolve } from 'path'
 import MagicString from 'magic-string'
 import { getQuestion, normalizeRawQuestion, normalizeResolvedQuestion } from './question'
-import type { GenerateOptions, GenerateReturn, ImportableQuestionOptions, ImportableQuestions, ResolvedQuestion, WritableQuestions } from './types'
+import type { GenerateReturn, ImportableQuestionOption, ImportableQuestions, ResolvedQuestion, WritableQuestions } from './types'
 import { readFile, writeFile } from './utils'
 import { parse, stringify } from './parse'
 
@@ -115,21 +115,19 @@ export function genTestCase(question: ResolvedQuestion): GenerateReturn {
   }
 }
 
-export async function generate(file: string, options: GenerateOptions = {}) {
-  const {
-    root = process.cwd(),
-  } = options
-
-  const absolute = resolve(root, file)
-  const questions = parse<ImportableQuestions>(await readFile(absolute) || '')?.questions
+export async function generate(file: string) {
+  const questions = parse<ImportableQuestions>(await readFile(file) || '')?.questions
   if (!questions || !questions.length)
-    throw new Error(`Please ensure that ${absolute} has import data!`)
-
-  for (const question of questions)
-    run(question)
+    throw new Error(`Please ensure that ${file} has import data!`)
+  batchGenerate(questions)
 }
 
-export async function run(options: ImportableQuestionOptions) {
+export async function batchGenerate(questions: ImportableQuestionOption[]) {
+  for (const question of questions)
+    singleGenerate(question)
+}
+
+export async function singleGenerate(options: ImportableQuestionOption) {
   const {
     name,
     category,
