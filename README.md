@@ -69,7 +69,7 @@ Options:
 I. batch generate questions with reading specfic file path
 
 ```bash
-dz-leetcode batch example/question.yml
+dz-leetcode batch example/questions.yml
 ```
 
 Configuration file usage
@@ -77,8 +77,13 @@ Configuration file usage
 ```yml
 questions:
   - name: two-sum
-  - category: algorithms #option
-  - tag: array #option
+    category: algorithms #option
+    tag: array #option
+  #or
+  - id: 1
+    category: algorithms #option
+    tag: array #option
+  ...
 ```
 
 II. generate a single question with question title or id
