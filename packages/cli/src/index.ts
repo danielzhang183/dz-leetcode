@@ -2,6 +2,7 @@ import { resolve } from 'path'
 import cac from 'cac'
 import { generate, singleGenerate } from 'dz-leetcode'
 import { version } from '../package.json'
+import { printErrorLogs } from './log'
 
 const cli = cac('dz-leetcode')
 
@@ -43,14 +44,17 @@ async function batch(file: string, options: BatchCliOptions) {
   } = options
 
   const absolute = resolve(root, file)
-  generate(absolute)
+  const logs = await generate(absolute)
+  printErrorLogs(logs)
 }
 
 async function single(titleOrId: string, options: SingleCliOptions) {
-  singleGenerate(Object.assign(
+  const log = await singleGenerate(Object.assign(
     /^\d+$/.test(titleOrId)
       ? { id: Number(titleOrId) }
       : { name: titleOrId },
     options,
   ))
+
+  printErrorLogs(log ? [log] : [])
 }

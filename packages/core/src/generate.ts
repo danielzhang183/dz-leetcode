@@ -1,15 +1,16 @@
-/* eslint-disable prefer-promise-reject-errors */
-/* eslint-disable no-console */
 import { join, resolve } from 'path'
 import MagicString from 'magic-string'
+import createDebug from 'debug'
 import { getQuestionById, getQuestionByTitle, normalizeRawQuestion, normalizeResolvedQuestion } from './question'
-import type { GenerateReturn, ImportableQuestionOptions, ImportableQuestions, ResolvedQuestion, WritableQuestions } from './types'
+import type { GenerateReturn, ImportableQuestionOptions, ImportableQuestions, ResolvedQuestion, RuntimeErrorLog, SingleErrorLog, WritableQuestions } from './types'
 import { readFile, writeFile } from './utils'
 import { parse, stringify } from './parse'
 
 export const root = resolve(process.cwd(), './packages')
 export const pathCode = join(root, './code')
 export const pathDocs = join(root, './docs')
+
+const debug = createDebug('dz-leetcode')
 
 export function genMarkdown(question: ResolvedQuestion): GenerateReturn {
   const {
@@ -116,42 +117,65 @@ export function genTestCase(question: ResolvedQuestion): GenerateReturn {
   }
 }
 
-export async function generate(file: string) {
+export async function generate(file: string): Promise<RuntimeErrorLog[]> {
   const questions = parse<ImportableQuestions>(await readFile(file) || '')?.questions
-  if (!questions || !questions.length)
-    throw new Error(`Please ensure that ${file} has import data!`)
+  const errorLogs: RuntimeErrorLog[] = []
+  if (!questions || !questions.length) {
+    errorLogs.push({
+      type: 'batch-error',
+      file,
+      timestamp: Date.now(),
+      error: `${file} has no import data!`,
+    })
 
-  batchGenerate(questions)
-}
+    return errorLogs
+  }
 
-export async function batchGenerate(questions: ImportableQuestionOptions[]) {
-  for (const question of questions)
-    singleGenerate(question)
+  async function batchGenerate(questions: ImportableQuestionOptions[]) {
+    const logs = await Promise.all(
+      questions.map(async (question: ImportableQuestionOptions): Promise<SingleErrorLog | void> => {
+        return await singleGenerate(question)
+      }))
+    return logs.filter(i => i) as SingleErrorLog[]
+  }
+
+  return batchGenerate(questions)
 }
 
 export async function singleGenerate(
   options: ImportableQuestionOptions,
-): Promise<string | undefined> {
+): Promise<SingleErrorLog | void> {
   const { category, tag, id, name } = options
-  if (!id && !name)
-    return Promise.reject<string>('dz-leetcode: Give question name or id at least!')
+  if (!id && !name) {
+    return {
+      type: 'single-error',
+      timestamp: Date.now(),
+      error: 'Give question name or id at least',
+    }
+  }
 
   const rawQuestion = id
     ? await getQuestionById(id)
     : await getQuestionByTitle(name!)
-  if (!rawQuestion)
-    return Promise.reject<string>('dz-leetcode: Not found question')
+  if (!rawQuestion) {
+    return {
+      type: 'single-error',
+      timestamp: Date.now(),
+      error: `Question ${id ? `No.${id}` : name} Not Found!`,
+      question: id || name,
+    }
+  }
 
   const question = normalizeRawQuestion(rawQuestion, category, tag)
-
-  Promise.all([
+  const gens = await Promise.all([
     genMarkdown(question),
     genCatelog(question),
     genCode(question),
     genTestCase(question),
-  ]).then(modules => modules.forEach(async ({ type, outFile, content }) => {
-    console.log(`DZ LEETCODE: ${type} Generating....`)
+  ])
+  await Promise.all(gens.map(async ({ type, outFile, content }) => {
+    debug(`${type} Generating....`)
     await writeFile(outFile, content)
-    console.log(`DZ LEETCODE: ${type} Done....`)
+    debug(`${type} Done....`)
   }))
 }

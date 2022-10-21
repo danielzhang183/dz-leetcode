@@ -114,3 +114,20 @@ export interface GenerateReturn {
   outFile: string
   content: string
 }
+
+export interface ErrorLogBase {
+  timestamp: number
+  error: unknown
+}
+
+export interface BatchErrorLog extends ErrorLogBase {
+  file: string
+  type: 'batch-error'
+}
+
+export interface SingleErrorLog extends ErrorLogBase {
+  type: 'single-error'
+  question?: string | number
+}
+
+export type RuntimeErrorLog = BatchErrorLog | SingleErrorLog
