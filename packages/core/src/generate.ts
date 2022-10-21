@@ -1,8 +1,9 @@
+/* eslint-disable prefer-promise-reject-errors */
 /* eslint-disable no-console */
 import { join, resolve } from 'path'
 import MagicString from 'magic-string'
-import { getQuestion, normalizeRawQuestion, normalizeResolvedQuestion } from './question'
-import type { GenerateReturn, ImportableQuestionOption, ImportableQuestions, ResolvedQuestion, WritableQuestions } from './types'
+import { getQuestionById, getQuestionByTitle, normalizeRawQuestion, normalizeResolvedQuestion } from './question'
+import type { GenerateReturn, ImportableQuestionOptions, ImportableQuestions, ResolvedQuestion, WritableQuestions } from './types'
 import { readFile, writeFile } from './utils'
 import { parse, stringify } from './parse'
 
@@ -119,21 +120,28 @@ export async function generate(file: string) {
   const questions = parse<ImportableQuestions>(await readFile(file) || '')?.questions
   if (!questions || !questions.length)
     throw new Error(`Please ensure that ${file} has import data!`)
+
   batchGenerate(questions)
 }
 
-export async function batchGenerate(questions: ImportableQuestionOption[]) {
+export async function batchGenerate(questions: ImportableQuestionOptions[]) {
   for (const question of questions)
     singleGenerate(question)
 }
 
-export async function singleGenerate(options: ImportableQuestionOption) {
-  const {
-    name,
-    category,
-    tag,
-  } = options
-  const rawQuestion = await getQuestion(name)
+export async function singleGenerate(
+  options: ImportableQuestionOptions,
+): Promise<string | undefined> {
+  const { category, tag, id, name } = options
+  if (!id && !name)
+    return Promise.reject<string>('dz-leetcode: Give question name or id at least!')
+
+  const rawQuestion = id
+    ? await getQuestionById(id)
+    : await getQuestionByTitle(name!)
+  if (!rawQuestion)
+    return Promise.reject<string>('dz-leetcode: Not found question')
+
   const question = normalizeRawQuestion(rawQuestion, category, tag)
 
   Promise.all([

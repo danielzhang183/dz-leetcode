@@ -17,7 +17,7 @@ cli
   .action(batch)
 
 cli
-  .command('single <title>')
+  .command('single <title | id>')
   .action(single)
 
 cli
@@ -46,6 +46,11 @@ async function batch(file: string, options: BatchCliOptions) {
   generate(absolute)
 }
 
-async function single(title: string, options: SingleCliOptions) {
-  singleGenerate({ name: title, ...options })
+async function single(titleOrId: string, options: SingleCliOptions) {
+  singleGenerate(Object.assign(
+    /^\d+$/.test(titleOrId)
+      ? { id: Number(titleOrId) }
+      : { name: titleOrId },
+    options,
+  ))
 }

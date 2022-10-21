@@ -6,7 +6,41 @@ import type { Category, CodeSnippet, Question, RawQuestion, ResolvedQuestion, Ta
 const LEETCODE_FETCH_URL = 'https://leetcode.cn/graphql/'
 const LEETCODE_QUESTION_URL = 'https://leetcode.cn/problems'
 
-export async function getQuestion(titleSlug: string): Promise<RawQuestion> {
+export async function getQuestionById(id: number): Promise<RawQuestion | undefined> {
+  const query = [
+    'query problemsetQuestionList($categorySlug: String, $limit: Int, $skip: Int, $filters: QuestionListFilterInput) {',
+    '  problemsetQuestionList(',
+    '    categorySlug: $categorySlug',
+    '    limit: $limit',
+    '    skip: $skip',
+    '    filters: $filters',
+    '  ) {',
+    '    hasMore',
+    '    total',
+    '    questions {',
+    '      titleSlug',
+    '    }',
+    '  }',
+    '}',
+  ].join('\n')
+
+  const titleSlug = await $fetch(LEETCODE_FETCH_URL, {
+    method: 'post',
+    body: {
+      query,
+      variables: {
+        categorySlug: '',
+        skip: id - 1,
+        limit: 1,
+        filters: {},
+      },
+    },
+  }).then(r => r.data.problemsetQuestionList.questions[0]?.titleSlug)
+
+  return titleSlug ? await getQuestionByTitle(titleSlug) : undefined
+}
+
+export async function getQuestionByTitle(titleSlug: string): Promise<RawQuestion | undefined> {
   const query = [
     'query questionData($titleSlug: String!) {',
     'question(titleSlug: $titleSlug) {',
@@ -36,7 +70,7 @@ export async function getQuestion(titleSlug: string): Promise<RawQuestion> {
       query,
       variables: { titleSlug },
     },
-  }).then(r => r.data.question)
+  }).then(r => r.data?.question || undefined)
 }
 
 export const getQuestionPath = (

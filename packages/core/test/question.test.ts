@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-
+import { getQuestionById } from '../src'
 import { question, rawQuestion, resolvedQuestion } from './fixture'
 
 describe('question', () => {
@@ -13,5 +13,9 @@ describe('question', () => {
 
   it('question', () => {
     expect(question).toMatchSnapshot('question')
+  })
+
+  it('get question by id', async () => {
+    expect(await getQuestionById(1)).toStrictEqual(rawQuestion)
   })
 })
