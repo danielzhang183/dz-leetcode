@@ -1,8 +1,7 @@
 import { join } from 'path'
 import { $fetch } from 'ohmyfetch'
-import type { Category, Question, Tag } from '../../docs/src/types'
 import { hyphenate, pad } from './utils'
-import type { CodeSnippet, RawQuestion, ResolvedQuestion, TestCase, TopicTag } from './types'
+import type { Category, CodeSnippet, Question, RawQuestion, ResolvedQuestion, Tag, TestCase, TopicTag } from './types'
 
 const LEETCODE_FETCH_URL = 'https://leetcode.cn/graphql/'
 const LEETCODE_QUESTION_URL = 'https://leetcode.cn/problems'

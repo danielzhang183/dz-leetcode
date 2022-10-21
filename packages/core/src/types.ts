@@ -1,5 +1,3 @@
-import type { Category, Difficulty, Question, Tag } from '../../docs/src/types'
-
 export interface CodeSnippet {
   lang: string
   code: string
@@ -13,6 +11,44 @@ export interface TestCase {
 export interface TopicTag {
   slug: string
   translatedName: string
+}
+
+export type Category =
+  | 'algorithm'
+  | 'structure'
+  | 'interview'
+  | 'design'
+
+export type AlgorithmTag =
+  | 'back-tracking' | 'bt'
+  | 'binary-search' | 'bs'
+  | 'dynamic-programming' | 'dp'
+  | 'greedy'
+  | 'math'
+  | 'sort'
+
+export type StructureTag =
+  | 'hash-table' | 'ht'
+  | 'linked-list' | 'll'
+  | 'array'
+  | 'heap'
+  | 'queue'
+  | 'stack'
+  | 'tree'
+
+export type Tag = AlgorithmTag | StructureTag
+
+export type Difficulty = 'Easy' | 'Medium' | 'Hard'
+
+export interface Question {
+  name: string
+  title: string
+  id: number | string
+  difficulty: Difficulty
+  category: Category | string
+  tag: Tag
+  link: string
+  origin: string
 }
 
 export interface RawQuestion {
