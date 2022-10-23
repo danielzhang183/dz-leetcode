@@ -36,7 +36,8 @@
   "scripts": {
     "build": "rimraf dist && unbuild",
     "stub": "unbuild --stub",
-    "prepublishOnly": "nr build"
+    "prepublishOnly": "nr build",
+    "test": "vitest"
   },
   "peerDependencies": {
     "dz-leetcode": "workspace:../core"
@@ -45,7 +46,13 @@
     "cac": "^6.7.14",
     "cli-cursor": "^4.0.0",
     "cli-highlight": "^2.1.11",
+    "cli-progress": "^3.11.2",
+    "debug": "^4.3.4",
     "log-update": "^5.0.1",
     "picocolors": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/cli-progress": "^3.11.0",
+    "@types/debug": "^4.1.7"
   }
 }

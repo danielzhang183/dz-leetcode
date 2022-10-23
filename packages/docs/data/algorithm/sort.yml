@@ -2,6 +2,6 @@ questions:
   - name: sortArray
     category: algorithm
     tag: sort
-  - name: 3Sum
+  - id: 15
     category: algorithm
     tag: sort

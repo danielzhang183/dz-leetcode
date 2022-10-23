@@ -1,16 +1,13 @@
 import { join, resolve } from 'path'
 import MagicString from 'magic-string'
-import createDebug from 'debug'
 import { getQuestionById, getQuestionByTitle, normalizeRawQuestion, normalizeResolvedQuestion } from './question'
-import type { GenerateReturn, ImportableQuestionOptions, ImportableQuestions, ResolvedQuestion, RuntimeErrorLog, SingleErrorLog, WritableQuestions } from './types'
+import type { GenerateReturn, ImportableQuestionOptions, ResolvedQuestion, WritableQuestions } from './types'
 import { readFile, writeFile } from './utils'
 import { parse, stringify } from './parse'
 
 export const root = resolve(process.cwd(), './packages')
 export const pathCode = join(root, './code')
 export const pathDocs = join(root, './docs')
-
-const debug = createDebug('dz-leetcode')
 
 export function genMarkdown(question: ResolvedQuestion): GenerateReturn {
   const {
@@ -117,39 +114,39 @@ export function genTestCase(question: ResolvedQuestion): GenerateReturn {
   }
 }
 
-export async function generate(file: string): Promise<RuntimeErrorLog[]> {
-  const questions = parse<ImportableQuestions>(await readFile(file) || '')?.questions
-  const errorLogs: RuntimeErrorLog[] = []
-  if (!questions || !questions.length) {
-    errorLogs.push({
-      type: 'batch-error',
-      file,
-      timestamp: Date.now(),
-      error: `${file} has no import data!`,
-    })
+// export async function generate(file: string): Promise<RuntimeErrorLog[]> {
+//   const questions = parse<ImportableQuestions>(await readFile(file) || '')?.questions
+//   const errorLogs: RuntimeErrorLog[] = []
+//   if (!questions || !questions.length) {
+//     errorLogs.push({
+//       type: 'batch-error',
+//       file,
+//       timestamp: Date.now(),
+//       error: `${file} has no import data!`,
+//     })
 
-    return errorLogs
-  }
+//     return errorLogs
+//   }
 
-  async function batchGenerate(questions: ImportableQuestionOptions[]) {
-    const logs = await Promise.all(
-      questions.map(async (question: ImportableQuestionOptions): Promise<SingleErrorLog | void> => {
-        return await singleGenerate(question)
-      }))
-    return logs.filter(i => i) as SingleErrorLog[]
-  }
+//   async function batchGenerate(questions: ImportableQuestionOptions[]) {
+//     const logs = await Promise.all(
+//       questions.map(async (question: ImportableQuestionOptions): Promise<SingleErrorLog | ResolvedQuestion> => {
+//         return await singleGenerate(question)
+//       }))
+//     return logs.filter(i => i) as SingleErrorLog[]
+//   }
 
-  return batchGenerate(questions)
-}
+//   return batchGenerate(questions)
+// }
 
-export async function singleGenerate(
-  options: ImportableQuestionOptions,
-): Promise<SingleErrorLog | void> {
+export async function singleGenerate(options: ImportableQuestionOptions): Promise<{
+  error: any
+  question: ResolvedQuestion | null
+}> {
   const { category, tag, id, name } = options
   if (!id && !name) {
     return {
-      type: 'single-error',
-      timestamp: Date.now(),
+      question: null,
       error: 'Give question name or id at least',
     }
   }
@@ -159,10 +156,8 @@ export async function singleGenerate(
     : await getQuestionByTitle(name!)
   if (!rawQuestion) {
     return {
-      type: 'single-error',
-      timestamp: Date.now(),
+      question: null,
       error: `Question ${id ? `No.${id}` : name} Not Found!`,
-      question: id || name,
     }
   }
 
@@ -173,9 +168,12 @@ export async function singleGenerate(
     genCode(question),
     genTestCase(question),
   ])
-  await Promise.all(gens.map(async ({ type, outFile, content }) => {
-    debug(`${type} Generating....`)
+  await Promise.all(gens.map(async ({ outFile, content }) => {
     await writeFile(outFile, content)
-    debug(`${type} Done....`)
   }))
+
+  return {
+    question,
+    error: null,
+  }
 }

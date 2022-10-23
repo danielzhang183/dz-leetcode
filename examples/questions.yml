@@ -1,4 +1,28 @@
 questions:
-  - name: two-sum
+  - category: structures
     tag: array
-  - id: 2
+    questions:
+      - 1
+      - 26
+      - 27
+
+  - category: structures
+    tag: linked-list
+    questions:
+      - 19
+      - 21
+      - 141
+
+  - category: algorithms
+    tag: sort
+    questions:
+      - 15
+      - 912
+
+  - category: algorithms
+    tag: binary-search
+    questions:
+      - 35
+      - 69
+      - 153
+
