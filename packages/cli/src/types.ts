@@ -14,6 +14,7 @@ export type ResolvedTagMap = Record<string, ResolvedQuestion[]>
 export interface CategoryMap {
   category: string
   tagMap: TagMap
+  questions: []
 }
 
 export interface TagData {

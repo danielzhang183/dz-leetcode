@@ -19,6 +19,10 @@ const difficultyColorMap: Record<Difficulty, string> = {
 
 export async function usage(options: UsageOptions) {
   const bars = createMultiProgresBar()
+  let categoriesBar: SingleBar | undefined
+  const questionBar = bars.create(1, 0)
+
+  const resolveCategories: any[] = []
 
   const logger = new TableLogger({
     columns: 4,
@@ -26,14 +30,27 @@ export async function usage(options: UsageOptions) {
     logLevel: options.logLevel,
   })
 
-  let depBar: SingleBar | undefined
-
   const resolvedUsages = await checkUsages(options, {
-    onLoaded(usages) {
-      depBar = bars.create(usages.length, 0, { type: c.green('categories') })
+    afterCategoriesLoaded(categories) {
+      categoriesBar = categories.length
+        ? bars.create(
+          categories.length,
+          0,
+          { type: c.green('categories'), name: c.cyan(categories[0].category) },
+        )
+        : undefined
     },
-    onResolved(_, categroy) {
-      depBar?.increment(1, { name: categroy })
+    beforeCategoryStart(category) {
+      categoriesBar?.increment(0, { name: c.cyan(category.category) })
+      questionBar?.start(category.tagMap.length, 0, { type: c.green('question') })
+    },
+    afterCategoryEnd(category) {
+      categoriesBar?.increment(1)
+      questionBar?.stop()
+      resolveCategories.push(category)
+    },
+    onQuestionResolved(_, name, progress) {
+      questionBar?.update(progress, { name })
     },
   })
 
@@ -68,33 +85,42 @@ export async function usage(options: UsageOptions) {
 }
 
 export interface UsageEventCallbacks {
-  onLoaded?: (usage: CategoryMap[]) => void
-  onResolved?: (category: string, progress: number, total: number) => void
+  afterCategoriesLoaded?: (categories: CategoryMap[]) => void
+  beforeCategoryStart?: (category: CategoryMap) => void
+  afterCategoryEnd?: (category: CategoryMap) => void
+  afterCategoriesEnd?: (categories: CategoryMap[]) => void
+  onQuestionResolved?: (category: string, progress: number, total: number) => void
 }
 
 export async function checkUsages(options: UsageOptions, callbacks: UsageEventCallbacks) {
   const categories = await loadCategories(options.file)
 
-  const usages: CategoryMap[] = Object.entries(categories!)
+  const unresolvedCategories: CategoryMap[] = Object.entries(categories!)
     // only check questions with more than one to supply
     .filter(i => Object.keys(i[1]).length > 1)
     // sort by the number of questions
     .sort((a, b) => Object.keys(b[1]).length - Object.keys(a[1]).length)
-    .map(([category, tagMap]) => ({ category, tagMap }))
+    .map(([category, tagMap]) => ({ category, tagMap, questions: Object.values(tagMap).flat(1) }))
 
-  callbacks.onLoaded?.(usages)
+  callbacks.afterCategoriesLoaded?.(unresolvedCategories)
 
-  let progress = 0
-  const total = usages.length
+  // let progress = 0
+  const total = unresolvedCategories.length
 
   const resolveUsages = await Promise.all(
-    usages.map(async ({ category, tagMap }) => {
+    unresolvedCategories.map(async (unresolvedCategory) => {
+      callbacks.beforeCategoryStart?.(unresolvedCategory)
+
+      const { category, tagMap } = unresolvedCategory
       const data = await resolveCategoryData(category, tagMap)
-      progress += 1
-      callbacks.onResolved?.(category, progress, total)
+      callbacks.onQuestionResolved?.(category, progress, total)
+
+      callbacks.afterCategoryEnd?.(unresolvedCategory)
       return data
     }),
   )
+
+  // callbacks.afterCategoriesEnd?.()
 
   return resolveUsages
 }

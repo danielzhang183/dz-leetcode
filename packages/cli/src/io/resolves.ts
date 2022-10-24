@@ -36,7 +36,6 @@ export async function resolveCategoryData(category: string, tagMap: TagMap): Pro
   }
 }
 
-const unknownRE = /^unknow-/
 export async function resolveTagData(category: string, tagMap: TagMap): Promise<TagData> {
   const errors: any[] = []
   const resolvedTagMap: ResolvedTagMap = {}
@@ -64,5 +63,39 @@ export async function resolveTagData(category: string, tagMap: TagMap): Promise<
   return {
     tagMap: resolvedTagMap,
     errors,
+  }
+}
+
+const unknownRE = /^unknow-/
+export async function resolveQuestionData(
+  questions: (string | number)[],
+  progressCallback: (name: string, counter: number, total: number) => void = () => {},
+) {
+  const total = questions.length
+  let counter = 0
+
+  return Promise.all(
+    questions
+      .map(async (identifier) => {
+        await generate({
+          category: unknownRE.test(category) ? undefined : category,
+          tag: unknownRE.test(tag) ? undefined : tag,
+          identifier,
+        })
+        counter += 1
+        progressCallback
+      })
+  )
+  for (const identifier of identifiers) {
+    debug.question(`resolving question ${identifier}`)
+    const { error, question } = await generate({
+      category: unknownRE.test(category) ? undefined : category,
+      tag: unknownRE.test(tag) ? undefined : tag,
+      identifier,
+    })
+    if (!error)
+      errors.push(error)
+    if (question != null)
+      resolvedTagMap[tag].push(question)
   }
 }
