@@ -1,9 +1,7 @@
 import { resolve } from 'path'
 import cac from 'cac'
-import type { ImportableQuestions } from 'dz-leetcode'
-import { parse, readFile, singleGenerate } from 'dz-leetcode'
+import { generate } from 'dz-leetcode'
 import { version } from '../package.json'
-import { printErrorLogs } from './log'
 import { usage } from './io/usage'
 
 const cli = cac('dz-leetcode')
@@ -46,33 +44,12 @@ async function batch(file: string, options: BatchCliOptions) {
   } = options
 
   const absolute = resolve(root, file)
-  const questions = parse<ImportableQuestions>(await readFile(absolute) || '')?.questions
-  if (!questions || !questions.length) {
-    printErrorLogs({
-      type: 'batch-error',
-      file,
-      timestamp: Date.now(),
-      error: `${file} has no import data!`,
-    })
-
-    return
-  }
-
-  usage({ logLevel: 'log' })
-  // const logs = await Promise.all(
-  //   questions.map(async (question: ImportableQuestionOptions): Promise<SingleErrorLog | void> => {
-  //     return await singleGenerate(question)
-  //   }))
-  // const logs = await generate(absolute)
+  await usage({ logLevel: 'log', file: absolute })
 }
 
 async function single(titleOrId: string, options: SingleCliOptions) {
-  await singleGenerate(Object.assign(
-    /^\d+$/.test(titleOrId)
-      ? { id: Number(titleOrId) }
-      : { name: titleOrId },
-    options,
-  ))
-
-  // printErrorLogs(log ?? [])
+  await generate({
+    identifier: /^\d+$/.test(titleOrId) ? Number(titleOrId) : titleOrId,
+    ...options,
+  })
 }

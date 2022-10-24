@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "@types/cli-progress": "^3.11.0",
-    "@types/debug": "^4.1.7"
+    "@types/debug": "^4.1.7",
+    "@types/node": "^18.11.2"
   }
 }

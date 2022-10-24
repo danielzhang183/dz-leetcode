@@ -1,7 +1,7 @@
 import YAML from 'js-yaml'
-import type { ImportableQuestions, WritableQuestions } from './types'
+import type { WritableQuestions } from './types'
 
-export function parse<T extends ImportableQuestions | WritableQuestions>(raw: string): T | undefined {
+export function parse<T>(raw: string): T | undefined {
   raw = raw.trim()
   if (!raw)
     return undefined

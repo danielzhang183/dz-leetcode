@@ -1,7 +1,7 @@
 import { existsSync, promises as fs } from 'fs'
 import { dirname } from 'path'
 
-const isNumber = (val: unknown): val is number => typeof val === 'number'
+export const isNumber = (val: unknown): val is number => typeof val === 'number'
 
 const camelizeRE = /-(\w)/g
 export const camelize = (str: string): string => str.replace(camelizeRE, (_, c) => (c ? c.toUpperCase() : ''))

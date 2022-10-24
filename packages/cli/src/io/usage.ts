@@ -1,10 +1,20 @@
-// import c from 'picocolors'
-// import type { SingleBar } from 'cli-progress'
+import c from 'picocolors'
+import type { SingleBar } from 'cli-progress'
+import type { Difficulty } from 'dz-leetcode'
 import { TableLogger, createMultiProgresBar } from '../log'
-// import { Category } from './../../../docs/src/types'
+import type { CategoryMap } from '../types'
+import { resolveCategoryData } from './resolves'
+import { loadCategories } from './category'
 
 export interface UsageOptions {
+  file: string
   logLevel: string
+}
+
+const difficultyColorMap: Record<Difficulty, string> = {
+  Easy: 'green',
+  Medium: 'magenta',
+  Hard: 'red',
 }
 
 export async function usage(options: UsageOptions) {
@@ -16,78 +26,75 @@ export async function usage(options: UsageOptions) {
     logLevel: options.logLevel,
   })
 
-  // let depBar: SingleBar | undefined
+  let depBar: SingleBar | undefined
 
-  // const resolvedUsages = await checkUsage(options, {
-  //   onLoaded(usages) {
-  //     depBar = bars.create(usages.length, 0, { type: c.green('tags') })
-  //   },
-  //   onResolved(_, categroy) {
-  //     depBar?.increment(1, { name: categroy })
-  //   },
-  // })
+  const resolvedUsages = await checkUsages(options, {
+    onLoaded(usages) {
+      depBar = bars.create(usages.length, 0, { type: c.green('categories') })
+    },
+    onResolved(_, categroy) {
+      depBar?.increment(1, { name: categroy })
+    },
+  })
 
   bars.stop()
 
-  // for (const { name, id, difficulty, origin } of resolvedUsages) {
-  //   const difficultyColorMap: Record<Difficulty, string> = {
-  //     Easy: 'green',
-  //     Medium: 'magenta',
-  //     Hard: 'red',
-  //   }
-  //   const color = difficultyColorMap[difficulty]
-  //   logger.row(
-  //     c.green(name),
-  //     c.gray(id),
-  //     c[color](difficulty),
-  //     c.gray(origin),
-  //   )
-  // }
+  for (const { category, tagMap } of resolvedUsages) {
+    const tags = Object.keys(tagMap).sort()
+    if (!tags.length)
+      continue
+
+    const questionCount = Object.values(tagMap).flatMap(i => i).length
+    // const pad = Math.max(8, ...Object.keys(tagMap).map(i => i.length)) + 2
+    for (const [tag, questions] of Object.entries(tagMap)) {
+      logger.log()
+      logger.log(`${c.blue(`${category} > ${tag}`)}  -  ${c.yellow(questionCount)} add`)
+      logger.log()
+      questions.forEach(({ title, questionId, difficulty, path }) => {
+        const color = difficultyColorMap[difficulty]
+        logger.row(
+          title,
+          c.gray(questionId),
+          // @ts-expect-error missing
+          c[color](difficulty),
+          c.gray(path),
+        )
+      })
+    }
+  }
 
   logger.log()
   logger.output()
 }
 
 export interface UsageEventCallbacks {
-  onLoaded?: () => void
-  onResolved?: () => void
+  onLoaded?: (usage: CategoryMap[]) => void
+  onResolved?: (category: string, progress: number, total: number) => void
 }
 
-// export async function checkUsages(options: UsageOptions, callbacks: UsageEventCallbacks) {
-//   const packages = await loadPackages(options)
-//   const names: Record<string, Record<string, PackageMeta[]>> = {}
+export async function checkUsages(options: UsageOptions, callbacks: UsageEventCallbacks) {
+  const categories = await loadCategories(options.file)
 
-//   for (const pkg of packages) {
-//     for (const dep of pkg.deps) {
-//       if (!names[dep.name])
-//         names[dep.name] = {}
-//       if (!names[dep.name][dep.currentVersion])
-//         names[dep.name][dep.currentVersion] = []
+  const usages: CategoryMap[] = Object.entries(categories!)
+    // only check questions with more than one to supply
+    .filter(i => Object.keys(i[1]).length > 1)
+    // sort by the number of questions
+    .sort((a, b) => Object.keys(b[1]).length - Object.keys(a[1]).length)
+    .map(([category, tagMap]) => ({ category, tagMap }))
 
-//       names[dep.name][dep.currentVersion].push(pkg)
-//     }
-//   }
+  callbacks.onLoaded?.(usages)
 
-//   const usages: UnresolvedUsage[] = Object.entries(names)
-//   // only check deps with more then 1 version in use
-//     .filter(i => Object.keys(i[1]).length > 1)
-//   // sort by the number of versions
-//     .sort((a, b) => Object.keys(b[1]).length - Object.keys(a[1]).length)
-//     .map(([name, versionMap]) => ({ name, versionMap }))
+  let progress = 0
+  const total = usages.length
 
-//   callbacks.onLoaded?.(usages)
+  const resolveUsages = await Promise.all(
+    usages.map(async ({ category, tagMap }) => {
+      const data = await resolveCategoryData(category, tagMap)
+      progress += 1
+      callbacks.onResolved?.(category, progress, total)
+      return data
+    }),
+  )
 
-//   let progress = 0
-//   const total = usages.length
-
-//   const resolveUsages = await Promise.all(
-//     usages.map(async ({ name, versionMap }) => {
-//       const { tags } = await getPackageData(name)
-//       progress += 1
-//       callbacks.onDependencyResolved?.(null, name, progress, total)
-//       return { name, versionMap, latest: tags.latest || '' }
-//     }),
-//   )
-
-//   return resolveUsages
-// }
+  return resolveUsages
+}

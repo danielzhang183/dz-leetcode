@@ -78,35 +78,14 @@ export interface ResolvedQuestion {
   origin: string
 }
 
-// interface ImportableQuestionOptions {
-//   category?: Category | string | undefined
-//   tag?: Tag | string | undefined
-// }
-
-// interface NameImportableQuestionOptions extends ImportableQuestionOptions {
-//   name: string
-// }
-
-// interface IdImportableQuestionOptions extends ImportableQuestionOptions {
-//   id: number
-// }
-
-// export type ResolvedImportableQuestionOptions =
-//   NameImportableQuestionOptions | IdImportableQuestionOptions
-
-export interface ImportableQuestionOptions {
-  id?: number
-  name?: string
-  category?: Category | string | undefined
-  tag?: Tag | string | undefined
-}
-
-export interface ImportableQuestions {
-  questions: Array<ImportableQuestionOptions>
-}
-
 export interface WritableQuestions {
   questions: Array<Question>
+}
+
+export interface GenerateOptions {
+  category?: string
+  tag?: string
+  identifier: string | number | undefined
 }
 
 export interface GenerateReturn {

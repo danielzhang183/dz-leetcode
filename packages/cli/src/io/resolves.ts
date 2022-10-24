@@ -1,26 +1,12 @@
 import createDebug from 'debug'
-import { singleGenerate } from 'dz-leetcode'
-import type { ResolvedQuestion } from 'dz-leetcode'
-import { isNumber } from './../utils'
+import { generate } from 'dz-leetcode'
+import type { CategoryData, ResolvedTagMap, TagData, TagMap } from '../types'
 
 export const debug = {
   cache: createDebug('dz-leetcode:cache'),
   category: createDebug('dz-leetcode:category'),
   tag: createDebug('dz-leetcode:tag'),
   question: createDebug('dz-leetcode:question'),
-}
-
-export type TagMap = Record<string, (string | number)[]>
-export type ResolvedTagMap = Record<string, ResolvedQuestion[]>
-
-export interface TagData {
-  tagMap: ResolvedTagMap
-  errors: any[]
-}
-
-export interface CategoryData extends TagData {
-  category: string
-  timestamp: number
 }
 
 export function now() {
@@ -50,6 +36,7 @@ export async function resolveCategoryData(category: string, tagMap: TagMap): Pro
   }
 }
 
+const unknownRE = /^unknow-/
 export async function resolveTagData(category: string, tagMap: TagMap): Promise<TagData> {
   const errors: any[] = []
   const resolvedTagMap: ResolvedTagMap = {}
@@ -57,20 +44,16 @@ export async function resolveTagData(category: string, tagMap: TagMap): Promise<
 
   for (const tag of tags) {
     debug.tag(`resloving tag ${tag}`)
-    const unresolvedQuestions = tagMap[tag]
+    const identifiers = tagMap[tag]
     resolvedTagMap[tag] = []
 
-    for (const unresolvedQuestion of unresolvedQuestions) {
-      debug.question(`resolving question ${unresolvedQuestion}`)
-      const { error, question } = await singleGenerate(Object.assign(
-        isNumber(unresolvedQuestion)
-          ? { id: Number(unresolvedQuestion) }
-          : { name: unresolvedQuestion },
-        {
-          category,
-          tag,
-        },
-      ))
+    for (const identifier of identifiers) {
+      debug.question(`resolving question ${identifier}`)
+      const { error, question } = await generate({
+        category: unknownRE.test(category) ? undefined : category,
+        tag: unknownRE.test(tag) ? undefined : tag,
+        identifier,
+      })
       if (!error)
         errors.push(error)
       if (question != null)

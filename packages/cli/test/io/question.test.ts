@@ -98,16 +98,5 @@ describe('questions', () => {
         },
       ]
     `)
-
-    // let progress = 0
-    // const total = usages.length
-
-    // const resolveUsages = await Promise.all(
-    //   usages.map(async ({ category, tagMap }) => {
-    //     progress += 1
-    //     await singleGenerate()
-    //     return { category, tag,  }
-    //   }),
-    // )
   })
 })

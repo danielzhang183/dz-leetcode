@@ -83,6 +83,23 @@ export class TableLogger {
   }
 }
 
+export function wrapJoin(strs: string[], delimiter: string, width: number): string[] {
+  const lines: string[] = []
+  let line = ''
+  for (let i = 0; i < strs.length; i++) {
+    const str = strs[i]
+    if (line && visualLength(line + str) > width) {
+      lines.push(line)
+      line = ''
+    }
+    line += str
+    if (i < strs.length - 1)
+      line += delimiter
+  }
+  lines.push(line)
+  return lines
+}
+
 export function printErrorLogs(logs: RuntimeErrorLog | RuntimeErrorLog[]) {
   logs = Array.isArray(logs) ? logs : [logs]
   if (!logs.length) {
@@ -92,7 +109,7 @@ export function printErrorLogs(logs: RuntimeErrorLog | RuntimeErrorLog[]) {
   }
 
   console.error()
-  console.error(c.inverse(c.bold(c.red(' DZ LEETCODE '))) + c.red(` ${logs.length} generate errors found`))
+  console.error(c.inverse(c.bold(c.red(' ERROR '))) + c.red(` ${logs.length} generate errors found`))
   logs.forEach((log, idx) => {
     console.error(c.yellow(`\n--- Error ${idx + 1} -------- ${c.gray(new Date(log.timestamp).toLocaleTimeString())} ---`))
     console.log(log.error)
