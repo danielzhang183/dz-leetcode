@@ -22,7 +22,7 @@ export function renderGenerations(cate: CategoryMeta) {
     const tip = [
       `${c.yellow(generatedCount)} generated`,
       `${c.yellow(total - generatedCount)} fail`,
-      `${c.yellow(generatedCount)} total`,
+      `${c.yellow(total)} total`,
     ].join(', ')
     lines.push(
       '',
