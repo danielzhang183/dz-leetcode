@@ -5,6 +5,7 @@ questions:
       - 1
       - 26
       - 27
+      - 10086
 
   - category: structures
     tag: linked-list
@@ -12,6 +13,7 @@ questions:
       - 19
       - 21
       - 141
+      - 5678
 
   - category: algorithms
     tag: sort

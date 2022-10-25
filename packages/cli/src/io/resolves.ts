@@ -61,15 +61,15 @@ export async function resolveTagData(
   }
 }
 
-const unknownRE = /^unknow-/
+const unknownRE = /^unknown-/
 export async function resolveQuestionData(
   category: string,
   tag: string,
   questions: (string | number)[],
-  progressCallback: (name: string, counter: number, total: number) => void = () => { },
+  progressCallback: (name: string, progress: number, total: number) => void = () => { },
 ) {
   const total = questions.length
-  let counter = 0
+  let progress = 0
 
   return Promise.all(
     questions
@@ -81,8 +81,8 @@ export async function resolveQuestionData(
           tag: unknownRE.test(tag) ? undefined : tag,
           identifier,
         })
-        counter += 1
-        progressCallback(question?.titleSlug || String(identifier), counter, total)
+        progress += 1
+        progressCallback(question?.titleSlug || String(identifier), progress, total)
         return {
           question,
           error,

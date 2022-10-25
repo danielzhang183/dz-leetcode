@@ -35,7 +35,7 @@ export async function gen(options: GenOptions) {
       categoriesBar?.increment(1)
       questionBar?.stop()
     },
-    onQuestionResolved(_, name, progress) {
+    onQuestionResolved(name, progress, _) {
       questionBar?.update(progress, { name })
     },
   })
@@ -56,9 +56,7 @@ export async function gen(options: GenOptions) {
 
   if (errLines.length) {
     console.error(c.inverse(c.red(c.bold(' ERROR '))))
-    console.error()
     console.error(errLines.join('\n'))
-    console.error()
   }
 }
 
@@ -67,7 +65,7 @@ export interface GenerateEventCallbacks {
   beforeCategoryStart?: (category: CategoryMeta) => void
   afterCategoryEnd?: (category: CategoryMeta) => void
   afterCategoriesEnd?: (categories: CategoryMeta[]) => void
-  onQuestionResolved?: (category: string, progress: number, total: number) => void
+  onQuestionResolved?: (name: string, progress: number, total: number) => void
 }
 
 export async function generateCategories(options: GenOptions, callbacks: GenerateEventCallbacks) {

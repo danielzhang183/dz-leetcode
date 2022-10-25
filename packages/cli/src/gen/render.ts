@@ -3,10 +3,10 @@ import c from 'picocolors'
 import { formatTable } from '../render'
 import type { CategoryMeta } from '../types'
 
-export function renderGenerations(category: CategoryMeta) {
+export function renderGenerations(cate: CategoryMeta) {
   const lines: string[] = []
   const errLines: string[] = []
-  const { resolved, tagMap } = category
+  const { resolved, tagMap, category } = cate
 
   const tags: Record<string, ResolvedQuestion[]> = {}
   for (const question of resolved) {
@@ -16,31 +16,30 @@ export function renderGenerations(category: CategoryMeta) {
     tags[tag].push(question)
   }
 
-  Object.entries((tags))
-    .forEach(([tag, questions]) => {
-      const total = tagMap[tag].length
-      const generatedCount = questions.length
-      const tip = [
-        `${c.yellow(generatedCount)} ~ generated`,
-        `${c.yellow(total - generatedCount)} ~ fail`,
-        `${c.yellow(generatedCount)} ~ total`,
-      ].join(', ')
-      lines.push(
-        '',
-        `${c.blue(`${category} > ${tag}`)}  -  ${tip}`,
-        '',
-      )
+  Object.entries((tags)).forEach(([tag, questions]) => {
+    const total = tagMap[tag].length
+    const generatedCount = questions.length
+    const tip = [
+      `${c.yellow(generatedCount)} generated`,
+      `${c.yellow(total - generatedCount)} fail`,
+      `${c.yellow(generatedCount)} total`,
+    ].join(', ')
+    lines.push(
+      '',
+      `${c.blue(`${category} > ${tag}`)} ${c.dim('-')} ${tip}`,
+      '',
+    )
 
-      questions = questions.sort((a, b) => Number(a.questionId) - Number(b.questionId))
+    questions = questions.sort((a, b) => Number(a.questionId) - Number(b.questionId))
 
-      lines.push(...formatTable(
-        questions.map(q => renderResolveQuestion(q)),
-        'LRRR',
-      ))
-    })
+    lines.push(...formatTable(
+      questions.map(q => renderResolveQuestion(q)),
+      'LRRR',
+    ))
+  })
   lines.push('')
 
-  const errors = category.errors
+  const errors = cate.errors
   if (errors.length) {
     lines.push()
     for (const error of errors)
@@ -72,8 +71,9 @@ export function renderResolveQuestion(question: ResolvedQuestion) {
 }
 
 export function renderResolveError(error: GenerateError) {
-  const lines: string[] = []
-
+  const lines: string[] = ['']
+  if (error.error)
+    lines.push(c.red(`> ${c.underline(`${error.category}/${error.tag}`)} ${String(error.error)}`))
   return lines
 }
 

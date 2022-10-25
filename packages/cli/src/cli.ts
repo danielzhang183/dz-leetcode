@@ -2,7 +2,7 @@ import { resolve } from 'path'
 import cac from 'cac'
 import { generate } from 'dz-leetcode'
 import { version } from '../package.json'
-import { usage } from './gen'
+import { gen } from './gen'
 
 const cli = cac('dz-leetcode')
 
@@ -44,7 +44,7 @@ async function batch(file: string, options: BatchCliOptions) {
   } = options
 
   const absolute = resolve(root, file)
-  await usage({ logLevel: 'log', file: absolute })
+  await gen({ logLevel: 'log', file: absolute })
 }
 
 async function single(titleOrId: string, options: SingleCliOptions) {
