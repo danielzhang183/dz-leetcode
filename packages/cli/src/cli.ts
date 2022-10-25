@@ -2,7 +2,7 @@ import { resolve } from 'path'
 import cac from 'cac'
 import { generate } from 'dz-leetcode'
 import { version } from '../package.json'
-import { usage } from './io/usage'
+import { usage } from './gen'
 
 const cli = cac('dz-leetcode')
 

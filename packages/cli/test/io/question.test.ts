@@ -3,9 +3,12 @@ import { loadQuestions } from '../fixtures'
 
 const questions = await loadQuestions()
 
+export type RawQuestion = string | number
+
 export interface UnresolvedUsage {
   category: string
-  tagMap: Record<string, (string | number)[]>
+  tagMap: Record<string, RawQuestion[]>
+  questions: RawQuestion[]
 }
 
 describe('questions', () => {
@@ -63,12 +66,20 @@ describe('questions', () => {
       .filter(i => Object.keys(i[1]).length > 1)
       // sort by the number of versions
       .sort((a, b) => Object.keys(b[1]).length - Object.keys(a[1]).length)
-      .map(([category, tagMap]) => ({ category, tagMap }))
+      .map(([category, tagMap]) => ({ category, tagMap, questions: Object.values(tagMap).flat(1) }))
 
     expect(usages).toMatchInlineSnapshot(`
       [
         {
           "category": "structures",
+          "questions": [
+            1,
+            26,
+            27,
+            19,
+            21,
+            141,
+          ],
           "tagMap": {
             "array": [
               1,
@@ -84,6 +95,13 @@ describe('questions', () => {
         },
         {
           "category": "algorithms",
+          "questions": [
+            15,
+            912,
+            35,
+            69,
+            153,
+          ],
           "tagMap": {
             "binary-search": [
               35,

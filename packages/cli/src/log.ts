@@ -114,4 +114,5 @@ export function printErrorLogs(logs: RuntimeErrorLog | RuntimeErrorLog[]) {
     console.error(c.yellow(`\n--- Error ${idx + 1} -------- ${c.gray(new Date(log.timestamp).toLocaleTimeString())} ---`))
     console.log(log.error)
   })
+  console.error()
 }

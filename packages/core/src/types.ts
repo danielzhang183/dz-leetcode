@@ -94,14 +94,21 @@ export interface GenerateReturn {
   content: string
 }
 
+export interface GenerateError {
+  category?: string
+  tag?: string
+  error: unknown
+  timestamp: number
+}
+
 export interface ErrorLogBase {
   timestamp: number
   error: unknown
 }
 
 export interface BatchErrorLog extends ErrorLogBase {
-  file: string
   type: 'batch-error'
+  file: string
 }
 
 export interface SingleErrorLog extends ErrorLogBase {

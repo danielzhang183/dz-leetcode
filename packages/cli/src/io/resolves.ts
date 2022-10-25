@@ -1,6 +1,7 @@
 import createDebug from 'debug'
 import { generate } from 'dz-leetcode'
-import type { CategoryData, ResolvedTagMap, TagData, TagMap } from '../types'
+import type { ResolvedQuestion } from 'dz-leetcode'
+import type { CategoryMeta, QuestionResolvedCallback, TagMap } from '../types'
 
 export const debug = {
   cache: createDebug('dz-leetcode:cache'),
@@ -13,63 +14,59 @@ export function now() {
   return Date.now()
 }
 
-export async function resolveCategoryData(category: string, tagMap: TagMap): Promise<CategoryData> {
+export async function resolveCategoryData(
+  category: CategoryMeta,
+  progress?: QuestionResolvedCallback,
+): Promise<CategoryMeta> {
   debug.category(`resolving category ${category}`)
-  const data = await resolveTagData(category, tagMap)
 
-  if (data) {
-    const result = {
-      category,
-      tagMap: data.tagMap,
-      errors: data.errors,
-      timestamp: now(),
-    }
+  const { questions, errors } = await resolveTagData(
+    category.category, category.tagMap, progress,
+  )
+  category.resolved = questions
+  category.errors = errors
 
-    return result
-  }
-
-  return {
-    category,
-    tagMap: {},
-    errors: [],
-    timestamp: now(),
-  }
+  return category
 }
 
-export async function resolveTagData(category: string, tagMap: TagMap): Promise<TagData> {
+export async function resolveTagData(
+  category: string,
+  tagMap: TagMap,
+  progress?: QuestionResolvedCallback,
+) {
   const errors: any[] = []
-  const resolvedTagMap: ResolvedTagMap = {}
+  const questions: ResolvedQuestion[] = []
   const tags = Object.keys(tagMap)
 
   for (const tag of tags) {
     debug.tag(`resloving tag ${tag}`)
-    const identifiers = tagMap[tag]
-    resolvedTagMap[tag] = []
 
-    for (const identifier of identifiers) {
-      debug.question(`resolving question ${identifier}`)
-      const { error, question } = await generate({
-        category: unknownRE.test(category) ? undefined : category,
-        tag: unknownRE.test(tag) ? undefined : tag,
-        identifier,
-      })
-      if (!error)
+    const data = await resolveQuestionData(
+      category,
+      tag,
+      tagMap[tag],
+      progress,
+    )
+    for (const { question, error } of data) {
+      if (question)
+        questions.push(question)
+      if (error)
         errors.push(error)
-      if (question != null)
-        resolvedTagMap[tag].push(question)
     }
   }
 
   return {
-    tagMap: resolvedTagMap,
+    questions,
     errors,
   }
 }
 
 const unknownRE = /^unknow-/
 export async function resolveQuestionData(
+  category: string,
+  tag: string,
   questions: (string | number)[],
-  progressCallback: (name: string, counter: number, total: number) => void = () => {},
+  progressCallback: (name: string, counter: number, total: number) => void = () => { },
 ) {
   const total = questions.length
   let counter = 0
@@ -77,25 +74,19 @@ export async function resolveQuestionData(
   return Promise.all(
     questions
       .map(async (identifier) => {
-        await generate({
+        debug.question(`resolving question ${identifier}`)
+
+        const { question, error } = await generate({
           category: unknownRE.test(category) ? undefined : category,
           tag: unknownRE.test(tag) ? undefined : tag,
           identifier,
         })
         counter += 1
-        progressCallback
-      })
+        progressCallback(question?.titleSlug || String(identifier), counter, total)
+        return {
+          question,
+          error,
+        }
+      }),
   )
-  for (const identifier of identifiers) {
-    debug.question(`resolving question ${identifier}`)
-    const { error, question } = await generate({
-      category: unknownRE.test(category) ? undefined : category,
-      tag: unknownRE.test(tag) ? undefined : tag,
-      identifier,
-    })
-    if (!error)
-      errors.push(error)
-    if (question != null)
-      resolvedTagMap[tag].push(question)
-  }
 }

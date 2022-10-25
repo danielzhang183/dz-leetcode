@@ -1,7 +1,7 @@
 import { join, resolve } from 'path'
 import MagicString from 'magic-string'
 import { getQuestionById, getQuestionByTitle, normalizeRawQuestion, normalizeResolvedQuestion } from './question'
-import type { GenerateOptions, GenerateReturn, ResolvedQuestion, WritableQuestions } from './types'
+import type { GenerateError, GenerateOptions, GenerateReturn, ResolvedQuestion, WritableQuestions } from './types'
 import { isNumber, readFile, writeFile } from './utils'
 import { parse, stringify } from './parse'
 
@@ -94,16 +94,16 @@ export function genTestCase(question: ResolvedQuestion): GenerateReturn {
   const { testcases, functionName, path } = question
 
   const s = new MagicString('')
-  ;[
+    ;[
     'import { describe, expect, it } from \'vitest\'',
-    `import { ${functionName} } from '../../../src/${path}'\n`,
-    `describe('${functionName}', () => {`,
-    '  it(\'exported\', () => {',
-    ...testcases.map(
-      ({ expect, toBe }) => `    expect(${functionName}(${expect})).toBe(${toBe})`,
-    ),
-    '  })',
-    '})',
+      `import { ${functionName} } from '../../../src/${path}'\n`,
+      `describe('${functionName}', () => {`,
+      '  it(\'exported\', () => {',
+      ...testcases.map(
+        ({ expect, toBe }) => `    expect(${functionName}(${expect})).toBe(${toBe})`,
+      ),
+      '  })',
+      '})',
   ]
     .forEach(str => s.append(`${str}\n`))
 
@@ -115,14 +115,13 @@ export function genTestCase(question: ResolvedQuestion): GenerateReturn {
 }
 
 export async function generate(options: GenerateOptions): Promise<{
-  error: any
-  question: ResolvedQuestion | null
+  error?: GenerateError
+  question?: ResolvedQuestion
 }> {
   const { category, tag, identifier } = options
   if (!identifier) {
     return {
-      question: null,
-      error: 'Give question name or id at least',
+      error: generateError('Give question name or id at least', category, tag),
     }
   }
 
@@ -131,8 +130,7 @@ export async function generate(options: GenerateOptions): Promise<{
     : await getQuestionByTitle(identifier)
   if (!rawQuestion) {
     return {
-      question: null,
-      error: `Question ${identifier} Not Found!`,
+      error: generateError(`Question ${identifier} Not Found!`, category, tag),
     }
   }
 
@@ -147,8 +145,14 @@ export async function generate(options: GenerateOptions): Promise<{
     await writeFile(outFile, content)
   }))
 
+  return { question }
+}
+
+export function generateError(error: unknown, category = 'unknown-category', tag = 'unknown-tag'): GenerateError {
   return {
-    question,
-    error: null,
+    category,
+    tag,
+    error,
+    timestamp: Date.now(),
   }
 }

@@ -7,22 +7,18 @@ export interface Options {
   logLevel: string
 }
 
-export type TagMap = Record<string, (string | number)[]>
+export type rawQuestion = string | number
+
+export type TagMap = Record<string, rawQuestion[]>
 
 export type ResolvedTagMap = Record<string, ResolvedQuestion[]>
 
-export interface CategoryMap {
+export interface CategoryMeta {
   category: string
   tagMap: TagMap
-  questions: []
+  questions: rawQuestion[]
+  resolved: ResolvedQuestion[]
+  errors: unknown[]
 }
 
-export interface TagData {
-  tagMap: ResolvedTagMap
-  errors: any[]
-}
-
-export interface CategoryData extends TagData {
-  category: string
-  timestamp: number
-}
+export type QuestionResolvedCallback = (name: string, counter: number, total: number) => void
