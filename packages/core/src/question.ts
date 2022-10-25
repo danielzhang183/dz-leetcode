@@ -130,6 +130,7 @@ export function normalizeRawQuestion(
     functionName: normalizeFunctionName(code),
     path: getQuestionPath(normalizedCategory, normalizedTag, question.questionId),
     origin: getQuestionOrigin(question.titleSlug),
+    outFiles: [],
   }
 }
 

@@ -1,7 +1,7 @@
 import { join, resolve } from 'path'
 import MagicString from 'magic-string'
 import { getQuestionById, getQuestionByTitle, normalizeRawQuestion, normalizeResolvedQuestion } from './question'
-import type { GenerateError, GenerateOptions, GenerateReturn, ResolvedQuestion, WritableQuestions } from './types'
+import type { GenerateError, GenerateOptions, GenerateOutcomes, GenerateReturn, ResolvedQuestion, WritableQuestions } from './types'
 import { isNumber, readFile, writeFile } from './utils'
 import { parse, stringify } from './parse'
 
@@ -9,7 +9,7 @@ export const root = resolve(process.cwd(), './packages')
 export const pathCode = join(root, './code')
 export const pathDocs = join(root, './docs')
 
-export function genMarkdown(question: ResolvedQuestion): GenerateReturn {
+export function genMarkdown(question: ResolvedQuestion): GenerateOutcomes {
   const {
     code,
     content,
@@ -67,7 +67,7 @@ export function genMarkdown(question: ResolvedQuestion): GenerateReturn {
   }
 }
 
-export async function genCatelog(question: ResolvedQuestion): Promise<GenerateReturn> {
+export async function genCatelog(question: ResolvedQuestion): Promise<GenerateOutcomes> {
   const path = join(pathDocs, 'data', `${question.path.replace(/(\/\d+$)/g, '')}.yml`)
   const content = parse<WritableQuestions>(await readFile(path) || '') || { questions: [] }
   if (!content.questions.find(i => i.title === question.titleSlug))
@@ -80,7 +80,7 @@ export async function genCatelog(question: ResolvedQuestion): Promise<GenerateRe
   }
 }
 
-export function genCode(question: ResolvedQuestion): GenerateReturn {
+export function genCode(question: ResolvedQuestion): GenerateOutcomes {
   const { code, path } = question
 
   return {
@@ -90,7 +90,7 @@ export function genCode(question: ResolvedQuestion): GenerateReturn {
   }
 }
 
-export function genTestCase(question: ResolvedQuestion): GenerateReturn {
+export function genTestCase(question: ResolvedQuestion): GenerateOutcomes {
   const { testcases, functionName, path } = question
 
   const s = new MagicString('')
@@ -114,10 +114,7 @@ export function genTestCase(question: ResolvedQuestion): GenerateReturn {
   }
 }
 
-export async function generate(options: GenerateOptions): Promise<{
-  error?: GenerateError
-  question?: ResolvedQuestion
-}> {
+export async function generate(options: GenerateOptions): Promise<GenerateReturn> {
   const { category, tag, identifier } = options
   if (!identifier) {
     return {
@@ -141,9 +138,11 @@ export async function generate(options: GenerateOptions): Promise<{
     genCode(question),
     genTestCase(question),
   ])
-  await Promise.all(gens.map(async ({ outFile, content }) => {
+  const outFiles = await Promise.all(gens.map(async ({ outFile, content }) => {
     await writeFile(outFile, content)
+    return outFile
   }))
+  question.outFiles = outFiles.sort()
 
   return { question }
 }

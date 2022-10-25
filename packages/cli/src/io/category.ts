@@ -30,15 +30,15 @@ export interface ImportableQuestions {
 
 export async function loadCategories(file: string): Promise<Record<string, TagMap> | undefined> {
   if (!existsSync(file))
-    return undefined
+    return
 
   const rawContent = await fs.readFile(file, 'utf-8')
   if (!rawContent)
-    return undefined
+    return
 
   const content = await parse<ImportableQuestions>(rawContent)?.questions
   if (!content)
-    return undefined
+    return
 
   const categories: Record<string, TagMap> = {}
   for (const question of content) {

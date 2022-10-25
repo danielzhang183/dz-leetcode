@@ -1,8 +1,9 @@
 import { resolve } from 'path'
-import cac from 'cac'
 import { generate } from 'dz-leetcode'
+import cac from 'cac'
 import { version } from '../package.json'
-import { gen } from './gen'
+import { generateFromFile } from './generate'
+import { renderSingleQuestion } from './generate/render'
 
 const cli = cac('dz-leetcode')
 
@@ -44,12 +45,18 @@ async function batch(file: string, options: BatchCliOptions) {
   } = options
 
   const absolute = resolve(root, file)
-  await gen({ logLevel: 'log', file: absolute })
+  await generateFromFile({ logLevel: 'log', file: absolute })
 }
 
 async function single(titleOrId: string, options: SingleCliOptions) {
-  await generate({
+  const { question, error } = await generate({
     identifier: /^\d+$/.test(titleOrId) ? Number(titleOrId) : titleOrId,
     ...options,
   })
+
+  const { lines, errLines } = renderSingleQuestion({ question, error })
+  if (lines.length)
+    console.log(lines.join('\n'))
+  if (errLines.length)
+    console.error(errLines.join('\n'))
 }

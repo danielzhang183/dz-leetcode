@@ -76,6 +76,7 @@ export interface ResolvedQuestion {
   tag: Tag | string
   path: string
   origin: string
+  outFiles: string[]
 }
 
 export interface WritableQuestions {
@@ -88,7 +89,7 @@ export interface GenerateOptions {
   identifier: string | number | undefined
 }
 
-export interface GenerateReturn {
+export interface GenerateOutcomes {
   type: 'markdown' | 'category' | 'code' | 'testcase'
   outFile: string
   content: string
@@ -99,6 +100,11 @@ export interface GenerateError {
   tag?: string
   error: unknown
   timestamp: number
+}
+
+export interface GenerateReturn {
+  error?: GenerateError
+  question?: ResolvedQuestion
 }
 
 export interface ErrorLogBase {

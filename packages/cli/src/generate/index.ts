@@ -12,7 +12,7 @@ export interface GenOptions {
   logLevel: string
 }
 
-export async function gen(options: GenOptions) {
+export async function generateFromFile(options: GenOptions) {
   const bars = createMultiProgresBar()
   let categoriesBar: SingleBar | undefined
   const questionBar = bars.create(1, 0)
@@ -57,6 +57,9 @@ export async function gen(options: GenOptions) {
   if (errLines.length) {
     console.error(c.inverse(c.red(c.bold(' ERROR '))))
     console.error(errLines.join('\n'))
+  }
+  else {
+    console.log(`${c.inverse(c.bold(c.green(' Done ')))} ${c.green('without any generate error')}`)
   }
 }
 
