@@ -291,6 +291,7 @@ exports[`question > resolvedQuestion > resolvedQuestion 1`] = `
   "difficulty": "Easy",
   "functionName": "twoSum",
   "origin": "https://leetcode.cn/problems/two-sum",
+  "outFiles": [],
   "path": "algorithms/array/001",
   "questionId": "1",
   "tag": "array",

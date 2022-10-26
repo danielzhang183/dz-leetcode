@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import c from 'picocolors'
 import { MultiBar, Presets } from 'cli-progress'
 import type { RuntimeErrorLog } from 'dz-leetcode'

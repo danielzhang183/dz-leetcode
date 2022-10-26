@@ -111,5 +111,7 @@ dz-leetcode pick two-sum -c algorithms -t array
 
 - [x] generate by question id
 - [x] beautify generate process
-- [ ] support random generate one question
+- [x] support random generate one question
 - [ ] support 'zh' language
+- [ ] support diff log level
+- [ ] refine random question generated process

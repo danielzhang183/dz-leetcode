@@ -5,14 +5,9 @@ import type { CategoryMeta, QuestionResolvedCallback, TagMap } from '../types'
 import { isUnknown } from '../utils'
 
 export const debug = {
-  cache: createDebug('dz-leetcode:cache'),
   category: createDebug('dz-leetcode:category'),
   tag: createDebug('dz-leetcode:tag'),
   question: createDebug('dz-leetcode:question'),
-}
-
-export function now() {
-  return Date.now()
 }
 
 export async function resolveCategory(

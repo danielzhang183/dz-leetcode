@@ -1,7 +1,8 @@
 import { resolve } from 'path'
 import cac from 'cac'
 import { version } from '../package.json'
-import { generateFromCommand, generateFromFile } from './generate'
+import { generateFromCommand, generateFromFile, generateFromRandom } from './generate'
+import type { FileCliOptions, PickCliOptions, RandomCliOptions } from './types'
 
 const cli = cac('dz-leetcode')
 
@@ -11,6 +12,7 @@ cli
   .option('-c, --category <category>', 'Question category')
   .option('-t, --tag <tag>', 'Question tag')
   .option('-lang, --language <language>', 'zh|zh-CN|en|en-US')
+  .option('-d, --difficulty <difficulty>', 'easy|medium|hard')
   .help()
 
 cli
@@ -22,25 +24,16 @@ cli
   .action(pick)
 
 cli
+  .command('random')
+  .action(random)
+
+cli
   .command('')
   .action(() => {
     cli.outputHelp()
   })
 
 cli.parse()
-
-export interface CliOptionBase {
-  root?: string
-  lang?: 'zh' | 'zh-CN' | 'en' | 'en-US'
-}
-
-export interface FileCliOptions extends CliOptionBase {
-}
-
-export interface PickCliOptions extends CliOptionBase {
-  category?: string
-  tag?: string
-}
 
 async function file(file: string, options: FileCliOptions) {
   const {
@@ -55,6 +48,13 @@ async function pick(identifier: string, options: PickCliOptions) {
   await generateFromCommand({
     logLevel: 'log',
     identifier,
+    ...options,
+  })
+}
+
+async function random(options: RandomCliOptions) {
+  await generateFromRandom({
+    logLevel: 'log',
     ...options,
   })
 }

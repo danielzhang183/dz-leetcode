@@ -1,6 +1,5 @@
 export * from './generate'
-export * from './generate/render'
-export * from './io/category'
+export * from './io/load'
 export * from './io/resolves'
 export * from './render'
 export * from './log'

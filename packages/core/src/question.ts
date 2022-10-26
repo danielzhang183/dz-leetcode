@@ -5,29 +5,111 @@ import type { Category, CodeSnippet, Question, RawQuestion, ResolvedQuestion, Ta
 
 const LEETCODE_FETCH_URL = 'https://leetcode.cn/graphql/'
 const LEETCODE_QUESTION_URL = 'https://leetcode.cn/problems'
+const LEETCODE_LIST_QUERY = [
+  'query problemsetQuestionList($categorySlug: String, $limit: Int, $skip: Int, $filters: QuestionListFilterInput) {',
+  '  problemsetQuestionList(',
+  '    categorySlug: $categorySlug',
+  '    limit: $limit',
+  '    skip: $skip',
+  '    filters: $filters',
+  '  ) {',
+  '    hasMore',
+  '    total',
+  '    questions {',
+  '      difficulty',
+  '      frontendQuestionId',
+  '      titleSlug',
+  '    }',
+  '  }',
+  '}',
+].join('\n')
+const LEETCODE_QUESTION_QUERY = [
+  'query questionData($titleSlug: String!) {',
+  '  question(titleSlug: $titleSlug) {',
+  '    questionId',
+  '    categoryTitle',
+  '    title',
+  '    titleSlug',
+  '    content',
+  '    difficulty',
+  '    exampleTestcases',
+  '    codeSnippets {',
+  '      lang',
+  '      code',
+  '    }',
+  '    topicTags {',
+  '      slug',
+  '       translatedName',
+  '    }',
+  '  }',
+  '}',
+].join('\n')
+
+export interface FilterOptions {
+  category?: string
+  tag?: string
+  difficulty?: string
+  skip?: number
+}
+
+export interface ResolvedFilterOptions {
+  listId?: string
+  tags?: string[]
+  difficulty?: string
+}
+
+export interface RandomQuestion {
+  difficulty: string
+  questionId: string
+  titleSlug: string
+}
+
+export async function getQuestionsByFilter(options: FilterOptions): Promise<RandomQuestion[]> {
+  const {
+    category,
+    tag,
+    difficulty,
+    skip = 0,
+  } = options
+
+  const filters: ResolvedFilterOptions = {}
+  if (category)
+    filters.listId = category
+  if (tag)
+    filters.tags = tag.split(',')
+  if (difficulty)
+    filters.difficulty = difficulty.toUpperCase()
+
+  return await $fetch(LEETCODE_FETCH_URL, {
+    method: 'post',
+    body: {
+      query: LEETCODE_LIST_QUERY,
+      variables: {
+        categorySlug: '',
+        skip,
+        limit: 100,
+        filters: {
+          orderBy: 'FRONTEND_ID',
+          sortOrder: 'DESCENDING',
+          ...filters,
+        },
+      },
+    },
+  }).then(
+    r => r.data?.problemsetQuestionList?.questions
+      .map((i: any): RandomQuestion => ({
+        difficulty: i.difficulty,
+        titleSlug: i.titleSlug,
+        questionId: i.frontendQuestionId,
+      })) || [],
+  )
+}
 
 export async function getQuestionById(id: number): Promise<RawQuestion | undefined> {
-  const query = [
-    'query problemsetQuestionList($categorySlug: String, $limit: Int, $skip: Int, $filters: QuestionListFilterInput) {',
-    '  problemsetQuestionList(',
-    '    categorySlug: $categorySlug',
-    '    limit: $limit',
-    '    skip: $skip',
-    '    filters: $filters',
-    '  ) {',
-    '    hasMore',
-    '    total',
-    '    questions {',
-    '      titleSlug',
-    '    }',
-    '  }',
-    '}',
-  ].join('\n')
-
   const titleSlug = await $fetch(LEETCODE_FETCH_URL, {
     method: 'post',
     body: {
-      query,
+      query: LEETCODE_LIST_QUERY,
       variables: {
         categorySlug: '',
         skip: id - 1,
@@ -41,33 +123,11 @@ export async function getQuestionById(id: number): Promise<RawQuestion | undefin
 }
 
 export async function getQuestionByTitle(titleSlug: string): Promise<RawQuestion | undefined> {
-  const query = [
-    'query questionData($titleSlug: String!) {',
-    'question(titleSlug: $titleSlug) {',
-    'questionId',
-    'categoryTitle',
-    'title',
-    'titleSlug',
-    'content',
-    'difficulty',
-    'exampleTestcases',
-    'codeSnippets {',
-    'lang',
-    'code',
-    '}',
-    'topicTags {',
-    'slug',
-    'translatedName',
-    '}',
-    '}',
-    '}',
-  ].join('\n')
-
   return await $fetch(LEETCODE_FETCH_URL, {
     method: 'post',
     body: {
       operationName: 'questionData',
-      query,
+      query: LEETCODE_QUESTION_QUERY,
       variables: { titleSlug },
     },
   }).then(r => r.data?.question || undefined)

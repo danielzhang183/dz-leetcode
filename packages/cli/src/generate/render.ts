@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import type { GenerateError, GenerateReturn, ResolvedQuestion } from 'dz-leetcode'
 import c from 'picocolors'
 import { formatTable } from '../render'
