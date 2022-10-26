@@ -19,7 +19,7 @@
     "@dz-leetcode/cli": "workspace:./packages/cli",
     "@types/node": "^18.11.2",
     "bumpp": "^8.2.1",
-    "dz-leetcode": "workspace:./packages/core",
+    "dz-leetcode": "^0.0.0",
     "eslint": "^8.25.0",
     "esno": "^0.16.3",
     "pnpm": "^7.13.5",

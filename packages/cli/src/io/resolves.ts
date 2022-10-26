@@ -1,7 +1,8 @@
 import createDebug from 'debug'
-import { generate } from 'dz-leetcode'
+import { generate, isNumber } from 'dz-leetcode'
 import type { ResolvedQuestion } from 'dz-leetcode'
 import type { CategoryMeta, QuestionResolvedCallback, TagMap } from '../types'
+import { isUnknown } from '../utils'
 
 export const debug = {
   cache: createDebug('dz-leetcode:cache'),
@@ -14,13 +15,13 @@ export function now() {
   return Date.now()
 }
 
-export async function resolveCategoryData(
+export async function resolveCategory(
   category: CategoryMeta,
   progress?: QuestionResolvedCallback,
 ): Promise<CategoryMeta> {
   debug.category(`resolving category ${category}`)
 
-  const { questions, errors } = await resolveTagData(
+  const { questions, errors } = await resolveTags(
     category.category, category.tagMap, progress,
   )
   category.resolved = questions
@@ -29,7 +30,7 @@ export async function resolveCategoryData(
   return category
 }
 
-export async function resolveTagData(
+export async function resolveTags(
   category: string,
   tagMap: TagMap,
   progress?: QuestionResolvedCallback,
@@ -41,7 +42,7 @@ export async function resolveTagData(
   for (const tag of tags) {
     debug.tag(`resloving tag ${tag}`)
 
-    const data = await resolveQuestionData(
+    const data = await resolveQuestions(
       category,
       tag,
       tagMap[tag],
@@ -61,12 +62,11 @@ export async function resolveTagData(
   }
 }
 
-const unknownRE = /^unknown-/
-export async function resolveQuestionData(
+export async function resolveQuestions(
   category: string,
   tag: string,
   questions: (string | number)[],
-  progressCallback: (name: string, progress: number, total: number) => void = () => { },
+  progressCallback?: QuestionResolvedCallback,
 ) {
   const total = questions.length
   let progress = 0
@@ -76,17 +76,29 @@ export async function resolveQuestionData(
       .map(async (identifier) => {
         debug.question(`resolving question ${identifier}`)
 
-        const { question, error } = await generate({
-          category: unknownRE.test(category) ? undefined : category,
-          tag: unknownRE.test(tag) ? undefined : tag,
-          identifier,
-        })
+        const { question, error } = await resolveQuestion(category, tag, identifier)
         progress += 1
-        progressCallback(question?.titleSlug || String(identifier), progress, total)
+        progressCallback?.(question?.titleSlug || String(identifier), progress, total)
         return {
           question,
           error,
         }
       }),
   )
+}
+
+export function resolveQuestion(
+  category: string,
+  tag: string,
+  identifier: string | number,
+) {
+  return generate({
+    category: isUnknown(category) ? undefined : category,
+    tag: isUnknown(tag) ? undefined : tag,
+    identifier: isNumber(identifier)
+      ? identifier
+      : /^\d+$/.test(identifier)
+        ? Number(identifier)
+        : identifier,
+  })
 }

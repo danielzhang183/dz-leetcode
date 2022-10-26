@@ -1,7 +1,9 @@
+/* eslint-disable no-console */
 import type { GenerateError, GenerateReturn, ResolvedQuestion } from 'dz-leetcode'
 import c from 'picocolors'
 import { formatTable } from '../render'
 import type { CategoryMeta } from '../types'
+import { isUnknown } from '../utils'
 
 export function renderCategories(resolveCategories: CategoryMeta[]) {
   const lines: string[] = ['']
@@ -30,8 +32,8 @@ export function renderCategory(cate: CategoryMeta) {
   }
 
   Object.entries((tags)).forEach(([tag, questions]) => {
-    const total = tagMap[tag].length
     const generatedCount = questions.length
+    const total = tagMap[tag]?.length || generatedCount
     const tip = [
       `${c.yellow(generatedCount)} generated`,
       `${c.yellow(total - generatedCount)} fail`,
@@ -39,7 +41,7 @@ export function renderCategory(cate: CategoryMeta) {
     ].join(', ')
     lines.push(
       '',
-      `${c.blue(`${category} > ${tag}`)} ${c.dim('-')} ${tip}`,
+      `${c.blue(`${isUnknown(category) ? questions[0].category : category} > ${tag}`)} ${c.dim('-')} ${tip}`,
       '',
     )
 
@@ -72,25 +74,13 @@ export function renderSingleQuestion({ error, question }: GenerateReturn) {
 
   if (question) {
     lines.push(
-      '',
       `${c.blue('generated files:')}`,
       ...question.outFiles.map(i => `${c.green('+')} ${c.underline(i)}`),
     )
   }
 
-  if (error) {
-    errLines.push(
-      '',
-      c.inverse(c.red(c.bold(' ERROR '))),
-      ...renderResolveError(error as GenerateError),
-    )
-  }
-  else {
-    errLines.push(
-      '',
-      `${c.inverse(c.bold(c.green(' Done ')))} ${c.green('without any generate error')}`,
-    )
-  }
+  if (error)
+    errLines.push(...renderResolveError(error as GenerateError))
 
   return { lines, errLines }
 }
@@ -113,8 +103,27 @@ export function renderResolveQuestion(question: ResolvedQuestion) {
 }
 
 export function renderResolveError(error: GenerateError) {
-  const lines: string[] = ['']
-  if (error.error)
+  const lines: string[] = []
+
+  if (error.error) {
+    lines.push('')
     lines.push(c.red(`> ${c.underline(`${error.category}/${error.tag}`)} ${String(error.error)}`))
+  }
+
   return lines
+}
+
+export function renderOutcomes(lines: string[], errLines: string[]) {
+  console.log()
+  console.log(lines.join('\n'))
+
+  if (errLines.length) {
+    console.error()
+    console.error(c.inverse(c.red(c.bold(' ERROR '))))
+    console.error(errLines.join('\n'))
+  }
+  else {
+    console.log()
+    console.log(`${c.inverse(c.bold(c.green(' Done ')))} ${c.green('without any generate error')}`)
+  }
 }

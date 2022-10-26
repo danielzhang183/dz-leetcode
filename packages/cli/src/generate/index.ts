@@ -3,21 +3,35 @@ import c from 'picocolors'
 import type { SingleBar } from 'cli-progress'
 import { createMultiProgresBar } from '../log'
 import type { CategoryMeta } from '../types'
-import { resolveCategoryData } from '../io/resolves'
+import { resolveCategory, resolveQuestion } from '../io/resolves'
 import { loadCategories } from '../io/category'
-import { renderCategories } from './render'
+import type { FileCliOptions, GenCliOptions } from '../cli'
+import { renderCategories, renderCategory, renderOutcomes, renderSingleQuestion } from './render'
 
-export interface GenOptions {
+export interface FileOptions extends FileCliOptions {
   file: string
   logLevel: string
 }
 
-export async function generateFromFile(options: GenOptions) {
+export interface CommandOptions extends GenCliOptions {
+  identifier: string
+  identifiers?: string[]
+  logLevel: string
+}
+
+export async function generateFromCommand(options: CommandOptions) {
+  if (options.identifier.split(',').length > 1)
+    generateMulti(options)
+  else
+    generateSingle(options)
+}
+
+export async function generateFromFile(options: FileOptions) {
   const bars = createMultiProgresBar()
   let categoriesBar: SingleBar | undefined
   const questionBar = bars.create(1, 0)
 
-  const resolveCategories = await generateCategories(options, {
+  const resolveCates = await generateCategories(options, {
     afterCategoriesLoaded(categories) {
       categoriesBar = categories.length
         ? bars.create(
@@ -51,16 +65,8 @@ export async function generateFromFile(options: GenOptions) {
   //   })
   // }
 
-  const { lines, errLines } = renderCategories(resolveCategories!)
-  console.log(lines.join('\n'))
-
-  if (errLines.length) {
-    console.error(c.inverse(c.red(c.bold(' ERROR '))))
-    console.error(errLines.join('\n'))
-  }
-  else {
-    console.log(`${c.inverse(c.bold(c.green(' Done ')))} ${c.green('without any generate error')}`)
-  }
+  const { lines, errLines } = renderCategories(resolveCates!)
+  renderOutcomes(lines, errLines)
 }
 
 export interface GenerateEventCallbacks {
@@ -71,12 +77,77 @@ export interface GenerateEventCallbacks {
   onQuestionResolved?: (name: string, progress: number, total: number) => void
 }
 
-export async function generateCategories(options: GenOptions, callbacks: GenerateEventCallbacks) {
+export async function generateSingle(options: CommandOptions) {
+  const {
+    category = 'unknown-category',
+    tag = 'unknown-tag',
+    identifier,
+  } = options
+
+  console.log()
+  console.log(c.magenta('generating...'))
+  const { question, error } = await resolveQuestion(category, tag, identifier)
+  const { lines, errLines } = renderSingleQuestion({ question, error })
+  renderOutcomes(lines, errLines)
+}
+
+export async function generateMulti(options: CommandOptions) {
+  const bars = createMultiProgresBar()
+  let questionBar: SingleBar | undefined
+
+  const resolveCate = await generateCategory(options, {
+    beforeCategoryStart(category) {
+      questionBar = category.questions.length
+        ? bars.create(
+          category.questions.length,
+          0,
+          { type: c.green('questions') },
+        )
+        : undefined
+    },
+    afterCategoryEnd() {
+      questionBar?.stop()
+    },
+    onQuestionResolved(name, progress, _) {
+      questionBar?.update(progress, { name })
+    },
+  })
+
+  bars.stop()
+
+  const { lines, errLines } = renderCategory(resolveCate)
+  renderOutcomes(lines, errLines)
+}
+
+export async function generateCategory(options: CommandOptions, callbacks: GenerateEventCallbacks) {
+  const {
+    category = 'unknown-category',
+    tag = 'unknown-tag',
+    identifier,
+  } = options
+
+  const questions = identifier.split(',')
+  const unresolvedCate: CategoryMeta = {
+    category,
+    tagMap: { [tag]: questions },
+    questions,
+    errors: [],
+    resolved: [],
+  }
+
+  callbacks.beforeCategoryStart?.(unresolvedCate)
+  const resloveCate = await resolveCategory(unresolvedCate, callbacks.onQuestionResolved)
+  callbacks.beforeCategoryStart?.(unresolvedCate)
+
+  return resloveCate
+}
+
+export async function generateCategories(options: FileOptions, callbacks: GenerateEventCallbacks) {
   const categories = await loadCategories(options.file)
   if (!categories)
     return
 
-  const unresolvedCategories: CategoryMeta[] = Object.entries(categories!)
+  const unresolvedCates: CategoryMeta[] = Object.entries(categories!)
     // only check questions with more than one to supply
     .filter(i => Object.keys(i[1]).length > 1)
     // sort by the number of questions
@@ -89,18 +160,18 @@ export async function generateCategories(options: GenOptions, callbacks: Generat
       errors: [],
     }))
 
-  callbacks.afterCategoriesLoaded?.(unresolvedCategories)
+  callbacks.afterCategoriesLoaded?.(unresolvedCates)
 
-  const resolveCategories = await Promise.all(
-    unresolvedCategories.map(async (unresolvedCategory) => {
-      callbacks.beforeCategoryStart?.(unresolvedCategory)
-      const data = await resolveCategoryData(unresolvedCategory, callbacks.onQuestionResolved)
-      callbacks.afterCategoryEnd?.(unresolvedCategory)
+  const resolveCates = await Promise.all(
+    unresolvedCates.map(async (unresolvedCate) => {
+      callbacks.beforeCategoryStart?.(unresolvedCate)
+      const data = await resolveCategory(unresolvedCate, callbacks.onQuestionResolved)
+      callbacks.afterCategoryEnd?.(unresolvedCate)
       return data
     }),
   )
 
-  callbacks.afterCategoriesEnd?.(resolveCategories)
+  callbacks.afterCategoriesEnd?.(resolveCates)
 
-  return resolveCategories
+  return resolveCates
 }

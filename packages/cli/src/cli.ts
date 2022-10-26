@@ -1,9 +1,7 @@
 import { resolve } from 'path'
-import { generate } from 'dz-leetcode'
 import cac from 'cac'
 import { version } from '../package.json'
-import { generateFromFile } from './generate'
-import { renderSingleQuestion } from './generate/render'
+import { generateFromCommand, generateFromFile } from './generate'
 
 const cli = cac('dz-leetcode')
 
@@ -15,12 +13,12 @@ cli
   .help()
 
 cli
-  .command('batch <file>')
-  .action(batch)
+  .command('file <file>')
+  .action(file)
 
 cli
-  .command('single <title | id>')
-  .action(single)
+  .command('gen <title | id<,title<, id>>>')
+  .action(gen)
 
 cli
   .command('')
@@ -30,16 +28,17 @@ cli
 
 cli.parse()
 
-export interface BatchCliOptions {
+export interface FileCliOptions {
   root?: string
 }
 
-export interface SingleCliOptions {
+export interface GenCliOptions {
+  root?: string
   category?: string
   tag?: string
 }
 
-async function batch(file: string, options: BatchCliOptions) {
+async function file(file: string, options: FileCliOptions) {
   const {
     root = process.cwd(),
   } = options
@@ -48,15 +47,10 @@ async function batch(file: string, options: BatchCliOptions) {
   await generateFromFile({ logLevel: 'log', file: absolute })
 }
 
-async function single(titleOrId: string, options: SingleCliOptions) {
-  const { question, error } = await generate({
-    identifier: /^\d+$/.test(titleOrId) ? Number(titleOrId) : titleOrId,
+async function gen(identifier: string, options: GenCliOptions) {
+  await generateFromCommand({
+    logLevel: 'log',
+    identifier,
     ...options,
   })
-
-  const { lines, errLines } = renderSingleQuestion({ question, error })
-  if (lines.length)
-    console.log(lines.join('\n'))
-  if (errLines.length)
-    console.error(errLines.join('\n'))
 }
