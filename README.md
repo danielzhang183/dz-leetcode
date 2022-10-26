@@ -47,58 +47,69 @@ Usage:
   $ dz-leetcode
 
 Commands:
-  batch <file>
-  single <title | id>
+  file <file>
+  pink <title | id<,title<, id>>>
 
 
 For more info, run any command with the `--help` flag:
-  $ dz-leetcode batch --help
-  $ dz-leetcode single --help
+  $ dz-leetcode file --help
+  $ dz-leetcode pink --help
   $ dz-leetcode --help
 
 Options:
-  -v, --version              Display version number
-  -r, --root <path>          root path
-  -c, --category <category>  Question category
-  -t, --tag <tag>            Question tag
-  -h, --help                 Display this message
+  -v, --version                 Display version number
+  -r, --root <path>             root path
+  -c, --category <category>     Question category
+  -t, --tag <tag>               Question tag
+  -lang, --language <language>  zh|zh-CN|en|en-US
+  -h, --help                    Display this message
 ```
 
 ### Usage
 
-I. batch generate questions with reading specfic file path
+I. file generate questions with reading specfic file path
 
 ```bash
-dz-leetcode batch example/questions.yml
+dz-leetcode file example/questions.yml
 ```
 
 Configuration file usage
 
 ```yml
 questions:
-  - name: two-sum
-    category: algorithms #option
+  - category: algorithms #option
     tag: array #option
+    name: two-sum
   #or
-  - id: 1
-    category: algorithms #option
+  - category: algorithms #option
     tag: array #option
+    id: 1
+  #or
+  - category: algorithms #option
+    tag: array #option
+    questions:
+      - two-sum
+      - 2
   ...
 ```
 
-II. generate a single question with question title or id
+II. generate picking questions with (title or id) or multple (title or id)s with ','
 
 ```bash
-dz-leetcode single two-sum
+dz-leetcode pick two-sum
 #or
-dz-leetcode single 1
+dz-leetcode pick 1
 #or
-dz-leetcode single two-sum -c algorithms
+dz-leetcode pick two-sum,2,3
 #or
-dz-leetcode single two-sum -c algorithms -t array
+dz-leetcode pick two-sum -c algorithms
+#or
+dz-leetcode pick two-sum -c algorithms -t array
 ```
 
 **WIP**
 
 - [x] generate by question id
-- [ ] beautify generate process
+- [x] beautify generate process
+- [ ] support random generate one question
+- [ ] support 'zh' language

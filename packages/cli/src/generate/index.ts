@@ -5,7 +5,7 @@ import { createMultiProgresBar } from '../log'
 import type { CategoryMeta } from '../types'
 import { resolveCategory, resolveQuestion } from '../io/resolves'
 import { loadCategories } from '../io/category'
-import type { FileCliOptions, GenCliOptions } from '../cli'
+import type { FileCliOptions, PickCliOptions } from '../cli'
 import { renderCategories, renderCategory, renderOutcomes, renderSingleQuestion } from './render'
 
 export interface FileOptions extends FileCliOptions {
@@ -13,7 +13,7 @@ export interface FileOptions extends FileCliOptions {
   logLevel: string
 }
 
-export interface CommandOptions extends GenCliOptions {
+export interface CommandOptions extends PickCliOptions {
   identifier: string
   identifiers?: string[]
   logLevel: string

@@ -10,6 +10,7 @@ cli
   .option('-r, --root <path>', 'root path')
   .option('-c, --category <category>', 'Question category')
   .option('-t, --tag <tag>', 'Question tag')
+  .option('-lang, --language <language>', 'zh|zh-CN|en|en-US')
   .help()
 
 cli
@@ -17,8 +18,8 @@ cli
   .action(file)
 
 cli
-  .command('gen <title | id<,title<, id>>>')
-  .action(gen)
+  .command('pink <title | id<,title<, id>>>')
+  .action(pick)
 
 cli
   .command('')
@@ -28,12 +29,15 @@ cli
 
 cli.parse()
 
-export interface FileCliOptions {
+export interface CliOptionBase {
   root?: string
+  lang?: 'zh' | 'zh-CN' | 'en' | 'en-US'
 }
 
-export interface GenCliOptions {
-  root?: string
+export interface FileCliOptions extends CliOptionBase {
+}
+
+export interface PickCliOptions extends CliOptionBase {
   category?: string
   tag?: string
 }
@@ -47,7 +51,7 @@ async function file(file: string, options: FileCliOptions) {
   await generateFromFile({ logLevel: 'log', file: absolute })
 }
 
-async function gen(identifier: string, options: GenCliOptions) {
+async function pick(identifier: string, options: PickCliOptions) {
   await generateFromCommand({
     logLevel: 'log',
     identifier,
