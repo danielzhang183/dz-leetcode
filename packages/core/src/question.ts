@@ -44,6 +44,23 @@ const LEETCODE_QUESTION_QUERY = [
   '  }',
   '}',
 ].join('\n')
+const LEETCODE_CATE_QUERY = [
+  'query questionTagTypeWithTags {',
+  '  questionTagTypeWithTags {',
+  '    name',
+  '    transName',
+  '    tagRelation {',
+  '      questionNum',
+  '      tag {',
+  '        name',
+  '        id',
+  '        nameTranslated',
+  '        slug',
+  '      }',
+  '    }',
+  '  }',
+  '}',
+].join('\n')
 
 export interface FilterOptions {
   category?: string
@@ -64,7 +81,40 @@ export interface RandomQuestion {
   titleSlug: string
 }
 
-export async function getQuestionsByFilter(options: FilterOptions): Promise<RandomQuestion[]> {
+export interface BaseMeta {
+  name: string
+  nameTranslated: string
+}
+
+export interface TagMeta extends BaseMeta {
+  id: string
+  slug: string
+}
+
+export interface CategoryMap extends BaseMeta {
+  tagMap: Array<{
+    questionNum: number
+    tag: TagMeta
+  }>
+}
+
+export function getCategoryMaps(): Promise<CategoryMap[]> {
+  return $fetch(LEETCODE_FETCH_URL, {
+    method: 'post',
+    body: {
+      query: LEETCODE_CATE_QUERY,
+      variables: {},
+    },
+  }).then(
+    r => r.data.questionTagTypeWithTags.map((i: any): CategoryMap => ({
+      name: i.name,
+      nameTranslated: i.transName,
+      tagMap: i.tagRelation,
+    })) || [],
+  )
+}
+
+export function getQuestionsByFilter(options: FilterOptions): Promise<RandomQuestion[]> {
   const {
     category,
     tag,
@@ -80,7 +130,7 @@ export async function getQuestionsByFilter(options: FilterOptions): Promise<Rand
   if (difficulty)
     filters.difficulty = difficulty.toUpperCase()
 
-  return await $fetch(LEETCODE_FETCH_URL, {
+  return $fetch(LEETCODE_FETCH_URL, {
     method: 'post',
     body: {
       query: LEETCODE_LIST_QUERY,
@@ -96,12 +146,11 @@ export async function getQuestionsByFilter(options: FilterOptions): Promise<Rand
       },
     },
   }).then(
-    r => r.data?.problemsetQuestionList?.questions
-      .map((i: any): RandomQuestion => ({
-        difficulty: i.difficulty,
-        titleSlug: i.titleSlug,
-        questionId: i.frontendQuestionId,
-      })) || [],
+    r => r.data?.problemsetQuestionList?.questions.map((i: any): RandomQuestion => ({
+      difficulty: i.difficulty,
+      titleSlug: i.titleSlug,
+      questionId: i.frontendQuestionId,
+    })) || [],
   )
 }
 
@@ -122,8 +171,8 @@ export async function getQuestionById(id: number): Promise<RawQuestion | undefin
   return titleSlug ? await getQuestionByTitle(titleSlug) : undefined
 }
 
-export async function getQuestionByTitle(titleSlug: string): Promise<RawQuestion | undefined> {
-  return await $fetch(LEETCODE_FETCH_URL, {
+export function getQuestionByTitle(titleSlug: string): Promise<RawQuestion | undefined> {
+  return $fetch(LEETCODE_FETCH_URL, {
     method: 'post',
     body: {
       operationName: 'questionData',
