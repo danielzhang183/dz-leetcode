@@ -24,6 +24,7 @@ export interface RandomCliOptions extends CliOptionBase {
   category?: string
   tag?: string
   difficulty?: string
+  interactive?: boolean
 }
 
 export interface FileOptions extends FileCliOptions {

@@ -20,7 +20,7 @@ export async function generateSingle(options: CommandOptions) {
   } = options
 
   console.log()
-  console.log(c.magenta('generating...'))
+  console.log(c.magenta('generating files...'))
   const { question, error } = await resolveQuestion(category, tag, identifier)
   const { lines, errLines } = renderSingleQuestion({ question, error })
   renderOutcomes(lines, errLines)

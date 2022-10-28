@@ -49,12 +49,14 @@
     "cli-progress": "^3.11.2",
     "debug": "^4.3.4",
     "log-update": "^5.0.1",
-    "picocolors": "^1.0.0"
+    "picocolors": "^1.0.0",
+    "prompts": "^2.4.2"
   },
   "devDependencies": {
     "@types/cli-progress": "^3.11.0",
     "@types/debug": "^4.1.7",
-    "@types/node": "^18.11.2"
+    "@types/node": "^18.11.2",
+    "@types/prompts": "^2.4.1"
   },
   "eslintConfig": {
     "extends": "@antfu",
