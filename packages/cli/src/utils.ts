@@ -16,9 +16,6 @@ export function randDistanceRange(min: number, max: number, distance = 100): num
   if (min > distance)
     min = Math.floor(min / distance)
   max = Math.round(max / distance)
-  const rand = randRange(min, max)
-  const randMin = min + rand * distance
-  const randMax = randMin + distance
 
-  return randRange(randMin, randMax > max ? max : randMax)
+  return randRange(min, max) * distance
 }

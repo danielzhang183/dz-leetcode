@@ -11,7 +11,7 @@ cli
   .option('-r, --root <path>', 'root path')
   .option('-c, --category <category>', 'Question category')
   .option('-t, --tag <tag>', 'Question tag')
-  .option('-lang, --language <language>', 'zh|zh-CN|en|en-US')
+  .option('-lang, --lang <lang>', 'Generate file lang, default by en, zh|en')
   .option('-d, --difficulty <difficulty>', 'easy|medium|hard')
   .help()
 
@@ -20,7 +20,7 @@ cli
   .action(file)
 
 cli
-  .command('pink <title | id<,title<, id>>>')
+  .command('pick <title | id<,title<, id>>>')
   .action(pick)
 
 cli
@@ -41,7 +41,10 @@ async function file(file: string, options: FileCliOptions) {
   } = options
 
   const absolute = resolve(root, file)
-  await generateFromFile({ logLevel: 'log', file: absolute })
+  await generateFromFile({
+    logLevel: 'log',
+    file: absolute,
+  })
 }
 
 async function pick(identifier: string, options: PickCliOptions) {
