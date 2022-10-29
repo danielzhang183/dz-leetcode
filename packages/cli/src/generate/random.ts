@@ -1,9 +1,9 @@
 import type { RandomQuestion, TagMeta } from 'dz-leetcode'
-import { getCategoryMaps, getQuestionsByFilter } from 'dz-leetcode'
+import { getCategoryMaps, getQuestionsByFilter, writeQuestion } from 'dz-leetcode'
 import prompts from 'prompts'
 import c from 'picocolors'
 import type { RandomOptions } from '../types'
-import { randDistanceRange, randRange } from '../utils'
+import { isUnknown, randDistanceRange, randRange } from '../utils'
 import { TableLogger } from '../log'
 import { resolveQuestion } from '../io/resolves'
 import { renderOutcomes, renderSingleQuestion } from './render'
@@ -16,15 +16,33 @@ interface InternalTag {
   tag: TagMeta
 }
 
+interface DumpChoice {
+  name: string
+  value: string
+}
+
 export async function generateFromRandom(options: RandomOptions) {
-  const {
-    category,
-    tag,
-    difficulty,
-  } = options
+  let { category, tag } = options
 
   const categories = await getCategoryMaps()
   const tags: InternalTag[] = categories.map(i => i.tagMap.map(t => t)).flat(1)
+
+  if (options.interactive) {
+    category = await prompts({
+      type: 'select',
+      name: 'category',
+      message: 'Pick a category',
+      choices: dumpCategories() as any as prompts.Choice[],
+      initial: 1,
+    }).then(r => r.category)
+    tag = await prompts({
+      type: 'select',
+      name: 'tag',
+      message: 'Pick a tag',
+      choices: dumpTags(category!) as any as prompts.Choice[],
+      initial: 1,
+    }).then(r => r.tag)
+  }
 
   async function generate() {
     let randQuestions: RandomQuestion[] = await generateRandQuestions()
@@ -41,6 +59,7 @@ export async function generateFromRandom(options: RandomOptions) {
       category || 'unknown-category',
       tag || 'unknown-tag',
       randQuestion.titleSlug,
+      false,
     )
     if (question) {
       const logger = new TableLogger({
@@ -75,7 +94,8 @@ export async function generateFromRandom(options: RandomOptions) {
     else {
       console.log()
       console.log(c.magenta('generating files...'))
-      const { lines, errLines } = renderSingleQuestion({ question, error })
+      const resolveQuestion = await writeQuestion(question!)
+      const { lines, errLines } = renderSingleQuestion({ question: resolveQuestion, error })
       renderOutcomes(lines, errLines)
     }
   }
@@ -83,10 +103,10 @@ export async function generateFromRandom(options: RandomOptions) {
   // ==== functions ====
   async function generateRandQuestions() {
     let randTag: InternalTag | undefined
-    if (tag)
+    if (tag && !isUnknown(tag))
       randTag = (tag && findTag(tag)) || undefined
     if (!randTag) {
-      const randTags = (category && findCategory(category)?.tagMap) || tags
+      const randTags = (category && !isUnknown(category) && findCategory(category)?.tagMap) || tags
       randTag = randTags[randRange(0, randTags.length)]
     }
 
@@ -97,7 +117,7 @@ export async function generateFromRandom(options: RandomOptions) {
 
     return await getQuestionsByFilter({
       tag: randTag.tag.slug,
-      difficulty,
+      difficulty: options.difficulty,
       skip,
     })
   }
@@ -108,6 +128,21 @@ export async function generateFromRandom(options: RandomOptions) {
 
   function findTag(tag: string) {
     return tags.find(i => i.tag.slug === tag)
+  }
+
+  function dumpCategories(): DumpChoice[] {
+    return [
+      { name: 'auto', value: 'unknown-category' },
+      ...categories.map(i => ({ name: i.name, value: i.name })),
+    ]
+  }
+
+  function dumpTags(category: string): DumpChoice[] {
+    const dumpTags = category === 'unknown-category' ? tags : findCategory(category)!.tagMap
+    return [
+      { name: 'auto', value: 'unknown-tag' },
+      ...dumpTags.map(i => ({ name: i.tag.name, value: i.tag.slug })),
+    ]
   }
 
   generate()

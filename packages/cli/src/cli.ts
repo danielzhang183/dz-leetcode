@@ -13,7 +13,7 @@ cli
   .option('-t, --tag <tag>', 'Question tag')
   .option('-lang, --lang <lang>', 'Generate file lang, default by en, zh|en')
   .option('-d, --difficulty <difficulty>', 'easy|medium|hard')
-  .option('-i, --interactive <interactive>', 'interactive mode')
+  .option('-i, --interactive', 'interactive mode')
   .help()
 
 cli

@@ -86,6 +86,7 @@ export function resolveQuestion(
   category: string,
   tag: string,
   identifier: string | number,
+  write = true,
 ) {
   return generate({
     category: isUnknown(category) ? undefined : category,
@@ -95,5 +96,6 @@ export function resolveQuestion(
       : /^\d+$/.test(identifier)
         ? Number(identifier)
         : identifier,
+    write,
   })
 }

@@ -44,7 +44,7 @@ const LEETCODE_QUESTION_QUERY = [
   '  }',
   '}',
 ].join('\n')
-const LEETCODE_CATE_QUERY = [
+const LEETCODE_TAGS_QUERY = [
   'query questionTagTypeWithTags {',
   '  questionTagTypeWithTags {',
   '    name',
@@ -102,7 +102,7 @@ export function getCategoryMaps(): Promise<CategoryMap[]> {
   return $fetch(LEETCODE_FETCH_URL, {
     method: 'post',
     body: {
-      query: LEETCODE_CATE_QUERY,
+      query: LEETCODE_TAGS_QUERY,
       variables: {},
     },
   }).then(
@@ -210,7 +210,7 @@ export function normalizeRawQuestion(
   }
 
   function normalizeCode(codeSnippets: CodeSnippet[]): string {
-    return codeSnippets.find(i => i.lang === 'TypeScript')?.code || ''
+    return codeSnippets?.find(i => i.lang === 'TypeScript')?.code || ''
   }
 
   function normalizeFunctionName(code: string): string {

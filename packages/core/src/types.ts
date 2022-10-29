@@ -86,6 +86,7 @@ export interface WritableQuestions {
 export interface GenerateOptions {
   category?: string
   tag?: string
+  write?: boolean
   identifier: string | number | undefined
 }
 

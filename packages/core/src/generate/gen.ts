@@ -1,9 +1,8 @@
 import { join, resolve } from 'path'
 import MagicString from 'magic-string'
-import { getQuestionById, getQuestionByTitle, normalizeRawQuestion, normalizeResolvedQuestion } from './question'
-import type { GenerateError, GenerateOptions, GenerateOutcomes, GenerateReturn, ResolvedQuestion, WritableQuestions } from './types'
-import { isNumber, readFile, writeFile } from './utils'
-import { parse, stringify } from './parse'
+import type { GenerateOutcomes, ResolvedQuestion, WritableQuestions } from '../types'
+import { parse, readFile, stringify } from '../io'
+import { normalizeResolvedQuestion } from '../question'
 
 export const root = resolve(process.cwd(), './packages')
 export const pathCode = join(root, './code')
@@ -111,47 +110,5 @@ export function genTestCase(question: ResolvedQuestion): GenerateOutcomes {
     type: 'testcase',
     outFile: join(pathCode, 'test', `${path}.test.ts`),
     content: s.toString(),
-  }
-}
-
-export async function generate(options: GenerateOptions): Promise<GenerateReturn> {
-  const { category, tag, identifier } = options
-  if (!identifier) {
-    return {
-      error: generateError('Give question name or id at least', category, tag),
-    }
-  }
-
-  const rawQuestion = isNumber(identifier)
-    ? await getQuestionById(identifier)
-    : await getQuestionByTitle(identifier)
-  if (!rawQuestion) {
-    return {
-      error: generateError(`Question ${identifier} Not Found!`, category, tag),
-    }
-  }
-
-  const question = normalizeRawQuestion(rawQuestion, category, tag)
-  const gens = await Promise.all([
-    genMarkdown(question),
-    genCatelog(question),
-    genCode(question),
-    genTestCase(question),
-  ])
-  const outFiles = await Promise.all(gens.map(async ({ outFile, content }) => {
-    await writeFile(outFile, content)
-    return outFile
-  }))
-  question.outFiles = outFiles.sort()
-
-  return { question }
-}
-
-export function generateError(error: unknown, category = 'unknown-category', tag = 'unknown-tag'): GenerateError {
-  return {
-    category,
-    tag,
-    error,
-    timestamp: Date.now(),
   }
 }
