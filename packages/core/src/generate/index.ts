@@ -5,7 +5,7 @@ import { isNumber } from '../utils'
 import { genCatelog, genCode, genMarkdown, genTestCase } from './gen'
 
 export async function generate(options: GenerateOptions): Promise<GenerateReturn> {
-  const { category, tag, identifier, write = true } = options
+  const { category, tag, identifier, write = true, lang } = options
   if (!identifier) {
     return {
       error: generateError('Give question name or id at least', category, tag),
@@ -21,7 +21,7 @@ export async function generate(options: GenerateOptions): Promise<GenerateReturn
     }
   }
 
-  const question = normalizeRawQuestion(rawQuestion, category, tag)
+  const question = normalizeRawQuestion(rawQuestion, { category, tag, lang })
   if (write)
     await writeQuestion(question)
 

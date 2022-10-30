@@ -11,7 +11,7 @@ export const pathDocs = join(root, './docs')
 export function genMarkdown(question: ResolvedQuestion): GenerateOutcomes {
   const {
     code,
-    content,
+    content = '',
     questionId,
     title,
     difficulty,
@@ -80,17 +80,17 @@ export async function genCatelog(question: ResolvedQuestion): Promise<GenerateOu
 }
 
 export function genCode(question: ResolvedQuestion): GenerateOutcomes {
-  const { code, path } = question
+  const { code, path, lang } = question
 
   return {
     type: 'code',
-    outFile: join(pathCode, 'src', `${path}.ts`),
+    outFile: join(pathCode, 'src', `${path}.${ensureExtName(lang)}`),
     content: `export ${code}`,
   }
 }
 
 export function genTestCase(question: ResolvedQuestion): GenerateOutcomes {
-  const { testcases, functionName, path } = question
+  const { testcases, functionName, path, lang } = question
 
   const s = new MagicString('')
     ;[
@@ -108,7 +108,16 @@ export function genTestCase(question: ResolvedQuestion): GenerateOutcomes {
 
   return {
     type: 'testcase',
-    outFile: join(pathCode, 'test', `${path}.test.ts`),
+    outFile: join(pathCode, 'test', `${path}.test.${ensureExtName(lang)}`),
     content: s.toString(),
   }
+}
+
+// ext name fallback
+const EXT: Record<string, string> = {
+  typescript: 'ts',
+  javascript: 'js',
+}
+export function ensureExtName(lang: string) {
+  return EXT[lang] || lang
 }

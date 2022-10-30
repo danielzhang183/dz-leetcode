@@ -7,39 +7,29 @@ export interface Options {
   logLevel: string
 }
 
-export interface CliOptionBase {
+export interface CommonOptions {
   root?: string
-  lang?: 'zh' | 'zh-CN' | 'en' | 'en-US'
-}
-
-export interface FileCliOptions extends CliOptionBase {
-}
-
-export interface PickCliOptions extends CliOptionBase {
+  file?: string
+  lang?: string | string[]
   category?: string
   tag?: string
-}
-
-export interface RandomCliOptions extends CliOptionBase {
-  category?: string
-  tag?: string
-  difficulty?: string
+  identifier?: string | string[] // single or multiple questions identifier<title or id>
   interactive?: boolean
+  cwd?: string
+  logLevel?: string
 }
 
-export interface FileOptions extends FileCliOptions {
+export interface FileOptions extends CommonOptions {
   file: string
-  logLevel: string
 }
 
-export interface CommandOptions extends PickCliOptions {
-  identifier: string
-  logLevel: string
+export interface CommandOptions extends CommonOptions {
+  identifier: string | string[]
 }
 
-export interface RandomOptions extends RandomCliOptions {
-  logLevel: string
+export interface RandomOptions extends CommonOptions {
   skip?: number
+  difficulty?: string
 }
 
 export interface GenerateEventCallbacks {
@@ -50,16 +40,14 @@ export interface GenerateEventCallbacks {
   onQuestionResolved?: QuestionResolvedCallback
 }
 
-export type rawQuestion = string | number
+export type QuestionIdentifier = string | number
 
-export type TagMap = Record<string, rawQuestion[]>
-
-export type ResolvedTagMap = Record<string, ResolvedQuestion[]>
+export type TagMap = Record<string, QuestionIdentifier[]>
 
 export interface CategoryMeta {
   category: string
   tagMap: TagMap
-  questions: rawQuestion[]
+  questions: QuestionIdentifier[]
   resolved: ResolvedQuestion[]
   errors: unknown[]
 }

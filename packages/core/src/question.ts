@@ -1,7 +1,7 @@
 import { join } from 'path'
 import { $fetch } from 'ohmyfetch'
-import { hyphenate, pad } from './utils'
-import type { Category, CodeSnippet, Question, RawQuestion, ResolvedQuestion, Tag, TestCase, TopicTag } from './types'
+import { hyphenate, pad, toArray } from './utils'
+import type { CodeSnippet, CommonOptions, Question, RawQuestion, ResolvedQuestion, Tag, TestCase, TopicTag } from './types'
 
 const LEETCODE_FETCH_URL = 'https://leetcode.cn/graphql/'
 const LEETCODE_QUESTION_URL = 'https://leetcode.cn/problems'
@@ -195,11 +195,15 @@ export const getQuestionPath = (
 
 export const getQuestionOrigin = (titleSlug: string) => `${LEETCODE_QUESTION_URL}/${titleSlug}`
 
-export function normalizeRawQuestion(
-  question: RawQuestion,
-  category?: Category | string | undefined,
-  tag?: Tag | string | undefined,
-): ResolvedQuestion {
+export function normalizeRawQuestion(question: RawQuestion, options: CommonOptions = {}): ResolvedQuestion {
+  const {
+    category,
+    tag,
+  } = options || {}
+  const lang = options.lang
+    ? toArray(options.lang).flatMap(i => i.split(','))
+    : ['typescript', 'javascript']
+
   function normalizeTestCases(exampleTestcases: string): TestCase[] {
     const res: TestCase[] = []
     const testcases = exampleTestcases.split('\n')
@@ -209,20 +213,32 @@ export function normalizeRawQuestion(
     return res
   }
 
-  function normalizeCode(codeSnippets: CodeSnippet[]): string {
-    return codeSnippets?.find(i => i.lang === 'TypeScript')?.code || ''
+  function normalizeCode(codeSnippets: CodeSnippet[]): { code: string; lang: string } {
+    for (const l of lang) {
+      const codesnippet = codeSnippets?.find(i => i.lang.toLowerCase() === l)
+      if (codesnippet) {
+        return {
+          code: codesnippet.code,
+          lang: codesnippet.lang.toLowerCase(),
+        }
+      }
+    }
+    return {
+      code: '',
+      lang: lang[0],
+    }
   }
 
   function normalizeFunctionName(code: string): string {
     const re = /function \*?(\w+)\(/
-    return code?.match(re)![1] || 'fn'
+    return code?.match(re)?.[1] || 'fn'
   }
 
   function normalizeTag(tag: string | TopicTag[]): string {
     return hyphenate(Array.isArray(tag) ? tag[0].slug : tag)
   }
 
-  const code = normalizeCode(question.codeSnippets)
+  const { code, lang: language } = normalizeCode(question.codeSnippets)
   const normalizedCategory = hyphenate(category || question.categoryTitle)
   const normalizedTag = normalizeTag(tag || question.topicTags)
 
@@ -240,6 +256,7 @@ export function normalizeRawQuestion(
     path: getQuestionPath(normalizedCategory, normalizedTag, question.questionId),
     origin: getQuestionOrigin(question.titleSlug),
     outFiles: [],
+    lang: language,
   }
 }
 

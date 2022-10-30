@@ -1,6 +1,7 @@
 {
   "cSpell.words": [
-    "picocolors"
+    "picocolors",
+    "unconfig"
   ],
   "prettier.enable": false,
   "editor.codeActionsOnSave": {

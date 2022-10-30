@@ -55,12 +55,12 @@ export async function generateFromRandom(options: RandomOptions) {
       randQuestion = randQuestions[randRange(0, randQuestions.length)]
     }
 
-    const { error, question } = await resolveQuestion(
-      category || 'unknown-category',
-      tag || 'unknown-tag',
-      randQuestion.titleSlug,
-      false,
-    )
+    const { error, question } = await resolveQuestion({
+      category,
+      tag,
+      identifier: randQuestion.titleSlug,
+      write: false,
+    })
     if (question) {
       const logger = new TableLogger({
         columns: 2,
@@ -81,7 +81,7 @@ export async function generateFromRandom(options: RandomOptions) {
         name: 'regenerate',
         type: 'confirm',
         initial: false,
-        message: c.green('regenerate a random question?'),
+        message: c.green('regenerate an random question?'),
       },
     ]).then(r => r.regenerate)
 

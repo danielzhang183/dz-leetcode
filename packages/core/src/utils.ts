@@ -13,3 +13,10 @@ export function pad<T extends string | number>(val: T, len = 3): T {
   const num = length > len ? val : '0'.repeat(len - length) + val
   return (isNumber(val) ? Number(num) : num) as T
 }
+
+export function toArray<T>(a: T | T[] | undefined | null): T[] {
+  if (a == null)
+    return []
+
+  return Array.isArray(a) ? a : [a]
+}

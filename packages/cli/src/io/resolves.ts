@@ -1,6 +1,6 @@
 import createDebug from 'debug'
 import { generate, isNumber } from 'dz-leetcode'
-import type { ResolvedQuestion } from 'dz-leetcode'
+import type { GenerateOptions, ResolvedQuestion } from 'dz-leetcode'
 import type { CategoryMeta, QuestionResolvedCallback, TagMap } from '../types'
 import { isUnknown } from '../utils'
 
@@ -71,7 +71,7 @@ export async function resolveQuestions(
       .map(async (identifier) => {
         debug.question(`resolving question ${identifier}`)
 
-        const { question, error } = await resolveQuestion(category, tag, identifier)
+        const { question, error } = await resolveQuestion({ category, tag, identifier })
         progress += 1
         progressCallback?.(question?.titleSlug || String(identifier), progress, total)
         return {
@@ -82,20 +82,24 @@ export async function resolveQuestions(
   )
 }
 
-export function resolveQuestion(
-  category: string,
-  tag: string,
-  identifier: string | number,
-  write = true,
-) {
+export function resolveQuestion(options: GenerateOptions) {
+  const {
+    category,
+    tag,
+    identifier,
+    write = true,
+    lang,
+  } = options
+
   return generate({
-    category: isUnknown(category) ? undefined : category,
-    tag: isUnknown(tag) ? undefined : tag,
+    category: category && isUnknown(category) ? undefined : category,
+    tag: tag && isUnknown(tag) ? undefined : tag,
     identifier: isNumber(identifier)
       ? identifier
-      : /^\d+$/.test(identifier)
+      : /^\d+$/.test(identifier!)
         ? Number(identifier)
         : identifier,
     write,
+    lang,
   })
 }

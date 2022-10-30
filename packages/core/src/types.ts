@@ -77,17 +77,25 @@ export interface ResolvedQuestion {
   path: string
   origin: string
   outFiles: string[]
+  lang: string
 }
 
 export interface WritableQuestions {
   questions: Array<Question>
 }
 
+export interface CommonOptions {
+  category?: string
+  tag?: string
+  lang?: string | string[]
+}
+
 export interface GenerateOptions {
   category?: string
   tag?: string
-  write?: boolean
   identifier: string | number | undefined
+  write?: boolean
+  lang?: string | string[]
 }
 
 export interface GenerateOutcomes {

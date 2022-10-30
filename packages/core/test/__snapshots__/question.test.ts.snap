@@ -290,6 +290,7 @@ exports[`question > resolvedQuestion > resolvedQuestion 1`] = `
 <strong>Follow-up:&nbsp;</strong>Can you come up with an algorithm that is less than&nbsp;<code>O(n<sup>2</sup>)&nbsp;</code>time complexity?",
   "difficulty": "Easy",
   "functionName": "twoSum",
+  "lang": "typescript",
   "origin": "https://leetcode.cn/problems/two-sum",
   "outFiles": [],
   "path": "algorithms/array/001",

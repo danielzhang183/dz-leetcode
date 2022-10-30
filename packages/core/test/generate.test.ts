@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { genCatelog, genCode, genMarkdown, genTestCase } from '../src'
+import { genCatelog, genCode, genMarkdown, genTestCase } from '../src/generate/gen'
 import { resolvedQuestion } from './fixture'
 
 describe('generate content', () => {
@@ -7,7 +7,7 @@ describe('generate content', () => {
     const markdown = await genMarkdown(resolvedQuestion)
     expect(markdown).toMatchSnapshot('markdown')
     const { outFile } = markdown
-    expect(outFile).toMatchInlineSnapshot('"/home/t04857/i/dz-leetcode/packages/docs/src/pages/algorithms/array/001.md"')
+    expect(outFile).toMatchInlineSnapshot('"/Users/dylanzhang/i/dz-leetcode/packages/docs/src/pages/algorithms/array/001.md"')
   })
 
   it('code', async () => {
@@ -19,7 +19,7 @@ describe('generate content', () => {
 
       };"
     `)
-    expect(outFile).toMatchInlineSnapshot('"/home/t04857/i/dz-leetcode/packages/code/src/algorithms/array/001.ts"')
+    expect(outFile).toMatchInlineSnapshot('"/Users/dylanzhang/i/dz-leetcode/packages/code/src/algorithms/array/001.ts"')
   })
 
   it('testcases', async () => {
@@ -39,7 +39,7 @@ describe('generate content', () => {
       })
       "
     `)
-    expect(outFile).toMatchInlineSnapshot('"/home/t04857/i/dz-leetcode/packages/code/test/algorithms/array/001.test.ts"')
+    expect(outFile).toMatchInlineSnapshot('"/Users/dylanzhang/i/dz-leetcode/packages/code/test/algorithms/array/001.test.ts"')
   })
 
   it('catelog', async () => {
@@ -57,6 +57,6 @@ describe('generate content', () => {
           tag: array
           category: algorithms"
     `)
-    expect(outFile).toMatchInlineSnapshot('"/home/t04857/i/dz-leetcode/packages/docs/data/algorithms/array.yml"')
+    expect(outFile).toMatchInlineSnapshot('"/Users/dylanzhang/i/dz-leetcode/packages/docs/data/algorithms/array.yml"')
   })
 })
