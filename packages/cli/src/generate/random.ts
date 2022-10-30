@@ -17,7 +17,7 @@ interface InternalTag {
 }
 
 interface DumpChoice {
-  name: string
+  title: string
   value: string
 }
 
@@ -61,6 +61,12 @@ export async function generateFromRandom(options: RandomOptions) {
       identifier: randQuestion.titleSlug,
       write: false,
     })
+    if (error) {
+      const { lines, errLines } = renderSingleQuestion({ error })
+      renderOutcomes(lines, errLines)
+      return
+    }
+
     if (question) {
       const logger = new TableLogger({
         columns: 2,
@@ -94,8 +100,8 @@ export async function generateFromRandom(options: RandomOptions) {
     else {
       console.log()
       console.log(c.magenta('generating files...'))
-      const resolveQuestion = await writeQuestion(question!)
-      const { lines, errLines } = renderSingleQuestion({ question: resolveQuestion, error })
+      const { question: writableQuestion, error: writableError } = await writeQuestion(question!)
+      const { lines, errLines } = renderSingleQuestion({ question: writableQuestion, error: writableError })
       renderOutcomes(lines, errLines)
     }
   }
@@ -132,16 +138,16 @@ export async function generateFromRandom(options: RandomOptions) {
 
   function dumpCategories(): DumpChoice[] {
     return [
-      { name: 'auto', value: 'unknown-category' },
-      ...categories.map(i => ({ name: i.name, value: i.name })),
+      { title: 'auto', value: 'unknown-category' },
+      ...categories.map(i => ({ title: i.name, value: i.name })),
     ]
   }
 
   function dumpTags(category: string): DumpChoice[] {
     const dumpTags = category === 'unknown-category' ? tags : findCategory(category)!.tagMap
     return [
-      { name: 'auto', value: 'unknown-tag' },
-      ...dumpTags.map(i => ({ name: i.tag.name, value: i.tag.slug })),
+      { title: 'auto', value: 'unknown-tag' },
+      ...dumpTags.map(i => ({ title: i.tag.name, value: i.tag.slug })),
     ]
   }
 

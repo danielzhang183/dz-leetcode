@@ -1,9 +1,9 @@
 import { resolve } from 'path'
 import cac from 'cac'
+import { resolveConfig } from 'dz-leetcode'
 import { version } from '../package.json'
 import { generateFromCommand, generateFromFile, generateFromRandom } from './generate'
 import type { CommandOptions, FileOptions, RandomOptions } from './types'
-import { resolveConfig } from './config'
 
 const cli = cac('dz-leetcode')
 

@@ -1,7 +1,7 @@
 import { createConfigLoader } from 'unconfig'
 import createDebug from 'debug'
 import deepmerge from 'deepmerge'
-import { toArray } from 'dz-leetcode'
+import { toArray } from './utils'
 import type { CommonOptions } from './types'
 
 const debug = createDebug('dz-leetcode:config')

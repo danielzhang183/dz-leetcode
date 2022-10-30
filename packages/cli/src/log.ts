@@ -1,7 +1,7 @@
 import c from 'picocolors'
 import { MultiBar, Presets } from 'cli-progress'
 import type { RuntimeErrorLog } from 'dz-leetcode'
-import type { Options } from './types'
+import type { TableOptions } from './types'
 import { visualLength, visualPadEnd, visualPadStart } from './render'
 
 export function createMultiProgresBar() {
@@ -15,10 +15,10 @@ export function createMultiProgresBar() {
 }
 
 export class TableLogger {
-  private options: Options
+  private options: TableOptions
   private rows: (string[] | string)[] = []
 
-  constructor(options: Partial<Options> = {}) {
+  constructor(options: Partial<TableOptions> = {}) {
     const {
       columns = 3,
       pending = 2,

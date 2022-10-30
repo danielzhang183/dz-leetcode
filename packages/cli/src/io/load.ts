@@ -62,6 +62,3 @@ export async function loadCategories(file: string): Promise<Record<string, TagMa
   return categories
 }
 
-export async function loadGeneratedQuestions(dir: string): Promise<number[]> {
-  return []
-}

@@ -85,9 +85,17 @@ export interface WritableQuestions {
 }
 
 export interface CommonOptions {
+  cwd?: string
+  root?: string
+  pathDoc?: string
+  pathCode?: string
+  file?: string
+  lang?: string | string[]
   category?: string
   tag?: string
-  lang?: string | string[]
+  identifier?: string | string[] // single or multiple questions identifier<title or id>
+  interactive?: boolean
+  logLevel?: string
 }
 
 export interface GenerateOptions {

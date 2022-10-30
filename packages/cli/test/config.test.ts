@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
+import type { CommonOptions } from 'dz-leetcode'
 import { resolveConfig } from '../src/config'
-import type { CommonOptions } from '../src/types'
 
 describe('load config', () => {
   it('with lang', async () => {

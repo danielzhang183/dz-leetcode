@@ -23,7 +23,7 @@ export async function generate(options: GenerateOptions): Promise<GenerateReturn
 
   const question = normalizeRawQuestion(rawQuestion, { category, tag, lang })
   if (write)
-    await writeQuestion(question)
+    return await writeQuestion(question)
 
   return { question }
 }
@@ -37,20 +37,27 @@ export function generateError(error: unknown, category = 'unknown-category', tag
   }
 }
 
-export async function writeQuestion(question: ResolvedQuestion): Promise<ResolvedQuestion> {
-  const gens = await Promise.all([
-    genMarkdown(question),
-    genCatelog(question),
-    genCode(question),
-    genTestCase(question),
-  ])
-  const outFiles = await Promise.all(
-    gens.map(async ({ outFile, content }) => {
-      await writeFile(outFile, content)
-      return outFile
-    }),
-  )
-  question.outFiles = outFiles.sort()
+export async function writeQuestion(question: ResolvedQuestion): Promise<GenerateReturn> {
+  try {
+    const gens = await Promise.all([
+      genMarkdown(question),
+      genCatelog(question),
+      genCode(question),
+      genTestCase(question),
+    ])
+    const outFiles = await Promise.all(
+      gens.map(async ({ outFile, content }) => {
+        await writeFile(outFile, content)
+        return outFile
+      }),
+    )
+    question.outFiles = outFiles.sort()
+  }
+  catch (error) { // TODO: not handle carefully
+    return {
+      error: generateError(error, question.category, question.tag),
+    }
+  }
 
-  return question
+  return { question }
 }

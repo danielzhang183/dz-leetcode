@@ -43,11 +43,14 @@
   },
   "dependencies": {
     "@dz-leetcode/cli": "workspace:*",
+    "deepmerge": "^4.2.2",
     "js-yaml": "^4.1.0",
     "magic-string": "^0.26.7",
-    "ohmyfetch": "^0.4.20"
+    "ohmyfetch": "^0.4.20",
+    "unconfig": "^0.3.7"
   },
   "devDependencies": {
-    "@types/js-yaml": "^4.0.5"
+    "@types/js-yaml": "^4.0.5",
+    "@types/prompts": "^2.4.1"
   }
 }

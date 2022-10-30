@@ -36,14 +36,7 @@ export async function generateFromFile(options: FileOptions) {
 
   bars.stop()
 
-  // if (!resolvedUsages) {
-  //   printErrorLogs({
-  //     type: 'batch-error',
-  //     timestamp: Date.now(),
-  //     error: `${options.file} have no import data`,
-  //     file: options.file,
-  //   })
-  // }
+  // TODO: handle resolveCates is null
 
   const { lines, errLines } = renderCategories(resolveCates!)
   renderOutcomes(lines, errLines)

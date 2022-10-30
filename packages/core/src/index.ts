@@ -1,5 +1,12 @@
+import type { CommonOptions } from './types'
+
 export * from './generate'
-export * from './question'
+export * from './config'
 export * from './io'
-export * from './utils'
+export * from './question'
 export * from './types'
+export * from './utils'
+
+export function defineConfig(config: Partial<CommonOptions>) {
+  return config
+}
