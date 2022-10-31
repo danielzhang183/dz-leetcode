@@ -5,4 +5,9 @@ export default defineConfig({
     'typescript',
     'javascript',
   ],
+  onlyDoc: false,
+  file: 'example/questions.yml',
+  // category: 'algorithms',
+  // tag: 'array',
+  // interactive: false,
 })

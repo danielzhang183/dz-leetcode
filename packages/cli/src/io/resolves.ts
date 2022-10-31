@@ -108,7 +108,6 @@ export function resolveQuestion<T extends CommonOptions & { write?: boolean }>(o
       write,
     },
   )
-  console.log({ resolveQuestion: normalizedOptions })
 
   return generate(normalizedOptions)
 }

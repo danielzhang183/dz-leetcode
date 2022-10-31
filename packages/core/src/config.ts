@@ -17,6 +17,9 @@ export function normalizeConfig<T extends CommonOptions>(options: T): T {
   paths.code = resolve(root, code || './packages/code')
   paths.doc = resolve(root, doc || './packages/docs')
 
+  if (options.file)
+    options.file = resolve(root, options.file)
+
   options.root = root
   options.paths = paths
   options.lang = toArray(options.lang).flatMap(i => i.split(','))
@@ -58,5 +61,5 @@ export async function resolveConfig<T extends CommonOptions>(options: T): Promis
   debug(`config file found ${config.sources[0]}`)
   const configOptions = normalizeConfig(config.config)
 
-  return deepmerge(options, configOptions) as T
+  return deepmerge(configOptions, options) as T
 }

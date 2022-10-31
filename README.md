@@ -75,6 +75,23 @@ dz-leetcode file example/questions.yml
 
 Configuration file usage
 
+I. config file usage `.leetcoderc.json` or `leetcode.config.ts`
+
+```ts
+import { defineConfig } from 'dz-leetcode'
+
+export default defineConfig({
+  root: '',
+  lang: [
+    'typescript',
+    'javascript',
+  ],
+  onlyDoc: false,
+})
+```
+
+II. import questions file usage
+
 ```yml
 questions:
   - category: algorithms #option
@@ -107,11 +124,19 @@ dz-leetcode pick two-sum -c algorithms
 dz-leetcode pick two-sum -c algorithms -t array
 ```
 
+III. random generate one question
+
+```bash
+dz-leetcode random
+or
+dz-leetcode random -i
+```
+
 **WIP**
 
 - [x] generate by question id
 - [x] beautify generate process
 - [x] support random generate one question
+- [x] beautify random question generate process
 - [ ] support 'zh' language
 - [ ] support diff log level
-- [ ] refine random question generated process

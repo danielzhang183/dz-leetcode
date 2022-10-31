@@ -51,11 +51,24 @@ export function genMarkdown(question: ResolvedQuestion, genPath = pathDoc): Gene
       .replaceAll(/\t/g, '  ')
       .replaceAll(/<\/?p>/g, '')
       .replaceAll(/<\/?code>/g, '')
-      .replaceAll(/<strong\sclass=.*?>/g, '<strong>')
+      .replaceAll(/<\/?pre>/g, '```')
+      .replaceAll(/<strong\sclass=.*?>(.*?)<\/strong>/g, (_, $1) => `### ${$1}`)
+      .replaceAll(/<\/?em>/g, '`')
+      .replaceAll(/\n<ul>\n|\n<\/ul>/g, '')
+      .replaceAll(/\s\s<li>(.*?)<\/li>/g, (_, $1) => `\n- ${$1}`)
+
+    if (s.hasChanged())
+      s = new MagicString(s.toString())
+
+    const index = s.toString().indexOf('\n### Example')
+    s.prependLeft(index, '## Usage\n')
+    s.replaceAll(/<strong>|((\s+)?<\/strong>)/g, '**')
+
+    return s
   }
 
-  const s = new MagicString(content)
-  transformMarkdown(s)
+  let s = new MagicString(content)
+  s = transformMarkdown(s)
   genMarkdownPre(s)
   genMarkdownPost(s)
 

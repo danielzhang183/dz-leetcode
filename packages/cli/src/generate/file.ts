@@ -36,16 +36,24 @@ export async function generateFromFile(options: FileOptions) {
 
   bars.stop()
 
-  // TODO: handle resolveCates is null
+  if (!resolveCates)
+    return
 
-  const { lines, errLines } = renderCategories(resolveCates!)
+  const { lines, errLines } = renderCategories(resolveCates)
   renderOutcomes(lines, errLines)
 }
 
 export async function generateCategories(options: FileOptions, callbacks: GenerateEventCallbacks) {
-  const categories = await loadCategories(options.file)
-  if (!categories)
+  if (!options.file) {
+    renderOutcomes([], [c.red('Import file not found! Please pass `-f` option or config `file` option.')])
     return
+  }
+
+  const categories = await loadCategories(options.file)
+  if (!categories) {
+    renderOutcomes([], [c.red(`load ${options.file} content error`)])
+    return
+  }
 
   const unresolvedCates: CategoryMeta[] = Object.entries(categories!)
     // only check questions with more than one to supply

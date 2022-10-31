@@ -1,4 +1,3 @@
-import { resolve } from 'path'
 import cac from 'cac'
 import { resolveConfig } from 'dz-leetcode'
 import { version } from '../package.json'
@@ -15,14 +14,15 @@ cli
   .option('-lang, --lang <lang>', 'Generated question syntax')
   .option('-d, --difficulty <difficulty>', 'easy|medium|hard')
   .option('-i, --interactive', 'interactive mode')
+  .option('-f, --file <file>', 'import questions config file')
   .help()
 
 cli
-  .command('file <file>')
+  .command('file')
   .action(file)
 
 cli
-  .command('pick <title | id<,title<, id>>>')
+  .command('pick <identifier>')
   .action(pick)
 
 cli
@@ -37,14 +37,10 @@ cli
 
 cli.parse()
 
-async function file(file: string, options: FileOptions) {
-  const { root = process.cwd() } = options
-
-  const absolute = resolve(root, file)
-  options.file = absolute
-  await generateFromFile(
-    await resolveConfig(options),
-  )
+async function file(options: FileOptions) {
+  console.log({ options })
+  console.log({ resolveConfig: await resolveConfig(options) })
+  await generateFromFile(await resolveConfig(options))
 }
 
 async function pick(identifier: string, options: CommandOptions) {
