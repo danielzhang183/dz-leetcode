@@ -1,33 +1,33 @@
 questions:
   - category: algorithms
-  - tag: sort
-  - questions:
-    - 912
+    tag: sort
+    questions:
     - 15
+    - 912
   - category: algorithms
-  - tag: binary-search
-  - questions:
-    - 704
+    tag: binary-search
+    questions:
     - 35
-    - 153
     - 69
+    - 153
+    - 704
   - category: algorithms
-  - tag: back-tracking
-  - questions:
-    - 46
-    - 79
+    tag: back-tracking
+    questions:
     - 17
-    - 39
-    - 51
     - 37
+    - 39
+    - 46
+    - 47
+    - 51
     - 77
     - 78
-    - 131
+    - 79
     - 93
-    - 47
+    - 131
   - category: algorithms
-  - tag: greedy
-  - questions:
+    tag: greedy
+    questions:
     - 55
     - 45
     - 300
@@ -38,33 +38,33 @@ questions:
     - 621
     - 649
   - category: algorithms
-  - tag: dynamic-programming
-  - questions:
-    - 509
-    - 70
-    - 746
+    tag: dynamic-programming
+    questions:
+    - 53
     - 62
     - 63
-    - 322
-    - 198
-    - 213
-    - 337
+    - 70
+    - 72
+    - 115
     - 121
     - 122
     - 123
-    - 714
-    - 53
-    - 674
-    - 518
+    - 198
+    - 213
+    - 322
+    - 337
     - 392
-    - 1143
-    - 115
+    - 509
+    - 714
+    - 746
+    - 518
     - 583
-    - 72
+    - 674
+    - 1143
   - category: algorithms
-  - tag: math
-  - questions:
+    tag: math
+    questions:
     - 18
     - 292
-    - 877
     - 326
+    - 877

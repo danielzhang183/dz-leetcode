@@ -6,7 +6,7 @@ export default defineConfig({
     'javascript',
   ],
   onlyDoc: false,
-  file: 'examples/questions.yml',
+  file: 'examples/structures.yml',
   // category: 'algorithms',
   // tag: 'array',
   // interactive: false,
