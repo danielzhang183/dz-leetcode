@@ -52,7 +52,7 @@ export function genMarkdown(question: ResolvedQuestion, genPath = pathDoc): Gene
       .replaceAll(/<\/?p>/g, '')
       .replaceAll(/<\/?code>/g, '')
       .replaceAll(/<\/?pre>/g, '```')
-      .replaceAll(/<strong\sclass=.*?>(.*?)<\/strong>/g, (_, $1) => `### ${$1}`)
+      .replaceAll(/<strong\sclass=.*?>(.*?)\:<\/strong>/g, (_, $1) => `### ${$1}`)
       .replaceAll(/<\/?em>/g, '`')
       .replaceAll(/\n<ul>\n|\n<\/ul>/g, '')
       .replaceAll(/\s\s<li>(.*?)<\/li>/g, (_, $1) => `\n- ${$1}`)

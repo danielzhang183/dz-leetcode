@@ -38,8 +38,6 @@ cli
 cli.parse()
 
 async function file(options: FileOptions) {
-  console.log({ options })
-  console.log({ resolveConfig: await resolveConfig(options) })
   await generateFromFile(await resolveConfig(options))
 }
 
