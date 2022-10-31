@@ -1,7 +1,7 @@
 import createDebug from 'debug'
 import { generate, isNumber } from 'dz-leetcode'
-import type { GenerateOptions, ResolvedQuestion } from 'dz-leetcode'
-import type { CategoryMeta, QuestionResolvedCallback, TagMap } from '../types'
+import type { CommonOptions, GenerateOptions, ResolvedQuestion } from 'dz-leetcode'
+import type { CategoryMeta, QuestionIdentifier, QuestionResolvedCallback, TagMap } from '../types'
 import { isUnknown } from '../utils'
 
 export const debug = {
@@ -12,12 +12,16 @@ export const debug = {
 
 export async function resolveCategory(
   category: CategoryMeta,
+  options: CommonOptions,
   progress?: QuestionResolvedCallback,
 ): Promise<CategoryMeta> {
   debug.category(`resolving category ${category}`)
 
   const { questions, errors } = await resolveTags(
-    category.category, category.tagMap, progress,
+    category.category,
+    category.tagMap,
+    options,
+    progress,
   )
   category.resolved = questions
   category.errors = errors
@@ -28,6 +32,7 @@ export async function resolveCategory(
 export async function resolveTags(
   category: string,
   tagMap: TagMap,
+  options: CommonOptions,
   progress?: QuestionResolvedCallback,
 ) {
   const errors: any[] = []
@@ -37,10 +42,11 @@ export async function resolveTags(
   for (const tag of tags) {
     debug.tag(`resloving tag ${tag}`)
 
+    options.category = category
+    options.tag = tag
     const data = await resolveQuestions(
-      category,
-      tag,
       tagMap[tag],
+      options,
       progress,
     )
     for (const { question, error } of data) {
@@ -58,9 +64,8 @@ export async function resolveTags(
 }
 
 export async function resolveQuestions(
-  category: string,
-  tag: string,
-  questions: (string | number)[],
+  questions: QuestionIdentifier[],
+  options: CommonOptions,
   progressCallback?: QuestionResolvedCallback,
 ) {
   const total = questions.length
@@ -71,7 +76,7 @@ export async function resolveQuestions(
       .map(async (identifier) => {
         debug.question(`resolving question ${identifier}`)
 
-        const { question, error } = await resolveQuestion({ category, tag, identifier })
+        const { question, error } = await resolveQuestion({ ...options, identifier })
         progress += 1
         progressCallback?.(question?.titleSlug || String(identifier), progress, total)
         return {
@@ -82,24 +87,28 @@ export async function resolveQuestions(
   )
 }
 
-export function resolveQuestion(options: GenerateOptions) {
+export function resolveQuestion<T extends CommonOptions & { write?: boolean }>(options: T) {
   const {
     category,
     tag,
     identifier,
     write = true,
-    lang,
   } = options
 
-  return generate({
-    category: category && isUnknown(category) ? undefined : category,
-    tag: tag && isUnknown(tag) ? undefined : tag,
-    identifier: isNumber(identifier)
-      ? identifier
-      : /^\d+$/.test(identifier!)
-        ? Number(identifier)
-        : identifier,
-    write,
-    lang,
-  })
+  const normalizedOptions: GenerateOptions = Object.assign(
+    options,
+    {
+      category: category && isUnknown(category) ? undefined : category,
+      tag: tag && isUnknown(tag) ? undefined : tag,
+      identifier: (isNumber(identifier)
+        ? identifier
+        : /^\d+$/.test((identifier as string)!)
+          ? Number(identifier)
+          : identifier) as QuestionIdentifier,
+      write,
+    },
+  )
+  console.log({ resolveQuestion: normalizedOptions })
+
+  return generate(normalizedOptions)
 }

@@ -65,7 +65,11 @@ export async function generateCategories(options: FileOptions, callbacks: Genera
   const resolveCates = await Promise.all(
     unresolvedCates.map(async (unresolvedCate) => {
       callbacks.beforeCategoryStart?.(unresolvedCate)
-      const data = await resolveCategory(unresolvedCate, callbacks.onQuestionResolved)
+      const data = await resolveCategory(
+        unresolvedCate,
+        options,
+        callbacks.onQuestionResolved,
+      )
       callbacks.afterCategoryEnd?.(unresolvedCate)
       return data
     }),

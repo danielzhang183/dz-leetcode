@@ -6,22 +6,20 @@ import type { CategoryMeta, CommandOptions, GenerateEventCallbacks } from '../ty
 import { renderCategory, renderOutcomes, renderSingleQuestion } from './render'
 
 export async function generateFromCommand(options: CommandOptions) {
-  if (options.identifier.length > 1)
+  if (Array.isArray(options.identifier) && options.identifier.length > 1)
     generateMulti(options)
   else
     generateSingle(options)
 }
 
 export async function generateSingle(options: CommandOptions) {
-  const {
-    category,
-    tag,
-    identifier,
-  } = options
+  options.identifier = Array.isArray(options.identifier)
+    ? options.identifier[0]
+    : options.identifier
 
   console.log()
   console.log(c.magenta('generating files...'))
-  const { question, error } = await resolveQuestion({ category, tag, identifier: identifier[0] })
+  const { question, error } = await resolveQuestion(options)
   const { lines, errLines } = renderSingleQuestion({ question, error })
   renderOutcomes(lines, errLines)
 }
@@ -71,7 +69,11 @@ export async function generateCategory(options: CommandOptions, callbacks: Gener
   }
 
   callbacks.beforeCategoryStart?.(unresolvedCate)
-  const resloveCate = await resolveCategory(unresolvedCate, callbacks.onQuestionResolved)
+  const resloveCate = await resolveCategory(
+    unresolvedCate,
+    options,
+    callbacks.onQuestionResolved,
+  )
   callbacks.beforeCategoryStart?.(unresolvedCate)
 
   return resloveCate

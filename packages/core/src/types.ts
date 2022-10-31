@@ -84,26 +84,29 @@ export interface WritableQuestions {
   questions: Array<Question>
 }
 
+export type QuestionIdentifier = string | number
+
 export interface CommonOptions {
   cwd?: string
   root?: string
-  pathDoc?: string
-  pathCode?: string
+  paths?: {
+    doc?: string
+    code?: string
+  }
+  onlyDoc?: boolean
   file?: string
   lang?: string | string[]
   category?: string
   tag?: string
-  identifier?: string | string[] // single or multiple questions identifier<title or id>
+  identifier?: QuestionIdentifier | QuestionIdentifier[] // single or multiple questions identifier<title or id>
   interactive?: boolean
   logLevel?: string
+  isResolved?: boolean
 }
 
-export interface GenerateOptions {
-  category?: string
-  tag?: string
-  identifier: string | number | undefined
+export interface GenerateOptions extends CommonOptions {
+  identifier?: QuestionIdentifier
   write?: boolean
-  lang?: string | string[]
 }
 
 export interface GenerateOutcomes {
@@ -123,20 +126,3 @@ export interface GenerateReturn {
   error?: GenerateError
   question?: ResolvedQuestion
 }
-
-export interface ErrorLogBase {
-  timestamp: number
-  error: unknown
-}
-
-export interface BatchErrorLog extends ErrorLogBase {
-  type: 'batch-error'
-  file: string
-}
-
-export interface SingleErrorLog extends ErrorLogBase {
-  type: 'single-error'
-  question?: string | number
-}
-
-export type RuntimeErrorLog = BatchErrorLog | SingleErrorLog

@@ -1,14 +1,14 @@
-import { join, resolve } from 'path'
+import { join } from 'path'
 import MagicString from 'magic-string'
 import type { GenerateOutcomes, ResolvedQuestion, WritableQuestions } from '../types'
 import { parse, readFile, stringify } from '../io'
 import { normalizeResolvedQuestion } from '../question'
 
-export const root = resolve(process.cwd(), './packages')
-export const pathCode = join(root, './code')
-export const pathDocs = join(root, './docs')
+const root = process.cwd()
+const pathCode = join(root, './packages/code')
+const pathDoc = join(root, './packages/docs')
 
-export function genMarkdown(question: ResolvedQuestion): GenerateOutcomes {
+export function genMarkdown(question: ResolvedQuestion, genPath = pathDoc): GenerateOutcomes {
   const {
     code,
     content = '',
@@ -61,13 +61,13 @@ export function genMarkdown(question: ResolvedQuestion): GenerateOutcomes {
 
   return {
     type: 'markdown',
-    outFile: join(pathDocs, 'src/pages', `${path}.md`),
+    outFile: join(genPath, 'src/pages', `${path}.md`),
     content: s.toString(),
   }
 }
 
-export async function genCatelog(question: ResolvedQuestion): Promise<GenerateOutcomes> {
-  const path = join(pathDocs, 'data', `${question.path.replace(/(\/\d+$)/g, '')}.yml`)
+export async function genCatelog(question: ResolvedQuestion, genPath = pathDoc): Promise<GenerateOutcomes> {
+  const path = join(genPath, 'data', `${question.path.replace(/(\/\d+$)/g, '')}.yml`)
   const content = parse<WritableQuestions>(await readFile(path) || '') || { questions: [] }
   if (!content.questions.find(i => i.title === question.titleSlug))
     content.questions.push(normalizeResolvedQuestion(question))
@@ -79,17 +79,17 @@ export async function genCatelog(question: ResolvedQuestion): Promise<GenerateOu
   }
 }
 
-export function genCode(question: ResolvedQuestion): GenerateOutcomes {
+export function genCode(question: ResolvedQuestion, genPath = pathCode): GenerateOutcomes {
   const { code, path, lang } = question
 
   return {
     type: 'code',
-    outFile: join(pathCode, 'src', `${path}.${ensureExtName(lang)}`),
+    outFile: join(genPath, 'src', `${path}.${ensureExtName(lang)}`),
     content: `export ${code}`,
   }
 }
 
-export function genTestCase(question: ResolvedQuestion): GenerateOutcomes {
+export function genTestCase(question: ResolvedQuestion, genPath = pathCode): GenerateOutcomes {
   const { testcases, functionName, path, lang } = question
 
   const s = new MagicString('')
@@ -108,7 +108,7 @@ export function genTestCase(question: ResolvedQuestion): GenerateOutcomes {
 
   return {
     type: 'testcase',
-    outFile: join(pathCode, 'test', `${path}.test.${ensureExtName(lang)}`),
+    outFile: join(genPath, 'test', `${path}.test.${ensureExtName(lang)}`),
     content: s.toString(),
   }
 }

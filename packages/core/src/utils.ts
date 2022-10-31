@@ -1,4 +1,5 @@
 export const isNumber = (val: unknown): val is number => typeof val === 'number'
+export const isString = (val: unknown): val is string => typeof val === 'string'
 
 const camelizeRE = /-(\w)/g
 export const camelize = (str: string): string => str.replace(camelizeRE, (_, c) => (c ? c.toUpperCase() : ''))

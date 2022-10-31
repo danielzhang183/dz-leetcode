@@ -1,10 +1,13 @@
+import { resolveConfig } from '../config'
 import { writeFile } from '../io'
 import { getQuestionById, getQuestionByTitle, normalizeRawQuestion } from '../question'
-import type { GenerateError, GenerateOptions, GenerateReturn, ResolvedQuestion } from '../types'
+import type { CommonOptions, GenerateError, GenerateOptions, GenerateReturn, ResolvedQuestion } from '../types'
 import { isNumber } from '../utils'
 import { genCatelog, genCode, genMarkdown, genTestCase } from './gen'
 
 export async function generate(options: GenerateOptions): Promise<GenerateReturn> {
+  options = await resolveConfig(options)
+
   const { category, tag, identifier, write = true, lang } = options
   if (!identifier) {
     return {
@@ -23,7 +26,7 @@ export async function generate(options: GenerateOptions): Promise<GenerateReturn
 
   const question = normalizeRawQuestion(rawQuestion, { category, tag, lang })
   if (write)
-    return await writeQuestion(question)
+    return await writeQuestion(question, options)
 
   return { question }
 }
@@ -37,14 +40,27 @@ export function generateError(error: unknown, category = 'unknown-category', tag
   }
 }
 
-export async function writeQuestion(question: ResolvedQuestion): Promise<GenerateReturn> {
-  try {
-    const gens = await Promise.all([
-      genMarkdown(question),
-      genCatelog(question),
-      genCode(question),
-      genTestCase(question),
+export async function writeQuestion<T extends CommonOptions>(question: ResolvedQuestion, options: T): Promise<GenerateReturn> {
+  const {
+    onlyDoc = false,
+    paths = {},
+  } = options
+
+  const unresloveGens = [
+    genMarkdown(question, paths.doc),
+    genCatelog(question, paths.doc),
+  ]
+  if (!onlyDoc) {
+    unresloveGens.push(...[
+      genCode(question, paths.code),
+      genTestCase(question, paths.code),
     ])
+  }
+
+  try {
+    // wait generate content is ready
+    const gens = await Promise.all(unresloveGens)
+    // write generate content to its relative file
     const outFiles = await Promise.all(
       gens.map(async ({ outFile, content }) => {
         await writeFile(outFile, content)

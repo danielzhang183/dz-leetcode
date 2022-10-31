@@ -56,8 +56,7 @@ export async function generateFromRandom(options: RandomOptions) {
     }
 
     const { error, question } = await resolveQuestion({
-      category,
-      tag,
+      ...options,
       identifier: randQuestion.titleSlug,
       write: false,
     })
@@ -100,7 +99,7 @@ export async function generateFromRandom(options: RandomOptions) {
     else {
       console.log()
       console.log(c.magenta('generating files...'))
-      const { question: writableQuestion, error: writableError } = await writeQuestion(question!)
+      const { question: writableQuestion, error: writableError } = await writeQuestion(question!, options)
       const { lines, errLines } = renderSingleQuestion({ question: writableQuestion, error: writableError })
       renderOutcomes(lines, errLines)
     }
@@ -109,8 +108,10 @@ export async function generateFromRandom(options: RandomOptions) {
   // ==== functions ====
   async function generateRandQuestions() {
     let randTag: InternalTag | undefined
+
     if (tag && !isUnknown(tag))
       randTag = (tag && findTag(tag)) || undefined
+
     if (!randTag) {
       const randTags = (category && !isUnknown(category) && findCategory(category)?.tagMap) || tags
       randTag = randTags[randRange(0, randTags.length)]

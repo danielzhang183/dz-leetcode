@@ -12,7 +12,7 @@ export interface FileOptions extends CommonOptions {
 }
 
 export interface CommandOptions extends CommonOptions {
-  identifier: string | string[]
+  identifier: QuestionIdentifier | QuestionIdentifier[]
 }
 
 export interface RandomOptions extends CommonOptions {

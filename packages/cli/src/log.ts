@@ -1,6 +1,5 @@
 import c from 'picocolors'
 import { MultiBar, Presets } from 'cli-progress'
-import type { RuntimeErrorLog } from 'dz-leetcode'
 import type { TableOptions } from './types'
 import { visualLength, visualPadEnd, visualPadStart } from './render'
 
@@ -97,21 +96,4 @@ export function wrapJoin(strs: string[], delimiter: string, width: number): stri
   }
   lines.push(line)
   return lines
-}
-
-export function printErrorLogs(logs: RuntimeErrorLog | RuntimeErrorLog[]) {
-  logs = Array.isArray(logs) ? logs : [logs]
-  if (!logs.length) {
-    console.log()
-    console.log(c.inverse(c.bold(c.green(' DZ LEETCODE '))) + c.green(' No generate errors found'))
-    return
-  }
-
-  console.error()
-  console.error(c.inverse(c.bold(c.red(' ERROR '))) + c.red(` ${logs.length} generate errors found`))
-  logs.forEach((log, idx) => {
-    console.error(c.yellow(`\n--- Error ${idx + 1} -------- ${c.gray(new Date(log.timestamp).toLocaleTimeString())} ---`))
-    console.log(log.error)
-  })
-  console.error()
 }
