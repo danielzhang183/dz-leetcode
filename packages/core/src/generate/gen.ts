@@ -55,7 +55,7 @@ export function genMarkdown(question: ResolvedQuestion, genPath = pathDoc): Gene
       .replaceAll(/<\/?pre>/g, '```')
       .replaceAll(/<strong\sclass=.*?>(.*?)\:<\/strong>/g, (_, $1) => `### ${$1}`)
       .replaceAll(/<\/?em>/g, '`')
-      .replaceAll(/\n<ul>\n|\n<\/ul>/g, '')
+      .replaceAll(/\n<[uo]l>\n|\n<\/[uo]l>/g, '')
       .replaceAll(/\s\s<li>(.*?)<\/li>/g, (_, $1) => `\n- ${$1}`)
 
     if (s.hasChanged())
