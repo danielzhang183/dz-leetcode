@@ -44,7 +44,6 @@ export async function generateFromFile(options: FileOptions) {
 }
 
 export async function generateCategories(options: FileOptions, callbacks: GenerateEventCallbacks) {
-  console.log({ generateCategories: options })
   if (!options.file) {
     renderOutcomes([], [c.red('Import file not found! Please pass `-f` option or config `file` option.')])
     return
@@ -55,8 +54,6 @@ export async function generateCategories(options: FileOptions, callbacks: Genera
     renderOutcomes([], [c.red(`load ${c.underline(options.file)} content error`)])
     return
   }
-
-  console.log({ categories, entries: Object.entries(categories) })
 
   const unresolvedCates: CategoryMeta[] = Object.entries(categories)
     // only check questions with more than one to supply
@@ -71,13 +68,10 @@ export async function generateCategories(options: FileOptions, callbacks: Genera
       errors: [],
     }))
 
-  console.log({ unresolvedCates })
-
   callbacks.afterCategoriesLoaded?.(unresolvedCates)
 
   const resolveCates = await Promise.all(
     unresolvedCates.map(async (unresolvedCate) => {
-      console.log({ unresolve: options })
       callbacks.beforeCategoryStart?.(unresolvedCate)
       const data = await resolveCategory(
         unresolvedCate,

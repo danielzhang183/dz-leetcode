@@ -3,6 +3,7 @@ import MagicString from 'magic-string'
 import type { GenerateOutcomes, ResolvedQuestion, WritableQuestions } from '../types'
 import { parse, readFile, stringify } from '../io'
 import { normalizeResolvedQuestion } from '../question'
+import { sortQuestions } from '../utils/sort'
 
 const root = process.cwd()
 const pathCode = join(root, './packages/code')
@@ -84,6 +85,7 @@ export async function genCatelog(question: ResolvedQuestion, genPath = pathDoc):
   const content = parse<WritableQuestions>(await readFile(path) || '') || { questions: [] }
   if (!content.questions.find(i => i.title === question.titleSlug))
     content.questions.push(normalizeResolvedQuestion(question))
+  content.questions = sortQuestions(content.questions, 'id-asc')
 
   return {
     type: 'category',
