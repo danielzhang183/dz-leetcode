@@ -1,18 +1,18 @@
 questions:
-  - name: Nim Game
-    title: nim-game
-    difficulty: Easy
-    id: 292
-    link: /algorithms/math/292
-    origin: https://leetcode.cn/problems/nim-game
-    tag: math
-    category: algorithms
   - name: 4Sum
     title: 4sum
     difficulty: Medium
     id: 18
     link: /algorithms/math/018
     origin: https://leetcode.cn/problems/4sum
+    tag: math
+    category: algorithms
+  - name: Nim Game
+    title: nim-game
+    difficulty: Easy
+    id: 292
+    link: /algorithms/math/292
+    origin: https://leetcode.cn/problems/nim-game
     tag: math
     category: algorithms
   - name: Power of Three

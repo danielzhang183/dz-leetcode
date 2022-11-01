@@ -1,10 +1,187 @@
 questions:
+  - name: Binary Tree Inorder Traversal
+    title: binary-tree-inorder-traversal
+    difficulty: Easy
+    id: 94
+    link: /structures/tree/094
+    origin: https://leetcode.cn/problems/binary-tree-inorder-traversal
+    tag: tree
+    category: structures
+  - name: Validate Binary Search Tree
+    title: validate-binary-search-tree
+    difficulty: Medium
+    id: 98
+    link: /structures/tree/098
+    origin: https://leetcode.cn/problems/validate-binary-search-tree
+    tag: tree
+    category: structures
+  - name: Recover Binary Search Tree
+    title: recover-binary-search-tree
+    difficulty: Medium
+    id: 99
+    link: /structures/tree/099
+    origin: https://leetcode.cn/problems/recover-binary-search-tree
+    tag: tree
+    category: structures
+  - name: Same Tree
+    title: same-tree
+    difficulty: Easy
+    id: 100
+    link: /structures/tree/100
+    origin: https://leetcode.cn/problems/same-tree
+    tag: tree
+    category: structures
+  - name: Symmetric Tree
+    title: symmetric-tree
+    difficulty: Easy
+    id: 101
+    link: /structures/tree/101
+    origin: https://leetcode.cn/problems/symmetric-tree
+    tag: tree
+    category: structures
+  - name: Binary Tree Level Order Traversal
+    title: binary-tree-level-order-traversal
+    difficulty: Medium
+    id: 102
+    link: /structures/tree/102
+    origin: https://leetcode.cn/problems/binary-tree-level-order-traversal
+    tag: tree
+    category: structures
+  - name: Maximum Depth of Binary Tree
+    title: maximum-depth-of-binary-tree
+    difficulty: Easy
+    id: 104
+    link: /structures/tree/104
+    origin: https://leetcode.cn/problems/maximum-depth-of-binary-tree
+    tag: tree
+    category: structures
+  - name: Binary Tree Level Order Traversal II
+    title: binary-tree-level-order-traversal-ii
+    difficulty: Medium
+    id: 107
+    link: /structures/tree/107
+    origin: https://leetcode.cn/problems/binary-tree-level-order-traversal-ii
+    tag: tree
+    category: structures
+  - name: Convert Sorted Array to Binary Search Tree
+    title: convert-sorted-array-to-binary-search-tree
+    difficulty: Easy
+    id: 108
+    link: /structures/tree/108
+    origin: https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree
+    tag: tree
+    category: structures
+  - name: Convert Sorted List to Binary Search Tree
+    title: convert-sorted-list-to-binary-search-tree
+    difficulty: Medium
+    id: 109
+    link: /structures/tree/109
+    origin: https://leetcode.cn/problems/convert-sorted-list-to-binary-search-tree
+    tag: tree
+    category: structures
+  - name: Balanced Binary Tree
+    title: balanced-binary-tree
+    difficulty: Easy
+    id: 110
+    link: /structures/tree/110
+    origin: https://leetcode.cn/problems/balanced-binary-tree
+    tag: tree
+    category: structures
+  - name: Minimum Depth of Binary Tree
+    title: minimum-depth-of-binary-tree
+    difficulty: Easy
+    id: 111
+    link: /structures/tree/111
+    origin: https://leetcode.cn/problems/minimum-depth-of-binary-tree
+    tag: tree
+    category: structures
+  - name: Path Sum
+    title: path-sum
+    difficulty: Easy
+    id: 112
+    link: /structures/tree/112
+    origin: https://leetcode.cn/problems/path-sum
+    tag: tree
+    category: structures
+  - name: Flatten Binary Tree to Linked List
+    title: flatten-binary-tree-to-linked-list
+    difficulty: Medium
+    id: 114
+    link: /structures/tree/114
+    origin: https://leetcode.cn/problems/flatten-binary-tree-to-linked-list
+    tag: tree
+    category: structures
+  - name: Populating Next Right Pointers in Each Node
+    title: populating-next-right-pointers-in-each-node
+    difficulty: Medium
+    id: 116
+    link: /structures/tree/116
+    origin: https://leetcode.cn/problems/populating-next-right-pointers-in-each-node
+    tag: tree
+    category: structures
+  - name: Populating Next Right Pointers in Each Node II
+    title: populating-next-right-pointers-in-each-node-ii
+    difficulty: Medium
+    id: 117
+    link: /structures/tree/117
+    origin: >-
+      https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii
+    tag: tree
+    category: structures
+  - name: Binary Tree Preorder Traversal
+    title: binary-tree-preorder-traversal
+    difficulty: Easy
+    id: 144
+    link: /structures/tree/144
+    origin: https://leetcode.cn/problems/binary-tree-preorder-traversal
+    tag: tree
+    category: structures
+  - name: Binary Tree Postorder Traversal
+    title: binary-tree-postorder-traversal
+    difficulty: Easy
+    id: 145
+    link: /structures/tree/145
+    origin: https://leetcode.cn/problems/binary-tree-postorder-traversal
+    tag: tree
+    category: structures
+  - name: Binary Tree Right Side View
+    title: binary-tree-right-side-view
+    difficulty: Medium
+    id: 199
+    link: /structures/tree/199
+    origin: https://leetcode.cn/problems/binary-tree-right-side-view
+    tag: tree
+    category: structures
+  - name: Count Complete Tree Nodes
+    title: count-complete-tree-nodes
+    difficulty: Medium
+    id: 222
+    link: /structures/tree/222
+    origin: https://leetcode.cn/problems/count-complete-tree-nodes
+    tag: tree
+    category: structures
   - name: Invert Binary Tree
     title: invert-binary-tree
     difficulty: Easy
     id: 226
     link: /structures/tree/226
     origin: https://leetcode.cn/problems/invert-binary-tree
+    tag: tree
+    category: structures
+  - name: Kth Smallest Element in a BST
+    title: kth-smallest-element-in-a-bst
+    difficulty: Medium
+    id: 230
+    link: /structures/tree/230
+    origin: https://leetcode.cn/problems/kth-smallest-element-in-a-bst
+    tag: tree
+    category: structures
+  - name: Lowest Common Ancestor of a Binary Tree
+    title: lowest-common-ancestor-of-a-binary-tree
+    difficulty: Medium
+    id: 236
+    link: /structures/tree/236
+    origin: https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree
     tag: tree
     category: structures
   - name: Binary Tree Paths
@@ -15,20 +192,44 @@ questions:
     origin: https://leetcode.cn/problems/binary-tree-paths
     tag: tree
     category: structures
-  - name: Binary Tree Inorder Traversal
-    title: binary-tree-inorder-traversal
+  - name: Sum of Left Leaves
+    title: sum-of-left-leaves
     difficulty: Easy
-    id: 94
-    link: /structures/tree/094
-    origin: https://leetcode.cn/problems/binary-tree-inorder-traversal
+    id: 404
+    link: /structures/tree/404
+    origin: https://leetcode.cn/problems/sum-of-left-leaves
     tag: tree
     category: structures
-  - name: N-ary Tree Level Order Traversal
-    title: n-ary-tree-level-order-traversal
+  - name: Find Largest Value in Each Tree Row
+    title: find-largest-value-in-each-tree-row
     difficulty: Medium
-    id: 764
-    link: /structures/tree/764
-    origin: https://leetcode.cn/problems/n-ary-tree-level-order-traversal
+    id: 515
+    link: /structures/tree/515
+    origin: https://leetcode.cn/problems/find-largest-value-in-each-tree-row
+    tag: tree
+    category: structures
+  - name: Diameter of Binary Tree
+    title: diameter-of-binary-tree
+    difficulty: Easy
+    id: 543
+    link: /structures/tree/543
+    origin: https://leetcode.cn/problems/diameter-of-binary-tree
+    tag: tree
+    category: structures
+  - name: Subtree of Another Tree
+    title: subtree-of-another-tree
+    difficulty: Easy
+    id: 572
+    link: /structures/tree/572
+    origin: https://leetcode.cn/problems/subtree-of-another-tree
+    tag: tree
+    category: structures
+  - name: Merge Two Binary Trees
+    title: merge-two-binary-trees
+    difficulty: Easy
+    id: 617
+    link: /structures/tree/617
+    origin: https://leetcode.cn/problems/merge-two-binary-trees
     tag: tree
     category: structures
   - name: Average of Levels in Binary Tree
@@ -39,11 +240,35 @@ questions:
     origin: https://leetcode.cn/problems/average-of-levels-in-binary-tree
     tag: tree
     category: structures
-  - name: Minimum Depth of Binary Tree
-    title: minimum-depth-of-binary-tree
+  - name: Maximum Binary Tree
+    title: maximum-binary-tree
+    difficulty: Medium
+    id: 654
+    link: /structures/tree/654
+    origin: https://leetcode.cn/problems/maximum-binary-tree
+    tag: tree
+    category: structures
+  - name: Search in a Binary Search Tree
+    title: search-in-a-binary-search-tree
     difficulty: Easy
-    id: 111
-    link: /structures/tree/111
-    origin: https://leetcode.cn/problems/minimum-depth-of-binary-tree
+    id: 700
+    link: /structures/tree/700
+    origin: https://leetcode.cn/problems/search-in-a-binary-search-tree
+    tag: tree
+    category: structures
+  - name: Insert into a Binary Search Tree
+    title: insert-into-a-binary-search-tree
+    difficulty: Medium
+    id: 701
+    link: /structures/tree/701
+    origin: https://leetcode.cn/problems/insert-into-a-binary-search-tree
+    tag: tree
+    category: structures
+  - name: N-ary Tree Level Order Traversal
+    title: n-ary-tree-level-order-traversal
+    difficulty: Medium
+    id: 764
+    link: /structures/tree/764
+    origin: https://leetcode.cn/problems/n-ary-tree-level-order-traversal
     tag: tree
     category: structures

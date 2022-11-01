@@ -1,10 +1,66 @@
 questions:
-  - name: Fibonacci Number
-    title: fibonacci-number
+  - name: Maximum Subarray
+    title: maximum-subarray
+    difficulty: Medium
+    id: 53
+    link: /algorithms/dynamic-programming/053
+    origin: https://leetcode.cn/problems/maximum-subarray
+    tag: dynamic-programming
+    category: algorithms
+  - name: Unique Paths
+    title: unique-paths
+    difficulty: Medium
+    id: 62
+    link: /algorithms/dynamic-programming/062
+    origin: https://leetcode.cn/problems/unique-paths
+    tag: dynamic-programming
+    category: algorithms
+  - name: Unique Paths II
+    title: unique-paths-ii
+    difficulty: Medium
+    id: 63
+    link: /algorithms/dynamic-programming/063
+    origin: https://leetcode.cn/problems/unique-paths-ii
+    tag: dynamic-programming
+    category: algorithms
+  - name: Climbing Stairs
+    title: climbing-stairs
     difficulty: Easy
-    id: 509
-    link: /algorithms/dynamic-programming/509
-    origin: https://leetcode.cn/problems/fibonacci-number
+    id: 70
+    link: /algorithms/dynamic-programming/070
+    origin: https://leetcode.cn/problems/climbing-stairs
+    tag: dynamic-programming
+    category: algorithms
+  - name: Edit Distance
+    title: edit-distance
+    difficulty: Hard
+    id: 72
+    link: /algorithms/dynamic-programming/072
+    origin: https://leetcode.cn/problems/edit-distance
+    tag: dynamic-programming
+    category: algorithms
+  - name: Distinct Subsequences
+    title: distinct-subsequences
+    difficulty: Hard
+    id: 115
+    link: /algorithms/dynamic-programming/115
+    origin: https://leetcode.cn/problems/distinct-subsequences
+    tag: dynamic-programming
+    category: algorithms
+  - name: Best Time to Buy and Sell Stock
+    title: best-time-to-buy-and-sell-stock
+    difficulty: Easy
+    id: 121
+    link: /algorithms/dynamic-programming/121
+    origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock
+    tag: dynamic-programming
+    category: algorithms
+  - name: Best Time to Buy and Sell Stock II
+    title: best-time-to-buy-and-sell-stock-ii
+    difficulty: Medium
+    id: 122
+    link: /algorithms/dynamic-programming/122
+    origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii
     tag: dynamic-programming
     category: algorithms
   - name: Best Time to Buy and Sell Stock III
@@ -15,11 +71,100 @@ questions:
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii
     tag: dynamic-programming
     category: algorithms
+  - name: House Robber
+    title: house-robber
+    difficulty: Medium
+    id: 198
+    link: /algorithms/dynamic-programming/198
+    origin: https://leetcode.cn/problems/house-robber
+    tag: dynamic-programming
+    category: algorithms
   - name: House Robber II
     title: house-robber-ii
     difficulty: Medium
     id: 213
     link: /algorithms/dynamic-programming/213
     origin: https://leetcode.cn/problems/house-robber-ii
+    tag: dynamic-programming
+    category: algorithms
+  - name: Coin Change
+    title: coin-change
+    difficulty: Medium
+    id: 322
+    link: /algorithms/dynamic-programming/322
+    origin: https://leetcode.cn/problems/coin-change
+    tag: dynamic-programming
+    category: algorithms
+  - name: House Robber III
+    title: house-robber-iii
+    difficulty: Medium
+    id: 337
+    link: /algorithms/dynamic-programming/337
+    origin: https://leetcode.cn/problems/house-robber-iii
+    tag: dynamic-programming
+    category: algorithms
+  - name: Is Subsequence
+    title: is-subsequence
+    difficulty: Easy
+    id: 392
+    link: /algorithms/dynamic-programming/392
+    origin: https://leetcode.cn/problems/is-subsequence
+    tag: dynamic-programming
+    category: algorithms
+  - name: Fibonacci Number
+    title: fibonacci-number
+    difficulty: Easy
+    id: 509
+    link: /algorithms/dynamic-programming/509
+    origin: https://leetcode.cn/problems/fibonacci-number
+    tag: dynamic-programming
+    category: algorithms
+  - name: Coin Change II
+    title: coin-change-ii
+    difficulty: Medium
+    id: 518
+    link: /algorithms/dynamic-programming/518
+    origin: https://leetcode.cn/problems/coin-change-ii
+    tag: dynamic-programming
+    category: algorithms
+  - name: Delete Operation for Two Strings
+    title: delete-operation-for-two-strings
+    difficulty: Medium
+    id: 583
+    link: /algorithms/dynamic-programming/583
+    origin: https://leetcode.cn/problems/delete-operation-for-two-strings
+    tag: dynamic-programming
+    category: algorithms
+  - name: Longest Continuous Increasing Subsequence
+    title: longest-continuous-increasing-subsequence
+    difficulty: Easy
+    id: 674
+    link: /algorithms/dynamic-programming/674
+    origin: https://leetcode.cn/problems/longest-continuous-increasing-subsequence
+    tag: dynamic-programming
+    category: algorithms
+  - name: Best Time to Buy and Sell Stock with Transaction Fee
+    title: best-time-to-buy-and-sell-stock-with-transaction-fee
+    difficulty: Medium
+    id: 714
+    link: /algorithms/dynamic-programming/714
+    origin: >-
+      https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee
+    tag: dynamic-programming
+    category: algorithms
+  - name: Min Cost Climbing Stairs
+    title: min-cost-climbing-stairs
+    difficulty: Easy
+    id: 746
+    link: /algorithms/dynamic-programming/746
+    origin: https://leetcode.cn/problems/min-cost-climbing-stairs
+    tag: dynamic-programming
+    category: algorithms
+  - name: Longest Common Subsequence
+    title: longest-common-subsequence
+    difficulty: Medium
+    id: 1143
+    link: /algorithms/dynamic-programming/1143
+    origin: https://leetcode.cn/problems/longest-common-subsequence
     tag: dynamic-programming
     category: algorithms

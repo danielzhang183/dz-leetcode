@@ -1,20 +1,4 @@
 questions:
-  - name: Jump Game
-    title: jump-game
-    difficulty: Medium
-    id: 55
-    link: /algorithms/greedy/055
-    origin: https://leetcode.cn/problems/jump-game
-    tag: greedy
-    category: algorithms
-  - name: Assign Cookies
-    title: assign-cookies
-    difficulty: Easy
-    id: 455
-    link: /algorithms/greedy/455
-    origin: https://leetcode.cn/problems/assign-cookies
-    tag: greedy
-    category: algorithms
   - name: Jump Game II
     title: jump-game-ii
     difficulty: Medium
@@ -23,12 +7,12 @@ questions:
     origin: https://leetcode.cn/problems/jump-game-ii
     tag: greedy
     category: algorithms
-  - name: Lemonade Change
-    title: lemonade-change
-    difficulty: Easy
-    id: 860
-    link: /algorithms/greedy/860
-    origin: https://leetcode.cn/problems/lemonade-change
+  - name: Jump Game
+    title: jump-game
+    difficulty: Medium
+    id: 55
+    link: /algorithms/greedy/055
+    origin: https://leetcode.cn/problems/jump-game
     tag: greedy
     category: algorithms
   - name: Longest Increasing Subsequence
@@ -55,12 +39,12 @@ questions:
     origin: https://leetcode.cn/problems/minimum-number-of-arrows-to-burst-balloons
     tag: greedy
     category: algorithms
-  - name: Dota2 Senate
-    title: dota2-senate
-    difficulty: Medium
-    id: 649
-    link: /algorithms/greedy/649
-    origin: https://leetcode.cn/problems/dota2-senate
+  - name: Assign Cookies
+    title: assign-cookies
+    difficulty: Easy
+    id: 455
+    link: /algorithms/greedy/455
+    origin: https://leetcode.cn/problems/assign-cookies
     tag: greedy
     category: algorithms
   - name: Task Scheduler
@@ -69,5 +53,21 @@ questions:
     id: 621
     link: /algorithms/greedy/621
     origin: https://leetcode.cn/problems/task-scheduler
+    tag: greedy
+    category: algorithms
+  - name: Dota2 Senate
+    title: dota2-senate
+    difficulty: Medium
+    id: 649
+    link: /algorithms/greedy/649
+    origin: https://leetcode.cn/problems/dota2-senate
+    tag: greedy
+    category: algorithms
+  - name: Lemonade Change
+    title: lemonade-change
+    difficulty: Easy
+    id: 860
+    link: /algorithms/greedy/860
+    origin: https://leetcode.cn/problems/lemonade-change
     tag: greedy
     category: algorithms

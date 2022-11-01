@@ -46,12 +46,12 @@ export async function writeQuestion<T extends CommonOptions>(question: ResolvedQ
     paths = {},
   } = options
 
-  const unresloveGens = [
+  const gens = [
     genMarkdown(question, paths.doc),
     genCatelog(question, paths.doc),
   ]
   if (!onlyDoc) {
-    unresloveGens.push(...[
+    gens.push(...[
       genCode(question, paths.code),
       genTestCase(question, paths.code),
     ])
@@ -59,10 +59,10 @@ export async function writeQuestion<T extends CommonOptions>(question: ResolvedQ
 
   try {
     // wait generate content is ready
-    const gens = await Promise.all(unresloveGens)
+    const resolvedGens = await Promise.all(gens)
     // write generate content to its relative file
     const outFiles = await Promise.all(
-      gens.map(async ({ outFile, content }) => {
+      resolvedGens.map(async ({ outFile, content }) => {
         await writeFile(outFile, content)
         return outFile
       }),

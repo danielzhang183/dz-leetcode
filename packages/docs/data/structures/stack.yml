@@ -1,4 +1,12 @@
 questions:
+  - name: Valid Parentheses
+    title: valid-parentheses
+    difficulty: Easy
+    id: 20
+    link: /structures/stack/020
+    origin: https://leetcode.cn/problems/valid-parentheses
+    tag: stack
+    category: structures
   - name: Simplify Path
     title: simplify-path
     difficulty: Medium
@@ -7,12 +15,12 @@ questions:
     origin: https://leetcode.cn/problems/simplify-path
     tag: stack
     category: structures
-  - name: Valid Parentheses
-    title: valid-parentheses
-    difficulty: Easy
-    id: 20
-    link: /structures/stack/020
-    origin: https://leetcode.cn/problems/valid-parentheses
+  - name: Evaluate Reverse Polish Notation
+    title: evaluate-reverse-polish-notation
+    difficulty: Medium
+    id: 150
+    link: /structures/stack/150
+    origin: https://leetcode.cn/problems/evaluate-reverse-polish-notation
     tag: stack
     category: structures
   - name: Reverse Words in a String
@@ -23,6 +31,14 @@ questions:
     origin: https://leetcode.cn/problems/reverse-words-in-a-string
     tag: stack
     category: structures
+  - name: Implement Stack using Queues
+    title: implement-stack-using-queues
+    difficulty: Easy
+    id: 225
+    link: /structures/stack/225
+    origin: https://leetcode.cn/problems/implement-stack-using-queues
+    tag: stack
+    category: structures
   - name: Implement Queue using Stacks
     title: implement-queue-using-stacks
     difficulty: Easy
@@ -31,11 +47,11 @@ questions:
     origin: https://leetcode.cn/problems/implement-queue-using-stacks
     tag: stack
     category: structures
-  - name: Evaluate Reverse Polish Notation
-    title: evaluate-reverse-polish-notation
-    difficulty: Medium
-    id: 150
-    link: /structures/stack/150
-    origin: https://leetcode.cn/problems/evaluate-reverse-polish-notation
+  - name: Remove All Adjacent Duplicates In String
+    title: remove-all-adjacent-duplicates-in-string
+    difficulty: Easy
+    id: 1047
+    link: /structures/stack/1047
+    origin: https://leetcode.cn/problems/remove-all-adjacent-duplicates-in-string
     tag: stack
     category: structures

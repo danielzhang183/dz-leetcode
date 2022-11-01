@@ -1,6 +1,7 @@
 import createDebug from 'debug'
 import { generate, isNumber } from 'dz-leetcode'
 import type { CommonOptions, GenerateOptions, ResolvedQuestion } from 'dz-leetcode'
+import pLimit from 'p-limit'
 import type { CategoryMeta, QuestionIdentifier, QuestionResolvedCallback, TagMap } from '../types'
 import { isUnknown } from '../utils'
 
@@ -70,10 +71,11 @@ export async function resolveQuestions(
 ) {
   const total = questions.length
   let progress = 0
+  const limit = pLimit(1)
 
   return Promise.all(
     questions
-      .map(async (identifier) => {
+      .map(async identifier => limit(async () => {
         debug.question(`resolving question ${identifier}`)
 
         const { question, error } = await resolveQuestion({ ...options, identifier })
@@ -83,7 +85,7 @@ export async function resolveQuestions(
           question,
           error,
         }
-      }),
+      })),
   )
 }
 
