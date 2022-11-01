@@ -25,7 +25,7 @@ export type QuestionIdentifier = string | number
 export type TagMap = Record<string, QuestionIdentifier[]>
 
 export interface CategoryMeta {
-  category: string
+  name: string
   tagMap: TagMap
   questions: QuestionIdentifier[]
   resolved: ResolvedQuestion[]

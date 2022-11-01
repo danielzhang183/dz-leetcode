@@ -19,7 +19,7 @@ export async function resolveCategory(
   debug.category(`resolving category ${category}`)
 
   const { questions, errors } = await resolveTags(
-    category.category,
+    category.name,
     category.tagMap,
     options,
     progress,
@@ -34,22 +34,25 @@ export async function resolveTags(
   category: string,
   tagMap: TagMap,
   options: CommonOptions,
-  progress?: QuestionResolvedCallback,
+  progressCallback?: QuestionResolvedCallback,
 ) {
   const errors: any[] = []
   const questions: ResolvedQuestion[] = []
   const tags = Object.keys(tagMap)
+  let counter = 0
 
   for (const tag of tags) {
     debug.tag(`resloving tag ${tag}`)
 
     options.category = category
     options.tag = tag
-    const data = await resolveQuestions(
+    const { data, progress } = await resolveQuestions(
       tagMap[tag],
       options,
-      progress,
+      progressCallback,
+      counter,
     )
+    counter = progress
     for (const { question, error } of data) {
       if (question)
         questions.push(question)
@@ -68,25 +71,26 @@ export async function resolveQuestions(
   questions: QuestionIdentifier[],
   options: CommonOptions,
   progressCallback?: QuestionResolvedCallback,
+  counter = 0,
 ) {
   const total = questions.length
-  let progress = 0
   const limit = pLimit(1)
 
-  return Promise.all(
-    questions
-      .map(async identifier => limit(async () => {
-        debug.question(`resolving question ${identifier}`)
+  const data = await Promise.all(
+    questions.map(identifier => limit(async (identifier) => {
+      debug.question(`resolving question ${identifier}`)
 
-        const { question, error } = await resolveQuestion({ ...options, identifier })
-        progress += 1
-        progressCallback?.(question?.titleSlug || String(identifier), progress, total)
-        return {
-          question,
-          error,
-        }
-      })),
+      const { question, error } = await resolveQuestion({ ...options, identifier })
+      counter += 1
+      progressCallback?.(question?.titleSlug || String(identifier), counter, total)
+      return {
+        question,
+        error,
+      }
+    }, identifier)),
   )
+
+  return { data, progress: counter }
 }
 
 export function resolveQuestion<T extends CommonOptions & { write?: boolean }>(options: T) {

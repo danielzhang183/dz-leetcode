@@ -17,10 +17,10 @@ export function renderCategories(resolveCategories: CategoryMeta[]) {
   return { lines, errLines }
 }
 
-export function renderCategory(cate: CategoryMeta) {
+export function renderCategory(category: CategoryMeta) {
   const lines: string[] = []
   const errLines: string[] = []
-  const { resolved, tagMap, category } = cate
+  const { resolved, tagMap, name } = category
 
   const tags: Record<string, ResolvedQuestion[]> = {}
   for (const question of resolved) {
@@ -40,7 +40,7 @@ export function renderCategory(cate: CategoryMeta) {
     ].join(', ')
     lines.push(
       '',
-      `${c.blue(`${isUnknown(category) ? questions[0].category : category} > ${tag}`)} ${c.dim('-')} ${tip}`,
+      `${c.blue(`${isUnknown(name) ? questions[0].category : name} > ${tag}`)} ${c.dim('-')} ${tip}`,
       '',
     )
 
@@ -53,7 +53,7 @@ export function renderCategory(cate: CategoryMeta) {
   })
   lines.push('')
 
-  const errors = cate.errors
+  const errors = category.errors
   if (errors.length) {
     lines.push()
     for (const error of errors)

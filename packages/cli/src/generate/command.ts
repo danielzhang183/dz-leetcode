@@ -60,21 +60,21 @@ export async function generateCategory(options: CommandOptions, callbacks: Gener
   } = options
 
   const questions = identifier as string[]
-  const unresolvedCate: CategoryMeta = {
-    category,
+  const cate: CategoryMeta = {
+    name: category,
     tagMap: { [tag]: questions },
     questions,
     errors: [],
     resolved: [],
   }
 
-  callbacks.beforeCategoryStart?.(unresolvedCate)
-  const resloveCate = await resolveCategory(
-    unresolvedCate,
+  callbacks.beforeCategoryStart?.(cate)
+  const reslovedCategory = await resolveCategory(
+    cate,
     options,
     callbacks.onQuestionResolved,
   )
-  callbacks.beforeCategoryStart?.(unresolvedCate)
+  callbacks.beforeCategoryStart?.(cate)
 
-  return resloveCate
+  return reslovedCategory
 }

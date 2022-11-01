@@ -11,18 +11,18 @@ export async function generateFromFile(options: FileOptions) {
   let categoriesBar: SingleBar | undefined
   const questionBar = bars.create(1, 0)
 
-  const resolveCates = await generateCategories(options, {
+  const resolvedCategories = await generateCategories(options, {
     afterCategoriesLoaded(categories) {
       categoriesBar = categories.length
         ? bars.create(
           categories.length,
           0,
-          { type: c.green('categories'), name: c.cyan(categories[0].category) },
+          { type: c.green('categories'), name: c.cyan(categories[0].name) },
         )
         : undefined
     },
     beforeCategoryStart(category) {
-      categoriesBar?.increment(0, { name: c.cyan(category.category) })
+      categoriesBar?.increment(0, { name: c.cyan(category.name) })
       questionBar?.start(category.questions.length, 0, { type: c.green('question') })
     },
     afterCategoryEnd() {
@@ -36,10 +36,10 @@ export async function generateFromFile(options: FileOptions) {
 
   bars.stop()
 
-  if (!resolveCates)
+  if (!resolvedCategories)
     return
 
-  const { lines, errLines } = renderCategories(resolveCates)
+  const { lines, errLines } = renderCategories(resolvedCategories)
   renderOutcomes(lines, errLines)
 }
 
@@ -49,41 +49,41 @@ export async function generateCategories(options: FileOptions, callbacks: Genera
     return
   }
 
-  const categories = await loadCategories(options.file)
-  if (!categories) {
+  const loadedCategories = await loadCategories(options.file)
+  if (!loadedCategories) {
     renderOutcomes([], [c.red(`load ${c.underline(options.file)} content error`)])
     return
   }
 
-  const unresolvedCates: CategoryMeta[] = Object.entries(categories)
+  const categories: CategoryMeta[] = Object.entries(loadedCategories)
     // only check questions with more than one to supply
     .filter(i => Object.keys(i[1]).length > 0)
     // sort by the number of questions
     .sort((a, b) => Object.keys(b[1]).length - Object.keys(a[1]).length)
-    .map(([category, tagMap]) => ({
-      category,
+    .map(([name, tagMap]) => ({
+      name,
       tagMap,
       questions: Object.values(tagMap).flat(1),
       resolved: [],
       errors: [],
     }))
 
-  callbacks.afterCategoriesLoaded?.(unresolvedCates)
+  callbacks.afterCategoriesLoaded?.(categories)
 
-  const resolveCates = await Promise.all(
-    unresolvedCates.map(async (unresolvedCate) => {
-      callbacks.beforeCategoryStart?.(unresolvedCate)
+  const resolvedCategories = await Promise.all(
+    categories.map(async (category) => {
+      callbacks.beforeCategoryStart?.(category)
       const data = await resolveCategory(
-        unresolvedCate,
+        category,
         options,
         callbacks.onQuestionResolved,
       )
-      callbacks.afterCategoryEnd?.(unresolvedCate)
+      callbacks.afterCategoryEnd?.(category)
       return data
     }),
   )
 
-  callbacks.afterCategoriesEnd?.(resolveCates)
+  callbacks.afterCategoriesEnd?.(resolvedCategories)
 
-  return resolveCates
+  return resolvedCategories
 }
