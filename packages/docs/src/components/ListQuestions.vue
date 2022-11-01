@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Category, Tag } from '~/types'
-import { easy, getTagQuestions, hard, medium } from '~/logics'
+import { easy, getDifficultyColor, getTagQuestions, hard, medium } from '~/logics'
 
 const props = defineProps<{
   module: Category
@@ -15,7 +15,9 @@ const difficulty = computed(() => Object.entries({
 
 const questions = computed(() => {
   const questions = getTagQuestions(props.module, props.tag)
-  return difficulty.value.length ? questions.filter(i => difficulty.value.includes(i.difficulty)) : questions
+  return difficulty.value.length
+    ? questions.filter(i => difficulty.value.includes(i.difficulty.toLowerCase()))
+    : questions
 })
 </script>
 
@@ -31,13 +33,13 @@ const questions = computed(() => {
       :title="item.name"
     >
       <div class="pt-2 pr-5">
-        <div class="text-3xl opacity-50" i-carbon-3d-curve-auto-colon />
+        <QuestionNo :no="item.id" />
       </div>
       <div class="flex-auto">
         <div cla ss="text-normal">{{ item.name }}</div>
-        <div class="flex gap-2 desc text-sm opacity-50 font-normal">
-          <div v-text="item.difficulty" />
-          <a v-if="item.origin" :href="item.origin">view source</a>
+        <div class="flex desc text-sm font-normal">
+          <div class="w-68px" :style="getDifficultyColor(item.difficulty)" v-text="item.difficulty" />
+          <a v-if="item.origin" opacity-50 :href="item.origin">view source</a>
         </div>
       </div>
     </a>

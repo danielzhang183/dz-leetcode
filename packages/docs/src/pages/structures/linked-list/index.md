@@ -6,6 +6,6 @@ description: List of questions that I am aware of
 plum: true
 ---
 
-<SubNav module="structure" />
+<SubNav module="structures" />
 
-<ListQuestions module="structure" tag="linked-list" />
+<ListQuestions module="structures" tag="linked-list" />

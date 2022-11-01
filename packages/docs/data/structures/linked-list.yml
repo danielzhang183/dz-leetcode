@@ -1,0 +1,89 @@
+questions:
+  - name: Reverse Linked List
+    title: reverse-linked-list
+    difficulty: Easy
+    id: 206
+    link: /structures/linked-list/206
+    origin: https://leetcode.cn/problems/reverse-linked-list
+    tag: linked-list
+    category: structures
+  - name: Linked List Cycle II
+    title: linked-list-cycle-ii
+    difficulty: Medium
+    id: 142
+    link: /structures/linked-list/142
+    origin: https://leetcode.cn/problems/linked-list-cycle-ii
+    tag: linked-list
+    category: structures
+  - name: Palindrome Linked List
+    title: palindrome-linked-list
+    difficulty: Easy
+    id: 234
+    link: /structures/linked-list/234
+    origin: https://leetcode.cn/problems/palindrome-linked-list
+    tag: linked-list
+    category: structures
+  - name: LRU Cache
+    title: lru-cache
+    difficulty: Medium
+    id: 146
+    link: /structures/linked-list/146
+    origin: https://leetcode.cn/problems/lru-cache
+    tag: linked-list
+    category: structures
+  - name: Linked List Cycle
+    title: linked-list-cycle
+    difficulty: Easy
+    id: 141
+    link: /structures/linked-list/141
+    origin: https://leetcode.cn/problems/linked-list-cycle
+    tag: linked-list
+    category: structures
+  - name: Reverse Linked List II
+    title: reverse-linked-list-ii
+    difficulty: Medium
+    id: 92
+    link: /structures/linked-list/092
+    origin: https://leetcode.cn/problems/reverse-linked-list-ii
+    tag: linked-list
+    category: structures
+  - name: Middle of the Linked List
+    title: middle-of-the-linked-list
+    difficulty: Easy
+    id: 876
+    link: /structures/linked-list/876
+    origin: https://leetcode.cn/problems/middle-of-the-linked-list
+    tag: linked-list
+    category: structures
+  - name: Intersection of Two Linked Lists
+    title: intersection-of-two-linked-lists
+    difficulty: Easy
+    id: 160
+    link: /structures/linked-list/160
+    origin: https://leetcode.cn/problems/intersection-of-two-linked-lists
+    tag: linked-list
+    category: structures
+  - name: Merge Two Sorted Lists
+    title: merge-two-sorted-lists
+    difficulty: Easy
+    id: 21
+    link: /structures/linked-list/021
+    origin: https://leetcode.cn/problems/merge-two-sorted-lists
+    tag: linked-list
+    category: structures
+  - name: Remove Linked List Elements
+    title: remove-linked-list-elements
+    difficulty: Easy
+    id: 203
+    link: /structures/linked-list/203
+    origin: https://leetcode.cn/problems/remove-linked-list-elements
+    tag: linked-list
+    category: structures
+  - name: Remove Nth Node From End of List
+    title: remove-nth-node-from-end-of-list
+    difficulty: Medium
+    id: 19
+    link: /structures/linked-list/019
+    origin: https://leetcode.cn/problems/remove-nth-node-from-end-of-list
+    tag: linked-list
+    category: structures

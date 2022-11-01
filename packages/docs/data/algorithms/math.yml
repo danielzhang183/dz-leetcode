@@ -1,0 +1,33 @@
+questions:
+  - name: Nim Game
+    title: nim-game
+    difficulty: Easy
+    id: 292
+    link: /algorithms/math/292
+    origin: https://leetcode.cn/problems/nim-game
+    tag: math
+    category: algorithms
+  - name: 4Sum
+    title: 4sum
+    difficulty: Medium
+    id: 18
+    link: /algorithms/math/018
+    origin: https://leetcode.cn/problems/4sum
+    tag: math
+    category: algorithms
+  - name: Power of Three
+    title: power-of-three
+    difficulty: Easy
+    id: 326
+    link: /algorithms/math/326
+    origin: https://leetcode.cn/problems/power-of-three
+    tag: math
+    category: algorithms
+  - name: Stone Game
+    title: stone-game
+    difficulty: Medium
+    id: 877
+    link: /algorithms/math/877
+    origin: https://leetcode.cn/problems/stone-game
+    tag: math
+    category: algorithms

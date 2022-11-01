@@ -14,22 +14,22 @@ export interface Post {
 }
 
 export type Category =
-  | 'algorithm'
-  | 'structure'
+  | 'algorithms'
+  | 'structures'
   | 'interview'
   | 'design'
 
 export type AlgorithmTag =
-  | 'back-tracking' | 'bt'
-  | 'binary-search' | 'bs'
-  | 'dynamic-programming' | 'dp'
+  | 'back-tracking'
+  | 'binary-search'
+  | 'dynamic-programming'
   | 'greedy'
   | 'math'
   | 'sort'
 
 export type StructureTag =
-  | 'hash-table' | 'ht'
-  | 'linked-list' | 'll'
+  | 'hash-table'
+  | 'linked-list'
   | 'array'
   | 'heap'
   | 'queue'

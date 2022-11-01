@@ -4,14 +4,13 @@ import { easy, getNavs, hard, medium } from '~/logics'
 
 const props = defineProps<{
   module: Category
-  navs: SubNav[]
 }>()
 
 const inactiveStyle = 'opacity-20 hover:opacity-50'
 
 const route = useRoute()
 
-const navs = props.navs || getNavs(props.module)
+const navs: SubNav[] = getNavs(props.module)
 </script>
 
 <template>
@@ -33,7 +32,7 @@ const navs = props.navs || getNavs(props.module)
       </button>
     </div>
 
-    <div mb-0 flex="~ gap2 sm:gap3 wrap" text-xl sm:text-3xl>
+    <div mb-0 flex="~ gap4 sm:gap3 wrap" text-xl sm:text-3xl>
       <router-link
         v-for="item in navs"
         :key="item.name"

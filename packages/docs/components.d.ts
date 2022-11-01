@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     Plum: typeof import('./src/components/Plum.vue')['default']
     Post: typeof import('./src/components/Post.vue')['default']
+    QuestionNo: typeof import('./src/components/QuestionNo.vue')['default']
     RiMoonLine: typeof import('~icons/ri/moon-line')['default']
     RiSunLine: typeof import('~icons/ri/sun-line')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

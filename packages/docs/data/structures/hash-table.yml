@@ -1,0 +1,25 @@
+questions:
+  - name: Valid Anagram
+    title: valid-anagram
+    difficulty: Easy
+    id: 242
+    link: /structures/hash-table/242
+    origin: https://leetcode.cn/problems/valid-anagram
+    tag: hash-table
+    category: structures
+  - name: Ransom Note
+    title: ransom-note
+    difficulty: Easy
+    id: 383
+    link: /structures/hash-table/383
+    origin: https://leetcode.cn/problems/ransom-note
+    tag: hash-table
+    category: structures
+  - name: Happy Number
+    title: happy-number
+    difficulty: Easy
+    id: 202
+    link: /structures/hash-table/202
+    origin: https://leetcode.cn/problems/happy-number
+    tag: hash-table
+    category: structures

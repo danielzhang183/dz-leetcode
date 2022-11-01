@@ -15,12 +15,12 @@ import { isDark } from '~/logics'
     <nav class="nav">
       <div class="spacer" />
       <div class="right">
-        <router-link to="/structure" title="Blog">
-          <span class="lt-md:hidden">Structure</span>
+        <router-link to="/structures" title="Blog">
+          <span class="lt-md:hidden">Structures</span>
           <div i-ri-article-line md:hidden />
         </router-link>
-        <router-link to="/algorithm" title="Projects">
-          <span class="lt-md:hidden">Algorithm</span>
+        <router-link to="/algorithms" title="Projects">
+          <span class="lt-md:hidden">Algorithms</span>
           <div i-ri-lightbulb-line md:hidden />
         </router-link>
         <router-link to="/design" title="Design">

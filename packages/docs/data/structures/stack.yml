@@ -1,0 +1,41 @@
+questions:
+  - name: Simplify Path
+    title: simplify-path
+    difficulty: Medium
+    id: 71
+    link: /structures/stack/071
+    origin: https://leetcode.cn/problems/simplify-path
+    tag: stack
+    category: structures
+  - name: Valid Parentheses
+    title: valid-parentheses
+    difficulty: Easy
+    id: 20
+    link: /structures/stack/020
+    origin: https://leetcode.cn/problems/valid-parentheses
+    tag: stack
+    category: structures
+  - name: Reverse Words in a String
+    title: reverse-words-in-a-string
+    difficulty: Medium
+    id: 151
+    link: /structures/stack/151
+    origin: https://leetcode.cn/problems/reverse-words-in-a-string
+    tag: stack
+    category: structures
+  - name: Implement Queue using Stacks
+    title: implement-queue-using-stacks
+    difficulty: Easy
+    id: 232
+    link: /structures/stack/232
+    origin: https://leetcode.cn/problems/implement-queue-using-stacks
+    tag: stack
+    category: structures
+  - name: Evaluate Reverse Polish Notation
+    title: evaluate-reverse-polish-notation
+    difficulty: Medium
+    id: 150
+    link: /structures/stack/150
+    origin: https://leetcode.cn/problems/evaluate-reverse-polish-notation
+    tag: stack
+    category: structures

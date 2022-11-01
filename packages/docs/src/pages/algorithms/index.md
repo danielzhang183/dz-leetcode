@@ -6,4 +6,4 @@ description: List of questions that I am aware of
 plum: true
 ---
 
-<ListAllQuestions module="algorithm" />
+<ListAllQuestions module="algorithms" />

@@ -1,0 +1,33 @@
+questions:
+  - name: Search Insert Position
+    title: search-insert-position
+    difficulty: Easy
+    id: 35
+    link: /algorithms/binary-search/035
+    origin: https://leetcode.cn/problems/search-insert-position
+    tag: binary-search
+    category: algorithms
+  - name: Binary Search
+    title: binary-search
+    difficulty: Easy
+    id: 704
+    link: /algorithms/binary-search/704
+    origin: https://leetcode.cn/problems/binary-search
+    tag: binary-search
+    category: algorithms
+  - name: Find Minimum in Rotated Sorted Array
+    title: find-minimum-in-rotated-sorted-array
+    difficulty: Medium
+    id: 153
+    link: /algorithms/binary-search/153
+    origin: https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array
+    tag: binary-search
+    category: algorithms
+  - name: Sqrt(x)
+    title: sqrtx
+    difficulty: Easy
+    id: 69
+    link: /algorithms/binary-search/069
+    origin: https://leetcode.cn/problems/sqrtx
+    tag: binary-search
+    category: algorithms

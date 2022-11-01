@@ -12,6 +12,9 @@
     "release": "bumpp --commit --push --tag && pnpm publish",
     "typecheck": "vue-tsc --noEmit"
   },
+  "dependencies": {
+    "dz-leetcode": "^0.0.0"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
     "@antfu/ni": "^0.18.2",
@@ -30,8 +33,5 @@
     "vite": "^3.1.8",
     "vitest": "^0.23.4",
     "vue-tsc": "^1.0.8"
-  },
-  "dependencies": {
-    "dz-leetcode": "^0.0.0"
   }
 }

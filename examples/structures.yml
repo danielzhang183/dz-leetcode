@@ -1,0 +1,89 @@
+questions:
+  - category: structures
+    tag: array
+    questions:
+      - 1
+      - 26
+      - 27
+      - 125
+      - 167
+      - 209
+      - 283
+      - 344
+      - 349
+      - 977
+  - category: structures
+    tag: linked-list
+    questions:
+      - 19
+      - 21
+      - 92
+      - 141
+      - 142
+      - 146
+      - 160
+      - 203
+      - 206
+      - 234
+      - 876
+      - 707
+  - category: structures
+    tag: tree
+    questions:
+      - 94
+      - 98
+      - 99
+      - 100
+      - 101
+      - 102
+      - 104
+      - 107
+      - 108
+      - 109
+      - 110
+      - 111
+      - 112
+      - 114
+      - 116
+      - 117
+      - 144
+      - 145
+      - 199
+      - 222
+      - 226
+      - 230
+      - 236
+      - 257
+      - 404
+      - 429
+      - 515
+      - 543
+      - 572
+      - 617
+      - 637
+      - 654
+      - 700
+      - 701
+  - category: structures
+    tag: stack
+    questions:
+      - 20
+      - 71
+      - 150
+      - 151
+      - 225
+      - 232
+      - 1047
+  - category: structures
+    tag: heap
+    questions:
+      - 215
+      - 295
+      - 347
+      - 502
+  - category: structures
+    tag: hash-table
+    questions:
+      - 202
+      - 242
+      - 383

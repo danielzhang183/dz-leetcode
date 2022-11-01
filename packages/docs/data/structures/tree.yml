@@ -1,0 +1,49 @@
+questions:
+  - name: Invert Binary Tree
+    title: invert-binary-tree
+    difficulty: Easy
+    id: 226
+    link: /structures/tree/226
+    origin: https://leetcode.cn/problems/invert-binary-tree
+    tag: tree
+    category: structures
+  - name: Binary Tree Paths
+    title: binary-tree-paths
+    difficulty: Easy
+    id: 257
+    link: /structures/tree/257
+    origin: https://leetcode.cn/problems/binary-tree-paths
+    tag: tree
+    category: structures
+  - name: Binary Tree Inorder Traversal
+    title: binary-tree-inorder-traversal
+    difficulty: Easy
+    id: 94
+    link: /structures/tree/094
+    origin: https://leetcode.cn/problems/binary-tree-inorder-traversal
+    tag: tree
+    category: structures
+  - name: N-ary Tree Level Order Traversal
+    title: n-ary-tree-level-order-traversal
+    difficulty: Medium
+    id: 764
+    link: /structures/tree/764
+    origin: https://leetcode.cn/problems/n-ary-tree-level-order-traversal
+    tag: tree
+    category: structures
+  - name: Average of Levels in Binary Tree
+    title: average-of-levels-in-binary-tree
+    difficulty: Easy
+    id: 637
+    link: /structures/tree/637
+    origin: https://leetcode.cn/problems/average-of-levels-in-binary-tree
+    tag: tree
+    category: structures
+  - name: Minimum Depth of Binary Tree
+    title: minimum-depth-of-binary-tree
+    difficulty: Easy
+    id: 111
+    link: /structures/tree/111
+    origin: https://leetcode.cn/problems/minimum-depth-of-binary-tree
+    tag: tree
+    category: structures

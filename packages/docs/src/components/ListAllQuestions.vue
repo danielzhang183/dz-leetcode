@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import type { Category } from '~/types'
-import { getModuleQuestions } from '~/logics'
+import { getDifficultyColor, getModuleQuestions } from '~/logics'
 
 const props = defineProps<{
   module: Category
 }>()
+
 const questions = getModuleQuestions(props.module)
 </script>
 
 <template>
   <template v-for="key in Object.keys(questions)" :key="key">
     <h4 class="mt-10 font-bold">
-      <a :href="`/${key}`">{{ key }}</a>
+      <a :href="`/${module}/${key}`">{{ key }}</a>
     </h4>
     <div class="project-grid py-2 -mx-3 gap-2">
       <a
@@ -24,11 +25,14 @@ const questions = getModuleQuestions(props.module)
         :title="item.name"
       >
         <div class="pt-2 pr-5">
-          <div class="text-3xl opacity-50" i-carbon-3d-curve-auto-colon />
+          <QuestionNo :no="item.id" />
         </div>
         <div class="flex-auto">
-          <div cla ss="text-normal">{{ item.name }}</div>
-          <div class="desc text-sm opacity-50 font-normal" v-html="item.difficulty" />
+          <div class="text-normal">{{ item.name }}</div>
+          <div class="flex desc text-sm font-normal">
+            <div class="w-68px" :style="getDifficultyColor(item.difficulty)" v-text="item.difficulty" />
+            <a v-if="item.origin" opacity-50 :href="item.origin">view source</a>
+          </div>
         </div>
       </a>
     </div>

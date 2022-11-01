@@ -1,0 +1,25 @@
+questions:
+  - name: Find Median from Data Stream
+    title: find-median-from-data-stream
+    difficulty: Hard
+    id: 295
+    link: /structures/heap/295
+    origin: https://leetcode.cn/problems/find-median-from-data-stream
+    tag: heap
+    category: structures
+  - name: Top K Frequent Elements
+    title: top-k-frequent-elements
+    difficulty: Medium
+    id: 347
+    link: /structures/heap/347
+    origin: https://leetcode.cn/problems/top-k-frequent-elements
+    tag: heap
+    category: structures
+  - name: Kth Largest Element in an Array
+    title: kth-largest-element-in-an-array
+    difficulty: Medium
+    id: 215
+    link: /structures/heap/215
+    origin: https://leetcode.cn/problems/kth-largest-element-in-an-array
+    tag: heap
+    category: structures

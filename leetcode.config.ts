@@ -6,7 +6,7 @@ export default defineConfig({
     'javascript',
   ],
   onlyDoc: false,
-  file: 'examples/structures.yml',
+  file: 'examples/hash.yml',
   // category: 'algorithms',
   // tag: 'array',
   // interactive: false,

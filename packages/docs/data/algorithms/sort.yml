@@ -1,0 +1,17 @@
+questions:
+  - name: Sort an Array
+    title: sort-an-array
+    difficulty: Medium
+    id: 912
+    link: /algorithms/sort/912
+    origin: https://leetcode.cn/problems/sort-an-array
+    tag: sort
+    category: algorithms
+  - name: 3Sum
+    title: 3sum
+    difficulty: Medium
+    id: 15
+    link: /algorithms/sort/015
+    origin: https://leetcode.cn/problems/3sum
+    tag: sort
+    category: algorithms

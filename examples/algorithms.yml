@@ -2,69 +2,69 @@ questions:
   - category: algorithms
     tag: sort
     questions:
-    - 15
-    - 912
+      - 15
+      - 912
   - category: algorithms
     tag: binary-search
     questions:
-    - 35
-    - 69
-    - 153
-    - 704
+      - 35
+      - 69
+      - 153
+      - 704
   - category: algorithms
     tag: back-tracking
     questions:
-    - 17
-    - 37
-    - 39
-    - 46
-    - 47
-    - 51
-    - 77
-    - 78
-    - 79
-    - 93
-    - 131
+      - 17
+      - 37
+      - 39
+      - 46
+      - 47
+      - 51
+      - 77
+      - 78
+      - 79
+      - 93
+      - 131
   - category: algorithms
     tag: greedy
     questions:
-    - 55
-    - 45
-    - 300
-    - 455
-    - 860
-    - 452
-    - 435
-    - 621
-    - 649
+      - 45
+      - 55
+      - 300
+      - 435
+      - 452
+      - 455
+      - 621
+      - 649
+      - 860
   - category: algorithms
     tag: dynamic-programming
     questions:
-    - 53
-    - 62
-    - 63
-    - 70
-    - 72
-    - 115
-    - 121
-    - 122
-    - 123
-    - 198
-    - 213
-    - 322
-    - 337
-    - 392
-    - 509
-    - 714
-    - 746
-    - 518
-    - 583
-    - 674
-    - 1143
+      - 53
+      - 62
+      - 63
+      - 70
+      - 72
+      - 115
+      - 121
+      - 122
+      - 123
+      - 198
+      - 213
+      - 322
+      - 337
+      - 392
+      - 509
+      - 518
+      - 583
+      - 674
+      - 714
+      - 746
+      - 1143
   - category: algorithms
     tag: math
     questions:
-    - 18
-    - 292
-    - 326
-    - 877
+      - 18
+      - 292
+      - 326
+      - 877

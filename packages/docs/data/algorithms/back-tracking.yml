@@ -1,0 +1,73 @@
+questions:
+  - name: Sudoku Solver
+    title: sudoku-solver
+    difficulty: Hard
+    id: 37
+    link: /algorithms/back-tracking/037
+    origin: https://leetcode.cn/problems/sudoku-solver
+    tag: back-tracking
+    category: algorithms
+  - name: Subsets
+    title: subsets
+    difficulty: Medium
+    id: 78
+    link: /algorithms/back-tracking/078
+    origin: https://leetcode.cn/problems/subsets
+    tag: back-tracking
+    category: algorithms
+  - name: Permutations
+    title: permutations
+    difficulty: Medium
+    id: 46
+    link: /algorithms/back-tracking/046
+    origin: https://leetcode.cn/problems/permutations
+    tag: back-tracking
+    category: algorithms
+  - name: Restore IP Addresses
+    title: restore-ip-addresses
+    difficulty: Medium
+    id: 93
+    link: /algorithms/back-tracking/093
+    origin: https://leetcode.cn/problems/restore-ip-addresses
+    tag: back-tracking
+    category: algorithms
+  - name: Palindrome Partitioning
+    title: palindrome-partitioning
+    difficulty: Medium
+    id: 131
+    link: /algorithms/back-tracking/131
+    origin: https://leetcode.cn/problems/palindrome-partitioning
+    tag: back-tracking
+    category: algorithms
+  - name: Permutations II
+    title: permutations-ii
+    difficulty: Medium
+    id: 47
+    link: /algorithms/back-tracking/047
+    origin: https://leetcode.cn/problems/permutations-ii
+    tag: back-tracking
+    category: algorithms
+  - name: Letter Combinations of a Phone Number
+    title: letter-combinations-of-a-phone-number
+    difficulty: Medium
+    id: 17
+    link: /algorithms/back-tracking/017
+    origin: https://leetcode.cn/problems/letter-combinations-of-a-phone-number
+    tag: back-tracking
+    category: algorithms
+  - name: N-Queens
+    title: n-queens
+    difficulty: Hard
+    id: 51
+    link: /algorithms/back-tracking/051
+    origin: https://leetcode.cn/problems/n-queens
+    tag: back-tracking
+    category: algorithms
+  - name: Combination Sum
+    title: combination-sum
+    difficulty: Medium
+    id: 39
+    link: /algorithms/back-tracking/039
+    origin: https://leetcode.cn/problems/combination-sum
+    tag: back-tracking
+    category: algorithms

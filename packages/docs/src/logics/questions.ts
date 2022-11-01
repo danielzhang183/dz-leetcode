@@ -1,4 +1,6 @@
 import { load } from 'js-yaml'
+import { sortQuestions } from './sort'
+import { capitalize, simplize } from './index'
 import type { Category, Question, SubNav, Tag } from '~/types'
 
 const genRE = (module: Category) => new RegExp(`..\/..\/data\/${module}\/(.*?).yml`, 'i')
@@ -11,8 +13,8 @@ export function getNavs(module: Category): SubNav[] {
     .map((key) => {
       const nav = key.match(re)![1]
       return {
-        name: nav,
-        link: `/${nav}`,
+        name: simplize(capitalize(nav)),
+        link: `/${module}/${nav}`,
       }
     })
 }
@@ -24,7 +26,7 @@ export function getModuleQuestions(module: Category): Record<string, Question[]>
     .filter(([key, _]) => key.includes(module))
     .reduce((map, [key, val]) => {
       const tag = key.match(re)![1]
-      map[tag] = getQuestions(val)
+      map[tag] = sortQuestions(getQuestions(val), 'id-asc')
       return map
     }, {} as Record<string, Question[]>)
 }
@@ -32,7 +34,7 @@ export function getModuleQuestions(module: Category): Record<string, Question[]>
 export function getTagQuestions(module: Category, tag: Tag): Question[] {
   const modules = getModules()
   const moduleKey = `../../data/${module}/${tag}.yml`
-  return getQuestions(modules[moduleKey])
+  return sortQuestions(getQuestions(modules[moduleKey]), 'id-asc')
 }
 
 function getQuestions(content: string): Question[] {
@@ -41,4 +43,21 @@ function getQuestions(content: string): Question[] {
 
 function getModules() {
   return import.meta.glob('../../data/**/*.yml', { as: 'raw', eager: true })
+}
+
+export function getDifficultyColor(difficulty: string) {
+  let color = ''
+  switch (difficulty) {
+    case 'Easy':
+      color = '#a1b53f'
+      break
+    case 'Medium':
+      color = '#e0a569'
+      break
+    case 'Hard':
+      color = '#cb7676'
+      break
+    default:
+  }
+  return `color: ${color};`
 }

@@ -26,7 +26,7 @@ const LEETCODE_LIST_QUERY = [
 const LEETCODE_QUESTION_QUERY = [
   'query questionData($titleSlug: String!) {',
   '  question(titleSlug: $titleSlug) {',
-  '    questionId',
+  '    questionFrontendId',
   '    categoryTitle',
   '    title',
   '    titleSlug',
@@ -179,7 +179,12 @@ export function getQuestionByTitle(titleSlug: string): Promise<RawQuestion | und
       query: LEETCODE_QUESTION_QUERY,
       variables: { titleSlug },
     },
-  }).then(r => r.data?.question || undefined)
+  }).then((r) => {
+    const question = r.data?.question || undefined
+    if (question)
+      question.questionId = question.questionFrontendId
+    return question
+  })
 }
 
 export const getQuestionPath = (
