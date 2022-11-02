@@ -6,7 +6,7 @@
   "scripts": {
     "build": "pnpm -r run build",
     "build:docs": "nr -C packages/docs build",
-    "dev": "nr -C packages/cli dev",
+    "dev": "DEBUG=dz-leetcode:* esno packages/cli/src/cli.ts",
     "dev:docs": "nr -C packages/docs dev",
     "lint": "eslint .",
     "test": "vitest",

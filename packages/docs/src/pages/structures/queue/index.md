@@ -1,5 +1,5 @@
 ---
-title: Blog - Dylan Zhang
+title: Blog - Daniel Zhang
 display: ''
 plum: true
 ---

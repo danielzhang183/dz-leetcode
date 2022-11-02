@@ -19,7 +19,6 @@ const routes: Post[] = router.getRoutes()
     date: i.meta.frontmatter.date,
     lang: i.meta.frontmatter.lang,
     duration: i.meta.frontmatter.duration,
-    recording: i.meta.frontmatter.recording,
   }))
 
 const posts = computed(() => (props.posts || routes).filter(i => !englishOnly.value || i.lang !== 'zh'))
@@ -38,8 +37,7 @@ const isSameYear = (a: Date | string | number, b: Date | string | number) => a &
 
     <template v-for="route, idx in posts" :key="route.path">
       <div v-if="!isSameYear(route.date, posts[idx - 1]?.date)" relative h20 pointer-events-none>
-        <!-- <span text-8em op10 absolute left--3rem top--2rem font-bold>{{ getYear(route.date) }}</span> -->
-        <span text-8em op10 absolute left--3rem top--2rem font-bold>Queue</span>
+        <span text-5em op10 absolute left--1rem top---1rem font-bold>Queue</span>
       </div>
       <AppLink
         class="item block font-normal mb-6 mt-2 no-underline"

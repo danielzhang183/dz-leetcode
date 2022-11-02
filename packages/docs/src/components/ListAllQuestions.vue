@@ -31,7 +31,7 @@ const questions = getModuleQuestions(props.module)
           <div class="text-normal">{{ item.name }}</div>
           <div class="flex gap2 desc text-sm font-normal">
             <div :style="getDifficultyColor(item.difficulty)" v-text="item.difficulty" />
-            <a v-if="item.origin" opacity-50 :href="item.origin">view source</a>
+            <a v-if="item.origin" opacity-50 :href="item.origin">source</a>
           </div>
         </div>
       </a>

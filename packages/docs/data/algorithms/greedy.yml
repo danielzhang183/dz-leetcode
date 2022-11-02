@@ -71,3 +71,21 @@ questions:
     origin: https://leetcode.cn/problems/lemonade-change
     tag: greedy
     category: algorithms
+  - name: Minimum Number of Taps to Open to Water a Garden
+    title: minimum-number-of-taps-to-open-to-water-a-garden
+    difficulty: Hard
+    id: 1326
+    link: /algorithms/greedy/1326
+    origin: >-
+      https://leetcode.cn/problems/minimum-number-of-taps-to-open-to-water-a-garden
+    tag: greedy
+    category: algorithms
+  - name: Minimum Number of Removals to Make Mountain Array
+    title: minimum-number-of-removals-to-make-mountain-array
+    difficulty: Hard
+    id: 1671
+    link: /algorithms/greedy/1671
+    origin: >-
+      https://leetcode.cn/problems/minimum-number-of-removals-to-make-mountain-array
+    tag: greedy
+    category: algorithms
