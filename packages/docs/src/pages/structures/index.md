@@ -1,8 +1,8 @@
 ---
-title: Array
-display: Array
-subtitle: List of questions that I am aware of
-description: List of questions that I am aware of
+title: Structures
+display: Structures
+subtitle: Common & Advanced Data Structures
+description: Common & Advanced Data Structures
 plum: true
 ---
 

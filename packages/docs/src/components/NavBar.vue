@@ -17,19 +17,19 @@ import { isDark } from '~/logics'
       <div class="right">
         <router-link to="/structures" title="Blog">
           <span class="lt-md:hidden">Structures</span>
-          <div i-ri-article-line md:hidden />
+          <div i-carbon-load-balancer-network md:hidden />
         </router-link>
         <router-link to="/algorithms" title="Projects">
           <span class="lt-md:hidden">Algorithms</span>
-          <div i-ri-lightbulb-line md:hidden />
+          <div i-carbon-calculation md:hidden />
         </router-link>
         <router-link to="/design" title="Design">
           <span class="lt-md:hidden">Design</span>
-          <div i-ri-lightbulb-line md:hidden />
+          <div i-carbon-cognitive md:hidden />
         </router-link>
         <router-link to="/interview" title="Interview">
           <span class="lt-md:hidden">Interview</span>
-          <div i-ri-lightbulb-line md:hidden />
+          <div i-carbon-license-third-party-draft md:hidden />
         </router-link>
         <a href="https://github.com/danielzhang183" target="_blank" title="GitHub" class="lt-md:hidden">
           <div i-uil-github-alt />

@@ -36,6 +36,7 @@
   "scripts": {
     "build": "rimraf dist && unbuild",
     "stub": "unbuild --stub",
+    "dev": "DEBUG=dz-leetcode:* esno src/cli.ts",
     "prepublishOnly": "nr build",
     "test": "vitest"
   },

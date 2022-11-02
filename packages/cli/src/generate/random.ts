@@ -35,6 +35,8 @@ export async function generateFromRandom(options: RandomOptions) {
       choices: dumpCategories() as any as prompts.Choice[],
       initial: 1,
     }).then(r => r.category)
+    if (!category)
+      return
     tag = await prompts({
       type: 'select',
       name: 'tag',
@@ -42,6 +44,8 @@ export async function generateFromRandom(options: RandomOptions) {
       choices: dumpTags(category!) as any as prompts.Choice[],
       initial: 1,
     }).then(r => r.tag)
+    if (!tag)
+      return
   }
 
   async function generate() {
