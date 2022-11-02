@@ -12,9 +12,6 @@ const router = useRouter()
 const route = useRoute()
 const content = ref<HTMLDivElement>()
 
-const base = 'https://antfu.me'
-const tweetUrl = computed(() => `https://twitter.com/intent/tweet?text=${encodeURIComponent(`Reading @antfu7\'s ${base}${route.path}\n\nI think...`)}`)
-
 onMounted(() => {
   const navigate = () => {
     if (location.hash) {
@@ -83,7 +80,6 @@ onMounted(() => {
     <slot />
   </article>
   <div v-if="route.path !== '/'" class="prose m-auto mt-8 mb-8">
-    <a v-if="frontmatter.duration" :href="tweetUrl" target="_blank" op50>comment on twitter</a>
     <br>
     <router-link
       :to="route.path.split('/').slice(0, -1).join('/') || '/'"

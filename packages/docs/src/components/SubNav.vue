@@ -4,13 +4,14 @@ import { easy, getNavs, hard, medium } from '~/logics'
 
 const props = defineProps<{
   module: Category
+  navs?: SubNav[]
 }>()
 
 const inactiveStyle = 'opacity-20 hover:opacity-50'
 
 const route = useRoute()
 
-const navs: SubNav[] = getNavs(props.module)
+const navs: SubNav[] = props.navs || getNavs(props.module)
 </script>
 
 <template>

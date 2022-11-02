@@ -113,8 +113,10 @@ export function renderResolveError(error: GenerateError) {
 }
 
 export function renderOutcomes(lines: string[], errLines: string[]) {
-  console.log()
-  console.log(lines.join('\n'))
+  if (lines.length) {
+    console.log()
+    console.log(lines.join('\n'))
+  }
 
   if (errLines.length) {
     console.error()
