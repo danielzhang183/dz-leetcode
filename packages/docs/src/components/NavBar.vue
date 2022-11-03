@@ -31,7 +31,7 @@ import { isDark } from '~/logics'
           <span class="lt-md:hidden">Interview</span>
           <div i-carbon-license-third-party-draft md:hidden />
         </router-link>
-        <a href="https://github.com/danielzhang183" target="_blank" title="GitHub" class="lt-md:hidden">
+        <a href="https://github.com/danielzhang183/dz-leetcode" target="_blank" title="GitHub" class="lt-md:hidden">
           <div i-uil-github-alt />
         </a>
         <ToggleTheme />
