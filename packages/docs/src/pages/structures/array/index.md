@@ -1,11 +1,14 @@
 ---
 title: Array
 display: Array
-subtitle: List of questions that I am aware of
-description: List of questions that I am aware of
+subtitle: The most basic yet important data structure is the array. It is a linear data structure.
 plum: true
 ---
 
 <SubNav module="structures" />
+
+An array is a collection of `homogeneous` data types where the elements are allocated `contiguous` memory. 
+ 
+Because of the contiguous allocation of memory, any element of an array can *be accessed in constant time*. Each array element has a corresponding index number. 
 
 <ListQuestions module="structures" tag="array" />

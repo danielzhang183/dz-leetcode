@@ -8,14 +8,14 @@ duration: 5min
 
 [[toc]]
 
-> FIFO: Fisrt In, First Out
+> FIFO: First In, First Out
 
 ## APIs
 
 * `enqueue(e)` Pushes element to the back of the queue
 * `dequeue()` Removes the element from the front of the queue and returns it.
 * `clear()` Clear out all the element in queue
-* `iteratable` Iterator element of queue contains
+* `iterable` Iterator element of queue contains
 
 **property**
 

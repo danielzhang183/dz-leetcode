@@ -174,8 +174,7 @@ export class LinkedList {
         curr = curr.next
       curr.next = node
     }
-    else
-      this.#head = node
+    else { this.#head = node }
 
     this.#size++
   }
@@ -292,7 +291,7 @@ export class LinkedList {
 
   toString() {
     let curr = this.#head
-    let str: any[] = []
+    const str: any[] = []
 
     while (curr) {
       str.push(curr.value)

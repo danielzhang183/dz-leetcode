@@ -7,17 +7,11 @@ plum: true
 
 * [Searching](/algorithms/binary-search)
 * [Sorting](/algorithms/sort)
-  * [Bubble Sort]()
-  * [Quick Sort]()
-  * [Merge Sort]()
 * [Greedy](/algorithms/greedy)
 * [Back Tracking](/algorithms/back-tracking)
-* [Dynaimc Programming](/algorithms/dynamic-programming)
+* [Dynamic Programming](/algorithms/dynamic-programming)
 * [Mathematical](/algorithms/math)
-
-## TODO
-
-* [Recursion](/algorithms/)
+* [Recursion](/algorithms/recursion)
 * [Divide & Conquer](/algorithms/divide-conquer)
-* [Bitwise](/algorithms/)
-* [Pattern Searching](/algorithms/)
+* [Bitwise](/algorithms/bitwise)
+* [Pattern Searching](/algorithms/pattern-searching)
