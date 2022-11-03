@@ -3,7 +3,7 @@ export const isUnknown = (val: string): boolean => unknownRE.test(val)
 export const isString = (val: unknown): val is string => typeof val === 'string'
 
 export function now() {
-  return Date.now()
+  return +Date.now()
 }
 
 export function randRange(min: number, max: number): number {

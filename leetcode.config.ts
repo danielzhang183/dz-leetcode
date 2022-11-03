@@ -1,7 +1,6 @@
 import { defineConfig } from 'dz-leetcode'
 
 export default defineConfig({
-  root: '/Users/dylanzhang/i/dz-leetcode',
   lang: [
     'typescript',
     'javascript',

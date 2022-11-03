@@ -12,11 +12,14 @@ duration: 5min
 
 ## APIs
 
-* `enqueue()` Pushes element to the back of the queue
+* `enqueue(e)` Pushes element to the back of the queue
 * `dequeue()` Removes the element from the front of the queue and returns it.
 * `clear()` Clear out all the element in queue
-* `size()` Return the num of element at current queue
 * `iteratable` Iterator element of queue contains
+
+**property**
+
+* `size` Return the num of element at current queue
 
 ## Usage
 
@@ -31,6 +34,8 @@ queue.clear() // queue is: []
 
 ## Implement
 
+### Pre
+
 ```ts
 class Node {
   value: any
@@ -40,7 +45,44 @@ class Node {
     this.value = value
   }
 }
+```
 
+### enqueue(value)
+
+```ts
+enqueue(value: any) {
+  const node = new Node(value)
+
+  if (this.#head) {
+    this.#tail!.next = node
+    this.#tail = node
+  }
+  else {
+    this.#head = node
+    this.#tail = node
+  }
+
+  this.#size++
+}
+```
+
+### dequeue()
+
+```ts
+dequeue() {
+  const current = this.#head
+  if (!current)
+    return
+
+  this.#head = this.#head?.next
+  this.#size--
+  return current.value
+}
+```
+
+### Completed code
+
+```ts
 class Queue {
   #head: Node | undefined
   #tail: Node | undefined

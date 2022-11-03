@@ -34,5 +34,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "scripts": {
+    "test": "vitest"
+  }
 }

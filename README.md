@@ -33,7 +33,7 @@ pnpm link dz-leetcode
 
 ## Usage
 
-### I. file generate questions with reading specific file path
+### I. generate questions with specific file
 
 ```bash
 dz-leetcode file -f example/questions.yml
@@ -57,7 +57,7 @@ dz-leetcode pick 1,2,3
   <img src='./packages/cli/snapshots/pick.png' width='600'/>
 </p>
 
-### III. random generate one question
+### III. generate one random question
 
 ```bash
 # fully range random (fully category & tag & difficulty)
@@ -149,6 +149,10 @@ questions:
       - 2
   ...
 ```
+
+## API
+
+
 
 ## License
 

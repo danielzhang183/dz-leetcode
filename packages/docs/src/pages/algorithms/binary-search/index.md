@@ -1,8 +1,7 @@
 ---
 title: Binary Search
 display: Binary Search
-subtitle: List of questions that I am aware of
-description: List of questions that I am aware of
+subtitle: Searching algorithms are used to find a specific element in an array, string, linked list, or some other data structure.
 plum: true
 ---
 
