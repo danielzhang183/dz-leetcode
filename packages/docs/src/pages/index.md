@@ -1,10 +1,11 @@
 ---
 title: DSA - roadmap
-subtitle: Data Structure & Algorithm
+display: DSA
+subtitle: Data Structure & Algorithm - roadmap
 plum: true
 ---
 
-## How to start learing DSA?
+**How do we start?**
 
 The first and foremost thing is dividing the total procedure into little pieces which need to be done sequentially.
 

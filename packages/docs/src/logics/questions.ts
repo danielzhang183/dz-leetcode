@@ -37,7 +37,7 @@ export function getTagQuestions(module: Category, tag: Tag): Question[] {
 }
 
 function getQuestions(content: string): Question[] {
-  return (load(content) as { questions: Question[] }).questions
+  return (load(content) as { questions: Question[] }).questions || []
 }
 
 function getModules() {

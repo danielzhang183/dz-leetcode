@@ -32,9 +32,7 @@ const questions = computed(() => {
       :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
       :title="item.name"
     >
-      <div class="pt-2 pr-5">
-        <QuestionNo :no="item.id" />
-      </div>
+      <div class="pt-2 pr-5">{{ item.id }}</div>
       <div class="flex-auto">
         <div cla ss="text-normal">{{ item.name }}</div>
         <div class="flex gap4 desc text-sm font-normal">
@@ -43,6 +41,9 @@ const questions = computed(() => {
         </div>
       </div>
     </a>
+    <div v-if="!questions.length">
+      Content is comming soon~
+    </div>
   </div>
 </template>
 

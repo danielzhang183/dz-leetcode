@@ -5,7 +5,7 @@ subtitle: Algorithm is defined as a process or set of well-defined instructions 
 plum: true
 ---
 
-* [Searching](/algorithms/binary-search)
+<!-- * [Searching](/algorithms/binary-search)
 * [Sorting](/algorithms/sort)
 * [Greedy](/algorithms/greedy)
 * [Back Tracking](/algorithms/back-tracking)
@@ -14,4 +14,6 @@ plum: true
 * [Recursion](/algorithms/recursion)
 * [Divide & Conquer](/algorithms/divide-conquer)
 * [Bitwise](/algorithms/bitwise)
-* [Pattern Searching](/algorithms/pattern-searching)
+* [Pattern Searching](/algorithms/pattern-searching) -->
+
+<ListAllQuestions module="algorithms" />
