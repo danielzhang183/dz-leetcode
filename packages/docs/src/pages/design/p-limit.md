@@ -2,6 +2,7 @@
 title: Limit promise concurrency using queue
 description: Run multiple async functions with limited concurrency
 date: 2022-11-01T16:00:00.000+00:00
+type: Queue
 lang: en
 duration: 10min
 ---

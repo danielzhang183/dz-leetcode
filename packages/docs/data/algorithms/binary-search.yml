@@ -1,3 +1,4 @@
+description: Break the data structure into two equal parts and try to decide in which half we need to find for the element.
 questions:
   - name: Search Insert Position
     title: search-insert-position

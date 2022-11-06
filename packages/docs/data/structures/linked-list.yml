@@ -1,3 +1,4 @@
+description: A linear data structure with random memory.
 questions:
   - name: Remove Nth Node From End of List
     title: remove-nth-node-from-end-of-list

@@ -1,3 +1,4 @@
+description: An index or location for the storage of an item in a data structure.
 questions:
   - name: Happy Number
     title: happy-number

@@ -6,14 +6,13 @@ export interface Post {
   path: string
   title: string
   date: string
+  type?: string
   lang?: string
   desc?: string
-  platform?: string
   duration?: string
-  recording?: string
 }
 
-export type Category =
+export type Module =
   | 'algorithms'
   | 'structures'
   | 'interview'
@@ -45,7 +44,7 @@ export interface Question {
   title: string
   id: number | string
   difficulty: Difficulty
-  category: Category | string
+  category: Module | string
   tag: Tag
   link: string
   origin: string

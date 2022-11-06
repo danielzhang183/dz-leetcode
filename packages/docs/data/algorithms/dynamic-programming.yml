@@ -1,3 +1,4 @@
+description: Use the previously calculated result to avoid repeated calculations of the same subtask which helps in reducing the time complexity. 
 questions:
   - name: Maximum Subarray
     title: maximum-subarray

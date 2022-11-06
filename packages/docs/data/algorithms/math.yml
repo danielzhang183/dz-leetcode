@@ -1,4 +1,5 @@
-questions:
+description: Was designed to solve Mathematical and Number Theory problems.
+questions: 
   - name: 4Sum
     title: 4sum
     difficulty: Medium

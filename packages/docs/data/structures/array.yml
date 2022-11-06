@@ -1,3 +1,4 @@
+description: A linear data structure with contiguous memory.
 questions:
   - name: Two Sum
     title: two-sum

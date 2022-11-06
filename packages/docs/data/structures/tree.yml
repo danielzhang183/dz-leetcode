@@ -1,3 +1,4 @@
+description: A non-linear data structure, there is only one path to go from any of its nodes to any other node.'
 questions:
   - name: Binary Tree Inorder Traversal
     title: binary-tree-inorder-traversal

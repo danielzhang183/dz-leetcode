@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Category, Tag } from '~/types'
+import type { Module, Tag } from '~/types'
 import { easy, getDifficultyColor, getTagQuestions, hard, medium } from '~/logics'
 
 const props = defineProps<{
-  module: Category
+  module: Module
   tag: Tag
 }>()
 

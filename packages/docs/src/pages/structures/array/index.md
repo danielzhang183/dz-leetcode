@@ -7,8 +7,10 @@ plum: true
 
 <SubNav module="structures" />
 
+<detail>
 An array is a collection of `homogeneous` data types where the elements are allocated `contiguous` memory. 
  
-Because of the contiguous allocation of memory, any element of an array can *be accessed in constant time*. Each array element has a corresponding index number. 
+Because of the contiguous allocation of memory, any element of an array can *be accessed in constant time*. Each array element has a corresponding index number.
+</detail>
 
 <ListQuestions module="structures" tag="array" />

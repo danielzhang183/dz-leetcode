@@ -10,21 +10,19 @@ const props = defineProps<{
 
 const router = useRouter()
 const routes: Post[] = router.getRoutes()
-  .filter(i => i.path.startsWith('/design') && i.meta.frontmatter.date)
-  .sort((a, b) => +new Date(b.meta.frontmatter.date) - +new Date(a.meta.frontmatter.date))
-  .filter(i => !i.path.endsWith('.html') && i.meta.frontmatter.type === props.type)
+  .filter(i => i.path.startsWith('/design') && i.meta.frontmatter.date && !i.path.endsWith('.html'))
+  .sort((a, b) => (a.meta.frontmatter.type - b.meta.frontmatter.type) || (+new Date(b.meta.frontmatter.date) - +new Date(a.meta.frontmatter.date)))
   .map(i => ({
     path: i.path,
+    type: i.meta.frontmatter.type,
     title: i.meta.frontmatter.title,
     date: i.meta.frontmatter.date,
     lang: i.meta.frontmatter.lang,
     duration: i.meta.frontmatter.duration,
   }))
-
 const posts = computed(() => (props.posts || routes).filter(i => !englishOnly.value || i.lang !== 'zh'))
 
-const getYear = (a: Date | string | number) => new Date(a).getFullYear()
-const isSameYear = (a: Date | string | number, b: Date | string | number) => a && b && getYear(a) === getYear(b)
+const isSameType = (a: string | undefined, b: string | undefined) => a && b && a === b
 </script>
 
 <template>
@@ -36,8 +34,8 @@ const isSameYear = (a: Date | string | number, b: Date | string | number) => a &
     </template>
 
     <template v-for="route, idx in posts" :key="route.path">
-      <div v-if="!isSameYear(route.date, posts[idx - 1]?.date)" relative h20 pointer-events-none>
-        <span text-5em op10 absolute left--1rem top---1rem font-bold>Queue</span>
+      <div v-if="!isSameType(route.type, posts[idx - 1]?.type)" relative h20 pointer-events-none>
+        <span text-5em op10 absolute left--1rem top---1rem font-bold>{{ route.type }}</span>
       </div>
       <AppLink
         class="item block font-normal mb-6 mt-2 no-underline"
@@ -53,18 +51,11 @@ const isSameYear = (a: Date | string | number, b: Date | string | number) => a &
               中文
             </span>
             <span align-middle>{{ route.title }}</span>
-            <span
-              v-if="route.recording"
-              align-middle mx1 text-red5
-              i-ri-movie-line
-              title="Has recording playback"
-            />
           </div>
 
           <div class="time opacity-50 text-sm">
             {{ formatDate(route.date) }}
             <span v-if="route.duration" op80>· {{ route.duration }}</span>
-            <span v-if="route.platform" op80>· {{ route.platform }}</span>
           </div>
         </li>
       </AppLink>

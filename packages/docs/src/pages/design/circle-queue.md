@@ -2,6 +2,7 @@
 title: Circle Queue
 description: Common Data Structure
 date: 2022-10-31T16:00:00.000+00:00
+type: Queue
 lang: en
 duration: 5min
 ---
@@ -32,11 +33,11 @@ circularQueue.enQueue(1) // return true, queue is [1]
 circularQueue.enQueue(2) // return true, queue is [1, 2]
 circularQueue.enQueue(3) // return true, queue is [1, 2, 3]
 circularQueue.enQueue(4) // return false, queue is [1, 2, 3]
-circularQueue.Rear()     // return 3
-circularQueue.isFull()   // return true
-circularQueue.deQueue()  // return true, queue is [1, 2]
+circularQueue.Rear() // return 3
+circularQueue.isFull() // return true
+circularQueue.deQueue() // return true, queue is [1, 2]
 circularQueue.enQueue(4) // return true, queue is [1, 4]
-circularQueue.Rear()     // return 4
+circularQueue.Rear() // return 4
 ```
 
 ## Implement

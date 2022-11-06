@@ -1,3 +1,4 @@
+description: A linear data structure which follows FILO.
 questions:
   - name: Valid Parentheses
     title: valid-parentheses

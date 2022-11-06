@@ -1,3 +1,4 @@
+description: Solving problems incrementally, Removing solutions that fail to satisfy the constraints of the problem at any point of time.
 questions:
   - name: Letter Combinations of a Phone Number
     title: letter-combinations-of-a-phone-number

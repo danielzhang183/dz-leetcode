@@ -1,3 +1,4 @@
+description: Rearrange a given array or list elements according to a comparison operator on the elements.
 questions:
   - name: 3Sum
     title: 3sum

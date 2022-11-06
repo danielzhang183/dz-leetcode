@@ -1,3 +1,4 @@
+description: The problems where choosing locally optimal also leads to the global solutions are best fit for Greedy.
 questions:
   - name: Jump Game II
     title: jump-game-ii

@@ -6,6 +6,4 @@ description: Common data structure design
 plum: true
 ---
 
-<!-- <SubNav /> -->
-
 <ListPosts />
