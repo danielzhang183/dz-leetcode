@@ -53,6 +53,7 @@ questions:
     origin: https://leetcode.cn/problems/minimum-size-subarray-sum
     tag: array
     category: structures
+    done: true
   - name: Move Zeroes
     title: move-zeroes
     difficulty: Easy
