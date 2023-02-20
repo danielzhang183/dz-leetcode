@@ -26,6 +26,7 @@ questions:
     origin: https://leetcode.cn/problems/remove-element
     tag: array
     category: structures
+    done: true
   - name: Valid Palindrome
     title: valid-palindrome
     difficulty: Easy
