@@ -17,6 +17,7 @@ questions:
     origin: https://leetcode.cn/problems/remove-duplicates-from-sorted-array
     tag: array
     category: structures
+    done: true
   - name: Remove Element
     title: remove-element
     difficulty: Easy
