@@ -44,6 +44,7 @@ questions:
     origin: https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted
     tag: array
     category: structures
+    done: true
   - name: Minimum Size Subarray Sum
     title: minimum-size-subarray-sum
     difficulty: Medium
