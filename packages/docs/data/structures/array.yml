@@ -8,6 +8,7 @@ questions:
     origin: https://leetcode.cn/problems/two-sum
     tag: array
     category: structures
+    done: true
   - name: Remove Duplicates from Sorted Array
     title: remove-duplicates-from-sorted-array
     difficulty: Easy
