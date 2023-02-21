@@ -25,3 +25,4 @@ questions:
     origin: https://leetcode.cn/problems/ransom-note
     tag: hash-table
     category: structures
+    done: true
