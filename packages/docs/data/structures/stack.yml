@@ -26,6 +26,7 @@ questions:
     origin: https://leetcode.cn/problems/evaluate-reverse-polish-notation
     tag: stack
     category: structures
+    done: true
   - name: Reverse Words in a String
     title: reverse-words-in-a-string
     difficulty: Medium
