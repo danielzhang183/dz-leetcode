@@ -3,6 +3,7 @@ import { removeDuplicates } from '../../../src/structures/stack/1047'
 
 describe('removeDuplicates', () => {
   it('exported', () => {
-    expect(removeDuplicates('abbaca')).toBe('azxxzy')
+    expect(removeDuplicates('abbaca')).toBe('ca')
+    expect(removeDuplicates('azxxzy')).toBe('ay')
   })
 })

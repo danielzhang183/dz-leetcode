@@ -57,3 +57,4 @@ questions:
     origin: https://leetcode.cn/problems/remove-all-adjacent-duplicates-in-string
     tag: stack
     category: structures
+    done: true
