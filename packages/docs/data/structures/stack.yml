@@ -8,6 +8,7 @@ questions:
     origin: https://leetcode.cn/problems/valid-parentheses
     tag: stack
     category: structures
+    done: true
   - name: Simplify Path
     title: simplify-path
     difficulty: Medium
