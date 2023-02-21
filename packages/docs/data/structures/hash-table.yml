@@ -16,6 +16,7 @@ questions:
     origin: https://leetcode.cn/problems/valid-anagram
     tag: hash-table
     category: structures
+    done: true
   - name: Ransom Note
     title: ransom-note
     difficulty: Easy
