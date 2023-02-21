@@ -17,6 +17,7 @@ questions:
     origin: https://leetcode.cn/problems/simplify-path
     tag: stack
     category: structures
+    done: true
   - name: Evaluate Reverse Polish Notation
     title: evaluate-reverse-polish-notation
     difficulty: Medium
