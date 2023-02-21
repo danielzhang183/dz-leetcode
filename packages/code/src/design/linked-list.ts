@@ -7,15 +7,22 @@ class Node {
   }
 }
 
-export class LinkedList {
+export class LinkedList<T = any> {
   #head: Node | undefined
   #size = 0
 
-  constructor() {
+  constructor(value: T | T[] | null) {
     this.clear()
+
+    if (value != null) {
+      if (Array.isArray(value))
+        value.forEach(val => this.add(val))
+      else
+        this.add(value)
+    }
   }
 
-  add(value: any) {
+  add(value: T) {
     const node = new Node(value)
 
     if (this.#head) {
@@ -24,14 +31,15 @@ export class LinkedList {
         curr = curr.next
       curr.next = node
     }
-    else
+    else {
       this.#head = node
+    }
 
     this.#size++
   }
 
   // insert element at the position index of the list
-  insertAt(value: any, index: number) {
+  insertAt(value: T, index: number) {
     if (index < 0 || index > this.#size)
       throw new Error('invalid index')
 
@@ -81,7 +89,7 @@ export class LinkedList {
   }
 
   // removes a given element from the list
-  removeElement(value: any) {
+  removeElement(value: T) {
     let curr = this.#head
     let prev: Node | undefined
 
@@ -104,7 +112,7 @@ export class LinkedList {
   }
 
   // finds the index of element
-  indexOf(value: any) {
+  indexOf(value: T) {
     let index = 0
     let curr = this.#head
 
@@ -142,7 +150,7 @@ export class LinkedList {
 
   toString() {
     let curr = this.#head
-    let str: any[] = []
+    const str: T[] = []
 
     while (curr) {
       str.push(curr.value)
