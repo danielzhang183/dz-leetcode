@@ -34,6 +34,7 @@ questions:
     origin: https://leetcode.cn/problems/reverse-words-in-a-string
     tag: stack
     category: structures
+    done: true
   - name: Implement Stack using Queues
     title: implement-stack-using-queues
     difficulty: Easy
