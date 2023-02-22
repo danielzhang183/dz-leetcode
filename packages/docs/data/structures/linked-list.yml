@@ -101,4 +101,6 @@ questions:
     link: /structures/linked-list/876
     origin: https://leetcode.cn/problems/middle-of-the-linked-list
     tag: linked-list
+    tags: ['fast-slow-pointer', 'count']
     category: structures
+    done: true
