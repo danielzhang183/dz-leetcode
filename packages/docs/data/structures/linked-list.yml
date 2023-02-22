@@ -33,7 +33,9 @@ questions:
     link: /structures/linked-list/141
     origin: https://leetcode.cn/problems/linked-list-cycle
     tag: linked-list
+    tags: ['fast-slow-pointer']
     category: structures
+    done: true
   - name: Linked List Cycle II
     title: linked-list-cycle-ii
     difficulty: Medium

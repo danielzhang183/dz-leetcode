@@ -42,7 +42,7 @@ function padZero(num: string | number, len = 3) {
       :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
       :title="item.name"
     >
-      <div class="pt-2 pr-5">
+      <div class="pt-2 pr-4 box-content min-w-8 text-center">
         <a
           :style="getDifficultyColor(item.difficulty)"
           :href="item.origin"
