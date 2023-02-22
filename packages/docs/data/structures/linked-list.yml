@@ -67,7 +67,9 @@ questions:
     link: /structures/linked-list/203
     origin: https://leetcode.cn/problems/remove-linked-list-elements
     tag: linked-list
+    tags: ['recursive', 'traverse']
     category: structures
+    done: true
   - name: Reverse Linked List
     title: reverse-linked-list
     difficulty: Easy
