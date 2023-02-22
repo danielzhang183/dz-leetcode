@@ -15,7 +15,9 @@ questions:
     link: /structures/linked-list/021
     origin: https://leetcode.cn/problems/merge-two-sorted-lists
     tag: linked-list
+    tags: ['recursive', 'traverse']
     category: structures
+    done: true
   - name: Reverse Linked List II
     title: reverse-linked-list-ii
     difficulty: Medium

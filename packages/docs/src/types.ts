@@ -49,6 +49,7 @@ export interface Question {
   link: string
   origin: string
   done?: boolean
+  tags?: string[]
 }
 
 export interface SubNav {

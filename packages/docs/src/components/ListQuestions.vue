@@ -19,6 +19,16 @@ const questions = computed(() => {
     ? questions.filter(i => difficulty.value.includes(i.difficulty.toLowerCase()))
     : questions
 })
+
+function padZero(num: string | number, len = 3) {
+  if (!num)
+    return
+
+  num = `${num}`
+  return num.length < len
+    ? new Array(len - num.length).fill(0).join('') + num
+    : num
+}
 </script>
 
 <template>
@@ -32,14 +42,36 @@ const questions = computed(() => {
       :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
       :title="item.name"
     >
-      <div class="pt-2 pr-5">{{ item.id }}</div>
+      <div class="pt-2 pr-5">
+        <a
+          :style="getDifficultyColor(item.difficulty)"
+          :href="item.origin"
+          target="_blank"
+        >
+          {{ padZero(item.id) }}
+        </a>
+      </div>
       <div class="flex-auto">
         <div cla ss="text-normal">{{ item.name }}</div>
-        <div class="flex gap4 desc text-sm font-normal">
-          <div :style="getDifficultyColor(item.difficulty)" v-text="item.difficulty" />
-          <a v-if="item.origin" opacity-50 :href="item.origin">source</a>
+        <div v-if="item.tags" class="flex gap-2 text-sm font-normal pt1">
+          <span
+            v-for="t in item.tags"
+            :key="t"
+            bg-light
+            rounded-3
+            text-black
+            px-2 py-0.5
+          >
+            {{ t }}
+          </span>
         </div>
       </div>
+      <div
+        v-if="item.done"
+        class="absolute bottom-3 right-4 text-2xl opacity-50"
+        i-ion-checkmark-done-outline
+        style="color: #a1b53f"
+      />
     </a>
     <div v-if="!questions.length">
       Content is comming soon~
