@@ -15,19 +15,16 @@ export function reverseList(head: ListNode | null): ListNode | null {
 }
 
 // traverse
-// export function reverseList(head: ListNode | null): ListNode | null {
-//   if (head == null || head.next == null)
-//     return head
+export function reverseList1(head: ListNode | null): ListNode | null {
+  let prev = null
+  let curr = head
 
-//   let prev = null
-//   let temp: ListNode | null = null
-//   let curr = head
-//   while (curr) {
-//     temp = curr.next
-//     curr.next = prev
-//     prev = curr
-//     curr = temp
-//   }
+  while (curr != null) {
+    const tmp = curr.next
+    curr.next = prev
+    prev = curr
+    curr = tmp
+  }
 
-//   return prev
-// }
+  return prev
+}

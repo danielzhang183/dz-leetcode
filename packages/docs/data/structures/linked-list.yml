@@ -27,7 +27,9 @@ questions:
     link: /structures/linked-list/092
     origin: https://leetcode.cn/problems/reverse-linked-list-ii
     tag: linked-list
+    tags: ['traverse', 'insert node from head']
     category: structures
+    done: true
   - name: Linked List Cycle
     title: linked-list-cycle
     difficulty: Easy
