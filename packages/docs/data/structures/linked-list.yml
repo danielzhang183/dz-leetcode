@@ -45,7 +45,9 @@ questions:
     link: /structures/linked-list/142
     origin: https://leetcode.cn/problems/linked-list-cycle-ii
     tag: linked-list
+    tags: ['fast-slow-pointer', 'hashSet']
     category: structures
+    done: true
   - name: LRU Cache
     title: lru-cache
     difficulty: Medium
