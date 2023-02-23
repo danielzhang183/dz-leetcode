@@ -7,7 +7,9 @@ questions:
     link: /structures/linked-list/019
     origin: https://leetcode.cn/problems/remove-nth-node-from-end-of-list
     tag: linked-list
+    tags: ['fast-slow-pointer', 'stack', 'count']
     category: structures
+    done: true
   - name: Merge Two Sorted Lists
     title: merge-two-sorted-lists
     difficulty: Easy
