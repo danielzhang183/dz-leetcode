@@ -79,7 +79,9 @@ questions:
     link: /structures/linked-list/206
     origin: https://leetcode.cn/problems/reverse-linked-list
     tag: linked-list
+    tags: ['recursive', 'traverse']
     category: structures
+    done: true
   - name: Palindrome Linked List
     title: palindrome-linked-list
     difficulty: Easy
