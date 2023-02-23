@@ -37,6 +37,33 @@ export class LinkedList<T = number> {
     this.#size++
   }
 
+  // insert element at the position index of the list
+  insertAt(value: T | ListNode<T>, index: number) {
+    if (index < 0 || index > this.#size)
+      throw new Error('invalid index')
+
+    const node = value instanceof ListNode ? value : new ListNode<T>(value)
+
+    if (index === 0) {
+      node.next = this.#head
+      this.#head = node
+    }
+    else {
+      let curr = this.#head
+      let prev: ListNode<T> | null
+      let counter = 0
+
+      while (counter++ < index) {
+        prev = curr
+        curr = curr!.next
+      }
+      node.next = curr
+      prev!.next = node
+    }
+
+    this.#size++
+  }
+
   isEmpty() {
     return this.#size === 0
   }

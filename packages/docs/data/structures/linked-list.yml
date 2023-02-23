@@ -59,7 +59,9 @@ questions:
     link: /structures/linked-list/160
     origin: https://leetcode.cn/problems/intersection-of-two-linked-lists
     tag: linked-list
+    tags: ['two-pointers']
     category: structures
+    done: true
   - name: Remove Linked List Elements
     title: remove-linked-list-elements
     difficulty: Easy
