@@ -1,4 +1,4 @@
-description: A non-linear data structure, there is only one path to go from any of its nodes to any other node.'
+description: A non-linear data structure, there is only one path to go from any of its nodes to any other node.
 questions:
   - name: Binary Tree Inorder Traversal
     title: binary-tree-inorder-traversal
@@ -8,6 +8,7 @@ questions:
     origin: https://leetcode.cn/problems/binary-tree-inorder-traversal
     tag: tree
     category: structures
+    done: true
   - name: Validate Binary Search Tree
     title: validate-binary-search-tree
     difficulty: Medium
@@ -137,6 +138,7 @@ questions:
     origin: https://leetcode.cn/problems/binary-tree-preorder-traversal
     tag: tree
     category: structures
+    done: true
   - name: Binary Tree Postorder Traversal
     title: binary-tree-postorder-traversal
     difficulty: Easy
@@ -145,6 +147,7 @@ questions:
     origin: https://leetcode.cn/problems/binary-tree-postorder-traversal
     tag: tree
     category: structures
+    done: true
   - name: Binary Tree Right Side View
     title: binary-tree-right-side-view
     difficulty: Medium
