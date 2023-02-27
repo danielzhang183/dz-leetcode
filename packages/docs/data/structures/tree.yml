@@ -33,7 +33,7 @@ questions:
     link: /structures/tree/100
     origin: https://leetcode.cn/problems/same-tree
     tag: tree
-    tags: ['recursive', 'BFS-queue']
+    tags: ['recursive', 'BFS - stack & queue']
     category: structures
     done: true
   - name: Symmetric Tree
@@ -43,7 +43,9 @@ questions:
     link: /structures/tree/101
     origin: https://leetcode.cn/problems/symmetric-tree
     tag: tree
+    tags: ['recursive', 'BFS - stack & queue']
     category: structures
+    done: true
   - name: Binary Tree Level Order Traversal
     title: binary-tree-level-order-traversal
     difficulty: Medium
