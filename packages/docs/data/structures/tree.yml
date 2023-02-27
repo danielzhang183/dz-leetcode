@@ -61,7 +61,9 @@ questions:
     link: /structures/tree/104
     origin: https://leetcode.cn/problems/maximum-depth-of-binary-tree
     tag: tree
+    tags: ['recursive', 'BFS - stack & queue']
     category: structures
+    done: true
   - name: Binary Tree Level Order Traversal II
     title: binary-tree-level-order-traversal-ii
     difficulty: Medium
