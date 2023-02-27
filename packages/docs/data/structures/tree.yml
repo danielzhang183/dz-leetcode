@@ -217,7 +217,9 @@ questions:
     link: /structures/tree/404
     origin: https://leetcode.cn/problems/sum-of-left-leaves
     tag: tree
+    tags: ['recursive', 'BFS']
     category: structures
+    done: true
   - name: Find Largest Value in Each Tree Row
     title: find-largest-value-in-each-tree-row
     difficulty: Medium
