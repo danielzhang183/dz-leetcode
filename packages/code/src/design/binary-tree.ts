@@ -17,31 +17,47 @@ export class BinaryTree<T = number> {
   constructor(value?: T[]) {
     this.clear()
 
-    if (Array.isArray(value)) {
-      //
-    }
+    if (Array.isArray(value))
+      this.createByLayer(value)
   }
 
-  add(value: T | null) {
+  add(value: T) {
     const treeNode = new TreeNode((value || 0) as T)
 
     if (this.#root) {
-      let parent: TreeNode | null = null
-      let curr = this.#root
-      while (true) {
-        parent = curr
-
-        if (curr.left != null) {
-          curr = curr.left
-        }
-        else if (curr.right != null) {
-          curr = curr.right
-        }
-      }
+      //
     }
     else {
       this.#root = treeNode
     }
+  }
+
+  createByLayer(value: T[]) {
+    if (!value.length)
+      return null
+
+    const root = new TreeNode<T>(value[0])
+    const stack: (TreeNode<T>)[] = [root]
+    let i = 1
+    while (i < value.length) {
+      while (stack.length--) {
+        this.#height++
+
+        const curr = stack.shift()!
+        if (value[i] != null) {
+          curr.left = new TreeNode<T>(value[i])
+          stack.push(curr.left)
+        }
+        i++
+        if (value[i] != null) {
+          curr.right = new TreeNode<T>(value[i])
+          stack.push(curr.right)
+        }
+        i++
+      }
+    }
+
+    this.#root = root
   }
 
   clear() {

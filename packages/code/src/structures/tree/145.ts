@@ -1,17 +1,49 @@
-/**
- * Definition for a binary tree node.
- * class TreeNode {
- *     val: number
- *     left: TreeNode | null
- *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.left = (left===undefined ? null : left)
- *         this.right = (right===undefined ? null : right)
- *     }
- * }
- */
+import type { TreeNode } from '../../utils'
 
-export function postorderTraversal(root: TreeNode | null): number[] {
+// recursive
+export function postorderTraversal1(root: TreeNode | null): number[] {
+  const ans: number[] = []
+  const postorder = (root: TreeNode | null) => {
+    if (root == null)
+      return
+    // console.log({ root: root.val })
 
+    postorder(root.left)
+    postorder(root.right)
+    ans.push(root.val!)
+  }
+
+  postorder(root)
+  return ans
 }
+
+// traverse
+export function postorderTraversal(root: TreeNode | null): number[] {
+  const ans: number[] = []
+  const stack = []
+  let prev: TreeNode | null = null
+  while (root || stack.length) {
+    while (root) {
+      stack.push(root)
+      root = root.left
+    }
+
+    root = stack.pop()!
+    if (root.right == null || root.right === prev) {
+      ans.push(root.val!)
+      prev = root
+      root = null
+    }
+    else {
+      stack.push(root)
+      root = root.right
+    }
+  }
+
+  return ans
+}
+
+// morris
+// export function postorderTraversal2(root: TreeNode | null): number[] {
+
+// }
