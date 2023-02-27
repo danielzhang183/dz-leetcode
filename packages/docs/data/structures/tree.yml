@@ -33,7 +33,9 @@ questions:
     link: /structures/tree/100
     origin: https://leetcode.cn/problems/same-tree
     tag: tree
+    tags: ['recursive', 'BFS-queue']
     category: structures
+    done: true
   - name: Symmetric Tree
     title: symmetric-tree
     difficulty: Easy
