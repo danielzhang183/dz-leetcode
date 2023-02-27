@@ -113,7 +113,9 @@ questions:
     link: /structures/tree/112
     origin: https://leetcode.cn/problems/path-sum
     tag: tree
+    tags: ['recursive', 'BFS - stack & queue']
     category: structures
+    done: true
   - name: Flatten Binary Tree to Linked List
     title: flatten-binary-tree-to-linked-list
     difficulty: Medium

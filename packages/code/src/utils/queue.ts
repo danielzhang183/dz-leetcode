@@ -17,7 +17,7 @@ export class Queue<T = number | null> {
     this.clear()
   }
 
-  enqueue(value: any) {
+  enqueue(value: T) {
     const node = new QueueNode<T>(value)
 
     if (this.#head) {
