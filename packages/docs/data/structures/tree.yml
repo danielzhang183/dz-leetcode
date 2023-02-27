@@ -103,7 +103,9 @@ questions:
     link: /structures/tree/111
     origin: https://leetcode.cn/problems/minimum-depth-of-binary-tree
     tag: tree
+    tags: ['recursive', 'BFS - stack & queue']
     category: structures
+    done: true
   - name: Path Sum
     title: path-sum
     difficulty: Easy
