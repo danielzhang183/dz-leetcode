@@ -207,7 +207,9 @@ questions:
     link: /structures/tree/257
     origin: https://leetcode.cn/problems/binary-tree-paths
     tag: tree
+    tags: ['recursive', 'BFS - stack & queue']
     category: structures
+    done: true
   - name: Sum of Left Leaves
     title: sum-of-left-leaves
     difficulty: Easy
