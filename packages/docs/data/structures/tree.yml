@@ -75,7 +75,9 @@ questions:
     link: /structures/tree/107
     origin: https://leetcode.cn/problems/binary-tree-level-order-traversal-ii
     tag: tree
+    tags: ['DFS', 'BFS']
     category: structures
+    done: true
   - name: Convert Sorted Array to Binary Search Tree
     title: convert-sorted-array-to-binary-search-tree
     difficulty: Easy
