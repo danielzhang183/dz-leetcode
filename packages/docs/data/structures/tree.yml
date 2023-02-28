@@ -7,7 +7,7 @@ questions:
     link: /structures/tree/094
     origin: https://leetcode.cn/problems/binary-tree-inorder-traversal
     tag: tree
-    tags: ['DFS', 'traverse', 'morris']
+    tags: ['DFS', 'traversal', 'morris']
     category: structures
     done: true
   - name: Validate Binary Search Tree
@@ -17,7 +17,9 @@ questions:
     link: /structures/tree/098
     origin: https://leetcode.cn/problems/validate-binary-search-tree
     tag: tree
+    tags: ['DFS', 'Inorder Traversal']
     category: structures
+    done: true
   - name: Recover Binary Search Tree
     title: recover-binary-search-tree
     difficulty: Medium
@@ -149,7 +151,7 @@ questions:
     link: /structures/tree/144
     origin: https://leetcode.cn/problems/binary-tree-preorder-traversal
     tag: tree
-    tags: ['DFS', 'traverse', 'morris']
+    tags: ['DFS', 'traversal', 'morris']
     category: structures
     done: true
   - name: Binary Tree Postorder Traversal
@@ -159,7 +161,7 @@ questions:
     link: /structures/tree/145
     origin: https://leetcode.cn/problems/binary-tree-postorder-traversal
     tag: tree
-    tags: ['DFS', 'traverse', 'morris']
+    tags: ['DFS', 'traversal', 'morris']
     category: structures
     done: true
   - name: Binary Tree Right Side View

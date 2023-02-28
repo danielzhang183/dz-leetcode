@@ -17,7 +17,7 @@ questions:
     link: /structures/linked-list/021
     origin: https://leetcode.cn/problems/merge-two-sorted-lists
     tag: linked-list
-    tags: ['recursive', 'traverse']
+    tags: ['recursive', 'traversal']
     category: structures
     done: true
   - name: Reverse Linked List II
@@ -27,7 +27,7 @@ questions:
     link: /structures/linked-list/092
     origin: https://leetcode.cn/problems/reverse-linked-list-ii
     tag: linked-list
-    tags: ['traverse', 'insert node from head']
+    tags: ['traversal', 'insert node from head']
     category: structures
     done: true
   - name: Linked List Cycle
@@ -75,7 +75,7 @@ questions:
     link: /structures/linked-list/203
     origin: https://leetcode.cn/problems/remove-linked-list-elements
     tag: linked-list
-    tags: ['recursive', 'traverse']
+    tags: ['recursive', 'traversal']
     category: structures
     done: true
   - name: Reverse Linked List
@@ -85,7 +85,7 @@ questions:
     link: /structures/linked-list/206
     origin: https://leetcode.cn/problems/reverse-linked-list
     tag: linked-list
-    tags: ['recursive', 'traverse']
+    tags: ['recursive', 'traversal']
     category: structures
     done: true
   - name: Palindrome Linked List
