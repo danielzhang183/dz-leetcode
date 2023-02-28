@@ -1,17 +1,49 @@
-/**
- * Definition for a binary tree node.
- * class TreeNode {
- *     val: number
- *     left: TreeNode | null
- *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.left = (left===undefined ? null : left)
- *         this.right = (right===undefined ? null : right)
- *     }
- * }
- */
+import type { TreeNode } from '../../utils'
 
+// DFS
 export function levelOrder(root: TreeNode | null): number[][] {
+  if (root == null)
+    return []
 
+  const dfs = (root: TreeNode, level: number, stack: number[][]) => {
+    if (level > stack.length)
+      stack.push([])
+
+    stack[level - 1].push(root.val!)
+
+    if (root.left)
+      dfs(root.left, level + 1, stack)
+    if (root.right)
+      dfs(root.right, level + 1, stack)
+  }
+
+  const ans: number[][] = []
+  dfs(root, 1, ans)
+
+  return ans
+}
+
+// BFS
+export function levelOrder1(root: TreeNode | null): number[][] {
+  if (root == null)
+    return []
+
+  const ans: number[][] = []
+  const stack: TreeNode[] = [root]
+
+  while (stack.length) {
+    const size = stack.length
+    ans.push([])
+
+    for (let i = 0; i < size; i++) {
+      const curr = stack.shift()!
+      ans[ans.length - 1].push(curr.val!)
+      if (curr.left)
+        stack.push(curr.left)
+      if (curr.right)
+        stack.push(curr.right)
+    }
+  }
+
+  return ans
 }

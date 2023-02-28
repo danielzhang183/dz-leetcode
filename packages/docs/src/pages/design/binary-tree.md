@@ -14,7 +14,7 @@ duration: 30min
 ### TreeNode
 
 ```ts
-export class TreeNode<T = number | null> {
+class TreeNode<T = number | null> {
   val: T
   left: TreeNode<T> | null
   right: TreeNode<T> | null
@@ -30,7 +30,7 @@ export class TreeNode<T = number | null> {
 ### Binary Tree
 
 ```ts
-export class BinaryTree<T = number | null> {
+class BinaryTree<T = number | null> {
   #root: TreeNode<T> | null = null
   #height = 0
 
@@ -113,7 +113,7 @@ Depth-First Search (DFS) algorithm can be further classified into three categori
 #### Recursive
 
 ```ts
-export function preorderTraversal(root: TreeNode | null): number[] {
+function preorderTraversal(root: TreeNode | null): number[] {
   const ans: number[] = []
   const preorder = (root: TreeNode | null) => {
     if (root == null)
@@ -132,7 +132,7 @@ export function preorderTraversal(root: TreeNode | null): number[] {
 #### Traverse
 
 ```ts
-export function preorderTraversal(root: TreeNode | null): number[] {
+function preorderTraversal(root: TreeNode | null): number[] {
   const ans: number[] = []
   const stack: TreeNode[] = []
   let curr = root
@@ -156,7 +156,7 @@ export function preorderTraversal(root: TreeNode | null): number[] {
 #### Morris Traverse
 
 ```ts
-export function preorderTraversal(root: TreeNode | null): number[] {
+function preorderTraversal(root: TreeNode | null): number[] {
   const ans: number[] = []
   let predecessor: TreeNode | null = null
 
@@ -191,7 +191,7 @@ export function preorderTraversal(root: TreeNode | null): number[] {
 #### Recursive
 
 ```ts
-export function inorderTraversal(root: TreeNode | null): number[] {
+function inorderTraversal(root: TreeNode | null): number[] {
   const ans: number[] = []
 
   const inorder = (root: TreeNode | null) => {
@@ -211,7 +211,7 @@ export function inorderTraversal(root: TreeNode | null): number[] {
 #### Traverse
 
 ```ts
-export function inorderTraversal(root: TreeNode | null): number[] {
+function inorderTraversal(root: TreeNode | null): number[] {
   const ans: number[] = []
   const stack: TreeNode[] = []
   let curr = root
@@ -233,7 +233,7 @@ export function inorderTraversal(root: TreeNode | null): number[] {
 #### Morris
 
 ```ts
-export function inorderTraversal(root: TreeNode | null): number[] {
+function inorderTraversal(root: TreeNode | null): number[] {
   const ans: number[] = []
   let predecessor: TreeNode | null = null
   while (root) {
@@ -320,8 +320,65 @@ function postorderTraversal(root: TreeNode | null): number[] {
 }
 ```
 
+### Level Order Traversal
+
+#### DFS
+
+```ts
+function levelOrder(root: TreeNode | null): number[][] {
+  if (root == null)
+    return []
+
+  const dfs = (root: TreeNode, level: number, stack: number[][]) => {
+    if (level > stack.length)
+      stack.push([])
+
+    stack[level - 1].push(root.val!)
+
+    if (root.left)
+      dfs(root.left, level + 1, stack)
+    if (root.right)
+      dfs(root.right, level + 1, stack)
+  }
+
+  const ans: number[][] = []
+  dfs(root, 1, ans)
+
+  return ans
+}
+```
+
+#### BFS
+
+```ts
+function levelOrder(root: TreeNode | null): number[][] {
+  if (root == null)
+    return []
+
+  const ans: number[][] = []
+  const stack: TreeNode[] = [root]
+
+  while (stack.length) {
+    const size = stack.length
+    ans.push([])
+
+    for (let i = 0; i < size; i++) {
+      const curr = stack.shift()!
+      ans[ans.length - 1].push(curr.val!)
+      if (curr.left)
+        stack.push(curr.left)
+      if (curr.right)
+        stack.push(curr.right)
+    }
+  }
+
+  return ans
+}
+```
+
 ## Related Questions
 
-- [Binary Tree Inorder Traversal](/structures/tree/094)
-- [Binary Tree Preorder Traversal](/structures/tree/144)
-- [Binary Tree Postorder Traversal](/structures/tree/145)
+- [94. Binary Tree Inorder Traversal](/structures/tree/094)
+- [144. Binary Tree Preorder Traversal](/structures/tree/144)
+- [145.Binary Tree Postorder Traversal](/structures/tree/145)
+- [102. Binary Tree Level Order Traversal](/structures/tree/102)

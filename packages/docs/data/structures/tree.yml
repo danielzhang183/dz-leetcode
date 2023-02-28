@@ -55,7 +55,9 @@ questions:
     link: /structures/tree/102
     origin: https://leetcode.cn/problems/binary-tree-level-order-traversal
     tag: tree
+    tags: ['DFS', 'BFS']
     category: structures
+    done: true
   - name: Maximum Depth of Binary Tree
     title: maximum-depth-of-binary-tree
     difficulty: Easy
