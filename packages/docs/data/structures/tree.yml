@@ -7,7 +7,7 @@ questions:
     link: /structures/tree/094
     origin: https://leetcode.cn/problems/binary-tree-inorder-traversal
     tag: tree
-    tags: ['recursive', 'traverse', 'morris']
+    tags: ['DFS', 'traverse', 'morris']
     category: structures
     done: true
   - name: Validate Binary Search Tree
@@ -33,7 +33,7 @@ questions:
     link: /structures/tree/100
     origin: https://leetcode.cn/problems/same-tree
     tag: tree
-    tags: ['recursive', 'BFS - stack & queue']
+    tags: ['DFS', 'BFS']
     category: structures
     done: true
   - name: Symmetric Tree
@@ -43,7 +43,7 @@ questions:
     link: /structures/tree/101
     origin: https://leetcode.cn/problems/symmetric-tree
     tag: tree
-    tags: ['recursive', 'BFS - stack & queue']
+    tags: ['DFS', 'BFS']
     category: structures
     done: true
   - name: Binary Tree Level Order Traversal
@@ -61,7 +61,7 @@ questions:
     link: /structures/tree/104
     origin: https://leetcode.cn/problems/maximum-depth-of-binary-tree
     tag: tree
-    tags: ['recursive', 'BFS - stack & queue']
+    tags: ['DFS', 'BFS']
     category: structures
     done: true
   - name: Binary Tree Level Order Traversal II
@@ -103,7 +103,7 @@ questions:
     link: /structures/tree/111
     origin: https://leetcode.cn/problems/minimum-depth-of-binary-tree
     tag: tree
-    tags: ['recursive', 'BFS - stack & queue']
+    tags: ['DFS', 'BFS']
     category: structures
     done: true
   - name: Path Sum
@@ -113,7 +113,7 @@ questions:
     link: /structures/tree/112
     origin: https://leetcode.cn/problems/path-sum
     tag: tree
-    tags: ['recursive', 'BFS - stack & queue']
+    tags: ['DFS', 'BFS']
     category: structures
     done: true
   - name: Flatten Binary Tree to Linked List
@@ -147,7 +147,7 @@ questions:
     link: /structures/tree/144
     origin: https://leetcode.cn/problems/binary-tree-preorder-traversal
     tag: tree
-    tags: ['recursive', 'traverse', 'morris']
+    tags: ['DFS', 'traverse', 'morris']
     category: structures
     done: true
   - name: Binary Tree Postorder Traversal
@@ -157,7 +157,7 @@ questions:
     link: /structures/tree/145
     origin: https://leetcode.cn/problems/binary-tree-postorder-traversal
     tag: tree
-    tags: ['recursive', 'traverse', 'morris']
+    tags: ['DFS', 'traverse', 'morris']
     category: structures
     done: true
   - name: Binary Tree Right Side View
@@ -207,7 +207,7 @@ questions:
     link: /structures/tree/257
     origin: https://leetcode.cn/problems/binary-tree-paths
     tag: tree
-    tags: ['recursive', 'BFS - stack & queue']
+    tags: ['DFS', 'BFS']
     category: structures
     done: true
   - name: Sum of Left Leaves
@@ -217,7 +217,7 @@ questions:
     link: /structures/tree/404
     origin: https://leetcode.cn/problems/sum-of-left-leaves
     tag: tree
-    tags: ['recursive', 'BFS']
+    tags: ['DFS', 'BFS']
     category: structures
     done: true
   - name: Find Largest Value in Each Tree Row
@@ -259,7 +259,9 @@ questions:
     link: /structures/tree/637
     origin: https://leetcode.cn/problems/average-of-levels-in-binary-tree
     tag: tree
+    tags: ['DFS', 'BFS']
     category: structures
+    done: true
   - name: Maximum Binary Tree
     title: maximum-binary-tree
     difficulty: Medium
