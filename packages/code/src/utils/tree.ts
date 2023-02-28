@@ -1,3 +1,5 @@
+import { Queue } from './queue'
+
 export class TreeNode<T = number | null> {
   val: T
   left: TreeNode<T> | null
@@ -79,4 +81,28 @@ export function createBinaryTree<T = number | null>(value?: T[]): TreeNode<T> | 
     return null
 
   return new BinaryTree<T>(value).val!
+}
+
+export function covertBinaryTreeToArray<T = number>(root: TreeNode<T> | null) {
+  if (root == null)
+    return []
+
+  const res: T[] = []
+  const q = new Queue<TreeNode<T>>()
+  q.enqueue(root)
+  while (!q.isEmpty()) {
+    let size = q.size
+
+    while (size--) {
+      const curr = q.dequeue()!
+      res.push(curr.val)
+
+      if (curr.left)
+        q.enqueue(curr.left)
+      if (curr.right)
+        q.enqueue(curr.right)
+    }
+  }
+
+  return res
 }

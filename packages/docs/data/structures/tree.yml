@@ -277,7 +277,9 @@ questions:
     link: /structures/tree/700
     origin: https://leetcode.cn/problems/search-in-a-binary-search-tree
     tag: tree
+    tags: ['DFS', 'BFS']
     category: structures
+    done: true
   - name: Insert into a Binary Search Tree
     title: insert-into-a-binary-search-tree
     difficulty: Medium
