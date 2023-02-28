@@ -239,7 +239,9 @@ questions:
     link: /structures/tree/543
     origin: https://leetcode.cn/problems/diameter-of-binary-tree
     tag: tree
+    tags: ['DFS']
     category: structures
+    done: true
   - name: Subtree of Another Tree
     title: subtree-of-another-tree
     difficulty: Easy

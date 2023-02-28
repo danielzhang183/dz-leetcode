@@ -1,17 +1,18 @@
-/**
- * Definition for a binary tree node.
- * class TreeNode {
- *     val: number
- *     left: TreeNode | null
- *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.left = (left===undefined ? null : left)
- *         this.right = (right===undefined ? null : right)
- *     }
- * }
- */
+import type { TreeNode } from '../../utils'
 
+// DFS
 export function diameterOfBinaryTree(root: TreeNode | null): number {
+  let max = 0
+  const depth = (root: TreeNode | null): number => {
+    if (root == null)
+      return 0
 
+    const left = depth(root.left)
+    const right = depth(root.right)
+    max = Math.max(max, left + right)
+    return Math.max(left, right) + 1
+  }
+
+  depth(root)
+  return max
 }
