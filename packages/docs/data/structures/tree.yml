@@ -183,7 +183,9 @@ questions:
     link: /structures/tree/226
     origin: https://leetcode.cn/problems/invert-binary-tree
     tag: tree
+    tags: ['DFS', 'BFS']
     category: structures
+    done: true
   - name: Kth Smallest Element in a BST
     title: kth-smallest-element-in-a-bst
     difficulty: Medium
