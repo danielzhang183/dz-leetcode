@@ -95,7 +95,9 @@ questions:
     link: /structures/tree/110
     origin: https://leetcode.cn/problems/balanced-binary-tree
     tag: tree
+    tags: ['DFS', 'DFS - bottom to top']
     category: structures
+    done: true
   - name: Minimum Depth of Binary Tree
     title: minimum-depth-of-binary-tree
     difficulty: Easy
