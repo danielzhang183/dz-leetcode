@@ -233,7 +233,9 @@ questions:
     link: /structures/tree/515
     origin: https://leetcode.cn/problems/find-largest-value-in-each-tree-row
     tag: tree
+    tags: ['DFS', 'BFS']
     category: structures
+    done: true
   - name: Diameter of Binary Tree
     title: diameter-of-binary-tree
     difficulty: Easy

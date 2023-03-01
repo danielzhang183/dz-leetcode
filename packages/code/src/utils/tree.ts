@@ -41,19 +41,28 @@ export class BinaryTree<T = number | null> {
     const root = new TreeNode<T>(value[0])
     const stack: TreeNode<T>[] = [root]
     let i = 1
+
     while (i < value.length) {
       let len = stack.length
+
       while (len--) {
         this.#height++
         const curr = stack.shift()!
+
         if (value[i] != null) {
           curr.left = new TreeNode<T>(value[i])
           stack.push(curr.left)
+        }
+        else {
+          curr.left = null
         }
         i++
         if (value[i] != null) {
           curr.right = new TreeNode<T>(value[i])
           stack.push(curr.right)
+        }
+        else {
+          curr.right = null
         }
         i++
       }
