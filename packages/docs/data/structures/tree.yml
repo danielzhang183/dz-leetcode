@@ -293,7 +293,9 @@ questions:
     link: /structures/tree/701
     origin: https://leetcode.cn/problems/insert-into-a-binary-search-tree
     tag: tree
+    tags: ['DFS', 'traversal']
     category: structures
+    done: true
   - name: N-ary Tree Level Order Traversal
     title: n-ary-tree-level-order-traversal
     difficulty: Medium
