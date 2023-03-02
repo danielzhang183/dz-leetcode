@@ -6,7 +6,7 @@ plum: true
 
 <SubNav module="structures" />
 
-*In General, heaps are of two types:*
+*In General, [heaps](/design/heap) are of two types:*
 
 **Max Heap**
 

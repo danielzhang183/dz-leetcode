@@ -9,10 +9,10 @@ plum: true
 
 There are a lot of different types of sorting algorithms:
 
-* [Bubble Sort](/design/)
-* [Selection Sort](/design/)
-* [Insertion Sort](/design/)
-* [Quick Sort](/design/)
-* [Merge Sort](/design/)
+* [Quick Sort](/design/quick-sort)
+* [Merge Sort](/design/merge-sort)
+* [Selection Sort](/design/slection-sort)
+* [Insertion Sort](/design/insertion-sort)
+* [Bubble Sort](/design/bubble-sort)
 
 <ListQuestions module="algorithms" tag="sort" />
