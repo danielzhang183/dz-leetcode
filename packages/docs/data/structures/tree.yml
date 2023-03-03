@@ -259,7 +259,9 @@ questions:
     link: /structures/tree/572
     origin: https://leetcode.cn/problems/subtree-of-another-tree
     tag: tree
+    tags: ['DFS', 'DFS + KMP']
     category: structures
+    done: true
   - name: Merge Two Binary Trees
     title: merge-two-binary-trees
     difficulty: Easy
