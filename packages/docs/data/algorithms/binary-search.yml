@@ -25,7 +25,9 @@ questions:
     link: /algorithms/binary-search/153
     origin: https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array
     tag: binary-search
+    tags: ['binary-search']
     category: algorithms
+    done: true
   - name: Binary Search
     title: binary-search
     difficulty: Easy
