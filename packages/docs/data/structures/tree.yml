@@ -269,7 +269,9 @@ questions:
     link: /structures/tree/617
     origin: https://leetcode.cn/problems/merge-two-binary-trees
     tag: tree
+    tags: ['DFS', 'BFS']
     category: structures
+    done: true
   - name: Average of Levels in Binary Tree
     title: average-of-levels-in-binary-tree
     difficulty: Easy
