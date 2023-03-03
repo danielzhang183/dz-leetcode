@@ -7,7 +7,9 @@ questions:
     link: /algorithms/binary-search/035
     origin: https://leetcode.cn/problems/search-insert-position
     tag: binary-search
+    tags: ['binary-search']
     category: algorithms
+    done: true
   - name: Sqrt(x)
     title: sqrtx
     difficulty: Easy
