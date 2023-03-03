@@ -31,4 +31,6 @@ questions:
     link: /algorithms/binary-search/704
     origin: https://leetcode.cn/problems/binary-search
     tag: binary-search
+    tags: ['binary-search']
     category: algorithms
+    done: true
