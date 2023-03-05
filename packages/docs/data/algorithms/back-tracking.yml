@@ -7,7 +7,9 @@ questions:
     link: /algorithms/back-tracking/017
     origin: https://leetcode.cn/problems/letter-combinations-of-a-phone-number
     tag: back-tracking
+    tags: ['N-ary Tree']
     category: algorithms
+    done: true
   - name: Sudoku Solver
     title: sudoku-solver
     difficulty: Hard
