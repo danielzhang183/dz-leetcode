@@ -55,7 +55,9 @@ questions:
     link: /algorithms/back-tracking/077
     origin: https://leetcode.cn/problems/combinations
     tag: back-tracking
+    tags: ['N-ary Tree', 'Choose Tree']
     category: algorithms
+    done: true
   - name: Subsets
     title: subsets
     difficulty: Medium
