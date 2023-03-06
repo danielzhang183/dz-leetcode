@@ -70,6 +70,7 @@ questions:
     origin: https://leetcode.cn/problems/subsets
     tag: back-tracking
     category: algorithms
+    done: true
   - name: Word Search
     title: word-search
     difficulty: Medium
