@@ -3,6 +3,7 @@ import { partition } from '../../../src/algorithms/back-tracking/131'
 
 describe('partition', () => {
   it('exported', () => {
-    expect(partition('aab')).toBe('a')
+    expect(partition('aab')).toStrictEqual([['a', 'a', 'b'], ['aa', 'b']])
+    expect(partition('a')).toStrictEqual([['a']])
   })
 })

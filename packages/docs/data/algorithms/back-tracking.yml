@@ -7,7 +7,7 @@ questions:
     link: /algorithms/back-tracking/017
     origin: https://leetcode.cn/problems/letter-combinations-of-a-phone-number
     tag: back-tracking
-    tags: ['N-ary Tree', 'Choose Tree']
+    tags: ['N-ary Tree']
     category: algorithms
     done: true
   - name: Sudoku Solver
@@ -25,7 +25,9 @@ questions:
     link: /algorithms/back-tracking/039
     origin: https://leetcode.cn/problems/combination-sum
     tag: back-tracking
+    tags: ['N-ary Tree', 'Choose Tree']
     category: algorithms
+    done: true
   - name: Permutations
     title: permutations
     difficulty: Medium
@@ -91,4 +93,6 @@ questions:
     link: /algorithms/back-tracking/131
     origin: https://leetcode.cn/problems/palindrome-partitioning
     tag: back-tracking
+    tags: ['N-ary Tree']
     category: algorithms
+    done: true
