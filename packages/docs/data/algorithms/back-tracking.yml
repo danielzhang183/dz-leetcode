@@ -25,7 +25,9 @@ questions:
     link: /algorithms/back-tracking/039
     origin: https://leetcode.cn/problems/combination-sum
     tag: back-tracking
+    tags: ['N-ary Tree', 'Choose Tree']
     category: algorithms
+    done: true
   - name: Permutations
     title: permutations
     difficulty: Medium
