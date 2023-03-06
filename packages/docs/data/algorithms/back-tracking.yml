@@ -85,7 +85,9 @@ questions:
     link: /algorithms/back-tracking/093
     origin: https://leetcode.cn/problems/restore-ip-addresses
     tag: back-tracking
+    tags: ['N-ary Tree']
     category: algorithms
+    done: true
   - name: Palindrome Partitioning
     title: palindrome-partitioning
     difficulty: Medium
