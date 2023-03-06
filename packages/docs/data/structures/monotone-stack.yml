@@ -1,0 +1,41 @@
+questions:
+  - name: Trapping Rain Water
+    title: trapping-rain-water
+    difficulty: Hard
+    id: 42
+    link: /structures/monotone-stack/042
+    origin: https://leetcode.cn/problems/trapping-rain-water
+    tag: monotone-stack
+    category: structures
+  - name: Largest Rectangle in Histogram
+    title: largest-rectangle-in-histogram
+    difficulty: Hard
+    id: 84
+    link: /structures/monotone-stack/084
+    origin: https://leetcode.cn/problems/largest-rectangle-in-histogram
+    tag: monotone-stack
+    category: structures
+  - name: Next Greater Element I
+    title: next-greater-element-i
+    difficulty: Easy
+    id: 496
+    link: /structures/monotone-stack/496
+    origin: https://leetcode.cn/problems/next-greater-element-i
+    tag: monotone-stack
+    category: structures
+  - name: Next Greater Element II
+    title: next-greater-element-ii
+    difficulty: Medium
+    id: 503
+    link: /structures/monotone-stack/503
+    origin: https://leetcode.cn/problems/next-greater-element-ii
+    tag: monotone-stack
+    category: structures
+  - name: Daily Temperatures
+    title: daily-temperatures
+    difficulty: Medium
+    id: 739
+    link: /structures/monotone-stack/739
+    origin: https://leetcode.cn/problems/daily-temperatures
+    tag: monotone-stack
+    category: structures

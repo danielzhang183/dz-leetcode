@@ -1,4 +1,6 @@
-description: The problems where choosing locally optimal also leads to the global solutions are best fit for Greedy.
+description: >-
+  The problems where choosing locally optimal also leads to the global solutions
+  are best fit for Greedy.
 questions:
   - name: Jump Game II
     title: jump-game-ii
@@ -6,6 +8,14 @@ questions:
     id: 45
     link: /algorithms/greedy/045
     origin: https://leetcode.cn/problems/jump-game-ii
+    tag: greedy
+    category: algorithms
+  - name: Maximum Subarray
+    title: maximum-subarray
+    difficulty: Medium
+    id: 53
+    link: /algorithms/greedy/053
+    origin: https://leetcode.cn/problems/maximum-subarray
     tag: greedy
     category: algorithms
   - name: Jump Game
@@ -16,12 +26,60 @@ questions:
     origin: https://leetcode.cn/problems/jump-game
     tag: greedy
     category: algorithms
+  - name: Merge Intervals
+    title: merge-intervals
+    difficulty: Medium
+    id: 56
+    link: /algorithms/greedy/056
+    origin: https://leetcode.cn/problems/merge-intervals
+    tag: greedy
+    category: algorithms
+  - name: Best Time to Buy and Sell Stock II
+    title: best-time-to-buy-and-sell-stock-ii
+    difficulty: Medium
+    id: 122
+    link: /algorithms/greedy/122
+    origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii
+    tag: greedy
+    category: algorithms
+  - name: Gas Station
+    title: gas-station
+    difficulty: Medium
+    id: 134
+    link: /algorithms/greedy/134
+    origin: https://leetcode.cn/problems/gas-station
+    tag: greedy
+    category: algorithms
+  - name: Candy
+    title: candy
+    difficulty: Hard
+    id: 135
+    link: /algorithms/greedy/135
+    origin: https://leetcode.cn/problems/candy
+    tag: greedy
+    category: algorithms
   - name: Longest Increasing Subsequence
     title: longest-increasing-subsequence
     difficulty: Medium
     id: 300
     link: /algorithms/greedy/300
     origin: https://leetcode.cn/problems/longest-increasing-subsequence
+    tag: greedy
+    category: algorithms
+  - name: Wiggle Subsequence
+    title: wiggle-subsequence
+    difficulty: Medium
+    id: 376
+    link: /algorithms/greedy/376
+    origin: https://leetcode.cn/problems/wiggle-subsequence
+    tag: greedy
+    category: algorithms
+  - name: Queue Reconstruction by Height
+    title: queue-reconstruction-by-height
+    difficulty: Medium
+    id: 406
+    link: /algorithms/greedy/406
+    origin: https://leetcode.cn/problems/queue-reconstruction-by-height
     tag: greedy
     category: algorithms
   - name: Non-overlapping Intervals
@@ -64,12 +122,44 @@ questions:
     origin: https://leetcode.cn/problems/dota2-senate
     tag: greedy
     category: algorithms
+  - name: Monotone Increasing Digits
+    title: monotone-increasing-digits
+    difficulty: Medium
+    id: 738
+    link: /algorithms/greedy/738
+    origin: https://leetcode.cn/problems/monotone-increasing-digits
+    tag: greedy
+    category: algorithms
+  - name: Partition Labels
+    title: partition-labels
+    difficulty: Medium
+    id: 763
+    link: /algorithms/greedy/763
+    origin: https://leetcode.cn/problems/partition-labels
+    tag: greedy
+    category: algorithms
   - name: Lemonade Change
     title: lemonade-change
     difficulty: Easy
     id: 860
     link: /algorithms/greedy/860
     origin: https://leetcode.cn/problems/lemonade-change
+    tag: greedy
+    category: algorithms
+  - name: Binary Tree Cameras
+    title: binary-tree-cameras
+    difficulty: Hard
+    id: 968
+    link: /algorithms/greedy/968
+    origin: https://leetcode.cn/problems/binary-tree-cameras
+    tag: greedy
+    category: algorithms
+  - name: Maximize Sum Of Array After K Negations
+    title: maximize-sum-of-array-after-k-negations
+    difficulty: Easy
+    id: 1005
+    link: /algorithms/greedy/1005
+    origin: https://leetcode.cn/problems/maximize-sum-of-array-after-k-negations
     tag: greedy
     category: algorithms
   - name: Minimum Number of Taps to Open to Water a Garden

@@ -1,1 +1,10 @@
 description: It is used to perform operations at the bit-level or to manipulate bits in different ways.
+questions:
+  - name: Sort Integers by The Number of 1 Bits
+    title: sort-integers-by-the-number-of-1-bits
+    difficulty: Easy
+    id: 1356
+    link: /algorithms/bitwise/1356
+    origin: https://leetcode.cn/problems/sort-integers-by-the-number-of-1-bits
+    tag: bitwise
+    category: algorithms

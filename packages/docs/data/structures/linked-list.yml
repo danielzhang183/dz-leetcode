@@ -7,7 +7,10 @@ questions:
     link: /structures/linked-list/019
     origin: https://leetcode.cn/problems/remove-nth-node-from-end-of-list
     tag: linked-list
-    tags: ['fast-slow-pointer', 'stack', 'count']
+    tags:
+      - fast-slow-pointer
+      - stack
+      - count
     category: structures
     done: true
   - name: Merge Two Sorted Lists
@@ -17,9 +20,19 @@ questions:
     link: /structures/linked-list/021
     origin: https://leetcode.cn/problems/merge-two-sorted-lists
     tag: linked-list
-    tags: ['recursive', 'traversal']
+    tags:
+      - recursive
+      - traversal
     category: structures
     done: true
+  - name: Swap Nodes in Pairs
+    title: swap-nodes-in-pairs
+    difficulty: Medium
+    id: 24
+    link: /structures/linked-list/024
+    origin: https://leetcode.cn/problems/swap-nodes-in-pairs
+    tag: linked-list
+    category: structures
   - name: Reverse Linked List II
     title: reverse-linked-list-ii
     difficulty: Medium
@@ -27,7 +40,9 @@ questions:
     link: /structures/linked-list/092
     origin: https://leetcode.cn/problems/reverse-linked-list-ii
     tag: linked-list
-    tags: ['traversal', 'insert node from head']
+    tags:
+      - traversal
+      - insert node from head
     category: structures
     done: true
   - name: Linked List Cycle
@@ -37,7 +52,8 @@ questions:
     link: /structures/linked-list/141
     origin: https://leetcode.cn/problems/linked-list-cycle
     tag: linked-list
-    tags: ['fast-slow-pointer']
+    tags:
+      - fast-slow-pointer
     category: structures
     done: true
   - name: Linked List Cycle II
@@ -47,9 +63,19 @@ questions:
     link: /structures/linked-list/142
     origin: https://leetcode.cn/problems/linked-list-cycle-ii
     tag: linked-list
-    tags: ['fast-slow-pointer', 'hashSet']
+    tags:
+      - fast-slow-pointer
+      - hashSet
     category: structures
     done: true
+  - name: Reorder List
+    title: reorder-list
+    difficulty: Medium
+    id: 143
+    link: /structures/linked-list/143
+    origin: https://leetcode.cn/problems/reorder-list
+    tag: linked-list
+    category: structures
   - name: LRU Cache
     title: lru-cache
     difficulty: Medium
@@ -65,7 +91,8 @@ questions:
     link: /structures/linked-list/160
     origin: https://leetcode.cn/problems/intersection-of-two-linked-lists
     tag: linked-list
-    tags: ['two-pointers']
+    tags:
+      - two-pointers
     category: structures
     done: true
   - name: Remove Linked List Elements
@@ -75,7 +102,9 @@ questions:
     link: /structures/linked-list/203
     origin: https://leetcode.cn/problems/remove-linked-list-elements
     tag: linked-list
-    tags: ['recursive', 'traversal']
+    tags:
+      - recursive
+      - traversal
     category: structures
     done: true
   - name: Reverse Linked List
@@ -85,7 +114,9 @@ questions:
     link: /structures/linked-list/206
     origin: https://leetcode.cn/problems/reverse-linked-list
     tag: linked-list
-    tags: ['recursive', 'traversal']
+    tags:
+      - recursive
+      - traversal
     category: structures
     done: true
   - name: Palindrome Linked List
@@ -111,6 +142,8 @@ questions:
     link: /structures/linked-list/876
     origin: https://leetcode.cn/problems/middle-of-the-linked-list
     tag: linked-list
-    tags: ['fast-slow-pointer', 'count']
+    tags:
+      - fast-slow-pointer
+      - count
     category: structures
     done: true

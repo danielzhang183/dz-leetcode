@@ -52,6 +52,22 @@ questions:
     origin: https://leetcode.cn/problems/implement-queue-using-stacks
     tag: stack
     category: structures
+  - name: Sliding Window Maximum
+    title: sliding-window-maximum
+    difficulty: Hard
+    id: 239
+    link: /structures/stack/239
+    origin: https://leetcode.cn/problems/sliding-window-maximum
+    tag: stack
+    category: structures
+  - name: Top K Frequent Elements
+    title: top-k-frequent-elements
+    difficulty: Medium
+    id: 347
+    link: /structures/stack/347
+    origin: https://leetcode.cn/problems/top-k-frequent-elements
+    tag: stack
+    category: structures
   - name: Remove All Adjacent Duplicates In String
     title: remove-all-adjacent-duplicates-in-string
     difficulty: Easy

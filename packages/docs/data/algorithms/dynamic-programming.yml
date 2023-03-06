@@ -1,4 +1,6 @@
-description: Use the previously calculated result to avoid repeated calculations of the same subtask which helps in reducing the time complexity. 
+description: >-
+  Use the previously calculated result to avoid repeated calculations of the
+  same subtask which helps in reducing the time complexity.
 questions:
   - name: Maximum Subarray
     title: maximum-subarray
@@ -40,6 +42,14 @@ questions:
     origin: https://leetcode.cn/problems/edit-distance
     tag: dynamic-programming
     category: algorithms
+  - name: Unique Binary Search Trees
+    title: unique-binary-search-trees
+    difficulty: Medium
+    id: 96
+    link: /algorithms/dynamic-programming/096
+    origin: https://leetcode.cn/problems/unique-binary-search-trees
+    tag: dynamic-programming
+    category: algorithms
   - name: Distinct Subsequences
     title: distinct-subsequences
     difficulty: Hard
@@ -72,6 +82,14 @@ questions:
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii
     tag: dynamic-programming
     category: algorithms
+  - name: Word Break
+    title: word-break
+    difficulty: Medium
+    id: 139
+    link: /algorithms/dynamic-programming/139
+    origin: https://leetcode.cn/problems/word-break
+    tag: dynamic-programming
+    category: algorithms
   - name: House Robber
     title: house-robber
     difficulty: Medium
@@ -86,6 +104,14 @@ questions:
     id: 213
     link: /algorithms/dynamic-programming/213
     origin: https://leetcode.cn/problems/house-robber-ii
+    tag: dynamic-programming
+    category: algorithms
+  - name: Perfect Squares
+    title: perfect-squares
+    difficulty: Medium
+    id: 279
+    link: /algorithms/dynamic-programming/279
+    origin: https://leetcode.cn/problems/perfect-squares
     tag: dynamic-programming
     category: algorithms
   - name: Coin Change
@@ -104,12 +130,52 @@ questions:
     origin: https://leetcode.cn/problems/house-robber-iii
     tag: dynamic-programming
     category: algorithms
+  - name: Integer Break
+    title: integer-break
+    difficulty: Medium
+    id: 343
+    link: /algorithms/dynamic-programming/343
+    origin: https://leetcode.cn/problems/integer-break
+    tag: dynamic-programming
+    category: algorithms
+  - name: Combination Sum IV
+    title: combination-sum-iv
+    difficulty: Medium
+    id: 377
+    link: /algorithms/dynamic-programming/377
+    origin: https://leetcode.cn/problems/combination-sum-iv
+    tag: dynamic-programming
+    category: algorithms
   - name: Is Subsequence
     title: is-subsequence
     difficulty: Easy
     id: 392
     link: /algorithms/dynamic-programming/392
     origin: https://leetcode.cn/problems/is-subsequence
+    tag: dynamic-programming
+    category: algorithms
+  - name: Partition Equal Subset Sum
+    title: partition-equal-subset-sum
+    difficulty: Medium
+    id: 416
+    link: /algorithms/dynamic-programming/416
+    origin: https://leetcode.cn/problems/partition-equal-subset-sum
+    tag: dynamic-programming
+    category: algorithms
+  - name: Ones and Zeroes
+    title: ones-and-zeroes
+    difficulty: Medium
+    id: 474
+    link: /algorithms/dynamic-programming/474
+    origin: https://leetcode.cn/problems/ones-and-zeroes
+    tag: dynamic-programming
+    category: algorithms
+  - name: Target Sum
+    title: target-sum
+    difficulty: Medium
+    id: 494
+    link: /algorithms/dynamic-programming/494
+    origin: https://leetcode.cn/problems/target-sum
     tag: dynamic-programming
     category: algorithms
   - name: Fibonacci Number
@@ -159,6 +225,14 @@ questions:
     id: 746
     link: /algorithms/dynamic-programming/746
     origin: https://leetcode.cn/problems/min-cost-climbing-stairs
+    tag: dynamic-programming
+    category: algorithms
+  - name: Last Stone Weight II
+    title: last-stone-weight-ii
+    difficulty: Medium
+    id: 1049
+    link: /algorithms/dynamic-programming/1049
+    origin: https://leetcode.cn/problems/last-stone-weight-ii
     tag: dynamic-programming
     category: algorithms
   - name: Longest Common Subsequence

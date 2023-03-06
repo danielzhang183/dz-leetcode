@@ -1,4 +1,6 @@
-description: A non-linear data structure, there is only one path to go from any of its nodes to any other node.
+description: >-
+  A non-linear data structure, there is only one path to go from any of its
+  nodes to any other node.
 questions:
   - name: Binary Tree Inorder Traversal
     title: binary-tree-inorder-traversal
@@ -7,7 +9,10 @@ questions:
     link: /structures/tree/094
     origin: https://leetcode.cn/problems/binary-tree-inorder-traversal
     tag: tree
-    tags: ['DFS', 'traversal', 'morris']
+    tags:
+      - DFS
+      - traversal
+      - morris
     category: structures
     done: true
   - name: Validate Binary Search Tree
@@ -17,7 +22,9 @@ questions:
     link: /structures/tree/098
     origin: https://leetcode.cn/problems/validate-binary-search-tree
     tag: tree
-    tags: ['DFS', 'Inorder Traversal']
+    tags:
+      - DFS
+      - Inorder Traversal
     category: structures
     done: true
   - name: Recover Binary Search Tree
@@ -35,7 +42,9 @@ questions:
     link: /structures/tree/100
     origin: https://leetcode.cn/problems/same-tree
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Symmetric Tree
@@ -45,7 +54,9 @@ questions:
     link: /structures/tree/101
     origin: https://leetcode.cn/problems/symmetric-tree
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Binary Tree Level Order Traversal
@@ -55,7 +66,9 @@ questions:
     link: /structures/tree/102
     origin: https://leetcode.cn/problems/binary-tree-level-order-traversal
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Maximum Depth of Binary Tree
@@ -65,7 +78,9 @@ questions:
     link: /structures/tree/104
     origin: https://leetcode.cn/problems/maximum-depth-of-binary-tree
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Binary Tree Level Order Traversal II
@@ -75,7 +90,9 @@ questions:
     link: /structures/tree/107
     origin: https://leetcode.cn/problems/binary-tree-level-order-traversal-ii
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Convert Sorted Array to Binary Search Tree
@@ -101,7 +118,9 @@ questions:
     link: /structures/tree/110
     origin: https://leetcode.cn/problems/balanced-binary-tree
     tag: tree
-    tags: ['DFS', 'DFS - bottom to top']
+    tags:
+      - DFS
+      - DFS - bottom to top
     category: structures
     done: true
   - name: Minimum Depth of Binary Tree
@@ -111,7 +130,9 @@ questions:
     link: /structures/tree/111
     origin: https://leetcode.cn/problems/minimum-depth-of-binary-tree
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Path Sum
@@ -121,7 +142,9 @@ questions:
     link: /structures/tree/112
     origin: https://leetcode.cn/problems/path-sum
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Flatten Binary Tree to Linked List
@@ -145,7 +168,16 @@ questions:
     difficulty: Medium
     id: 117
     link: /structures/tree/117
-    origin: https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii
+    origin: >-
+      https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii
+    tag: tree
+    category: structures
+  - name: Sum Root to Leaf Numbers
+    title: sum-root-to-leaf-numbers
+    difficulty: Medium
+    id: 129
+    link: /structures/tree/129
+    origin: https://leetcode.cn/problems/sum-root-to-leaf-numbers
     tag: tree
     category: structures
   - name: Binary Tree Preorder Traversal
@@ -155,7 +187,10 @@ questions:
     link: /structures/tree/144
     origin: https://leetcode.cn/problems/binary-tree-preorder-traversal
     tag: tree
-    tags: ['DFS', 'traversal', 'morris']
+    tags:
+      - DFS
+      - traversal
+      - morris
     category: structures
     done: true
   - name: Binary Tree Postorder Traversal
@@ -165,7 +200,10 @@ questions:
     link: /structures/tree/145
     origin: https://leetcode.cn/problems/binary-tree-postorder-traversal
     tag: tree
-    tags: ['DFS', 'traversal', 'morris']
+    tags:
+      - DFS
+      - traversal
+      - morris
     category: structures
     done: true
   - name: Binary Tree Right Side View
@@ -175,7 +213,9 @@ questions:
     link: /structures/tree/199
     origin: https://leetcode.cn/problems/binary-tree-right-side-view
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Count Complete Tree Nodes
@@ -193,7 +233,9 @@ questions:
     link: /structures/tree/226
     origin: https://leetcode.cn/problems/invert-binary-tree
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Kth Smallest Element in a BST
@@ -219,7 +261,9 @@ questions:
     link: /structures/tree/257
     origin: https://leetcode.cn/problems/binary-tree-paths
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Sum of Left Leaves
@@ -229,7 +273,9 @@ questions:
     link: /structures/tree/404
     origin: https://leetcode.cn/problems/sum-of-left-leaves
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Find Largest Value in Each Tree Row
@@ -239,7 +285,9 @@ questions:
     link: /structures/tree/515
     origin: https://leetcode.cn/problems/find-largest-value-in-each-tree-row
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Diameter of Binary Tree
@@ -249,7 +297,8 @@ questions:
     link: /structures/tree/543
     origin: https://leetcode.cn/problems/diameter-of-binary-tree
     tag: tree
-    tags: ['DFS']
+    tags:
+      - DFS
     category: structures
     done: true
   - name: Subtree of Another Tree
@@ -259,7 +308,9 @@ questions:
     link: /structures/tree/572
     origin: https://leetcode.cn/problems/subtree-of-another-tree
     tag: tree
-    tags: ['DFS', 'DFS + KMP']
+    tags:
+      - DFS
+      - DFS + KMP
     category: structures
     done: true
   - name: Merge Two Binary Trees
@@ -269,7 +320,9 @@ questions:
     link: /structures/tree/617
     origin: https://leetcode.cn/problems/merge-two-binary-trees
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Average of Levels in Binary Tree
@@ -279,7 +332,9 @@ questions:
     link: /structures/tree/637
     origin: https://leetcode.cn/problems/average-of-levels-in-binary-tree
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Maximum Binary Tree
@@ -297,7 +352,9 @@ questions:
     link: /structures/tree/700
     origin: https://leetcode.cn/problems/search-in-a-binary-search-tree
     tag: tree
-    tags: ['DFS', 'BFS']
+    tags:
+      - DFS
+      - BFS
     category: structures
     done: true
   - name: Insert into a Binary Search Tree
@@ -307,7 +364,9 @@ questions:
     link: /structures/tree/701
     origin: https://leetcode.cn/problems/insert-into-a-binary-search-tree
     tag: tree
-    tags: ['DFS', 'traversal']
+    tags:
+      - DFS
+      - traversal
     category: structures
     done: true
   - name: N-ary Tree Level Order Traversal
@@ -316,5 +375,13 @@ questions:
     id: 764
     link: /structures/tree/764
     origin: https://leetcode.cn/problems/n-ary-tree-level-order-traversal
+    tag: tree
+    category: structures
+  - name: Balance a Binary Search Tree
+    title: balance-a-binary-search-tree
+    difficulty: Medium
+    id: 1382
+    link: /structures/tree/1382
+    origin: https://leetcode.cn/problems/balance-a-binary-search-tree
     tag: tree
     category: structures

@@ -1,2 +1,50 @@
 description: It can be interpreted as an array of characters.
 questions:
+  - name: Reverse Words in a String
+    title: reverse-words-in-a-string
+    difficulty: Medium
+    id: 151
+    link: /structures/string/151
+    origin: https://leetcode.cn/problems/reverse-words-in-a-string
+    tag: string
+    category: structures
+  - name: Reverse String
+    title: reverse-string
+    difficulty: Easy
+    id: 344
+    link: /structures/string/344
+    origin: https://leetcode.cn/problems/reverse-string
+    tag: string
+    category: structures
+  - name: Repeated Substring Pattern
+    title: repeated-substring-pattern
+    difficulty: Easy
+    id: 459
+    link: /structures/string/459
+    origin: https://leetcode.cn/problems/repeated-substring-pattern
+    tag: string
+    category: structures
+  - name: Reverse String II
+    title: reverse-string-ii
+    difficulty: Easy
+    id: 541
+    link: /structures/string/541
+    origin: https://leetcode.cn/problems/reverse-string-ii
+    tag: string
+    category: structures
+  - name: Backspace String Compare
+    title: backspace-string-compare
+    difficulty: Easy
+    id: 844
+    link: /structures/string/844
+    origin: https://leetcode.cn/problems/backspace-string-compare
+    tag: string
+    category: structures
+  - name: Long Pressed Name
+    title: long-pressed-name
+    difficulty: Easy
+    id: 925
+    link: /structures/string/925
+    origin: https://leetcode.cn/problems/long-pressed-name
+    tag: string
+    category: structures

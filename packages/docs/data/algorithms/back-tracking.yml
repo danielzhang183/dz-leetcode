@@ -1,4 +1,6 @@
-description: Solving problems incrementally, Removing solutions that fail to satisfy the constraints of the problem at any point of time.
+description: >-
+  Solving problems incrementally, Removing solutions that fail to satisfy the
+  constraints of the problem at any point of time.
 questions:
   - name: Letter Combinations of a Phone Number
     title: letter-combinations-of-a-phone-number
@@ -7,7 +9,8 @@ questions:
     link: /algorithms/back-tracking/017
     origin: https://leetcode.cn/problems/letter-combinations-of-a-phone-number
     tag: back-tracking
-    tags: ['N-ary Tree']
+    tags:
+      - N-ary Tree
     category: algorithms
     done: true
   - name: Sudoku Solver
@@ -25,9 +28,19 @@ questions:
     link: /algorithms/back-tracking/039
     origin: https://leetcode.cn/problems/combination-sum
     tag: back-tracking
-    tags: ['N-ary Tree', 'Choose Tree']
+    tags:
+      - N-ary Tree
+      - Choose Tree
     category: algorithms
     done: true
+  - name: Combination Sum II
+    title: combination-sum-ii
+    difficulty: Medium
+    id: 40
+    link: /algorithms/back-tracking/040
+    origin: https://leetcode.cn/problems/combination-sum-ii
+    tag: back-tracking
+    category: algorithms
   - name: Permutations
     title: permutations
     difficulty: Medium
@@ -52,6 +65,14 @@ questions:
     origin: https://leetcode.cn/problems/n-queens
     tag: back-tracking
     category: algorithms
+  - name: N-Queens II
+    title: n-queens-ii
+    difficulty: Hard
+    id: 52
+    link: /algorithms/back-tracking/052
+    origin: https://leetcode.cn/problems/n-queens-ii
+    tag: back-tracking
+    category: algorithms
   - name: Combinations
     title: combinations
     difficulty: Medium
@@ -59,7 +80,9 @@ questions:
     link: /algorithms/back-tracking/077
     origin: https://leetcode.cn/problems/combinations
     tag: back-tracking
-    tags: ['N-ary Tree', 'Choose Tree']
+    tags:
+      - N-ary Tree
+      - Choose Tree
     category: algorithms
     done: true
   - name: Subsets
@@ -79,6 +102,14 @@ questions:
     origin: https://leetcode.cn/problems/word-search
     tag: back-tracking
     category: algorithms
+  - name: Subsets II
+    title: subsets-ii
+    difficulty: Medium
+    id: 90
+    link: /algorithms/back-tracking/090
+    origin: https://leetcode.cn/problems/subsets-ii
+    tag: back-tracking
+    category: algorithms
   - name: Restore IP Addresses
     title: restore-ip-addresses
     difficulty: Medium
@@ -86,7 +117,8 @@ questions:
     link: /algorithms/back-tracking/093
     origin: https://leetcode.cn/problems/restore-ip-addresses
     tag: back-tracking
-    tags: ['N-ary Tree']
+    tags:
+      - N-ary Tree
     category: algorithms
     done: true
   - name: Palindrome Partitioning
@@ -96,6 +128,31 @@ questions:
     link: /algorithms/back-tracking/131
     origin: https://leetcode.cn/problems/palindrome-partitioning
     tag: back-tracking
-    tags: ['N-ary Tree']
+    tags:
+      - N-ary Tree
     category: algorithms
     done: true
+  - name: Combination Sum III
+    title: combination-sum-iii
+    difficulty: Medium
+    id: 216
+    link: /algorithms/back-tracking/216
+    origin: https://leetcode.cn/problems/combination-sum-iii
+    tag: back-tracking
+    category: algorithms
+  - name: Reconstruct Itinerary
+    title: reconstruct-itinerary
+    difficulty: Hard
+    id: 332
+    link: /algorithms/back-tracking/332
+    origin: https://leetcode.cn/problems/reconstruct-itinerary
+    tag: back-tracking
+    category: algorithms
+  - name: Non-decreasing Subsequences
+    title: non-decreasing-subsequences
+    difficulty: Medium
+    id: 491
+    link: /algorithms/back-tracking/491
+    origin: https://leetcode.cn/problems/non-decreasing-subsequences
+    tag: back-tracking
+    category: algorithms
