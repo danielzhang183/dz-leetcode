@@ -92,6 +92,8 @@ questions:
     link: /algorithms/back-tracking/078
     origin: https://leetcode.cn/problems/subsets
     tag: back-tracking
+    tags:
+      - N-ary Tree
     category: algorithms
     done: true
   - name: Word Search
@@ -109,7 +111,10 @@ questions:
     link: /algorithms/back-tracking/090
     origin: https://leetcode.cn/problems/subsets-ii
     tag: back-tracking
+    tags:
+      - N-ary Tree
     category: algorithms
+    done: true
   - name: Restore IP Addresses
     title: restore-ip-addresses
     difficulty: Medium
