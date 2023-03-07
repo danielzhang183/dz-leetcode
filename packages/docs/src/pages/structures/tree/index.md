@@ -17,5 +17,4 @@ plum: true
 * Perfect Binary Tree – A perfect binary tree has all the levels filled
 * [Binary Search Tree]() – A binary search tree is a special type of binary tree where the smaller node is put to the left of a node and a higher value node is put to the right of a node
 
-
 <ListQuestions module="structures" tag="tree" />

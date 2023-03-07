@@ -6,4 +6,4 @@ plum: true
 
 <SubNav module="structures" />
 
-<!-- <ListQuestions module="structures" tag="string" /> -->
+<ListQuestions module="structures" tag="string" />

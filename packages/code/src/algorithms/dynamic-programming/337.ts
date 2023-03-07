@@ -1,4 +1,4 @@
-/**
+export /**
  * Definition for a binary tree node.
  * class TreeNode {
  *     val: number
@@ -12,6 +12,6 @@
  * }
  */
 
-export function rob(root: TreeNode | null): number {
+function rob(root: TreeNode | null): number {
 
-}
+};

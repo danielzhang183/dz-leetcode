@@ -90,6 +90,14 @@ questions:
     origin: https://leetcode.cn/problems/word-break
     tag: dynamic-programming
     category: algorithms
+  - name: Best Time to Buy and Sell Stock IV
+    title: best-time-to-buy-and-sell-stock-iv
+    difficulty: Hard
+    id: 188
+    link: /algorithms/dynamic-programming/188
+    origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv
+    tag: dynamic-programming
+    category: algorithms
   - name: House Robber
     title: house-robber
     difficulty: Medium
@@ -112,6 +120,14 @@ questions:
     id: 279
     link: /algorithms/dynamic-programming/279
     origin: https://leetcode.cn/problems/perfect-squares
+    tag: dynamic-programming
+    category: algorithms
+  - name: Best Time to Buy and Sell Stock with Cooldown
+    title: best-time-to-buy-and-sell-stock-with-cooldown
+    difficulty: Medium
+    id: 309
+    link: /algorithms/dynamic-programming/309
+    origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown
     tag: dynamic-programming
     category: algorithms
   - name: Coin Change

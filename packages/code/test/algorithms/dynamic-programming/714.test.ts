@@ -3,7 +3,7 @@ import { maxProfit } from '../../../src/algorithms/dynamic-programming/714'
 
 describe('maxProfit', () => {
   it('exported', () => {
-    expect(maxProfit([1, 3, 2, 8, 4, 9])).toBe(2)
-    expect(maxProfit([1, 3, 7, 5, 10, 3])).toBe(3)
+    expect(maxProfit([1,3,2,8,4,9])).toBe(2)
+    expect(maxProfit([1,3,7,5,10,3])).toBe(3)
   })
 })

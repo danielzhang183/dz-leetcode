@@ -11,4 +11,6 @@ plum: true
 2. **Conquer:** Recursively solve these subproblems
 3. **Combine:** Appropriately combine the answers
 
-Content is coming soon.
+Questions are coming soon~
+
+<SubNav module="algorithms" />
