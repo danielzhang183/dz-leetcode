@@ -106,6 +106,7 @@ questions:
     origin: https://leetcode.cn/problems/assign-cookies
     tag: greedy
     category: algorithms
+    done: true
   - name: Task Scheduler
     title: task-scheduler
     difficulty: Medium
