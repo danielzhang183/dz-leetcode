@@ -12,6 +12,7 @@ questions:
     tags:
       - N-ary Tree
     category: algorithms
+    series: combinaton
     done: true
   - name: Sudoku Solver
     title: sudoku-solver
@@ -21,6 +22,7 @@ questions:
     origin: https://leetcode.cn/problems/sudoku-solver
     tag: back-tracking
     category: algorithms
+    series: chessboard
   - name: Combination Sum
     title: combination-sum
     difficulty: Medium
@@ -32,6 +34,7 @@ questions:
       - N-ary Tree
       - Choose Tree
     category: algorithms
+    series: combinaton
     done: true
   - name: Combination Sum II
     title: combination-sum-ii
@@ -41,6 +44,7 @@ questions:
     origin: https://leetcode.cn/problems/combination-sum-ii
     tag: back-tracking
     category: algorithms
+    series: combinaton
   - name: Permutations
     title: permutations
     difficulty: Medium
@@ -51,6 +55,7 @@ questions:
     tags:
       - N-ary Tree
     category: algorithms
+    series: permutation
     done: true
   - name: Permutations II
     title: permutations-ii
@@ -62,6 +67,7 @@ questions:
     tags:
       - N-ary Tree
     category: algorithms
+    series: permutation
     done: true
   - name: N-Queens
     title: n-queens
@@ -71,6 +77,7 @@ questions:
     origin: https://leetcode.cn/problems/n-queens
     tag: back-tracking
     category: algorithms
+    series: chessboard
   - name: N-Queens II
     title: n-queens-ii
     difficulty: Hard
@@ -90,6 +97,7 @@ questions:
       - N-ary Tree
       - Choose Tree
     category: algorithms
+    series: combinaton
     done: true
   - name: Subsets
     title: subsets
@@ -101,6 +109,7 @@ questions:
     tags:
       - N-ary Tree
     category: algorithms
+    series: subset
     done: true
   - name: Word Search
     title: word-search
@@ -120,6 +129,7 @@ questions:
     tags:
       - N-ary Tree
     category: algorithms
+    series: subset
     done: true
   - name: Restore IP Addresses
     title: restore-ip-addresses
@@ -131,6 +141,7 @@ questions:
     tags:
       - N-ary Tree
     category: algorithms
+    series: partition
     done: true
   - name: Palindrome Partitioning
     title: palindrome-partitioning
@@ -142,6 +153,7 @@ questions:
     tags:
       - N-ary Tree
     category: algorithms
+    series: partition
     done: true
   - name: Combination Sum III
     title: combination-sum-iii
@@ -151,6 +163,7 @@ questions:
     origin: https://leetcode.cn/problems/combination-sum-iii
     tag: back-tracking
     category: algorithms
+    series: combinaton
   - name: Reconstruct Itinerary
     title: reconstruct-itinerary
     difficulty: Hard
@@ -159,6 +172,7 @@ questions:
     origin: https://leetcode.cn/problems/reconstruct-itinerary
     tag: back-tracking
     category: algorithms
+    series: other
   - name: Non-decreasing Subsequences
     title: non-decreasing-subsequences
     difficulty: Medium
@@ -169,4 +183,5 @@ questions:
     tags:
       - N-ary Tree
     category: algorithms
+    series: other
     done: true
