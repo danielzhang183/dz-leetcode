@@ -59,7 +59,10 @@ questions:
     link: /algorithms/back-tracking/047
     origin: https://leetcode.cn/problems/permutations-ii
     tag: back-tracking
+    tags:
+      - N-ary Tree
     category: algorithms
+    done: true
   - name: N-Queens
     title: n-queens
     difficulty: Hard
@@ -163,5 +166,7 @@ questions:
     link: /algorithms/back-tracking/491
     origin: https://leetcode.cn/problems/non-decreasing-subsequences
     tag: back-tracking
+    tags:
+      - N-ary Tree
     category: algorithms
     done: true
