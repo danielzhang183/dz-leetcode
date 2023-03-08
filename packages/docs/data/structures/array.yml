@@ -112,7 +112,11 @@ questions:
     link: /structures/array/349
     origin: https://leetcode.cn/problems/intersection-of-two-arrays
     tag: array
+    tags:
+      - set
+      - sort + two-pointers
     category: structures
+    done: true
   - name: Find Pivot Index
     title: find-pivot-index
     difficulty: Easy
