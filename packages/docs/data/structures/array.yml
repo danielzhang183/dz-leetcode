@@ -89,7 +89,10 @@ questions:
     link: /structures/array/283
     origin: https://leetcode.cn/problems/move-zeroes
     tag: array
+    tags:
+      - two-pointers
     category: structures
+    done: true
   - name: Reverse String
     title: reverse-string
     difficulty: Easy
