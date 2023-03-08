@@ -94,7 +94,11 @@ questions:
     link: /structures/array/344
     origin: https://leetcode.cn/problems/reverse-string
     tag: array
+    tags:
+      - two-pointers
+      - api
     category: structures
+    done: true
   - name: Intersection of Two Arrays
     title: intersection-of-two-arrays
     difficulty: Easy
