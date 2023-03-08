@@ -43,7 +43,10 @@ questions:
     link: /structures/array/035
     origin: https://leetcode.cn/problems/search-insert-position
     tag: array
+    tags:
+      - binary-search
     category: structures
+    done: true
   - name: Valid Palindrome
     title: valid-palindrome
     difficulty: Easy
