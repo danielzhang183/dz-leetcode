@@ -114,7 +114,10 @@ questions:
     link: /structures/array/724
     origin: https://leetcode.cn/problems/find-pivot-index
     tag: array
+    tags:
+      - prefix-sum
     category: structures
+    done: true
   - name: Sort Array By Parity II
     title: sort-array-by-parity-ii
     difficulty: Easy
