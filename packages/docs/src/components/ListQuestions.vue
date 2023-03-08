@@ -117,6 +117,10 @@ function padZero(num: string | number, len = 3) {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+.project-grid a {
+  border-bottom: unset;
+}
+
 .project-grid a.item {
   padding: 0.8em 1em;
   background: transparent;

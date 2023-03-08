@@ -32,7 +32,8 @@ const navs: SubNav[] = props.navs || getNavs(props.module)
         Hard
       </button>
       <button flex="~ gap1" items-center mb2 op30 text-sm @click="mode = Number(!mode)">
-        <div :i="mode ? 'i-ri-road-map-fill' : 'i-ri-road-map-line'" />
+        <div v-if="mode" i-carbon:accessibility-color-filled />
+        <div v-else i-carbon:accessibility-color />
       </button>
     </div>
 
