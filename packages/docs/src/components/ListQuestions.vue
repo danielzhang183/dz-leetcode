@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Module, Tag } from '~/types'
-import { easy, getDifficultyColor, getTagQuestions, hard, medium } from '~/logics'
+import type { Module, Question, Tag } from '~/types'
+import { easy, getDifficultyColor, getTagQuestions, hard, medium, mode } from '~/logics'
 
 const props = defineProps<{
   module: Module
@@ -13,12 +13,39 @@ const difficulty = computed(() => Object.entries({
   medium: medium.value,
 }).map(([key, val]) => val && key).filter(Boolean))
 
+const rawQuestions = getTagQuestions(props.module, props.tag) || []
+const modeQuestions = normalizeModeQuestions(rawQuestions)
+
 const questions = computed(() => {
-  const questions = getTagQuestions(props.module, props.tag)
-  return difficulty.value.length
-    ? questions.filter(i => difficulty.value.includes(i.difficulty.toLowerCase()))
-    : questions
+  const qas = mode.value ? Object.assign({}, modeQuestions) : { unsort: rawQuestions }
+
+  if ([1, 2].includes(difficulty.value.length)) {
+    for (const key of Object.keys(qas)) {
+      qas[key] = qas[key].filter(i => difficulty.value.includes(i.difficulty.toLowerCase()))
+      if (!qas[key].length)
+        delete qas[key]
+    }
+  }
+
+  return qas
 })
+
+function normalizeModeQuestions(questions: Question[]) {
+  const map: Record<string, Question[]> = {}
+  for (const question of questions) {
+    const series = question.series ?? 'other'
+    if (!map[series])
+      map[series] = []
+
+    map[series].push(question)
+  }
+
+  return map
+}
+
+function normalizeSolution(link: string, solution: string) {
+  return `${link}#${solution.replace(' ', '').replace(/\+/g, '-').toLowerCase()}`
+}
 
 function padZero(num: string | number, len = 3) {
   if (!num)
@@ -32,50 +59,55 @@ function padZero(num: string | number, len = 3) {
 </script>
 
 <template>
-  <div class="project-grid py-2 -mx-3 gap-2">
-    <a
-      v-for="item, idx in questions"
-      :key="idx"
-      class="item relative flex items-center"
-      :href="item.link"
-      target="_blank"
-      :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
-      :title="item.name"
-    >
-      <div class="pt-2 pr-4 box-content min-w-8 text-center">
-        <a
-          :style="getDifficultyColor(item.difficulty)"
-          :href="item.origin"
-          target="_blank"
-        >
-          {{ padZero(item.id) }}
-        </a>
-      </div>
-      <div class="flex-auto">
-        <div cla ss="text-normal">{{ item.name }}</div>
-        <div v-if="item.tags" class="flex gap-2 text-sm font-normal pt1">
-          <span
-            v-for="t in item.tags"
-            :key="t"
-            bg-light
-            rounded-3
-            text-black
-            px-2 py-0.5
-          >
-            {{ t }}
-          </span>
-        </div>
-      </div>
-      <div
-        v-if="item.done"
-        class="absolute bottom-3 right-4 text-2xl opacity-50"
-        i-ion-checkmark-done-outline
-        style="color: #a1b53f"
-      />
-    </a>
-    <div v-if="!questions.length">
-      Content is comming soon~
+  <template v-for="series in Object.keys(questions)" :key="series">
+    <div v-if="series !== 'unsort'" h15 pointer-events-none>
+      <span text-3em op10 font-bold>{{ series }}</span>
     </div>
+    <div class="project-grid py-2 -mx-3 gap-2">
+      <a
+        v-for="item, idx in questions[series]"
+        :key="idx"
+        class="item relative flex items-center"
+        :href="item.link"
+        target="_blank"
+        :class="!item.link ? 'opacity-0 pointer-events-none h-0 -mt-8 -mb-4' : ''"
+        :title="item.name"
+      >
+        <div class="pt-2 pr-4 box-content min-w-8 text-center">
+          <router-link
+            :to="item.origin"
+            title="View Source"
+            :style="getDifficultyColor(item.difficulty)"
+          >
+            {{ padZero(item.id) }}
+          </router-link>
+        </div>
+        <div class="flex-auto">
+          <div cla ss="text-normal">{{ item.name }}</div>
+          <div v-if="item.tags" class="tags flex gap-2 text-sm font-normal pt1">
+            <a
+              v-for="t in item.tags"
+              :key="t"
+              :href="normalizeSolution(item.link, t)"
+              :title="t"
+              class="rounded-3 badge-square-blue text-sm px-2 py-0.5"
+              target="_blank"
+            >
+              {{ t }}
+            </a>
+          </div>
+        </div>
+        <div
+          v-if="item.done"
+          class="absolute bottom-3 right-4 text-2xl opacity-50"
+          i-ion-checkmark-done-outline
+          style="color: #a1b53f"
+        />
+      </a>
+    </div>
+  </template>
+  <div v-if="!rawQuestions.length">
+    Content is comming soon~
   </div>
 </template>
 
@@ -93,5 +125,21 @@ function padZero(num: string | number, len = 3) {
 
 .project-grid a.item:hover {
   background: #88888808;
+}
+
+.tags a {
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  opacity: 0.6;
+  outline: none;
+  color: rgba(59,130,246,var(--un-text-opacity));
+  border-bottom: unset;
+}
+
+.tags a:hover {
+  opacity: 1;
+  text-decoration-color: unset;
+  border-bottom: unset;
 }
 </style>

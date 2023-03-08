@@ -34,4 +34,4 @@ export function letterCombinations(digits: string): string[] {
   return ans
 }
 
-// letterCombinations('23')
+letterCombinations('23')

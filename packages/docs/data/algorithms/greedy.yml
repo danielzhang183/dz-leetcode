@@ -10,6 +10,7 @@ questions:
     origin: https://leetcode.cn/problems/jump-game-ii
     tag: greedy
     category: algorithms
+    series: interval
   - name: Maximum Subarray
     title: maximum-subarray
     difficulty: Medium
@@ -18,6 +19,7 @@ questions:
     origin: https://leetcode.cn/problems/maximum-subarray
     tag: greedy
     category: algorithms
+    series: hard
   - name: Jump Game
     title: jump-game
     difficulty: Medium
@@ -26,6 +28,7 @@ questions:
     origin: https://leetcode.cn/problems/jump-game
     tag: greedy
     category: algorithms
+    series: interval
   - name: Merge Intervals
     title: merge-intervals
     difficulty: Medium
@@ -34,6 +37,7 @@ questions:
     origin: https://leetcode.cn/problems/merge-intervals
     tag: greedy
     category: algorithms
+    series: interval
   - name: Best Time to Buy and Sell Stock II
     title: best-time-to-buy-and-sell-stock-ii
     difficulty: Medium
@@ -42,6 +46,7 @@ questions:
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii
     tag: greedy
     category: algorithms
+    series: stock
   - name: Gas Station
     title: gas-station
     difficulty: Medium
@@ -50,6 +55,7 @@ questions:
     origin: https://leetcode.cn/problems/gas-station
     tag: greedy
     category: algorithms
+    series: hard
   - name: Candy
     title: candy
     difficulty: Hard
@@ -58,6 +64,7 @@ questions:
     origin: https://leetcode.cn/problems/candy
     tag: greedy
     category: algorithms
+    series: balance
   - name: Longest Increasing Subsequence
     title: longest-increasing-subsequence
     difficulty: Medium
@@ -74,6 +81,7 @@ questions:
     origin: https://leetcode.cn/problems/wiggle-subsequence
     tag: greedy
     category: algorithms
+    series: subsequence
   - name: Queue Reconstruction by Height
     title: queue-reconstruction-by-height
     difficulty: Medium
@@ -82,6 +90,7 @@ questions:
     origin: https://leetcode.cn/problems/queue-reconstruction-by-height
     tag: greedy
     category: algorithms
+    series: balance
   - name: Non-overlapping Intervals
     title: non-overlapping-intervals
     difficulty: Medium
@@ -90,6 +99,7 @@ questions:
     origin: https://leetcode.cn/problems/non-overlapping-intervals
     tag: greedy
     category: algorithms
+    series: interval
   - name: Minimum Number of Arrows to Burst Balloons
     title: minimum-number-of-arrows-to-burst-balloons
     difficulty: Medium
@@ -98,6 +108,7 @@ questions:
     origin: https://leetcode.cn/problems/minimum-number-of-arrows-to-burst-balloons
     tag: greedy
     category: algorithms
+    series: interval
   - name: Assign Cookies
     title: assign-cookies
     difficulty: Easy
@@ -106,6 +117,7 @@ questions:
     origin: https://leetcode.cn/problems/assign-cookies
     tag: greedy
     category: algorithms
+    series: basic
     done: true
   - name: Task Scheduler
     title: task-scheduler
@@ -123,6 +135,16 @@ questions:
     origin: https://leetcode.cn/problems/dota2-senate
     tag: greedy
     category: algorithms
+  - name: Best Time to Buy and Sell Stock with Transaction Fee
+    title: best-time-to-buy-and-sell-stock-with-transaction-fee
+    difficulty: Medium
+    id: 714
+    link: /algorithms/greedy/714
+    origin: >-
+      https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee
+    tag: greedy
+    category: algorithms
+    series: stock
   - name: Monotone Increasing Digits
     title: monotone-increasing-digits
     difficulty: Medium
@@ -131,6 +153,7 @@ questions:
     origin: https://leetcode.cn/problems/monotone-increasing-digits
     tag: greedy
     category: algorithms
+    series: subsequence
   - name: Partition Labels
     title: partition-labels
     difficulty: Medium
@@ -139,6 +162,7 @@ questions:
     origin: https://leetcode.cn/problems/partition-labels
     tag: greedy
     category: algorithms
+    series: interval
   - name: Lemonade Change
     title: lemonade-change
     difficulty: Easy
@@ -147,6 +171,7 @@ questions:
     origin: https://leetcode.cn/problems/lemonade-change
     tag: greedy
     category: algorithms
+    series: basic
   - name: Binary Tree Cameras
     title: binary-tree-cameras
     difficulty: Hard
@@ -155,6 +180,7 @@ questions:
     origin: https://leetcode.cn/problems/binary-tree-cameras
     tag: greedy
     category: algorithms
+    series: hard
   - name: Maximize Sum Of Array After K Negations
     title: maximize-sum-of-array-after-k-negations
     difficulty: Easy
@@ -163,6 +189,7 @@ questions:
     origin: https://leetcode.cn/problems/maximize-sum-of-array-after-k-negations
     tag: greedy
     category: algorithms
+    series: basic
   - name: Minimum Number of Taps to Open to Water a Garden
     title: minimum-number-of-taps-to-open-to-water-a-garden
     difficulty: Hard

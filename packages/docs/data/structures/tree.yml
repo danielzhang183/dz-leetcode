@@ -14,6 +14,7 @@ questions:
       - traversal
       - morris
     category: structures
+    series: traversal
     done: true
   - name: Validate Binary Search Tree
     title: validate-binary-search-tree
@@ -26,6 +27,7 @@ questions:
       - DFS
       - Inorder Traversal
     category: structures
+    series: bst character
     done: true
   - name: Recover Binary Search Tree
     title: recover-binary-search-tree
@@ -58,6 +60,7 @@ questions:
       - DFS
       - BFS
     category: structures
+    series: bs character
     done: true
   - name: Binary Tree Level Order Traversal
     title: binary-tree-level-order-traversal
@@ -70,6 +73,7 @@ questions:
       - DFS
       - BFS
     category: structures
+    series: traversal
     done: true
   - name: Maximum Depth of Binary Tree
     title: maximum-depth-of-binary-tree
@@ -82,7 +86,18 @@ questions:
       - DFS
       - BFS
     category: structures
+    series: bs character
     done: true
+  - name: Construct Binary Tree from Inorder and Postorder Traversal
+    title: construct-binary-tree-from-inorder-and-postorder-traversal
+    difficulty: Medium
+    id: 106
+    link: /structures/tree/106
+    origin: >-
+      https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal
+    tag: tree
+    category: structures
+    series: bs modify
   - name: Binary Tree Level Order Traversal II
     title: binary-tree-level-order-traversal-ii
     difficulty: Medium
@@ -103,6 +118,7 @@ questions:
     origin: https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree
     tag: tree
     category: structures
+    series: bst modify
   - name: Convert Sorted List to Binary Search Tree
     title: convert-sorted-list-to-binary-search-tree
     difficulty: Medium
@@ -122,6 +138,7 @@ questions:
       - DFS
       - DFS - bottom to top
     category: structures
+    series: bs character
     done: true
   - name: Minimum Depth of Binary Tree
     title: minimum-depth-of-binary-tree
@@ -134,6 +151,7 @@ questions:
       - DFS
       - BFS
     category: structures
+    series: bs character
     done: true
   - name: Path Sum
     title: path-sum
@@ -146,6 +164,7 @@ questions:
       - DFS
       - BFS
     category: structures
+    series: bs character
     done: true
   - name: Flatten Binary Tree to Linked List
     title: flatten-binary-tree-to-linked-list
@@ -192,6 +211,7 @@ questions:
       - traversal
       - morris
     category: structures
+    series: traversal
     done: true
   - name: Binary Tree Postorder Traversal
     title: binary-tree-postorder-traversal
@@ -205,6 +225,7 @@ questions:
       - traversal
       - morris
     category: structures
+    series: traversal
     done: true
   - name: Binary Tree Right Side View
     title: binary-tree-right-side-view
@@ -226,6 +247,7 @@ questions:
     origin: https://leetcode.cn/problems/count-complete-tree-nodes
     tag: tree
     category: structures
+    series: bs character
   - name: Invert Binary Tree
     title: invert-binary-tree
     difficulty: Easy
@@ -237,6 +259,7 @@ questions:
       - DFS
       - BFS
     category: structures
+    series: bs modify
     done: true
   - name: Kth Smallest Element in a BST
     title: kth-smallest-element-in-a-bst
@@ -246,6 +269,16 @@ questions:
     origin: https://leetcode.cn/problems/kth-smallest-element-in-a-bst
     tag: tree
     category: structures
+  - name: Lowest Common Ancestor of a Binary Search Tree
+    title: lowest-common-ancestor-of-a-binary-search-tree
+    difficulty: Medium
+    id: 235
+    link: /structures/tree/235
+    origin: >-
+      https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree
+    tag: tree
+    category: structures
+    series: ancestor
   - name: Lowest Common Ancestor of a Binary Tree
     title: lowest-common-ancestor-of-a-binary-tree
     difficulty: Medium
@@ -254,6 +287,7 @@ questions:
     origin: https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree
     tag: tree
     category: structures
+    series: ancestor
   - name: Binary Tree Paths
     title: binary-tree-paths
     difficulty: Easy
@@ -265,6 +299,7 @@ questions:
       - DFS
       - BFS
     category: structures
+    series: bs character
     done: true
   - name: Sum of Left Leaves
     title: sum-of-left-leaves
@@ -277,7 +312,26 @@ questions:
       - DFS
       - BFS
     category: structures
+    series: bs character
     done: true
+  - name: Find Mode in Binary Search Tree
+    title: find-mode-in-binary-search-tree
+    difficulty: Easy
+    id: 501
+    link: /structures/tree/501
+    origin: https://leetcode.cn/problems/find-mode-in-binary-search-tree
+    tag: tree
+    category: structures
+    series: bst character
+  - name: Find Bottom Left Tree Value
+    title: find-bottom-left-tree-value
+    difficulty: Medium
+    id: 513
+    link: /structures/tree/513
+    origin: https://leetcode.cn/problems/find-bottom-left-tree-value
+    tag: tree
+    category: structures
+    series: bs character
   - name: Find Largest Value in Each Tree Row
     title: find-largest-value-in-each-tree-row
     difficulty: Medium
@@ -290,6 +344,24 @@ questions:
       - BFS
     category: structures
     done: true
+  - name: Minimum Absolute Difference in BST
+    title: minimum-absolute-difference-in-bst
+    difficulty: Easy
+    id: 530
+    link: /structures/tree/530
+    origin: https://leetcode.cn/problems/minimum-absolute-difference-in-bst
+    tag: tree
+    category: structures
+    series: bst character
+  - name: Convert BST to Greater Tree
+    title: convert-bst-to-greater-tree
+    difficulty: Medium
+    id: 538
+    link: /structures/tree/538
+    origin: https://leetcode.cn/problems/convert-bst-to-greater-tree
+    tag: tree
+    category: structures
+    series: bst character
   - name: Diameter of Binary Tree
     title: diameter-of-binary-tree
     difficulty: Easy
@@ -324,6 +396,7 @@ questions:
       - DFS
       - BFS
     category: structures
+    series: bs modify
     done: true
   - name: Average of Levels in Binary Tree
     title: average-of-levels-in-binary-tree
@@ -345,6 +418,7 @@ questions:
     origin: https://leetcode.cn/problems/maximum-binary-tree
     tag: tree
     category: structures
+    series: bs modify
   - name: Search in a Binary Search Tree
     title: search-in-a-binary-search-tree
     difficulty: Easy
@@ -356,6 +430,7 @@ questions:
       - DFS
       - BFS
     category: structures
+    series: bst character
     done: true
   - name: Insert into a Binary Search Tree
     title: insert-into-a-binary-search-tree

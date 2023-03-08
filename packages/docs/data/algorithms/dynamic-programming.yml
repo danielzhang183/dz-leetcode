@@ -10,6 +10,7 @@ questions:
     origin: https://leetcode.cn/problems/maximum-subarray
     tag: dynamic-programming
     category: algorithms
+    series: subsequence
   - name: Unique Paths
     title: unique-paths
     difficulty: Medium
@@ -18,6 +19,7 @@ questions:
     origin: https://leetcode.cn/problems/unique-paths
     tag: dynamic-programming
     category: algorithms
+    series: basic
   - name: Unique Paths II
     title: unique-paths-ii
     difficulty: Medium
@@ -26,6 +28,7 @@ questions:
     origin: https://leetcode.cn/problems/unique-paths-ii
     tag: dynamic-programming
     category: algorithms
+    series: basic
   - name: Climbing Stairs
     title: climbing-stairs
     difficulty: Easy
@@ -34,6 +37,7 @@ questions:
     origin: https://leetcode.cn/problems/climbing-stairs
     tag: dynamic-programming
     category: algorithms
+    series: pack complete
   - name: Edit Distance
     title: edit-distance
     difficulty: Hard
@@ -42,6 +46,7 @@ questions:
     origin: https://leetcode.cn/problems/edit-distance
     tag: dynamic-programming
     category: algorithms
+    series: subsequence
   - name: Unique Binary Search Trees
     title: unique-binary-search-trees
     difficulty: Medium
@@ -50,6 +55,7 @@ questions:
     origin: https://leetcode.cn/problems/unique-binary-search-trees
     tag: dynamic-programming
     category: algorithms
+    series: basic
   - name: Distinct Subsequences
     title: distinct-subsequences
     difficulty: Hard
@@ -58,6 +64,7 @@ questions:
     origin: https://leetcode.cn/problems/distinct-subsequences
     tag: dynamic-programming
     category: algorithms
+    series: subsequence
   - name: Best Time to Buy and Sell Stock
     title: best-time-to-buy-and-sell-stock
     difficulty: Easy
@@ -66,6 +73,7 @@ questions:
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock
     tag: dynamic-programming
     category: algorithms
+    series: stock
   - name: Best Time to Buy and Sell Stock II
     title: best-time-to-buy-and-sell-stock-ii
     difficulty: Medium
@@ -74,6 +82,7 @@ questions:
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii
     tag: dynamic-programming
     category: algorithms
+    series: stock
   - name: Best Time to Buy and Sell Stock III
     title: best-time-to-buy-and-sell-stock-iii
     difficulty: Hard
@@ -82,6 +91,7 @@ questions:
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii
     tag: dynamic-programming
     category: algorithms
+    series: stock
   - name: Word Break
     title: word-break
     difficulty: Medium
@@ -90,6 +100,7 @@ questions:
     origin: https://leetcode.cn/problems/word-break
     tag: dynamic-programming
     category: algorithms
+    series: pack complete
   - name: Best Time to Buy and Sell Stock IV
     title: best-time-to-buy-and-sell-stock-iv
     difficulty: Hard
@@ -98,6 +109,7 @@ questions:
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv
     tag: dynamic-programming
     category: algorithms
+    series: stock
   - name: House Robber
     title: house-robber
     difficulty: Medium
@@ -106,6 +118,7 @@ questions:
     origin: https://leetcode.cn/problems/house-robber
     tag: dynamic-programming
     category: algorithms
+    series: house robber
   - name: House Robber II
     title: house-robber-ii
     difficulty: Medium
@@ -114,6 +127,7 @@ questions:
     origin: https://leetcode.cn/problems/house-robber-ii
     tag: dynamic-programming
     category: algorithms
+    series: house robber
   - name: Perfect Squares
     title: perfect-squares
     difficulty: Medium
@@ -122,6 +136,16 @@ questions:
     origin: https://leetcode.cn/problems/perfect-squares
     tag: dynamic-programming
     category: algorithms
+    series: pack complete
+  - name: Longest Increasing Subsequence
+    title: longest-increasing-subsequence
+    difficulty: Medium
+    id: 300
+    link: /algorithms/dynamic-programming/300
+    origin: https://leetcode.cn/problems/longest-increasing-subsequence
+    tag: dynamic-programming
+    category: algorithms
+    series: subsequence
   - name: Best Time to Buy and Sell Stock with Cooldown
     title: best-time-to-buy-and-sell-stock-with-cooldown
     difficulty: Medium
@@ -130,6 +154,7 @@ questions:
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown
     tag: dynamic-programming
     category: algorithms
+    series: stock
   - name: Coin Change
     title: coin-change
     difficulty: Medium
@@ -138,6 +163,7 @@ questions:
     origin: https://leetcode.cn/problems/coin-change
     tag: dynamic-programming
     category: algorithms
+    series: pack complete
   - name: House Robber III
     title: house-robber-iii
     difficulty: Medium
@@ -146,6 +172,7 @@ questions:
     origin: https://leetcode.cn/problems/house-robber-iii
     tag: dynamic-programming
     category: algorithms
+    series: house robber
   - name: Integer Break
     title: integer-break
     difficulty: Medium
@@ -154,6 +181,7 @@ questions:
     origin: https://leetcode.cn/problems/integer-break
     tag: dynamic-programming
     category: algorithms
+    series: basic
   - name: Combination Sum IV
     title: combination-sum-iv
     difficulty: Medium
@@ -162,6 +190,7 @@ questions:
     origin: https://leetcode.cn/problems/combination-sum-iv
     tag: dynamic-programming
     category: algorithms
+    series: pack complete
   - name: Is Subsequence
     title: is-subsequence
     difficulty: Easy
@@ -170,6 +199,7 @@ questions:
     origin: https://leetcode.cn/problems/is-subsequence
     tag: dynamic-programming
     category: algorithms
+    series: subsequence
   - name: Partition Equal Subset Sum
     title: partition-equal-subset-sum
     difficulty: Medium
@@ -178,6 +208,7 @@ questions:
     origin: https://leetcode.cn/problems/partition-equal-subset-sum
     tag: dynamic-programming
     category: algorithms
+    series: pack01
   - name: Ones and Zeroes
     title: ones-and-zeroes
     difficulty: Medium
@@ -186,6 +217,7 @@ questions:
     origin: https://leetcode.cn/problems/ones-and-zeroes
     tag: dynamic-programming
     category: algorithms
+    series: pack01
   - name: Target Sum
     title: target-sum
     difficulty: Medium
@@ -194,6 +226,7 @@ questions:
     origin: https://leetcode.cn/problems/target-sum
     tag: dynamic-programming
     category: algorithms
+    series: pack01
   - name: Fibonacci Number
     title: fibonacci-number
     difficulty: Easy
@@ -202,6 +235,16 @@ questions:
     origin: https://leetcode.cn/problems/fibonacci-number
     tag: dynamic-programming
     category: algorithms
+    series: basic
+  - name: Longest Palindromic Subsequence
+    title: longest-palindromic-subsequence
+    difficulty: Medium
+    id: 516
+    link: /algorithms/dynamic-programming/516
+    origin: https://leetcode.cn/problems/longest-palindromic-subsequence
+    tag: dynamic-programming
+    category: algorithms
+    series: subsequence
   - name: Coin Change II
     title: coin-change-ii
     difficulty: Medium
@@ -210,6 +253,7 @@ questions:
     origin: https://leetcode.cn/problems/coin-change-ii
     tag: dynamic-programming
     category: algorithms
+    series: pack complete
   - name: Delete Operation for Two Strings
     title: delete-operation-for-two-strings
     difficulty: Medium
@@ -218,6 +262,16 @@ questions:
     origin: https://leetcode.cn/problems/delete-operation-for-two-strings
     tag: dynamic-programming
     category: algorithms
+    series: subsequence
+  - name: Palindromic Substrings
+    title: palindromic-substrings
+    difficulty: Medium
+    id: 647
+    link: /algorithms/dynamic-programming/647
+    origin: https://leetcode.cn/problems/palindromic-substrings
+    tag: dynamic-programming
+    category: algorithms
+    series: subsequence
   - name: Longest Continuous Increasing Subsequence
     title: longest-continuous-increasing-subsequence
     difficulty: Easy
@@ -226,6 +280,7 @@ questions:
     origin: https://leetcode.cn/problems/longest-continuous-increasing-subsequence
     tag: dynamic-programming
     category: algorithms
+    series: subsequence
   - name: Best Time to Buy and Sell Stock with Transaction Fee
     title: best-time-to-buy-and-sell-stock-with-transaction-fee
     difficulty: Medium
@@ -235,6 +290,16 @@ questions:
       https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee
     tag: dynamic-programming
     category: algorithms
+    series: stock
+  - name: Maximum Length of Repeated Subarray
+    title: maximum-length-of-repeated-subarray
+    difficulty: Medium
+    id: 718
+    link: /algorithms/dynamic-programming/718
+    origin: https://leetcode.cn/problems/maximum-length-of-repeated-subarray
+    tag: dynamic-programming
+    category: algorithms
+    series: subsequence
   - name: Min Cost Climbing Stairs
     title: min-cost-climbing-stairs
     difficulty: Easy
@@ -243,6 +308,16 @@ questions:
     origin: https://leetcode.cn/problems/min-cost-climbing-stairs
     tag: dynamic-programming
     category: algorithms
+    series: basic
+  - name: Uncrossed Lines
+    title: uncrossed-lines
+    difficulty: Medium
+    id: 1035
+    link: /algorithms/dynamic-programming/1035
+    origin: https://leetcode.cn/problems/uncrossed-lines
+    tag: dynamic-programming
+    category: algorithms
+    series: subsequence
   - name: Last Stone Weight II
     title: last-stone-weight-ii
     difficulty: Medium
@@ -251,6 +326,7 @@ questions:
     origin: https://leetcode.cn/problems/last-stone-weight-ii
     tag: dynamic-programming
     category: algorithms
+    series: pack01
   - name: Longest Common Subsequence
     title: longest-common-subsequence
     difficulty: Medium
@@ -259,3 +335,4 @@ questions:
     origin: https://leetcode.cn/problems/longest-common-subsequence
     tag: dynamic-programming
     category: algorithms
+    series: subsequence

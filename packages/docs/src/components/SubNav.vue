@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Module, SubNav } from '../types'
-import { easy, getNavs, hard, medium } from '~/logics'
+import { easy, getNavs, hard, medium, mode } from '~/logics'
 
 const props = defineProps<{
   module: Module
@@ -30,6 +30,9 @@ const navs: SubNav[] = props.navs || getNavs(props.module)
       <button flex="~ gap1" items-center mb2 op30 text-sm @click="hard = !hard">
         <div :i="hard ? 'carbon-checkbox-checked' : 'carbon-checkbox'" />
         Hard
+      </button>
+      <button flex="~ gap1" items-center mb2 op30 text-sm @click="mode = Number(!mode)">
+        <div :i="mode ? 'i-ri-road-map-fill' : 'i-ri-road-map-line'" />
       </button>
     </div>
 

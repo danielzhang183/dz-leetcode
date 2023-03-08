@@ -46,10 +46,12 @@ export interface Question {
   difficulty: Difficulty
   category: Module | string
   tag: Tag
+  tags?: string[]
   link: string
   origin: string
+  series?: string
+  seriesIndex?: number
   done?: boolean
-  tags?: string[]
 }
 
 export interface SubNav {

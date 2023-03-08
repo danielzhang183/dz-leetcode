@@ -86,6 +86,7 @@ questions:
     origin: https://leetcode.cn/problems/n-queens-ii
     tag: back-tracking
     category: algorithms
+    series: chessboard
   - name: Combinations
     title: combinations
     difficulty: Medium
@@ -119,6 +120,7 @@ questions:
     origin: https://leetcode.cn/problems/word-search
     tag: back-tracking
     category: algorithms
+    series: chessboard
   - name: Subsets II
     title: subsets-ii
     difficulty: Medium
