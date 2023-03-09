@@ -190,6 +190,7 @@ questions:
     tag: greedy
     category: algorithms
     series: basic
+    done: true
   - name: Minimum Number of Taps to Open to Water a Garden
     title: minimum-number-of-taps-to-open-to-water-a-garden
     difficulty: Hard
