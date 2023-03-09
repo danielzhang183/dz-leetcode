@@ -172,6 +172,7 @@ questions:
     tag: greedy
     category: algorithms
     series: basic
+    done: true
   - name: Binary Tree Cameras
     title: binary-tree-cameras
     difficulty: Hard
