@@ -25,7 +25,7 @@ we can `make use of the spaces in front of the queue`. In a normal queue, once t
 * `isEmpty(): boolean` Checks whether the circular queue is empty or not.
 * `isFull(): boolean` Checks whether the circular queue is full or not.
 
-## Usage
+## Usages
 
 ```ts
 const circularQueue = new CircularQueue(3)

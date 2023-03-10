@@ -17,13 +17,13 @@ duration: 10min
 
 * `pLimit(concurrency)` return `limit` function
 * `limit(fn, ...args)`
-  * `fn` Promise-returning/async function.
-  * `args` Any arguments to pass through to fn.
+    * `fn` Promise-returning/async function.
+    * `args` Any arguments to pass through to fn.
 * property `activeCount` the number of promises that are currently running.
 * property `pendingCount` the number of promises that are waiting to run.
 * `reset()` discard pending promises that are waiting to run.
 
-## Usage
+## Usages
 
 ```ts
 function sleep(ms: number) {

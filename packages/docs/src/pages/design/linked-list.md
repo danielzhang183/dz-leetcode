@@ -25,7 +25,7 @@ duration: 5min
 
 * `size` Return the num of element at current ll
 
-## Usage
+## Usages
 
 ```ts
 const ll = new LinkedList()

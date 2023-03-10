@@ -62,7 +62,7 @@ export function genMarkdown(question: ResolvedQuestion, genPath = pathDoc): Gene
       s = new MagicString(s.toString())
 
     const index = s.toString().indexOf('\n### Example')
-    s.prependLeft(index, '## Usage\n')
+    s.prependLeft(index, '## Examples\n')
     s.replaceAll(/<strong>|((\s+)?<\/strong>)/g, '**')
 
     return s

@@ -22,7 +22,7 @@ duration: 5min
 
 * `size` Return the num of element at current queue
 
-## Usage
+## Usages
 
 ```ts
 const queue = new Queue()
