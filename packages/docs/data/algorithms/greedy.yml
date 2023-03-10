@@ -158,6 +158,7 @@ questions:
     tag: greedy
     category: algorithms
     series: subsequence
+    done: true
   - name: Partition Labels
     title: partition-labels
     difficulty: Medium
