@@ -74,13 +74,13 @@ function padZero(num: string | number, len = 3) {
         :title="item.name"
       >
         <div class="pt-2 pr-4 box-content min-w-8 text-center">
-          <router-link
-            :to="item.origin"
+          <a
+            :href="item.origin"
             title="View Source"
             :style="getDifficultyColor(item.difficulty)"
           >
             {{ padZero(item.id) }}
-          </router-link>
+          </a>
         </div>
         <div class="flex-auto">
           <div cla ss="text-normal">{{ item.name }}</div>
