@@ -80,8 +80,12 @@ questions:
     link: /algorithms/greedy/376
     origin: https://leetcode.cn/problems/wiggle-subsequence
     tag: greedy
+    tags:
+      - greedy
+      - DP
     category: algorithms
     series: subsequence
+    done: true
   - name: Queue Reconstruction by Height
     title: queue-reconstruction-by-height
     difficulty: Medium

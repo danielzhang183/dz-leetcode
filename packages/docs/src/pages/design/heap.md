@@ -32,7 +32,6 @@ It takes **O(log N)** to balance the tree.
 - For **max-heap**, it balances in such a way that the maximum element is the root of that binary tree
 - For **min-heap**, it balances in such a way that the minimum element is the root of that binary tree.
 
-
 ### Insertion
 
 If we insert a new element into the heap since we are adding a new element into the heap so it will distort the properties of the heap so we need to perform the **heapify** operation so that it maintains the property of the heap.
