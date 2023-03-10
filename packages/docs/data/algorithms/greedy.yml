@@ -69,6 +69,7 @@ questions:
     tag: greedy
     category: algorithms
     series: balance
+    done: true
   - name: Longest Increasing Subsequence
     title: longest-increasing-subsequence
     difficulty: Medium
