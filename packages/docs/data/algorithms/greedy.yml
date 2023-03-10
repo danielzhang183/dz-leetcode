@@ -45,8 +45,12 @@ questions:
     link: /algorithms/greedy/122
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii
     tag: greedy
+    tags:
+      - greedy
+      - DP
     category: algorithms
     series: stock
+    done: true
   - name: Gas Station
     title: gas-station
     difficulty: Medium
