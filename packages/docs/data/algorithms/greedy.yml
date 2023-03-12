@@ -121,6 +121,7 @@ questions:
     tag: greedy
     category: algorithms
     series: interval
+    done: true
   - name: Assign Cookies
     title: assign-cookies
     difficulty: Easy
