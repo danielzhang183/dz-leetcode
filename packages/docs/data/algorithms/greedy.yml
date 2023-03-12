@@ -112,6 +112,7 @@ questions:
     tag: greedy
     category: algorithms
     series: interval
+    done: true
   - name: Minimum Number of Arrows to Burst Balloons
     title: minimum-number-of-arrows-to-burst-balloons
     difficulty: Medium
