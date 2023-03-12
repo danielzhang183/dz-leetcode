@@ -82,6 +82,7 @@ questions:
     origin: https://leetcode.cn/problems/longest-increasing-subsequence
     tag: greedy
     category: algorithms
+    series: subsequence
   - name: Wiggle Subsequence
     title: wiggle-subsequence
     difficulty: Medium
@@ -197,8 +198,11 @@ questions:
     link: /algorithms/greedy/968
     origin: https://leetcode.cn/problems/binary-tree-cameras
     tag: greedy
+    tags:
+      - DFS
     category: algorithms
     series: hard
+    done: true
   - name: Maximize Sum Of Array After K Negations
     title: maximize-sum-of-array-after-k-negations
     difficulty: Easy
