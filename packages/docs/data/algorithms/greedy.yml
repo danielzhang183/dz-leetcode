@@ -21,6 +21,7 @@ questions:
     tag: greedy
     category: algorithms
     series: hard
+    done: true
   - name: Jump Game
     title: jump-game
     difficulty: Medium
