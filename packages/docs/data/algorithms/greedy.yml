@@ -11,6 +11,7 @@ questions:
     tag: greedy
     category: algorithms
     series: interval
+    done: true
   - name: Maximum Subarray
     title: maximum-subarray
     difficulty: Medium

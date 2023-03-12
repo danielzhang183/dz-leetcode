@@ -3,6 +3,7 @@ import { jump } from '../../../src/algorithms/greedy/045'
 
 describe('jump', () => {
   it('exported', () => {
-    expect(jump([2, 3, 1, 1, 4])).toBe([2, 3, 0, 1, 4])
+    expect(jump([2, 3, 1, 1, 4])).toBe(2)
+    expect(jump([2, 3, 0, 1, 4])).toBe(2)
   })
 })
