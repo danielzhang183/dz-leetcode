@@ -40,6 +40,7 @@ questions:
     tag: greedy
     category: algorithms
     series: interval
+    done: true
   - name: Best Time to Buy and Sell Stock II
     title: best-time-to-buy-and-sell-stock-ii
     difficulty: Medium
