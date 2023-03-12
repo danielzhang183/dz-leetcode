@@ -29,6 +29,7 @@ questions:
     tag: greedy
     category: algorithms
     series: interval
+    done: true
   - name: Merge Intervals
     title: merge-intervals
     difficulty: Medium
