@@ -224,6 +224,7 @@ questions:
     tag: dynamic-programming
     category: algorithms
     series: pack01
+    done: true
   - name: Ones and Zeroes
     title: ones-and-zeroes
     difficulty: Medium
