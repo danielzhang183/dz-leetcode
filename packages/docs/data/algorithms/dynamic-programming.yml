@@ -234,8 +234,13 @@ questions:
     link: /algorithms/dynamic-programming/509
     origin: https://leetcode.cn/problems/fibonacci-number
     tag: dynamic-programming
+    tags:
+      - DFS
+      - DP
+      - scroll array
     category: algorithms
     series: basic
+    done: true
   - name: Longest Palindromic Subsequence
     title: longest-palindromic-subsequence
     difficulty: Medium
