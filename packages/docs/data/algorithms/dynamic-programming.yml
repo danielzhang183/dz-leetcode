@@ -192,8 +192,11 @@ questions:
     link: /algorithms/dynamic-programming/343
     origin: https://leetcode.cn/problems/integer-break
     tag: dynamic-programming
+    tags:
+      - DP
     category: algorithms
     series: basic
+    done: true
   - name: Combination Sum IV
     title: combination-sum-iv
     difficulty: Medium
