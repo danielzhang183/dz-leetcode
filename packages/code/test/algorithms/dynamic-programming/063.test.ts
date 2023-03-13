@@ -3,6 +3,8 @@ import { uniquePathsWithObstacles } from '../../../src/algorithms/dynamic-progra
 
 describe('uniquePathsWithObstacles', () => {
   it('exported', () => {
-    expect(uniquePathsWithObstacles([[0, 0, 0], [0, 1, 0], [0, 0, 0]])).toBe([[0, 1], [0, 0]])
+    expect(uniquePathsWithObstacles([[0, 0]])).toBe(1)
+    expect(uniquePathsWithObstacles([[0, 1], [0, 0]])).toBe(1)
+    expect(uniquePathsWithObstacles([[0, 0, 0], [0, 1, 0], [0, 0, 0]])).toBe(2)
   })
 })

@@ -31,8 +31,11 @@ questions:
     link: /algorithms/dynamic-programming/063
     origin: https://leetcode.cn/problems/unique-paths-ii
     tag: dynamic-programming
+    tags:
+      - DP
     category: algorithms
     series: basic
+    done: true
   - name: Climbing Stairs
     title: climbing-stairs
     difficulty: Easy
