@@ -234,6 +234,7 @@ questions:
     tag: dynamic-programming
     category: algorithms
     series: pack01
+    done: true
   - name: Target Sum
     title: target-sum
     difficulty: Medium
