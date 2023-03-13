@@ -317,8 +317,12 @@ questions:
     link: /algorithms/dynamic-programming/746
     origin: https://leetcode.cn/problems/min-cost-climbing-stairs
     tag: dynamic-programming
+    tags:
+      - DP
+      - scroll array
     category: algorithms
     series: basic
+    done: true
   - name: Uncrossed Lines
     title: uncrossed-lines
     difficulty: Medium
