@@ -36,8 +36,13 @@ questions:
     link: /algorithms/dynamic-programming/070
     origin: https://leetcode.cn/problems/climbing-stairs
     tag: dynamic-programming
+    tags:
+      - DFS
+      - DP
+      - scroll array
     category: algorithms
     series: pack complete
+    done: true
   - name: Edit Distance
     title: edit-distance
     difficulty: Hard
