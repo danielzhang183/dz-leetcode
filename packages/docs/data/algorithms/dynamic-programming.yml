@@ -18,8 +18,12 @@ questions:
     link: /algorithms/dynamic-programming/062
     origin: https://leetcode.cn/problems/unique-paths
     tag: dynamic-programming
+    tags:
+      - DFS
+      - DP
     category: algorithms
     series: basic
+    done: true
   - name: Unique Paths II
     title: unique-paths-ii
     difficulty: Medium
