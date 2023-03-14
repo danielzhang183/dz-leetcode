@@ -18,6 +18,7 @@ export function genMarkdown(question: ResolvedQuestion, genPath = pathDoc): Gene
     difficulty,
     origin,
     path,
+    isTranslated = false,
   } = question
 
   function genMarkdownPre(s: MagicString) {
@@ -29,7 +30,7 @@ export function genMarkdown(question: ResolvedQuestion, genPath = pathDoc): Gene
       `origin: ${origin}`,
       '---',
       '\n[[toc]]\n',
-      '## Problem\n',
+      `## ${isTranslated ? '问题' : 'Problem'}\n`,
     ]
       .reverse()
       .forEach(str => s.prepend(`${str}\n`))
@@ -37,11 +38,11 @@ export function genMarkdown(question: ResolvedQuestion, genPath = pathDoc): Gene
 
   function genMarkdownPost(s: MagicString) {
     [
-      '\n\n## Solution\n',
+      `\n\n## ${isTranslated ? '解决方案' : 'Solution'}\n`,
       '```ts',
       code,
       '```\n',
-      `[view source](${origin})`,
+      `[${isTranslated ? '查看原题' : 'view source'}](${origin})`,
     ]
       .forEach(str => s.append(`${str}\n`))
   }
@@ -53,7 +54,12 @@ export function genMarkdown(question: ResolvedQuestion, genPath = pathDoc): Gene
       .replaceAll(/<\/?p>/g, '')
       .replaceAll(/<\/?code>/g, '')
       .replaceAll(/<\/?pre>/g, '```')
-      .replaceAll(/<strong\sclass=.*?>(.*?)\:<\/strong>/g, (_, $1) => `### ${$1}`)
+      .replaceAll( // modify example
+        isTranslated
+          ? /<strong>(示例 \d)：<\/strong>/g
+          : /<strong\sclass=.*?>(.*?)\:<\/strong>/g,
+        (_, $1) => `### ${$1}`,
+      )
       .replaceAll(/<\/?em>/g, '`')
       .replaceAll(/\n<[uo]l>\n|\n<\/[uo]l>/g, '')
       .replaceAll(/\s\s<li>(.*?)<\/li>/g, (_, $1) => `\n- ${$1}`)
@@ -61,8 +67,8 @@ export function genMarkdown(question: ResolvedQuestion, genPath = pathDoc): Gene
     if (s.hasChanged())
       s = new MagicString(s.toString())
 
-    const index = s.toString().indexOf('\n### Example')
-    s.prependLeft(index, '## Examples\n')
+    const index = s.toString().indexOf(`\n### ${isTranslated ? '示例' : 'Example'}`)
+    s.prependLeft(index, `## ${isTranslated ? '示例' : 'Examples'}\n`)
     s.replaceAll(/<strong>|((\s+)?<\/strong>)/g, '**')
 
     return s
@@ -108,7 +114,7 @@ export function genTestCase(question: ResolvedQuestion, genPath = pathCode): Gen
   const { testcases, functionName, path, lang } = question
 
   const s = new MagicString('')
-    ;[
+  ;[
     'import { describe, expect, it } from \'vitest\'',
       `import { ${functionName} } from '../../../src/${path}'\n`,
       `describe('${functionName}', () => {`,

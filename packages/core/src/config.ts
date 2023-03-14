@@ -60,6 +60,9 @@ export async function resolveConfig<T extends CommonOptions>(options: T): Promis
 
   debug(`config file found ${config.sources[0]}`)
   const configOptions = normalizeConfig(config.config)
+  debug(`normalized config ${JSON.stringify(configOptions)}`)
+  const mergedOptions = deepmerge(configOptions, options)
+  debug(`merged config ${JSON.stringify(mergedOptions)}`)
 
-  return deepmerge(configOptions, options) as T
+  return mergedOptions as T
 }

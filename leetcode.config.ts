@@ -1,6 +1,7 @@
 import { defineConfig } from 'dz-leetcode'
 
 export default defineConfig({
+  isTranslated: true, // true is 'zh_CN', false is 'en_US'
   lang: [
     'typescript',
     'javascript',

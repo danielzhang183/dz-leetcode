@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ES2018", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    "lib": ["ESNext"], /* Specify a set of bundled library declaration files that describe the target runtime environment. */
+    "target": "ESNext", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "lib": ["ESNext", "DOM"], /* Specify a set of bundled library declaration files that describe the target runtime environment. */
     "module": "ESNext", /* Specify what module code is generated. */
     "moduleResolution": "node", /* Specify how TypeScript looks up a file from a given module specifier. */
     "resolveJsonModule": true, /* Enable importing .json files. */
@@ -16,7 +16,9 @@
       ]
     }
   },
-  "exclude": [
-    "./examples/**/*"
+  "include": [
+    "../packages/docs/**/*",
+    "../packages/core/**/*",
+    "../packages/cli/**/*"
   ]
 }

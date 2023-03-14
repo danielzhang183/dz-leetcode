@@ -8,7 +8,14 @@ import { genCatelog, genCode, genMarkdown, genTestCase } from './gen'
 export async function generate(options: GenerateOptions): Promise<GenerateReturn> {
   options = await resolveConfig(options)
 
-  const { category, tag, identifier, write = true, lang } = options
+  const {
+    category,
+    tag,
+    identifier,
+    lang,
+    write = true, // write to file or not
+    isTranslated = false, // translate to zh_CN or not
+  } = options
   if (!identifier) {
     return {
       error: generateError('Give question name or id at least', category, tag),
@@ -24,7 +31,10 @@ export async function generate(options: GenerateOptions): Promise<GenerateReturn
     }
   }
 
-  const question = normalizeRawQuestion(rawQuestion, { category, tag, lang })
+  const question = normalizeRawQuestion(
+    rawQuestion,
+    { category, tag, lang, isTranslated },
+  )
   if (write)
     return await writeQuestion(question, options)
 
@@ -58,9 +68,9 @@ export async function writeQuestion<T extends CommonOptions>(question: ResolvedQ
   }
 
   try {
-    // wait generate content is ready
+    // wait generate content for ready
     const resolvedGens = await Promise.all(gens)
-    // write generate content to its relative file
+    // write generate content to its' relative file
     const outFiles = await Promise.all(
       resolvedGens.map(async ({ outFile, content }) => {
         await writeFile(outFile, content)
