@@ -55,8 +55,10 @@ export interface RawQuestion {
   questionId: string
   categoryTitle: string
   title: string
+  translatedTitle: string
   titleSlug: string
   content: string
+  translatedContent: string
   difficulty: Difficulty
   exampleTestcases: string
   codeSnippets: Array<CodeSnippet>
@@ -78,6 +80,7 @@ export interface ResolvedQuestion {
   origin: string
   outFiles: string[]
   lang: string
+  isTranslated?: boolean
 }
 
 export interface WritableQuestions {
@@ -102,11 +105,13 @@ export interface CommonOptions {
   interactive?: boolean
   logLevel?: string
   isResolved?: boolean
+  isTranslated?: boolean
 }
 
 export interface GenerateOptions extends CommonOptions {
   identifier?: QuestionIdentifier
   write?: boolean
+  isTranslated?: boolean
 }
 
 export interface GenerateOutcomes {

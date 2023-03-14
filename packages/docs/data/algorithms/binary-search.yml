@@ -7,7 +7,7 @@ questions:
     link: /algorithms/binary-search/035
     origin: https://leetcode.cn/problems/search-insert-position
     tag: binary-search
-    tags: ['binary-search']
+    tags: [binary-search]
     category: algorithms
     done: true
   - name: Sqrt(x)
@@ -25,7 +25,7 @@ questions:
     link: /algorithms/binary-search/153
     origin: https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array
     tag: binary-search
-    tags: ['binary-search']
+    tags: [binary-search]
     category: algorithms
     done: true
   - name: Binary Search
@@ -35,6 +35,6 @@ questions:
     link: /algorithms/binary-search/704
     origin: https://leetcode.cn/problems/binary-search
     tag: binary-search
-    tags: ['binary-search']
+    tags: [binary-search]
     category: algorithms
     done: true

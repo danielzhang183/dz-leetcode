@@ -38,7 +38,7 @@ If we insert a new element into the heap since we are adding a new element into 
 
 It takes **O(logN)** time.
 
-```
+```txt
 Assume initially heap(taking max-heap) is as follows
 
     8
@@ -70,7 +70,7 @@ deleting the top element of the heap or the highest priority element, and then o
 
 It takes **O(logN)** time.
 
-```
+```txt
 Assume initially heap(taking max-heap) is as follows
 
     15
@@ -106,10 +106,6 @@ It takes **O(log1)** time.
 - removeMax (max-heap) or removeMin (min-heap)
 
 ## Implement
-
-```ts
-
-```
 
 ## Pros & Cons
 

@@ -3,6 +3,6 @@ import { isValid } from '../../../src/structures/queue/020'
 
 describe('isValid', () => {
   it('exported', () => {
-    expect(isValid("()")).toBe("()[]{}")
+    expect(isValid('()')).toBe('()[]{}')
   })
 })

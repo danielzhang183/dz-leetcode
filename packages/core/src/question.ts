@@ -29,8 +29,10 @@ const LEETCODE_QUESTION_QUERY = [
   '    questionFrontendId',
   '    categoryTitle',
   '    title',
+  '    translatedTitle',
   '    titleSlug',
   '    content',
+  '    translatedContent',
   '    difficulty',
   '    exampleTestcases',
   '    codeSnippets {',
@@ -204,6 +206,7 @@ export function normalizeRawQuestion(question: RawQuestion, options: CommonOptio
   const {
     category,
     tag,
+    isTranslated = false,
   } = options || {}
   const lang = options.lang
     ? toArray(options.lang).flatMap(i => i.split(','))
@@ -251,9 +254,9 @@ export function normalizeRawQuestion(question: RawQuestion, options: CommonOptio
     questionId: question.questionId,
     category: normalizedCategory,
     tag: normalizedTag,
-    title: question.title,
+    title: isTranslated ? question.translatedTitle : question.title,
     titleSlug: question.titleSlug,
-    content: question.content,
+    content: isTranslated ? question.translatedContent : question.content,
     difficulty: question.difficulty,
     testcases: normalizeTestCases(question.exampleTestcases),
     code,
@@ -262,6 +265,7 @@ export function normalizeRawQuestion(question: RawQuestion, options: CommonOptio
     origin: getQuestionOrigin(question.titleSlug),
     outFiles: [],
     lang: language,
+    isTranslated,
   }
 }
 

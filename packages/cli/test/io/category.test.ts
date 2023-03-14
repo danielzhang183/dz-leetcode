@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { describe, it } from 'vitest'
 
 describe('category', () => {
   it('load categories', async () => {

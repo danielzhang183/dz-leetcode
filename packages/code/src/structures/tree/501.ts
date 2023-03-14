@@ -14,4 +14,4 @@ export /**
 
 function findMode(root: TreeNode | null): number[] {
 
-};
+}

@@ -8,11 +8,11 @@
     "build:docs": "nr -C packages/docs build",
     "dev": "DEBUG=dz-leetcode:* esno packages/cli/src/cli.ts",
     "dev:docs": "nr -C packages/docs dev",
-    "lint": "eslint .",
+    "lint": "eslint . --ignore-pattern 'packages/code/**'",
     "test": "vitest",
     "prepublishOnly": "nr build",
     "release": "bumpp --commit --push --tag && pnpm publish",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "pnpm -r run typecheck"
   },
   "dependencies": {
     "dz-leetcode": "^0.0.0"

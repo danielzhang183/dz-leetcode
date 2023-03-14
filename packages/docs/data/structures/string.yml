@@ -15,7 +15,11 @@ questions:
     link: /structures/string/344
     origin: https://leetcode.cn/problems/reverse-string
     tag: string
+    tags:
+      - two-pointers
+      - api
     category: structures
+    done: true
   - name: Repeated Substring Pattern
     title: repeated-substring-pattern
     difficulty: Easy
@@ -31,7 +35,10 @@ questions:
     link: /structures/string/541
     origin: https://leetcode.cn/problems/reverse-string-ii
     tag: string
+    tags:
+      - DFS
     category: structures
+    done: true
   - name: Backspace String Compare
     title: backspace-string-compare
     difficulty: Easy
