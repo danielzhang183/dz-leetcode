@@ -31,7 +31,10 @@ questions:
     link: /structures/string/541
     origin: https://leetcode.cn/problems/reverse-string-ii
     tag: string
+    tags:
+      - DFS
     category: structures
+    done: true
   - name: Backspace String Compare
     title: backspace-string-compare
     difficulty: Easy

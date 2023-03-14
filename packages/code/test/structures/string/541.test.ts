@@ -3,7 +3,8 @@ import { reverseStr } from '../../../src/structures/string/541'
 
 describe('reverseStr', () => {
   it('exported', () => {
-    expect(reverseStr('abcdefg')).toBe(2)
-    expect(reverseStr('abcd')).toBe(2)
+    expect(reverseStr('abcdefg', 2)).toBe('bacdfeg')
+    expect(reverseStr('abcd', 2)).toBe('bacd')
+    expect(reverseStr('abcdef', 3)).toBe('cbadef')
   })
 })
