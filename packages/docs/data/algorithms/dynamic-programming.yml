@@ -106,8 +106,12 @@ questions:
     link: /algorithms/dynamic-programming/123
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii
     tag: dynamic-programming
+    tags:
+      - DP
+      - Greedy
     category: algorithms
     series: stock
+    done: true
   - name: Word Break
     title: word-break
     difficulty: Medium
