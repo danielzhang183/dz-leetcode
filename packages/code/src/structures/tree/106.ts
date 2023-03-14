@@ -14,4 +14,4 @@ export /**
 
 function buildTree(inorder: number[], postorder: number[]): TreeNode | null {
 
-};
+}

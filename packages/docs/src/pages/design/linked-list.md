@@ -64,7 +64,7 @@ class Node {
 ### add(value)
 
 ```ts
-add(value: any) {
+function add(value: any) {
   const node = new Node(value)
 
   if (this.#head) {
@@ -73,8 +73,7 @@ add(value: any) {
       curr = curr.next
     curr.next = node
   }
-  else
-    this.#head = node
+  else { this.#head = node }
 
   this.#size++
 }
@@ -83,7 +82,7 @@ add(value: any) {
 ### insertAt(value, index)
 
 ```ts
-insertAt(value: any, index: number) {
+function insertAt(value: any, index: number) {
   if (index < 0 || index > this.#size)
     throw new Error('invalid index')
 
@@ -113,7 +112,7 @@ insertAt(value: any, index: number) {
 ### removeFrom(index)
 
 ```ts
-removeFrom(index: number) {
+function removeFrom(index: number) {
   if (index < 0 || index >= this.#size)
     throw new Error('invalid index')
 
@@ -140,7 +139,7 @@ removeFrom(index: number) {
 ### indexOf(value)
 
 ```ts
-indexOf(value: any) {
+function indexOf(value: any) {
   let index = 0
   let curr = this.#head
 

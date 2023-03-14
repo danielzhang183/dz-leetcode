@@ -22,7 +22,7 @@ function quickSort(arr: number[], l: number, r: number): number {
   const randomIndex = Math.floor(Math.random() * (r - l + 1)) + l
   swap(arr, randomIndex, r)
 
-  let i = l;
+  let i = l
   let j = r
   while (i < j) {
     while (i < j && arr[j] >= arr[l]) j--

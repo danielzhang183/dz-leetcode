@@ -51,7 +51,7 @@ class Node {
 ### enqueue(value)
 
 ```ts
-enqueue(value: any) {
+function enqueue(value: any) {
   const node = new Node(value)
 
   if (this.#head) {
@@ -70,7 +70,7 @@ enqueue(value: any) {
 ### dequeue()
 
 ```ts
-dequeue() {
+function dequeue() {
   const current = this.#head
   if (!current)
     return

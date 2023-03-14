@@ -14,4 +14,4 @@ export /**
 
 function getMinimumDifference(root: TreeNode | null): number {
 
-};
+}

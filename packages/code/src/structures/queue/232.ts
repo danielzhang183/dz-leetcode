@@ -1,23 +1,23 @@
 export class MyQueue {
-    constructor() {
+  constructor() {
 
-    }
+  }
 
-    push(x: number): void {
+  push(x: number): void {
 
-    }
+  }
 
-    pop(): number {
+  pop(): number {
 
-    }
+  }
 
-    peek(): number {
+  peek(): number {
 
-    }
+  }
 
-    empty(): boolean {
+  empty(): boolean {
 
-    }
+  }
 }
 
 /**

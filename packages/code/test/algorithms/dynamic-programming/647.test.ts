@@ -3,6 +3,6 @@ import { countSubstrings } from '../../../src/algorithms/dynamic-programming/647
 
 describe('countSubstrings', () => {
   it('exported', () => {
-    expect(countSubstrings("abc")).toBe("aaa")
+    expect(countSubstrings('abc')).toBe('aaa')
   })
 })

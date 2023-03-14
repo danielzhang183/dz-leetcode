@@ -11,10 +11,6 @@ duration: 5min
 
 ## Implement
 
-```ts
-
-```
-
 ## Related Question
 
 - []()

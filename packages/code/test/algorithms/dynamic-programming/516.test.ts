@@ -3,6 +3,6 @@ import { longestPalindromeSubseq } from '../../../src/algorithms/dynamic-program
 
 describe('longestPalindromeSubseq', () => {
   it('exported', () => {
-    expect(longestPalindromeSubseq("bbbab")).toBe("cbbd")
+    expect(longestPalindromeSubseq('bbbab')).toBe('cbbd')
   })
 })
