@@ -93,8 +93,12 @@ questions:
     link: /algorithms/dynamic-programming/122
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii
     tag: dynamic-programming
+    tags:
+      - DP
+      - Greedy
     category: algorithms
     series: stock
+    done: true
   - name: Best Time to Buy and Sell Stock III
     title: best-time-to-buy-and-sell-stock-iii
     difficulty: Hard
