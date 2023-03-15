@@ -117,6 +117,14 @@ questions:
       - sort + two-pointers
     category: structures
     done: true
+  - name: Fizz Buzz
+    title: fizz-buzz
+    difficulty: Easy
+    id: 412
+    link: /structures/array/412
+    origin: https://leetcode.cn/problems/fizz-buzz
+    tag: array
+    category: structures
   - name: Find Pivot Index
     title: find-pivot-index
     difficulty: Easy
