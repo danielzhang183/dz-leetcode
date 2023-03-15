@@ -7,7 +7,11 @@ questions:
     link: /structures/string/151
     origin: https://leetcode.cn/problems/reverse-words-in-a-string
     tag: string
+    tags:
+      - two-pointers
+      - api
     category: structures
+    done: true
   - name: Reverse String
     title: reverse-string
     difficulty: Easy
