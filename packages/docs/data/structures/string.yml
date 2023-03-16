@@ -73,6 +73,7 @@ questions:
       - stack
       - two-pointers
     category: structures
+    series: Two Pointers
     done: true
   - name: Long Pressed Name
     title: long-pressed-name
@@ -81,5 +82,8 @@ questions:
     link: /structures/string/925
     origin: https://leetcode.cn/problems/long-pressed-name
     tag: string
+    tags:
+      - two-pointers
     category: structures
-    series: KMP
+    series: Two Pointers
+    done: true
