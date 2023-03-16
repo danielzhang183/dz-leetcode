@@ -78,6 +78,7 @@ function padZero(num: string | number, len = 3) {
             :href="item.origin"
             title="View Source"
             :style="getDifficultyColor(item.difficulty)"
+            target="_blank"
           >
             {{ padZero(item.id) }}
           </a>

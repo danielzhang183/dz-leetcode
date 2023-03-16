@@ -24,7 +24,7 @@ questions:
     tag: string
     tags:
       - two-pointers
-      - api
+      - API
     category: structures
     series: reverse
     done: true
@@ -37,7 +37,7 @@ questions:
     tag: string
     tags:
       - two-pointers
-      - api
+      - API
     category: structures
     series: reverse
     done: true
@@ -48,8 +48,12 @@ questions:
     link: /structures/string/459
     origin: https://leetcode.cn/problems/repeated-substring-pattern
     tag: string
+    tags:
+      - KMP
+      - API
     category: structures
     series: KMP
+    done: true
   - name: Reverse String II
     title: reverse-string-ii
     difficulty: Easy
