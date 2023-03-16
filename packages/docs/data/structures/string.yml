@@ -69,8 +69,11 @@ questions:
     link: /structures/string/844
     origin: https://leetcode.cn/problems/backspace-string-compare
     tag: string
+    tags:
+      - stack
+      - two-pointers
     category: structures
-    series: KMP
+    done: true
   - name: Long Pressed Name
     title: long-pressed-name
     difficulty: Easy
