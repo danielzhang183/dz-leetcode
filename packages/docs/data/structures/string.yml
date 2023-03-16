@@ -1,5 +1,20 @@
 description: It can be interpreted as an array of characters.
 questions:
+  - name: Find the Index of the First Occurrence in a String
+    title: find-the-index-of-the-first-occurrence-in-a-string
+    difficulty: Medium
+    id: 28
+    link: /structures/string/028
+    origin: >-
+      https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string
+    tag: string
+    tags:
+      - KMP
+      - Sunday
+      - API
+    category: structures
+    series: KMP
+    done: true
   - name: Reverse Words in a String
     title: reverse-words-in-a-string
     difficulty: Medium
@@ -11,6 +26,7 @@ questions:
       - two-pointers
       - api
     category: structures
+    series: reverse
     done: true
   - name: Reverse String
     title: reverse-string
@@ -23,6 +39,7 @@ questions:
       - two-pointers
       - api
     category: structures
+    series: reverse
     done: true
   - name: Repeated Substring Pattern
     title: repeated-substring-pattern
@@ -32,6 +49,7 @@ questions:
     origin: https://leetcode.cn/problems/repeated-substring-pattern
     tag: string
     category: structures
+    series: KMP
   - name: Reverse String II
     title: reverse-string-ii
     difficulty: Easy
@@ -42,6 +60,7 @@ questions:
     tags:
       - DFS
     category: structures
+    series: reverse
     done: true
   - name: Backspace String Compare
     title: backspace-string-compare
@@ -51,6 +70,7 @@ questions:
     origin: https://leetcode.cn/problems/backspace-string-compare
     tag: string
     category: structures
+    series: KMP
   - name: Long Pressed Name
     title: long-pressed-name
     difficulty: Easy
@@ -59,3 +79,4 @@ questions:
     origin: https://leetcode.cn/problems/long-pressed-name
     tag: string
     category: structures
+    series: KMP
