@@ -7,8 +7,11 @@ questions:
     link: /structures/hash-table/001
     origin: https://leetcode.cn/problems/two-sum
     tag: hash-table
+    tags:
+      - HashMap
     category: structures
     series: SUM
+    done: true
   - name: 3Sum
     title: 3sum
     difficulty: Medium
