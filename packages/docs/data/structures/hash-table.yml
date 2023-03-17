@@ -42,7 +42,10 @@ questions:
     link: /structures/hash-table/205
     origin: https://leetcode.cn/problems/isomorphic-strings
     tag: hash-table
+    tags:
+      - HashMap
     category: structures
+    done: true
   - name: Valid Anagram
     title: valid-anagram
     difficulty: Easy
