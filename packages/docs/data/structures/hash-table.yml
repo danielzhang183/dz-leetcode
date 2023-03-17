@@ -8,6 +8,7 @@ questions:
     origin: https://leetcode.cn/problems/two-sum
     tag: hash-table
     category: structures
+    series: SUM
   - name: 3Sum
     title: 3sum
     difficulty: Medium
@@ -16,6 +17,7 @@ questions:
     origin: https://leetcode.cn/problems/3sum
     tag: hash-table
     category: structures
+    series: SUM
   - name: 4Sum
     title: 4sum
     difficulty: Medium
@@ -24,6 +26,7 @@ questions:
     origin: https://leetcode.cn/problems/4sum
     tag: hash-table
     category: structures
+    series: SUM
   - name: Happy Number
     title: happy-number
     difficulty: Easy
@@ -56,7 +59,11 @@ questions:
     link: /structures/hash-table/349
     origin: https://leetcode.cn/problems/intersection-of-two-arrays
     tag: hash-table
+    tags:
+      - HashSet
+      - sort + two-pointers
     category: structures
+    done: true
   - name: Ransom Note
     title: ransom-note
     difficulty: Easy
@@ -74,6 +81,7 @@ questions:
     origin: https://leetcode.cn/problems/4sum-ii
     tag: hash-table
     category: structures
+    series: SUM
   - name: Find Common Characters
     title: find-common-characters
     difficulty: Easy
