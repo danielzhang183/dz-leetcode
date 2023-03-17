@@ -19,8 +19,11 @@ questions:
     link: /structures/hash-table/015
     origin: https://leetcode.cn/problems/3sum
     tag: hash-table
+    tags:
+      - two-pointers
     category: structures
     series: SUM
+    done: true
   - name: 4Sum
     title: 4sum
     difficulty: Medium
