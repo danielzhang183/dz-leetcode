@@ -31,8 +31,11 @@ questions:
     link: /structures/hash-table/018
     origin: https://leetcode.cn/problems/4sum
     tag: hash-table
+    tags:
+      - two-pointers
     category: structures
     series: SUM
+    done: true
   - name: Happy Number
     title: happy-number
     difficulty: Easy
