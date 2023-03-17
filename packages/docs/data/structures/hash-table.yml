@@ -45,6 +45,7 @@ questions:
     tags:
       - HashMap
     category: structures
+    series: HashMap
     done: true
   - name: Valid Anagram
     title: valid-anagram
@@ -54,6 +55,18 @@ questions:
     origin: https://leetcode.cn/problems/valid-anagram
     tag: hash-table
     category: structures
+    done: true
+  - name: Word Pattern
+    title: word-pattern
+    difficulty: Easy
+    id: 290
+    link: /structures/hash-table/290
+    origin: https://leetcode.cn/problems/word-pattern
+    tag: hash-table
+    tags:
+      - HashMap
+    category: structures
+    series: HashMap
     done: true
   - name: Intersection of Two Arrays
     title: intersection-of-two-arrays
