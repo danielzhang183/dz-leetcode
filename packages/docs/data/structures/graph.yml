@@ -26,4 +26,8 @@ questions:
     link: /structures/graph/841
     origin: https://leetcode.cn/problems/keys-and-rooms
     tag: graph
+    tags:
+      - BFS
+      - DFS
     category: structures
+    done: true
