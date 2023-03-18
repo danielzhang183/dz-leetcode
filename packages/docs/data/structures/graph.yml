@@ -15,7 +15,10 @@ questions:
     link: /structures/graph/463
     origin: https://leetcode.cn/problems/island-perimeter
     tag: graph
+    tags:
+      - traversal
     category: structures
+    done: true
   - name: Keys and Rooms
     title: keys-and-rooms
     difficulty: Medium
