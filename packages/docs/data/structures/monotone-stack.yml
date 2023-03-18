@@ -39,3 +39,4 @@ questions:
     origin: https://leetcode.cn/problems/daily-temperatures
     tag: monotone-stack
     category: structures
+    done: true
