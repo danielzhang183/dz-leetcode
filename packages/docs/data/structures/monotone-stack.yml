@@ -34,6 +34,8 @@ questions:
     link: /structures/monotone-stack/503
     origin: https://leetcode.cn/problems/next-greater-element-ii
     tag: monotone-stack
+    tags:
+      - loop array
     category: structures
     done: true
   - name: Daily Temperatures
