@@ -49,6 +49,10 @@ export class Queue<T = number | null> {
     this.#size = 0
   }
 
+  top() {
+    return this.#tail ? this.#tail.value : undefined
+  }
+
   get size() {
     return this.#size
   }

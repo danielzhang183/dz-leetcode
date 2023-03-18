@@ -22,7 +22,11 @@ questions:
     link: /structures/monotone-stack/496
     origin: https://leetcode.cn/problems/next-greater-element-i
     tag: monotone-stack
+    tags:
+      - stack
+      - queue
     category: structures
+    done: true
   - name: Next Greater Element II
     title: next-greater-element-ii
     difficulty: Medium
@@ -31,6 +35,7 @@ questions:
     origin: https://leetcode.cn/problems/next-greater-element-ii
     tag: monotone-stack
     category: structures
+    done: true
   - name: Daily Temperatures
     title: daily-temperatures
     difficulty: Medium
