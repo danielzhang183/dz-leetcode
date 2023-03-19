@@ -7,6 +7,7 @@ questions:
     origin: https://leetcode.cn/problems/trapping-rain-water
     tag: monotone-stack
     category: structures
+    done: true
   - name: Largest Rectangle in Histogram
     title: largest-rectangle-in-histogram
     difficulty: Hard
