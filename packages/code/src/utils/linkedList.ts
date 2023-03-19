@@ -12,7 +12,7 @@ export function createCycleLinkedList<T = number>(val?: T | T[], pos?: number): 
     return prehead!
 
   let curr = prehead
-  let cycle = null
+  let cycle: ListNode<T> | null = null
   let count = 0
   while (curr?.next != null) {
     if (count++ === pos)

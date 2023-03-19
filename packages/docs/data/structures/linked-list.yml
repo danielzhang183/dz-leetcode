@@ -126,7 +126,11 @@ questions:
     link: /structures/linked-list/234
     origin: https://leetcode.cn/problems/palindrome-linked-list
     tag: linked-list
+    tags:
+      - fast-slow pointers
+      - dfs
     category: structures
+    done: true
   - name: Design Linked List
     title: design-linked-list
     difficulty: Medium
