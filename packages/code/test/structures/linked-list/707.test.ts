@@ -1,8 +1,64 @@
 import { describe, expect, it } from 'vitest'
-import { fn } from '../../../src/structures/linked-list/707'
+import { MyLinkedList } from '../../../src/structures/linked-list/707'
 
-describe('fn', () => {
-  it('exported', () => {
-    expect(fn(['MyLinkedList', 'addAtHead', 'addAtTail', 'addAtIndex', 'get', 'deleteAtIndex', 'get'])).toBe([[], [1], [3], [1, 2], [1], [1], [1]])
+describe('MyLinkedList', () => {
+  it('ll', () => {
+    const ll = new MyLinkedList()
+    ll.addAtHead(1)
+    expect(ll.toString()).toBe('1')
+    ll.addAtTail(3)
+    expect(ll.toString()).toBe('1->3')
+    ll.addAtIndex(1, 2)
+    expect(ll.toString()).toBe('1->2->3')
+    ll.deleteAtIndex(1)
+    expect(ll.toString()).toBe('1->3')
+    expect(ll.get(1)).toBe(3)
+  })
+
+  it('ll2', () => {
+    const ll = new MyLinkedList()
+    ll.addAtHead(2)
+    expect(ll.toString()).toBe('2')
+    ll.deleteAtIndex(1)
+    expect(ll.toString()).toBe('2')
+    ll.addAtHead(2)
+    expect(ll.toString()).toBe('2->2')
+    ll.addAtHead(7)
+    expect(ll.toString()).toBe('7->2->2')
+    ll.addAtHead(3)
+    expect(ll.toString()).toBe('3->7->2->2')
+    ll.addAtHead(2)
+    expect(ll.toString()).toBe('2->3->7->2->2')
+    ll.addAtHead(5)
+    expect(ll.toString()).toBe('5->2->3->7->2->2')
+    ll.addAtTail(5)
+    expect(ll.toString()).toBe('5->2->3->7->2->2->5')
+    expect(ll.get(5)).toBe(2)
+    ll.deleteAtIndex(6)
+    expect(ll.toString()).toBe('5->2->3->7->2->2')
+    ll.deleteAtIndex(4)
+    expect(ll.toString()).toBe('5->2->3->7->2')
+  })
+
+  it('ll3', () => {
+    const ll = new MyLinkedList()
+    ll.addAtHead(0)
+    expect(ll.toString()).toBe('0')
+    ll.addAtIndex(1, 1)
+    expect(ll.toString()).toBe('0->1')
+    expect(ll.get(2)).toBe(-1)
+    ll.addAtHead(4)
+    expect(ll.toString()).toBe('4->0->1')
+    expect(ll.get(2)).toBe(1)
+    ll.addAtHead(4)
+    expect(ll.toString()).toBe('4->4->0->1')
+    expect(ll.get(2)).toBe(0)
+    expect(ll.get(3)).toBe(1)
+    ll.addAtIndex(1, 6)
+    expect(ll.toString()).toBe('4->6->4->0->1')
+    ll.addAtTail(1)
+    expect(ll.toString()).toBe('4->6->4->0->1->1')
+    ll.addAtHead(0)
+    expect(ll.toString()).toBe('0->4->6->4->0->1->1')
   })
 })

@@ -138,7 +138,11 @@ questions:
     link: /structures/linked-list/707
     origin: https://leetcode.cn/problems/design-linked-list
     tag: linked-list
+    tags:
+      - a singly ll
+      - doubly ll
     category: structures
+    done: true
   - name: Middle of the Linked List
     title: middle-of-the-linked-list
     difficulty: Easy
