@@ -33,6 +33,7 @@ questions:
     origin: https://leetcode.cn/problems/swap-nodes-in-pairs
     tag: linked-list
     category: structures
+    done: true
   - name: Reverse Linked List II
     title: reverse-linked-list-ii
     difficulty: Medium
