@@ -75,7 +75,10 @@ questions:
     link: /structures/linked-list/143
     origin: https://leetcode.cn/problems/reorder-list
     tag: linked-list
+    tags:
+      - splite linkedlist
     category: structures
+    done: true
   - name: LRU Cache
     title: lru-cache
     difficulty: Medium
