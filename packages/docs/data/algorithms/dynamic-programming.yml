@@ -203,8 +203,11 @@ questions:
     link: /algorithms/dynamic-programming/337
     origin: https://leetcode.cn/problems/house-robber-iii
     tag: dynamic-programming
+    tags:
+      - DFS
     category: algorithms
     series: house robber
+    done: true
   - name: Integer Break
     title: integer-break
     difficulty: Medium
