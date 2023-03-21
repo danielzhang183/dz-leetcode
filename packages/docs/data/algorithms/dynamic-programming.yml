@@ -141,8 +141,12 @@ questions:
     link: /algorithms/dynamic-programming/198
     origin: https://leetcode.cn/problems/house-robber
     tag: dynamic-programming
+    tags:
+      - DP
+      - scroll array
     category: algorithms
     series: house robber
+    done: true
   - name: House Robber II
     title: house-robber-ii
     difficulty: Medium
