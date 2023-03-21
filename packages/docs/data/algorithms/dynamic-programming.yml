@@ -154,8 +154,12 @@ questions:
     link: /algorithms/dynamic-programming/213
     origin: https://leetcode.cn/problems/house-robber-ii
     tag: dynamic-programming
+    tags:
+      - DP
+      - scroll array
     category: algorithms
     series: house robber
+    done: true
   - name: Perfect Squares
     title: perfect-squares
     difficulty: Medium
