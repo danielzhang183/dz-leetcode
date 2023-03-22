@@ -3,7 +3,7 @@ import { isSubsequence } from '../../../src/algorithms/dynamic-programming/392'
 
 describe('isSubsequence', () => {
   it('exported', () => {
-    expect(isSubsequence('abc')).toBe('ahbgdc')
-    expect(isSubsequence('axc')).toBe('ahbgdc')
+    expect(isSubsequence('abc', 'ahbgdc')).toBe(true)
+    expect(isSubsequence('axc', 'ahbgdc')).toBe(false)
   })
 })

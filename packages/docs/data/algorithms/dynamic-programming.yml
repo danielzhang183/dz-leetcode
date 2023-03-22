@@ -244,8 +244,12 @@ questions:
     link: /algorithms/dynamic-programming/392
     origin: https://leetcode.cn/problems/is-subsequence
     tag: dynamic-programming
+    tags:
+      - DP
+      - Traversal
     category: algorithms
     series: subsequence
+    done: true
   - name: Partition Equal Subset Sum
     title: partition-equal-subset-sum
     difficulty: Medium
