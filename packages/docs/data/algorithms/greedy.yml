@@ -19,6 +19,9 @@ questions:
     link: /algorithms/greedy/053
     origin: https://leetcode.cn/problems/maximum-subarray
     tag: greedy
+    tags:
+      - greedy
+      - DP
     category: algorithms
     series: hard
     done: true
