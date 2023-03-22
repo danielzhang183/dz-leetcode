@@ -375,6 +375,7 @@ questions:
     tag: dynamic-programming
     category: algorithms
     series: subsequence
+    done: true
   - name: Last Stone Weight II
     title: last-stone-weight-ii
     difficulty: Medium
