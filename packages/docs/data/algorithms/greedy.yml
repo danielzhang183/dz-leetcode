@@ -84,8 +84,12 @@ questions:
     link: /algorithms/greedy/300
     origin: https://leetcode.cn/problems/longest-increasing-subsequence
     tag: greedy
+    tags:
+      - greedy
+      - DP
     category: algorithms
     series: subsequence
+    done: true
   - name: Wiggle Subsequence
     title: wiggle-subsequence
     difficulty: Medium

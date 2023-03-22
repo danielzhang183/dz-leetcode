@@ -180,8 +180,12 @@ questions:
     link: /algorithms/dynamic-programming/300
     origin: https://leetcode.cn/problems/longest-increasing-subsequence
     tag: dynamic-programming
+    tags:
+      - DP
+      - Greedy
     category: algorithms
     series: subsequence
+    done: true
   - name: Best Time to Buy and Sell Stock with Cooldown
     title: best-time-to-buy-and-sell-stock-with-cooldown
     difficulty: Medium
