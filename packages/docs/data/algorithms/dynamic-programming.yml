@@ -61,8 +61,11 @@ questions:
     link: /algorithms/dynamic-programming/072
     origin: https://leetcode.cn/problems/edit-distance
     tag: dynamic-programming
+    tags:
+      - DP
     category: algorithms
     series: subsequence
+    done: true
   - name: Unique Binary Search Trees
     title: unique-binary-search-trees
     difficulty: Medium

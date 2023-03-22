@@ -3,7 +3,7 @@ import { minDistance } from '../../../src/algorithms/dynamic-programming/072'
 
 describe('minDistance', () => {
   it('exported', () => {
-    expect(minDistance('horse')).toBe('ros')
-    expect(minDistance('intention')).toBe('execution')
+    expect(minDistance('horse', 'ros')).toBe(3)
+    expect(minDistance('intention', 'execution')).toBe(5)
   })
 })
