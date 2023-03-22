@@ -318,8 +318,12 @@ questions:
     link: /algorithms/dynamic-programming/583
     origin: https://leetcode.cn/problems/delete-operation-for-two-strings
     tag: dynamic-programming
+    tags:
+      - longest-common-subsequence
+      - DP
     category: algorithms
     series: subsequence
+    done: true
   - name: Palindromic Substrings
     title: palindromic-substrings
     difficulty: Medium

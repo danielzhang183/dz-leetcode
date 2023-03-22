@@ -3,7 +3,7 @@ import { minDistance } from '../../../src/algorithms/dynamic-programming/583'
 
 describe('minDistance', () => {
   it('exported', () => {
-    expect(minDistance('sea')).toBe('eat')
-    expect(minDistance('leetcode')).toBe('etco')
+    expect(minDistance('sea', 'eat')).toBe(2)
+    expect(minDistance('leetcode', 'etco')).toBe(4)
   })
 })
