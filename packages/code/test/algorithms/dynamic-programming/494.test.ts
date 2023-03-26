@@ -3,7 +3,7 @@ import { findTargetSumWays } from '../../../src/algorithms/dynamic-programming/4
 
 describe('findTargetSumWays', () => {
   it('exported', () => {
-    expect(findTargetSumWays([1, 1, 1, 1, 1])).toBe(3)
-    expect(findTargetSumWays([1])).toBe(1)
+    expect(findTargetSumWays([1, 1, 1, 1, 1], 3)).toBe(5)
+    expect(findTargetSumWays([1], 1)).toBe(1)
   })
 })

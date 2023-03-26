@@ -280,8 +280,12 @@ questions:
     link: /algorithms/dynamic-programming/494
     origin: https://leetcode.cn/problems/target-sum
     tag: dynamic-programming
+    tags:
+      - DP
+      - back-tracking
     category: algorithms
     series: pack01
+    done: true
   - name: Fibonacci Number
     title: fibonacci-number
     difficulty: Easy
