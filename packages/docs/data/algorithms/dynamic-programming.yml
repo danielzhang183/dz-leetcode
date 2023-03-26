@@ -240,6 +240,7 @@ questions:
     tag: dynamic-programming
     category: algorithms
     series: NP complete
+    done: true
   - name: Is Subsequence
     title: is-subsequence
     difficulty: Easy
