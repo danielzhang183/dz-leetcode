@@ -52,7 +52,7 @@ questions:
       - DP
       - scroll array
     category: algorithms
-    series: pack complete
+    series: NP complete
     done: true
   - name: Edit Distance
     title: edit-distance
@@ -131,7 +131,7 @@ questions:
     origin: https://leetcode.cn/problems/word-break
     tag: dynamic-programming
     category: algorithms
-    series: pack complete
+    series: NP complete
   - name: Best Time to Buy and Sell Stock IV
     title: best-time-to-buy-and-sell-stock-iv
     difficulty: Hard
@@ -175,7 +175,7 @@ questions:
     origin: https://leetcode.cn/problems/perfect-squares
     tag: dynamic-programming
     category: algorithms
-    series: pack complete
+    series: NP complete
   - name: Longest Increasing Subsequence
     title: longest-increasing-subsequence
     difficulty: Medium
@@ -206,7 +206,7 @@ questions:
     origin: https://leetcode.cn/problems/coin-change
     tag: dynamic-programming
     category: algorithms
-    series: pack complete
+    series: NP complete
   - name: House Robber III
     title: house-robber-iii
     difficulty: Medium
@@ -239,7 +239,7 @@ questions:
     origin: https://leetcode.cn/problems/combination-sum-iv
     tag: dynamic-programming
     category: algorithms
-    series: pack complete
+    series: NP complete
   - name: Is Subsequence
     title: is-subsequence
     difficulty: Easy
@@ -261,7 +261,7 @@ questions:
     origin: https://leetcode.cn/problems/partition-equal-subset-sum
     tag: dynamic-programming
     category: algorithms
-    series: pack01
+    series: NP 01
     done: true
   - name: Ones and Zeroes
     title: ones-and-zeroes
@@ -271,7 +271,7 @@ questions:
     origin: https://leetcode.cn/problems/ones-and-zeroes
     tag: dynamic-programming
     category: algorithms
-    series: pack01
+    series: NP 01
     done: true
   - name: Target Sum
     title: target-sum
@@ -284,7 +284,7 @@ questions:
       - DP
       - back-tracking
     category: algorithms
-    series: pack01
+    series: NP 01
     done: true
   - name: Fibonacci Number
     title: fibonacci-number
@@ -317,7 +317,8 @@ questions:
     origin: https://leetcode.cn/problems/coin-change-ii
     tag: dynamic-programming
     category: algorithms
-    series: pack complete
+    series: NP complete
+    done: true
   - name: Delete Operation for Two Strings
     title: delete-operation-for-two-strings
     difficulty: Medium
@@ -399,7 +400,7 @@ questions:
     origin: https://leetcode.cn/problems/last-stone-weight-ii
     tag: dynamic-programming
     category: algorithms
-    series: pack01
+    series: NP 01
     done: true
   - name: Longest Common Subsequence
     title: longest-common-subsequence
