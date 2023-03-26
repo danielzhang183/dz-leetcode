@@ -3,6 +3,7 @@ import { lastStoneWeightII } from '../../../src/algorithms/dynamic-programming/1
 
 describe('lastStoneWeightII', () => {
   it('exported', () => {
-    expect(lastStoneWeightII([2, 7, 4, 1, 8, 1])).toBe([31, 26, 33, 21, 40])
+    expect(lastStoneWeightII([2, 7, 4, 1, 8, 1])).toBe(1)
+    expect(lastStoneWeightII([31, 26, 33, 21, 40])).toBe(5)
   })
 })

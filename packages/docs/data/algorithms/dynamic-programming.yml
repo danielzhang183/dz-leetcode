@@ -396,6 +396,7 @@ questions:
     tag: dynamic-programming
     category: algorithms
     series: pack01
+    done: true
   - name: Longest Common Subsequence
     title: longest-common-subsequence
     difficulty: Medium
