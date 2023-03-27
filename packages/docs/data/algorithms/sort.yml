@@ -7,7 +7,10 @@ questions:
     link: /algorithms/sort/015
     origin: https://leetcode.cn/problems/3sum
     tag: sort
+    tags:
+      - sort + two pointers
     category: algorithms
+    done: true
   - name: Sort an Array
     title: sort-an-array
     difficulty: Medium
