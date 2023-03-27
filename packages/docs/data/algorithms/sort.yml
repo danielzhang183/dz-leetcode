@@ -18,4 +18,6 @@ questions:
     link: /algorithms/sort/912
     origin: https://leetcode.cn/problems/sort-an-array
     tag: sort
+    tags:
+      - quick sort
     category: algorithms
