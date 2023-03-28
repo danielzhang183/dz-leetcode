@@ -24,4 +24,4 @@ export function maxProfit(prices: number[]): number {
   return dp[len - 1][1]
 }
 
-maxProfit([7, 1, 5, 3, 6, 4])
+// maxProfit([7, 1, 5, 3, 6, 4])

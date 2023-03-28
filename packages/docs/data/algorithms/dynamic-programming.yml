@@ -139,8 +139,11 @@ questions:
     link: /algorithms/dynamic-programming/188
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv
     tag: dynamic-programming
+    tags:
+      - DP
     category: algorithms
     series: stock
+    done: true
   - name: House Robber
     title: house-robber
     difficulty: Medium
