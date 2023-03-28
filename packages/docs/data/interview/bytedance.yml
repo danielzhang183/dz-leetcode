@@ -1,0 +1,17 @@
+questions:
+  - name: Jump Game II
+    title: jump-game-ii
+    difficulty: Medium
+    id: 45
+    link: /interview/bytedance/045
+    origin: https://leetcode.cn/problems/jump-game-ii
+    tag: bytedance
+    category: interview
+  - name: Design Browser History
+    title: design-browser-history
+    difficulty: Medium
+    id: 1472
+    link: /interview/bytedance/1472
+    origin: https://leetcode.cn/problems/design-browser-history
+    tag: bytedance
+    category: interview

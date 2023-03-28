@@ -1,0 +1,9 @@
+questions:
+  - name: Insert Delete GetRandom O(1)
+    title: insert-delete-getrandom-o1
+    difficulty: Medium
+    id: 380
+    link: /interview/meituan/380
+    origin: https://leetcode.cn/problems/insert-delete-getrandom-o1
+    tag: meituan
+    category: interview

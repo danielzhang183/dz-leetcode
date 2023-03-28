@@ -1,0 +1,9 @@
+questions:
+  - name: Design Authentication Manager
+    title: design-authentication-manager
+    difficulty: Medium
+    id: 1797
+    link: /interview/didi/1797
+    origin: https://leetcode.cn/problems/design-authentication-manager
+    tag: didi
+    category: interview

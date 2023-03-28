@@ -1,0 +1,9 @@
+questions:
+  - name: Frog Jump
+    title: frog-jump
+    difficulty: Medium
+    id: 999
+    link: /interview/tesla/frog-jump
+    origin: https://github.com/himanshuarora05/Codility-FrogJump
+    tag: tesla
+    category: interview

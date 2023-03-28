@@ -1,0 +1,9 @@
+questions:
+  - name: Shuffle an Array
+    title: shuffle-an-array
+    difficulty: Medium
+    id: 384
+    link: /interview/netease/384
+    origin: https://leetcode.cn/problems/shuffle-an-array
+    tag: netease
+    category: interview

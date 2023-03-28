@@ -1,0 +1,9 @@
+questions:
+  - name: Calc Launch Time
+    title: calc-launch-time
+    difficulty: Medium
+    id: 999
+    link: /interview/huawei/calc-launch-time
+    origin: /interview/huawei/calc-launch-time
+    tag: huawei
+    category: interview

@@ -1,0 +1,9 @@
+questions:
+  - name: Number of Recent Calls
+    title: number-of-recent-calls
+    difficulty: Easy
+    id: 933
+    link: /interview/ali/933
+    origin: https://leetcode.cn/problems/number-of-recent-calls
+    tag: ali
+    category: interview

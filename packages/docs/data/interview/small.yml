@@ -1,0 +1,17 @@
+questions:
+  - name: Add Two Numbers
+    title: add-two-numbers
+    difficulty: Medium
+    id: 2
+    link: /interview/small/002
+    origin: https://leetcode.cn/problems/add-two-numbers
+    tag: small
+    category: interview
+  - name: Contains Duplicate
+    title: contains-duplicate
+    difficulty: Easy
+    id: 217
+    link: /interview/small/217
+    origin: https://leetcode.cn/problems/contains-duplicate
+    tag: small
+    category: interview
