@@ -345,8 +345,12 @@ questions:
     link: /algorithms/dynamic-programming/647
     origin: https://leetcode.cn/problems/palindromic-substrings
     tag: dynamic-programming
+    tags:
+      - two-pointers
+      - DP
     category: algorithms
     series: subsequence
+    done: true
   - name: Longest Continuous Increasing Subsequence
     title: longest-continuous-increasing-subsequence
     difficulty: Easy
