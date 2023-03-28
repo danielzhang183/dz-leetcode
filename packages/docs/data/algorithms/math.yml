@@ -7,7 +7,10 @@ questions:
     link: /algorithms/math/018
     origin: https://leetcode.cn/problems/4sum
     tag: math
+    tags:
+      - sort + two-pointers
     category: algorithms
+    done: true
   - name: Nim Game
     title: nim-game
     difficulty: Easy
