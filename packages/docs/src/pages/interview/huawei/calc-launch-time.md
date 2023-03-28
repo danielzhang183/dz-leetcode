@@ -1,8 +1,9 @@
 ---
 title: Calc Launch Time
-display: Huawei. Calc Launch Time
+display: Calc Launch Time
 difficulty: Medium
 origin: https://leetcode.cn/problems/insert-delete-getrandom-o1
+company: huawei
 ---
 
 [[toc]]

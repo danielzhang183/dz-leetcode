@@ -45,12 +45,6 @@ import { isDark } from '~/logics'
   margin-bottom: 0;
 }
 
-.logo {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-}
-
 .nav {
   padding: 2rem;
   width: 100%;

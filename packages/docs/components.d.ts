@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     AppLink: typeof import('./src/components/AppLink.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     ListAllQuestions: typeof import('./src/components/ListAllQuestions.vue')['default']
+    ListInterviews: typeof import('./src/components/ListInterviews.vue')['default']
     ListPosts: typeof import('./src/components/ListPosts.vue')['default']
     ListQuestions: typeof import('./src/components/ListQuestions.vue')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']

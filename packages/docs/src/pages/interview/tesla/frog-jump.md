@@ -3,6 +3,7 @@ title: Frog Jump
 display: Tesla. Frog Jump
 difficulty: Medium
 origin: https://github.com/himanshuarora05/Codility-FrogJump
+company: tesla
 ---
 
 [[toc]]

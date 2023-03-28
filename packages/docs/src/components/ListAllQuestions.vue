@@ -14,9 +14,9 @@ const total = modules.reduce((a, b) => a + b.total, 0)
 <template>
   <div class="flex justify-end items-center">
     <div class="flex gap2 desc text-sm font-normal items-center">
-      <i dot bg-green-500 rounded-sm /><span>{{ done }}</span>
-      <i dot bg-blue-500 rounded-sm /><span>{{ total - done }}</span>
-      <i dot bg-purple-500 rounded-sm /><span>{{ total }}</span>
+      <i dot bg-green-500 rounded-sm opacity-50 /><span>{{ done }}</span>
+      <i dot bg-blue-500 rounded-sm opacity-50 /><span>{{ total - done }}</span>
+      <i dot bg-purple-500 rounded-sm opacity-50 /><span>{{ total }}</span>
     </div>
   </div>
 
