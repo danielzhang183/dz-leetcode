@@ -1,11 +1,24 @@
 export class RecentCounter {
-    constructor() {
+  constructor(
+    private requests: number[] = [],
+    private start = -3000,
+  ) {}
 
+  ping(t: number): number {
+    this.start = t - 3000
+    while (this.requests.length) {
+      if (this.requests[0] < this.start)
+        this.requests.shift()
+      else
+        break
     }
+    this.requests.push(t)
+    return this.requests.length
+  }
 
-    ping(t: number): number {
-
-    }
+  get range(): [number, number] {
+    return [this.start, this.start + 3000]
+  }
 }
 
 /**
