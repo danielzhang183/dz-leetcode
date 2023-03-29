@@ -7,6 +7,7 @@ questions:
     origin: https://leetcode.cn/problems/add-two-numbers
     tag: small
     category: interview
+    done: true
   - name: Contains Duplicate
     title: contains-duplicate
     difficulty: Easy
