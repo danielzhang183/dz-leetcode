@@ -14,4 +14,9 @@ questions:
     link: /interview/small/217
     origin: https://leetcode.cn/problems/contains-duplicate
     tag: small
+    tags:
+      - Set
+      - Traversal
+      - API
     category: interview
+    done: true

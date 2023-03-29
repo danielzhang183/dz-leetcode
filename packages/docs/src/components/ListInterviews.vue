@@ -19,7 +19,7 @@ const companyIconMap = new Map<string, string>([
   ['bytedance', 'i-icon-park-solid:bytedance'],
   ['tencent', 'i-icon-park-outline:tencent-qq'],
   ['baidu', 'i-simple-icons:baidu'],
-  ['small', 'i-emojione-monotone:sleeping-face'],
+  ['small', 'i-material-symbols-brunch-dining-sharp'],
 ])
 
 const router = useRouter()
@@ -42,7 +42,7 @@ const interviews = computed(
 )
 const navs = [...new Set(routes.map(i => i.company))]
   .map(i => ({ icon: companyIconMap.get(i), company: i }))
-  .concat([{ icon: 'i-ic:baseline-format-list-bulleted', company: '' }]) as InterviewNav[]
+  .concat([{ icon: 'i-material-symbols-autorenew', company: '' }]) as InterviewNav[]
 </script>
 
 <template>
