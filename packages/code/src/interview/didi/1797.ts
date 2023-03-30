@@ -1,19 +1,34 @@
+// Map
 export class AuthenticationManager {
-    constructor(timeToLive: number) {
+  constructor(
+    public timeToLive: number,
+    private map = new Map<string, number>(),
+  ) {}
 
+  generate(tokenId: string, currentTime: number): void {
+    this.map.set(tokenId, currentTime + this.timeToLive)
+  }
+
+  renew(tokenId: string, currentTime: number): void {
+    if (this.map.has(tokenId)) {
+      const expireTime = this.map.get(tokenId)!
+      if (expireTime > currentTime)
+        this.map.set(tokenId, currentTime + this.timeToLive)
+    }
+  }
+
+  countUnexpiredTokens(currentTime: number): number {
+    for (const [key, value] of this.map.entries()) {
+      if (value! <= currentTime)
+        this.map.delete(key)
     }
 
-    generate(tokenId: string, currentTime: number): void {
+    return this.map.size
+  }
 
-    }
-
-    renew(tokenId: string, currentTime: number): void {
-
-    }
-
-    countUnexpiredTokens(currentTime: number): number {
-
-    }
+  get state() {
+    return this.map
+  }
 }
 
 /**

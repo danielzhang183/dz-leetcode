@@ -6,4 +6,7 @@ questions:
     link: /interview/didi/1797
     origin: https://leetcode.cn/problems/design-authentication-manager
     tag: didi
+    tags:
+      - Map
     category: interview
+    done: true
