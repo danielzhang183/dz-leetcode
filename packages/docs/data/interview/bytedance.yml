@@ -6,7 +6,10 @@ questions:
     link: /interview/bytedance/045
     origin: https://leetcode.cn/problems/jump-game-ii
     tag: bytedance
+    tags:
+      - greedy
     category: interview
+    done: true
   - name: Design Browser History
     title: design-browser-history
     difficulty: Medium
@@ -15,3 +18,4 @@ questions:
     origin: https://leetcode.cn/problems/design-browser-history
     tag: bytedance
     category: interview
+    done: true

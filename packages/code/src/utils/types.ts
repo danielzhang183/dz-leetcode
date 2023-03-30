@@ -1,9 +1,9 @@
 export class ListNode<T = number> {
-  val: T | 0
+  val: T
   next: ListNode<T> | null
 
   constructor(val?: T, next?: ListNode<T> | null) {
-    this.val = (val === undefined ? 0 : val)
+    this.val = (val === undefined ? 0 : val) as T
     this.next = (next === undefined ? null : next)
   }
 }

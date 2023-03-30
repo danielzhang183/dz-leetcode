@@ -5,6 +5,7 @@ interface Interview {
   title: string
   origin: string
   icon: string
+  done: boolean
 }
 
 type InterviewNav = Pick<Interview, 'company' | 'icon'>
@@ -22,6 +23,7 @@ const companyIconMap = new Map<string, string>([
   ['small', 'i-material-symbols-brunch-dining-sharp'],
 ])
 
+// const modules = getModules('interview')
 const router = useRouter()
 const routes: Interview[] = router.getRoutes()
   .filter(i => i.path.startsWith('/interview') && i.meta.frontmatter.company && !i.path.endsWith('.html'))
@@ -32,6 +34,7 @@ const routes: Interview[] = router.getRoutes()
     title: i.meta.frontmatter.title,
     origin: i.meta.frontmatter.origin,
     icon: companyIconMap.get(i.meta.frontmatter.company)!,
+    done: i.meta.frontmatter.done,
   }))
 
 const company = ref<string>('')
@@ -43,6 +46,8 @@ const interviews = computed(
 const navs = [...new Set(routes.map(i => i.company))]
   .map(i => ({ icon: companyIconMap.get(i), company: i }))
   .concat([{ icon: 'i-material-symbols-autorenew', company: '' }]) as InterviewNav[]
+
+const doneStyle = 'color-[#329672]'
 </script>
 
 <template>
@@ -67,11 +72,17 @@ const navs = [...new Set(routes.map(i => i.company))]
       :title="item.title"
     >
       <div class="pr-5">
-        <div class="text-3xl opacity-50" :class="item.icon" />
+        <div text-3xl opacity-50 :class="[item.icon]" />
       </div>
       <div class="flex-auto">
         <div class="mt-0">{{ item.title }}</div>
-        <div v-if="item.company" class="text-sm opacity-50 min-h-10">{{ item.company }}</div>
+        <div
+          v-if="item.company"
+          class="text-sm opacity-50 min-h-10"
+          :class="[item.done ? doneStyle : '']"
+        >
+          {{ item.company }}
+        </div>
       </div>
     </a>
   </div>
