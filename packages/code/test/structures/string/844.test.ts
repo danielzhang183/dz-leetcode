@@ -3,9 +3,9 @@ import { backspaceCompare } from '../../../src/structures/string/844'
 
 describe('backspaceCompare', () => {
   it('exported', () => {
-    expect(backspaceCompare('ab#c', 'ad#c')).toBe(true)
-    expect(backspaceCompare('ab##', 'c#d#')).toBe(true)
-    expect(backspaceCompare('a#c', 'b')).toBe(false)
-    expect(backspaceCompare('bxj##tw', 'bxj###tw')).toBe(false)
+    expect(backspaceCompare('ab#c', 'ad#c')).toBeTruthy()
+    expect(backspaceCompare('ab##', 'c#d#')).toBeTruthy()
+    expect(backspaceCompare('a#c', 'b')).toBeFalsy()
+    expect(backspaceCompare('bxj##tw', 'bxj###tw')).toBeFalsy()
   })
 })

@@ -6,4 +6,7 @@ questions:
     link: /interview/meituan/380
     origin: https://leetcode.cn/problems/insert-delete-getrandom-o1
     tag: meituan
+    tags:
+      - Map + Array
     category: interview
+    done: true

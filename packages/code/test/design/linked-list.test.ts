@@ -43,11 +43,11 @@ describe('linked-list', () => {
   })
 
   it('clear - isEmpty', () => {
-    expect(ll.isEmpty()).toBe(false)
+    expect(ll.isEmpty()).toBeFalsy()
     expect(ll.size).toBe(2)
     expect(ll.toString()).toMatchInlineSnapshot('"1, 2"')
     ll.clear()
-    expect(ll.isEmpty()).toBe(true)
+    expect(ll.isEmpty()).toBeTruthy()
     expect(ll.size).toBe(0)
   })
 })

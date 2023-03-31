@@ -3,8 +3,8 @@ import { isValid } from '../../../src/structures/stack/020'
 
 describe('isValid', () => {
   it('exported', () => {
-    expect(isValid('()')).toBe(true)
-    expect(isValid('()[]{}')).toBe(true)
-    expect(isValid('(]')).toBe(false)
+    expect(isValid('()')).toBeTruthy()
+    expect(isValid('()[]{}')).toBeTruthy()
+    expect(isValid('(]')).toBeFalsy()
   })
 })

@@ -3,11 +3,11 @@ import { isPalindrome } from '../../../src/structures/array/125'
 
 describe('isPalindrome', () => {
   it('exported', () => {
-    expect(isPalindrome('A man, a plan, a canal: Panama')).toBe(true)
-    expect(isPalindrome('race a car')).toBe(false)
-    expect(isPalindrome('a')).toBe(true)
-    expect(isPalindrome('aa')).toBe(true)
-    expect(isPalindrome(' ')).toBe(true)
-    expect(isPalindrome('ab_a')).toBe(true)
+    expect(isPalindrome('A man, a plan, a canal: Panama')).toBeTruthy()
+    expect(isPalindrome('race a car')).toBeFalsy()
+    expect(isPalindrome('a')).toBeTruthy()
+    expect(isPalindrome('aa')).toBeTruthy()
+    expect(isPalindrome(' ')).toBeTruthy()
+    expect(isPalindrome('ab_a')).toBeTruthy()
   })
 })

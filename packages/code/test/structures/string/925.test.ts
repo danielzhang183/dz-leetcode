@@ -3,8 +3,8 @@ import { isLongPressedName } from '../../../src/structures/string/925'
 
 describe('isLongPressedName', () => {
   it('exported', () => {
-    expect(isLongPressedName('alex', 'aaleex')).toBe(true)
-    expect(isLongPressedName('saeed', 'ssaaedd')).toBe(false)
-    expect(isLongPressedName('alex', 'aaleexa')).toBe(false)
+    expect(isLongPressedName('alex', 'aaleex')).toBeTruthy()
+    expect(isLongPressedName('saeed', 'ssaaedd')).toBeFalsy()
+    expect(isLongPressedName('alex', 'aaleexa')).toBeFalsy()
   })
 })

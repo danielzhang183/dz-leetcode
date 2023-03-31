@@ -4,7 +4,7 @@ import { createLinkedList } from '../../../src/utils'
 
 describe('isPalindrome', () => {
   it('exported', () => {
-    expect(isPalindrome(createLinkedList([1, 2, 2, 1]))).toBe(true)
-    expect(isPalindrome(createLinkedList([1, 2]))).toBe(false)
+    expect(isPalindrome(createLinkedList([1, 2, 2, 1]))).toBeTruthy()
+    expect(isPalindrome(createLinkedList([1, 2]))).toBeFalsy()
   })
 })

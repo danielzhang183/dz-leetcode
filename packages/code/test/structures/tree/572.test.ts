@@ -7,14 +7,14 @@ describe('isSubtree', () => {
     expect(isSubtree(
       createBinaryTree([3, 4, 5, 1, 2]),
       createBinaryTree([4, 1, 2]),
-    )).toBe(true)
+    )).toBeTruthy()
     expect(isSubtree(
       createBinaryTree([3, 4, 5, 1, 2, null, null, null, null, 0]),
       createBinaryTree([4, 1, 2]),
-    )).toBe(false)
+    )).toBeFalsy()
     expect(isSubtree(
       createBinaryTree([1, 1]),
       createBinaryTree([1]),
-    )).toBe(true)
+    )).toBeTruthy()
   })
 })
