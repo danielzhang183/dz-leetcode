@@ -7,6 +7,7 @@ questions:
     origin: https://leetcode.cn/problems/sort-list
     tag: tencent
     category: interview
+    done: true
   - name: Flatten Nested List Iterator
     title: flatten-nested-list-iterator
     difficulty: Medium
