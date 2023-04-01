@@ -79,6 +79,7 @@ questions:
     tag: back-tracking
     category: algorithms
     series: chessboard
+    done: true
   - name: N-Queens II
     title: n-queens-ii
     difficulty: Hard
