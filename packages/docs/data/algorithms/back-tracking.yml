@@ -167,6 +167,7 @@ questions:
     tag: back-tracking
     category: algorithms
     series: combinaton
+    done: true
   - name: Reconstruct Itinerary
     title: reconstruct-itinerary
     difficulty: Hard
