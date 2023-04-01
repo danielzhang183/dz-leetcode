@@ -152,14 +152,6 @@ questions:
     origin: https://leetcode.cn/problems/valid-mountain-array
     tag: array
     category: structures
-  - name: Squares of a Sorted Array
-    title: squares-of-a-sorted-array
-    difficulty: Easy
-    id: 977
-    link: /structures/array/977
-    origin: https://leetcode.cn/problems/squares-of-a-sorted-array
-    tag: array
-    category: structures
   - name: Unique Number of Occurrences
     title: unique-number-of-occurrences
     difficulty: Easy

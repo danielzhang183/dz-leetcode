@@ -1,4 +1,6 @@
-description: Break the data structure into two equal parts and try to decide in which half we need to find for the element.
+description: >-
+  Break the data structure into two equal parts and try to decide in which half
+  we need to find for the element.
 questions:
   - name: Search Insert Position
     title: search-insert-position
@@ -7,7 +9,8 @@ questions:
     link: /algorithms/binary-search/035
     origin: https://leetcode.cn/problems/search-insert-position
     tag: binary-search
-    tags: [binary-search]
+    tags:
+      - binary-search
     category: algorithms
     done: true
   - name: Sqrt(x)
@@ -25,7 +28,8 @@ questions:
     link: /algorithms/binary-search/153
     origin: https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array
     tag: binary-search
-    tags: [binary-search]
+    tags:
+      - binary-search
     category: algorithms
     done: true
   - name: Binary Search
@@ -35,6 +39,16 @@ questions:
     link: /algorithms/binary-search/704
     origin: https://leetcode.cn/problems/binary-search
     tag: binary-search
-    tags: [binary-search]
+    tags:
+      - binary-search
+    category: algorithms
+    done: true
+  - name: Squares of a Sorted Array
+    title: squares-of-a-sorted-array
+    difficulty: Easy
+    id: 977
+    link: /algorithms/binary-search/977
+    origin: https://leetcode.cn/problems/squares-of-a-sorted-array
+    tag: binary-search
     category: algorithms
     done: true
