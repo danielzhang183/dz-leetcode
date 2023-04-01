@@ -45,6 +45,7 @@ questions:
     tag: back-tracking
     category: algorithms
     series: combinaton
+    done: true
   - name: Permutations
     title: permutations
     difficulty: Medium
