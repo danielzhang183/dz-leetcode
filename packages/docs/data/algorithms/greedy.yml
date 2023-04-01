@@ -20,7 +20,7 @@ questions:
     origin: https://leetcode.cn/problems/maximum-subarray
     tag: greedy
     tags:
-      - greedy
+      - Greedy
       - DP
     category: algorithms
     series: hard
@@ -53,7 +53,7 @@ questions:
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii
     tag: greedy
     tags:
-      - greedy
+      - Greedy
       - DP
     category: algorithms
     series: stock
@@ -85,7 +85,7 @@ questions:
     origin: https://leetcode.cn/problems/longest-increasing-subsequence
     tag: greedy
     tags:
-      - greedy
+      - Greedy
       - DP
     category: algorithms
     series: subsequence
@@ -98,7 +98,7 @@ questions:
     origin: https://leetcode.cn/problems/wiggle-subsequence
     tag: greedy
     tags:
-      - greedy
+      - Greedy
       - DP
     category: algorithms
     series: subsequence
@@ -167,8 +167,12 @@ questions:
     origin: >-
       https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee
     tag: greedy
+    tags:
+      - Greedy
+      - DP
     category: algorithms
     series: stock
+    done: true
   - name: Monotone Increasing Digits
     title: monotone-increasing-digits
     difficulty: Medium

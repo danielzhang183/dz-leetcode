@@ -92,7 +92,7 @@ questions:
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock
     tag: dynamic-programming
     tags:
-      - greedy
+      - Greedy
       - DP
     category: algorithms
     series: stock
@@ -368,8 +368,12 @@ questions:
     origin: >-
       https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee
     tag: dynamic-programming
+    tags:
+      - DP
+      - Greedy
     category: algorithms
     series: stock
+    done: true
   - name: Maximum Length of Repeated Subarray
     title: maximum-length-of-repeated-subarray
     difficulty: Medium
