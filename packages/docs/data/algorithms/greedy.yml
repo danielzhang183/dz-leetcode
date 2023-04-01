@@ -188,6 +188,7 @@ questions:
     tag: greedy
     category: algorithms
     series: interval
+    done: true
   - name: Lemonade Change
     title: lemonade-change
     difficulty: Easy
