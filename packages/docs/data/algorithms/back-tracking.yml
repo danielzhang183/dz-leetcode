@@ -23,6 +23,7 @@ questions:
     tag: back-tracking
     category: algorithms
     series: chessboard
+    done: true
   - name: Combination Sum
     title: combination-sum
     difficulty: Medium
