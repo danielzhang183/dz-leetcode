@@ -1,4 +1,5 @@
 import YAML from 'js-yaml'
+import type { Difficulty } from './../types'
 import { capitalize, normalizeName, simplify } from './index'
 import type { Module, Question, SubNav, Tag } from '~/types'
 
@@ -15,6 +16,9 @@ export interface ModuleMeta {
   done: number
   undone: number
   link: string
+  Easy: number
+  Medium: number
+  Hard: number
   questions: Question[]
 }
 
@@ -75,17 +79,24 @@ function normalizeModule(module: RawModuleMeta, options: NormalizeModuleOptions)
   const questions = module?.questions || []
   const total = questions.length
   const done = questions.filter(i => i.done).length
+  const difficultyMap = new Map<Difficulty, number>([
+    ['Easy', 0],
+    ['Medium', 0],
+    ['Hard', 0],
+  ])
+  questions.reduce((map, i) => map.set(i.difficulty, map.get(i.difficulty)! + 1), difficultyMap)
 
   return {
     key,
     name: normalizeName(key),
     description: module?.description || '',
+    link: `${options.module}/${key}`,
+    questions,
     total,
     done,
     undone: total - done,
-    link: `${options.module}/${key}`,
-    questions,
-  }
+    ...Object.fromEntries(difficultyMap),
+  } as ModuleMeta
 }
 
 export function getDifficultyColor(difficulty: string) {

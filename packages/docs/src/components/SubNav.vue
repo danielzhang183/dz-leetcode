@@ -18,22 +18,21 @@ const navs: SubNav[] = props.navs || getNavs(props.module)
   <div class="prose m-auto mb-8 select-none">
     <div flex="~ gap3">
       <button flex="~ gap1" items-center mb2 op30 text-sm @click="easy = !easy">
-        <div :i="easy ? 'carbon-checkbox-checked' : 'carbon-checkbox'" />
+        <div :class="easy ? 'i-carbon-checkbox-checked' : 'i-carbon-checkbox'" />
         Easy
       </button>
 
       <button flex="~ gap1" items-center mb2 op30 text-sm @click="medium = !medium">
-        <div :i="medium ? 'carbon-checkbox-checked' : 'carbon-checkbox'" />
+        <div :class="medium ? 'i-carbon-checkbox-checked' : 'i-carbon-checkbox'" />
         Medium
       </button>
 
       <button flex="~ gap1" items-center mb2 op30 text-sm @click="hard = !hard">
-        <div :i="hard ? 'carbon-checkbox-checked' : 'carbon-checkbox'" />
+        <div :class="hard ? 'i-carbon-checkbox-checked' : 'i-carbon-checkbox'" />
         Hard
       </button>
       <button flex="~ gap1" items-center mb2 op30 text-sm @click="mode = Number(!mode)">
-        <div v-if="mode" i-carbon:accessibility-color-filled />
-        <div v-else i-carbon:accessibility-color />
+        <div :class="mode ? 'i-carbon:accessibility-color-filled ' : 'i-carbon:accessibility-color'" />
       </button>
     </div>
 

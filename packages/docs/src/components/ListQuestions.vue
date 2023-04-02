@@ -85,7 +85,7 @@ function padZero(num: string | number, len = 3) {
         </div>
         <div class="flex-auto">
           <div cla ss="text-normal">{{ item.name }}</div>
-          <div v-if="item.tags" class="tags flex gap-2 text-sm font-normal pt1">
+          <div v-if="item.tags && mode" class="tags flex gap-2 text-sm font-normal pt1">
             <a
               v-for="t in item.tags"
               :key="t"
@@ -99,7 +99,7 @@ function padZero(num: string | number, len = 3) {
           </div>
         </div>
         <div
-          v-if="item.done"
+          v-if="item.done && mode"
           class="absolute bottom-3 right-4 text-2xl opacity-50"
           i-ion-checkmark-done-outline
           style="color: #a1b53f"

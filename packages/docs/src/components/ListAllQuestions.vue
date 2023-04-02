@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Module } from '~/types'
-import { getModules } from '~/logics'
+import { MODE, getModules, mode } from '~/logics'
 
 const props = defineProps<{
   module: Module
@@ -8,15 +8,31 @@ const props = defineProps<{
 
 const modules = getModules(props.module)
 const done = modules.reduce((a, b) => a + b.done, 0)
+const easy = modules.reduce((a, b) => a + b.Easy, 0)
+const medium = modules.reduce((a, b) => a + b.Medium, 0)
 const total = modules.reduce((a, b) => a + b.total, 0)
+const isViewMode = computed(() => mode.value === MODE.VIEW)
 </script>
 
 <template>
   <div class="flex justify-end items-center">
     <div class="flex gap2 desc text-sm font-normal items-center">
-      <i dot bg-green-500 rounded-sm opacity-50 /><span>{{ done }}</span>
-      <i dot bg-blue-500 rounded-sm opacity-50 /><span>{{ total - done }}</span>
-      <i dot bg-purple-500 rounded-sm opacity-50 /><span>{{ total }}</span>
+      <template v-if="isViewMode">
+        <i dot bg-green-500 rounded-sm opacity-50 /><span>Done: {{ done }}</span>
+        <i dot bg-blue-500 rounded-sm opacity-50 /><span>Undo: {{ total - done }}</span>
+        <i dot bg-purple-500 rounded-sm opacity-50 /><span>Total: {{ total }}</span>
+      </template>
+      <template v-else>
+        <i class="bg-[#a1b53f]" dot rounded-sm opacity-50 />
+        <span>Easy: {{ easy }}</span>
+        <i class="bg-[#e0a569]" dot rounded-sm opacity-50 />
+        <span>Medium: {{ medium }}</span>
+        <i class="bg-[#cb7676]" dot rounded-sm opacity-50 />
+        <span>Hard: {{ total - easy - medium }}</span>
+      </template>
+      <button op50 @click="mode = Number(!mode)">
+        <div :class="mode ? 'i-carbon:accessibility-color-filled ' : 'i-carbon:accessibility-color'" />
+      </button>
     </div>
   </div>
 
@@ -37,9 +53,16 @@ const total = modules.reduce((a, b) => a + b.total, 0)
         <div class="mt-0">{{ item.name }}</div>
         <div v-if="item.description" class="text-sm opacity-50 min-h-10">{{ item.description }}</div>
         <div class="flex gap2 desc text-sm font-normal justify-end items-center">
-          <i dot bg-green-500 /><span>{{ item.done }}</span>
-          <i dot bg-blue-500 /><span>{{ item.undone }}</span>
-          <i dot bg-purple-500 /><span>{{ item.total }}</span>
+          <template v-if="isViewMode">
+            <i dot bg-green-500 /><span>{{ item.done }}</span>
+            <i dot bg-blue-500 /><span>{{ item.undone }}</span>
+            <i dot bg-purple-500 /><span>{{ item.total }}</span>
+          </template>
+          <template v-else>
+            <i class="dot bg-[#a1b53f]" /><span>{{ item.Easy }}</span>
+            <i class="dot bg-[#e0a569]" /><span>{{ item.Medium }}</span>
+            <i class="dot bg-[#cb7676]" /><span>{{ item.Hard }}</span>
+          </template>
         </div>
       </div>
     </a>
