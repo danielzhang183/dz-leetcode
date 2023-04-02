@@ -1,8 +1,8 @@
 ---
 title: Greedy
-display: Greedy
-subtitle: List of questions that I am aware of
-description: List of questions that I am aware of
+titleZh: 贪心算法
+subtitle: The problems where choosing locally optimal also leads to the global solutions are best fit for Greedy.
+subtitleZh: 选择局部最优的问题也会导致全局解决方案最适合贪婪。
 plum: true
 ---
 

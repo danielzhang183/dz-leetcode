@@ -1,6 +1,8 @@
 ---
 title: Queue
+titleZh: 队列
 subtitle: It is a linear structure which follows `FIFO`.
+subtitleZh: 它是遵循“FIFO”的线性结构。
 plum: true
 ---
 

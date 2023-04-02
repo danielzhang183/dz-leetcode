@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { isDark } from '~/logics'
+const { t } = useI18n()
 </script>
 
 <template>
@@ -16,19 +17,19 @@ import { isDark } from '~/logics'
       <div class="spacer" />
       <div class="right">
         <router-link to="/structures" title="Structures">
-          <span class="lt-md:hidden">Structures</span>
+          <span class="lt-md:hidden">{{ t('nav.structure') }}</span>
           <div i-carbon-load-balancer-network md:hidden />
         </router-link>
         <router-link to="/algorithms" title="Algorithms">
-          <span class="lt-md:hidden">Algorithms</span>
+          <span class="lt-md:hidden">{{ t('nav.algorithm') }}</span>
           <div i-carbon-calculation md:hidden />
         </router-link>
         <router-link to="/design" title="Design">
-          <span class="lt-md:hidden">Design</span>
+          <span class="lt-md:hidden">{{ t('nav.design') }}</span>
           <div i-carbon-cognitive md:hidden />
         </router-link>
         <router-link to="/interview" title="Interview">
-          <span class="lt-md:hidden">Interview</span>
+          <span class="lt-md:hidden">{{ t('nav.interview') }}</span>
           <div i-carbon-license-third-party-draft md:hidden />
         </router-link>
         <a href="https://github.com/danielzhang183/dz-leetcode" target="_blank" title="GitHub" class="lt-md:hidden">

@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppLink: typeof import('./src/components/AppLink.vue')['default']
+    Detail: typeof import('./src/components/Detail.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     ListAllQuestions: typeof import('./src/components/ListAllQuestions.vue')['default']
     ListInterviews: typeof import('./src/components/ListInterviews.vue')['default']

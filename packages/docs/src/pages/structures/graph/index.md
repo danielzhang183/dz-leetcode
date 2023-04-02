@@ -1,6 +1,8 @@
 ---
 title: Graph
+titleZh: 图
 subtitle: A Graph is a non-linear data structure consisting of a finite set of vertices(or nodes) and a set of edges that connect a pair of nodes.
+subtitleZh: 图是一种非线性数据结构，由一组有限的顶点（或节点）和一组连接一对节点的边组成。
 plum: true
 ---
 

@@ -1,0 +1,78 @@
+nav:
+  structure: Structure
+  algorithm: Algorithm
+  design: Design
+  interview: Interview
+subnav:
+  array: Array
+  graph: Graph
+  hash-table: HT
+  heap: Heap
+  linked-list: LL
+  monotone-stack: Mono
+  queue: Q
+  stack: Stack
+  string: String
+  tree: Tree
+  union-find-disjoint-sets: UnionSet
+  back-tracking: BT
+  binary-search: BS
+  bitwise: Bitwise
+  divide-conquer: D&C
+  dynamic-programming: DP
+  greedy: Greedy
+  math: Math
+  recursion: Recur
+  sort: Sort
+easy: Easy
+medium: Medium
+hard: Hard
+done: Done
+undo: Undo
+total: Total
+view-source: Source
+structure:
+  desc: The main idea behind using data structures is to minimize the time and space complexities. An efficient data structure takes minimum memory space and requires minimum time to execute the data.
+# structure
+array: Array
+array-desc: A linear data structure with contiguous memory.
+graph: Graph
+graph-desc: A non-linear data structure consisting of a finite set of vertices(or nodes) and a set of edges that connect a pair of nodes.
+hash-table: Hash Table
+hash-table-desc: An index or location for the storage of an item in a data structure.
+heap: Heap
+heap-desc: A special Tree-based data structure - a complete binary tree.
+linked-list: Linked List
+linked-list-desc: A linear data structure with random memory.
+monotone-stack: Monotone Stack
+monotone-stack-desc: Monotone Stack Desc
+queue: Queue
+queue-desc: A linear data structure which follows FIFO.
+stack: Stack
+stack-desc: A linear data structure which follows FILO.
+string: String
+string-desc: It can be interpreted as an array of characters.
+tree: Tree
+tree-desc: A non-linear data structure, there is only one path to go from any of its nodes to any other node.
+union-find-disjoint-sets: Union Find Disjoint Sets
+union-find-disjoint-sets-desc: Union Find Disjoint Sets Desc
+# algorithm
+back-tracking: Back Tracking
+back-tracking-desc: Solving problems incrementally, Removing solutions that fail to satisfy the constraints of the problem at any point of time.
+binary-search: Binary Search
+binary-search-desc: Break the data structure into two equal parts and try to decide in which half we need to find for the element.
+bitwise: Bitwise
+bitwise-desc: It is used to perform operations at the bit-level or to manipulate bits in different ways.
+divide-conquer: Divide Conquer
+divide-conquer-desc: It breaks problem into parts, then solves each part and merges the solved subtasks until problem solved.
+dynamic-programming: Dynamic Programming
+dynamic-programming-desc: Use the previously calculated result to avoid repeated calculations of the same subtask which helps in reducing the time complexity.
+greedy: Greedy
+greedy-desc: The problems where choosing locally optimal also leads to the global solutions are best fit for Greedy.
+math: Math
+math-desc: Was designed to solve Mathematical and Number Theory problems.
+recursion: Recursion
+recursion-desc: It uses the concept of code reusability and repeated usage of the same piece of code.
+sort: Sort
+sort-desc: Regular sort, such as quick / merge sort...
+

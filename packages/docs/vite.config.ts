@@ -1,4 +1,5 @@
 import { resolve } from 'path'
+import path from 'node:path'
 import { defineConfig } from 'vite'
 import fs from 'fs-extra'
 import Pages from 'vite-plugin-pages'
@@ -17,6 +18,7 @@ import UnoCSS from 'unocss/vite'
 import SVG from 'vite-svg-loader'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
+import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import { slugify } from './scripts/slugify'
 
 export default defineConfig({
@@ -29,6 +31,7 @@ export default defineConfig({
     include: [
       'vue',
       'vue-router',
+      'vue-i18n',
       '@vueuse/core',
       '@vueuse/head',
       'dayjs',
@@ -99,6 +102,7 @@ export default defineConfig({
       imports: [
         'vue',
         'vue-router',
+        'vue-i18n',
         '@vueuse/core',
         '@vueuse/head',
       ],
@@ -125,6 +129,13 @@ export default defineConfig({
 
     SVG({
       svgo: false,
+    }),
+
+    VueI18n({
+      runtimeOnly: true,
+      compositionOnly: true,
+      fullInstall: true,
+      include: [path.resolve(__dirname, 'locales/**')],
     }),
   ],
 

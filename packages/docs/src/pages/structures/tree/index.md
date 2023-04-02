@@ -1,6 +1,8 @@
 ---
 title: Tree
+titleZh: 树
 subtitle: It is non-linear structure. It has a root and leaves. There is only one path to go from any of its node to any other node.
+subtitleZh: 是非线性结构，它有根和叶，从它的任何一个节点到任何其他节点只有一条路径。
 plum: true
 ---
 

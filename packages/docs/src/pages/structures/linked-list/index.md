@@ -1,6 +1,8 @@
 ---
 title: Linked List
+titleZh: 链表
 subtitle: It is a linear structure which maintains a pointer points to next node.
+subtitleZh: 它是一个线性结构，维护指向下一个节点的指针。
 plum: true
 ---
 

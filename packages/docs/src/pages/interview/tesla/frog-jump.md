@@ -60,4 +60,3 @@ function frogJump(blocks: number[]): number {
 }
 ```
 
-[view source](https://github.com/himanshuarora05/Codility-FrogJump)

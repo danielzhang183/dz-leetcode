@@ -12,6 +12,7 @@ const inactiveStyle = 'opacity-20 hover:opacity-50'
 const route = useRoute()
 
 const navs: SubNav[] = props.navs || getNavs(props.module)
+const { t } = useI18n()
 </script>
 
 <template>
@@ -19,17 +20,17 @@ const navs: SubNav[] = props.navs || getNavs(props.module)
     <div flex="~ gap3">
       <button flex="~ gap1" items-center mb2 op30 text-sm @click="easy = !easy">
         <div :class="easy ? 'i-carbon-checkbox-checked' : 'i-carbon-checkbox'" />
-        Easy
+        {{ t('easy') }}
       </button>
 
       <button flex="~ gap1" items-center mb2 op30 text-sm @click="medium = !medium">
         <div :class="medium ? 'i-carbon-checkbox-checked' : 'i-carbon-checkbox'" />
-        Medium
+        {{ t('medium') }}
       </button>
 
       <button flex="~ gap1" items-center mb2 op30 text-sm @click="hard = !hard">
         <div :class="hard ? 'i-carbon-checkbox-checked' : 'i-carbon-checkbox'" />
-        Hard
+        {{ t('hard') }}
       </button>
       <button flex="~ gap1" items-center mb2 op30 text-sm @click="mode = Number(!mode)">
         <div :class="mode ? 'i-carbon:accessibility-color-filled ' : 'i-carbon:accessibility-color'" />

@@ -1,8 +1,8 @@
 ---
 title: Hash Table
-display: Hash Table
+titleZh: 哈希表
 subtitle: List of questions that I am aware of
-description: List of questions that I am aware of
+subtitleZh: List of questions that I am aware of
 plum: true
 ---
 

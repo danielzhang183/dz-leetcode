@@ -1,6 +1,8 @@
 ---
 title: Stack
+titleZh: 栈
 subtitle: It is a linear data structure which follows `FILO`.
+subtitleZh: 它是遵循 FILO 的线性数据结构。
 plum: true
 ---
 

@@ -1,7 +1,10 @@
 import YAML from 'js-yaml'
+import { i18n } from './../modules/i18n'
 import type { Difficulty } from './../types'
 import { capitalize, normalizeName, simplify } from './index'
 import type { Module, Question, SubNav, Tag } from '~/types'
+
+// const { t } = useI18n()
 
 export interface RawModuleMeta {
   description?: string
@@ -32,7 +35,7 @@ export function getNavs(module: Module): SubNav[] {
     .map((key) => {
       const nav = key.match(re)![1]
       return {
-        name: simplify(capitalize(nav)),
+        name: i18n.global.t(`subnav.${nav}`) ?? simplify(capitalize(nav)),
         link: `/${module}/${nav}`,
       }
     })

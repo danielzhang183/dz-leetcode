@@ -1,0 +1,78 @@
+nav:
+  structure: 数据结构
+  algorithm: 算法
+  design: 设计
+  interview: 面试
+subnav:
+  array: 数组
+  graph: 图
+  hash-table: 哈希表
+  heap: 堆
+  linked-list: 链表
+  monotone-stack: 单调栈
+  queue: 队列
+  stack: 栈
+  string: 字符串
+  tree: 树
+  union-find-disjoint-sets: 不相交集
+  back-tracking: 回溯
+  binary-search: 二分
+  bitwise: 位运算
+  divide-conquer: 分治
+  dynamic-programming: 动规
+  greedy: 贪心
+  math: 数学
+  recursion: 递归
+  sort: 排序
+easy: 简单
+medium: 中等
+hard: 困难
+done: 已完成
+undo: 未完成
+total: 总共
+view-source: 查看原题
+nothing-here-yet: 暂无内容
+structure:
+  desc: 使用数据结构背后的主要思想是最小化时间和空间的复杂性。高效的数据结构需要最少的内存空间，并且需要最少的时间来执行数据。
+# structure
+array: 数组
+array-desc: 具有连续内存的线性数据结构。
+graph: 图
+graph-desc: 一种非线性数据结构，由一组有限的顶点（或节点）和一组连接一对节点的边组成。
+hash-table: 哈希表
+hash-table-desc: 数据结构中用于存储项目的索引或位置。
+heap: 堆
+heap-desc: 一种特殊的基于树的数据结构——完全二叉树。
+linked-list: 链表
+linked-list-desc: 具有随机存储器的线性数据结构。
+monotone-stack: 单调栈
+monotone-stack-desc: 单调栈描述
+queue: 队列
+queue-desc: 遵循 FIFO 的线性数据结构。
+stack: 栈
+stack-desc: 遵循 FILO 的线性数据结构。
+string: 字符串
+string-desc: 它可以被解释为一个字符数组。
+tree: 树
+tree-desc: 非线性数据结构，从它的任何节点到任何其他节点只有一条路径。
+union-find-disjoint-sets: 联合查找不相交集
+union-find-disjoint-sets-desc: 联合查找不相交集 描述
+# algorithm
+back-tracking: 回溯算法
+back-tracking-desc: 逐步解决问题，移除在任何时间点不能满足问题约束的解决方案。
+binary-search: 二分查找
+binary-search-desc: 将数据结构分成两个相等的部分，并尝试决定我们需要在哪一半中找到元素。
+bitwise: 位运算
+bitwise-desc: 它用于在位级别执行操作或以不同方式操作位。
+divide-conquer: 分治算法
+divide-conquer-desc: 它将问题分解成多个部分，然后解决每个部分并合并已解决的子任务，直到问题解决。
+dynamic-programming: 动态规划
+dynamic-programming-desc: 使用之前计算的结果，避免重复计算同一个子任务，有助于降低时间复杂度。
+greedy: 贪心算法
+greedy-desc: 选择局部最优的问题也会导致全局解决方案最适合贪婪。
+math: 数学
+math-desc: 旨在解决数学和数论问题。
+recursion: 递归算法
+recursion-desc: 它使用代码可重用性和重复使用同一段代码的概念。
+sort: 排序
+sort-desc: 常见排序，如快排、归并...

@@ -1,8 +1,8 @@
 ---
 title: Dynamic Programming
-display: Dynamic Programming
-subtitle: List of questions that I am aware of
-description: List of questions that I am aware of
+titleZh: 动态规划
+subtitle: Use the previously calculated result to avoid repeated calculations of the same subtask which helps in reducing the time complexity.
+subtitleZh: 使用之前计算的结果，避免重复计算同一个子任务，有助于降低时间复杂度。
 plum: true
 ---
 

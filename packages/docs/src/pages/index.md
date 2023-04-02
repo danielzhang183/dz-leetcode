@@ -1,7 +1,9 @@
 ---
 title: DSA - roadmap
+titleZh: DSA - roadmap
 display: DSA
 subtitle: Data Structure & Algorithm - roadmap
+subtitleZh: 数据结构和算法 - roadmap
 plum: true
 ---
 

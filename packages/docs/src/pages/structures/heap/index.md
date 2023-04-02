@@ -1,6 +1,8 @@
 ---
 title: Heap
+titleZh: 堆
 subtitle: It is a special tree-based data structure in which the tree is a completed binary tree.
+subtitleZh: 它是一种特殊的基于树的数据结构，其中树是一棵完整的二叉树。
 plum: true
 ---
 

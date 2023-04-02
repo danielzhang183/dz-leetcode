@@ -12,23 +12,24 @@ const easy = modules.reduce((a, b) => a + b.Easy, 0)
 const medium = modules.reduce((a, b) => a + b.Medium, 0)
 const total = modules.reduce((a, b) => a + b.total, 0)
 const isViewMode = computed(() => mode.value === MODE.VIEW)
+const { t } = useI18n()
 </script>
 
 <template>
   <div class="flex justify-end items-center">
     <div class="flex gap2 desc text-sm font-normal items-center">
       <template v-if="isViewMode">
-        <i dot bg-green-500 rounded-sm opacity-50 /><span>Done: {{ done }}</span>
-        <i dot bg-blue-500 rounded-sm opacity-50 /><span>Undo: {{ total - done }}</span>
-        <i dot bg-purple-500 rounded-sm opacity-50 /><span>Total: {{ total }}</span>
+        <i dot bg-green-500 rounded-sm opacity-50 /><span>{{ t('done') }}: {{ done }}</span>
+        <i dot bg-blue-500 rounded-sm opacity-50 /><span>{{ t('undo') }}: {{ total - done }}</span>
+        <i dot bg-purple-500 rounded-sm opacity-50 /><span>{{ t('total') }}: {{ total }}</span>
       </template>
       <template v-else>
         <i class="bg-[#a1b53f]" dot rounded-sm opacity-50 />
-        <span>Easy: {{ easy }}</span>
+        <span>{{ t('easy') }}: {{ easy }}</span>
         <i class="bg-[#e0a569]" dot rounded-sm opacity-50 />
-        <span>Medium: {{ medium }}</span>
+        <span>{{ t('medium') }}: {{ medium }}</span>
         <i class="bg-[#cb7676]" dot rounded-sm opacity-50 />
-        <span>Hard: {{ total - easy - medium }}</span>
+        <span>{{ t('hard') }}: {{ total - easy - medium }}</span>
       </template>
       <button op50 @click="mode = Number(!mode)">
         <div :class="mode ? 'i-carbon:accessibility-color-filled ' : 'i-carbon:accessibility-color'" />
@@ -50,8 +51,10 @@ const isViewMode = computed(() => mode.value === MODE.VIEW)
         <div class="text-3xl opacity-50" i-simple-icons-leetcode />
       </div>
       <div class="flex-auto">
-        <div class="mt-0">{{ item.name }}</div>
-        <div v-if="item.description" class="text-sm opacity-50 min-h-10">{{ item.description }}</div>
+        <div class="mt-0">{{ t(`${item.key}`) ?? item.name }}</div>
+        <div v-if="item.description" class="text-sm opacity-50 min-h-10">
+          {{ t(`${item.key}-desc`) ?? item.description }}
+        </div>
         <div class="flex gap2 desc text-sm font-normal justify-end items-center">
           <template v-if="isViewMode">
             <i dot bg-green-500 /><span>{{ item.done }}</span>

@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { formatDate } from '~/logics'
+import { formatDate, getDifficultyColor, isEnglish } from '~/logics'
 
 const { frontmatter } = defineProps({
   frontmatter: {
@@ -67,13 +67,28 @@ onMounted(() => {
   </ClientOnly>
   <div v-if="frontmatter.display ?? frontmatter.title" class="prose m-auto mb-8">
     <h1 class="mb-0">
-      {{ frontmatter.display ?? frontmatter.title }}
+      {{ !isEnglish && frontmatter.titleZh ? frontmatter.titleZh : frontmatter.display ?? frontmatter.title }}
     </h1>
     <p v-if="frontmatter.date" class="opacity-50 !-mt-2">
       {{ formatDate(frontmatter.date) }} <span v-if="frontmatter.duration">· {{ frontmatter.duration }}</span>
     </p>
-    <p v-if="frontmatter.subtitle" class="opacity-50 !-mt-6 italic">
-      {{ frontmatter.subtitle }}
+    <div flex="~ gap3" items-center>
+      <span
+        v-if="frontmatter.difficulty"
+        v-t="`${frontmatter.difficulty}`"
+        :style="getDifficultyColor(frontmatter.difficulty)"
+      />
+      <div v-if="frontmatter.origin" flex="~ gap1" items-center cursor-pointer>
+        <i i-ion:ios-share-alt />
+        <a
+          v-t="'view-source'"
+          :href="frontmatter.origin"
+          target="_blank"
+        />
+      </div>
+    </div>
+    <p v-if="frontmatter.subtitle ?? frontmatter.subtitleZh" class="opacity-50 !-mt-6 italic">
+      {{ isEnglish ? frontmatter.subtitle : frontmatter.subtitleZh }}
     </p>
   </div>
   <article ref="content">
