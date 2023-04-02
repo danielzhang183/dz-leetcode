@@ -14,6 +14,8 @@ declare module '@vue/runtime-core' {
     ListInterviews: typeof import('./src/components/ListInterviews.vue')['default']
     ListPosts: typeof import('./src/components/ListPosts.vue')['default']
     ListQuestions: typeof import('./src/components/ListQuestions.vue')['default']
+    'Mdi:translate': typeof import('~icons/mdi/translate')['default']
+    'Mdi:translateOff': typeof import('~icons/mdi/translate-off')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     Plum: typeof import('./src/components/Plum.vue')['default']
     Post: typeof import('./src/components/Post.vue')['default']
@@ -23,5 +25,6 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     SubNav: typeof import('./src/components/SubNav.vue')['default']
     ToggleTheme: typeof import('./src/components/ToggleTheme.vue')['default']
+    ToggleTranslate: typeof import('./src/components/ToggleTranslate.vue')['default']
   }
 }

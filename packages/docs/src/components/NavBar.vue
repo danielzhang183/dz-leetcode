@@ -35,6 +35,7 @@ const { t } = useI18n()
         <a href="https://github.com/danielzhang183/dz-leetcode" target="_blank" title="GitHub" class="lt-md:hidden">
           <div i-uil-github-alt />
         </a>
+        <ToggleTranslate />
         <ToggleTheme />
       </div>
     </nav>
