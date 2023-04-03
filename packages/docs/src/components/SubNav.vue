@@ -45,7 +45,7 @@ const { t } = useI18n()
         class="!border-none !font-400"
         :class="route.path === item.link ? '' : inactiveStyle"
       >
-        {{ item.name }}
+        {{ t(`subnav.${item.name}`) }}
       </router-link>
     </div>
   </div>

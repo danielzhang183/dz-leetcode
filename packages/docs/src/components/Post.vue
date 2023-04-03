@@ -59,6 +59,7 @@ onMounted(() => {
   navigate()
   setTimeout(navigate, 500)
 })
+const title = computed(() => !isEnglish.value && frontmatter.titleZh ? frontmatter.titleZh : frontmatter.display ?? frontmatter.title)
 </script>
 
 <template>
@@ -67,7 +68,7 @@ onMounted(() => {
   </ClientOnly>
   <div v-if="frontmatter.display ?? frontmatter.title" class="prose m-auto mb-8">
     <h1 class="mb-0">
-      {{ !isEnglish && frontmatter.titleZh ? frontmatter.titleZh : frontmatter.display ?? frontmatter.title }}
+      {{ title }}
     </h1>
     <p v-if="frontmatter.date" class="opacity-50 !-mt-2">
       {{ formatDate(frontmatter.date) }} <span v-if="frontmatter.duration">· {{ frontmatter.duration }}</span>
@@ -75,7 +76,7 @@ onMounted(() => {
     <div flex="~ gap3" items-center>
       <span
         v-if="frontmatter.difficulty"
-        v-t="`${frontmatter.difficulty}`"
+        v-t="`${frontmatter.difficulty.toLowerCase()}`"
         :style="getDifficultyColor(frontmatter.difficulty)"
       />
       <div v-if="frontmatter.origin" flex="~ gap1" items-center cursor-pointer>

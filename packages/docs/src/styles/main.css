@@ -1,9 +1,3 @@
-:root {
-  --c-bg: #fff;
-  --c-scrollbar: #eee;
-  --c-scrollbar-hover: #bbb;
-}
-
 html {
   background-color: var(--c-bg);
 }
@@ -35,20 +29,6 @@ html {
 
 * {
   scrollbar-color: var(--c-scrollbar) var(--c-bg);
-}
-
-.sponsorkit-avatar {
-  cursor: pointer;
-}
-.sponsorkit-tier-title {
-  font-weight: 600;
-  font-size: 20px;
-  fill: currentColor;
-}
-.sponsorkit-name {
-  font-weight: 300;
-  font-size: 15px;
-  transform: translateY(8px);
 }
 
 ::-webkit-scrollbar {

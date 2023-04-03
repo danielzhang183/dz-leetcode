@@ -10,6 +10,8 @@ import './styles/main.css'
 import './styles/prose.css'
 import './styles/markdown.css'
 import './styles/entry.css'
+import './styles/vars.css'
+import './styles/components/custom-block.css'
 import 'uno.css'
 
 const routes = autoRoutes.map((i) => {

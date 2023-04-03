@@ -1,7 +1,6 @@
 import YAML from 'js-yaml'
-import { i18n } from './../modules/i18n'
 import type { Difficulty } from './../types'
-import { capitalize, normalizeName, simplify } from './index'
+import { normalizeName } from './index'
 import type { Module, Question, SubNav, Tag } from '~/types'
 
 // const { t } = useI18n()
@@ -35,7 +34,7 @@ export function getNavs(module: Module): SubNav[] {
     .map((key) => {
       const nav = key.match(re)![1]
       return {
-        name: i18n.global.t(`subnav.${nav}`) ?? simplify(capitalize(nav)),
+        name: nav,
         link: `/${module}/${nav}`,
       }
     })
