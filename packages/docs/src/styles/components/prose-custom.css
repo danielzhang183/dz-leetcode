@@ -1,0 +1,218 @@
+/**
+* Custom Block
+* -------------------------------------------------------------------------- */
+
+.prose .custom-block {
+  margin: 16px 0;
+}
+
+.prose .custom-block p {
+  margin: 8px 0;
+  line-height: 24px;
+}
+
+.prose .custom-block p:first-child {
+  margin: 0;
+}
+
+.prose .custom-block a {
+  color: inherit;
+  font-weight: 600;
+}
+
+.prose .custom-block a:hover {
+  text-decoration: underline;
+}
+
+.prose .custom-block code {
+  font-size: var(--vp-custom-block-code-font-size);
+  font-weight: 700;
+  color: inherit;
+}
+
+.prose .custom-block div[class*='language-'] {
+  margin: 8px 0;
+}
+
+.prose .custom-block div[class*='language-'] code {
+  font-weight: 400;
+  background-color: transparent;
+}
+
+/**
+* Code
+* -------------------------------------------------------------------------- */
+
+.prose div[class*='language-'] {
+  position: relative;
+  margin: 16px -24px;
+  background-color: var(--vp-code-block-bg);
+  overflow-x: auto;
+  transition: background-color 0.5s;
+}
+
+@media (min-width: 640px) {
+  .prose div[class*='language-'] {
+    border-radius: 8px;
+    margin: 16px 0;
+  }
+}
+
+@media (max-width: 639px) {
+  .prose li div[class*='language-'] {
+    border-radius: 8px 0 0 8px;
+  }
+}
+
+.prose div[class*='language-'] + div[class*='language-'],
+.prose div[class$='-api'] + div[class*='language-'],
+.prose div[class*='language-'] + div[class$='-api'] > div[class*='language-'] {
+  margin-top: -8px;
+}
+
+.prose [class*='language-'] code .highlighted {
+  background-color: var(--vp-code-line-highlight-color);
+  transition: background-color 0.5s;
+  margin: 0 -24px;
+  padding: 0 24px;
+  width: calc(100% + 2 * 24px);
+  display: inline-block;
+}
+
+.prose [class*='language-'] code .highlighted.error {
+  background-color: var(--vp-code-line-error-color);
+}
+
+.prose [class*='language-'] code .highlighted.warning {
+  background-color: var(--vp-code-line-warning-color);
+}
+
+.prose [class*='language-'] code .diff {
+  transition: background-color 0.5s;
+  margin: 0 -24px;
+  padding: 0 24px;
+  width: calc(100% + 2 * 24px);
+  display: inline-block;
+}
+
+.prose [class*='language-'] code .diff::before {
+  position: absolute;
+  left: 10px;
+}
+
+.prose [class*='language-'] .has-focused-lines .line:not(.has-focus) {
+  filter: blur(0.095rem);
+  opacity: 0.4;
+  transition: filter 0.35s, opacity 0.35s;
+}
+
+.prose [class*='language-'] .has-focused-lines .line:not(.has-focus) {
+  opacity: 0.7;
+  transition: filter 0.35s, opacity 0.35s;
+}
+
+.prose [class*='language-']:hover .has-focused-lines .line:not(.has-focus) {
+  filter: blur(0);
+  opacity: 1;
+}
+
+.prose [class*='language-'] code .diff.remove {
+  background-color: var(--vp-code-line-diff-remove-color);
+  opacity: 0.7;
+}
+
+.prose [class*='language-'] code .diff.remove::before {
+  content: '-';
+  color: var(--vp-code-line-diff-remove-symbol-color);
+}
+
+.prose [class*='language-'] code .diff.add {
+  background-color: var(--vp-code-line-diff-add-color);
+}
+
+.prose [class*='language-'] code .diff.add::before {
+  content: '+';
+  color: var(--vp-code-line-diff-add-symbol-color);
+}
+
+.prose [class*='language-'] > button.copy {
+  /*rtl:ignore*/
+  direction: ltr;
+  position: absolute;
+  top: 12px;
+  /*rtl:ignore*/
+  right: 12px;
+  z-index: 3;
+  border: 1px solid var(--vp-code-copy-code-border-color);
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--vp-code-copy-code-bg);
+  opacity: 0;
+  cursor: pointer;
+  background-image: var(--vp-icon-copy);
+  background-position: 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  transition: border-color 0.25s, background-color 0.25s, opacity 0.25s;
+}
+
+.prose [class*='language-']:hover > button.copy,
+.prose [class*='language-'] > button.copy:focus {
+  opacity: 1;
+}
+
+.prose [class*='language-'] > button.copy:hover,
+.prose [class*='language-'] > button.copy.copied {
+  border-color: var(--vp-code-copy-code-hover-border-color);
+  background-color: var(--vp-code-copy-code-hover-bg);
+}
+
+.prose [class*='language-'] > button.copy.copied,
+.prose [class*='language-'] > button.copy:hover.copied {
+  /*rtl:ignore*/
+  border-radius: 0 4px 4px 0;
+  background-color: var(--vp-code-copy-code-hover-bg);
+  background-image: var(--vp-icon-copied);
+}
+
+.prose [class*='language-'] > button.copy.copied::before,
+.prose [class*='language-'] > button.copy:hover.copied::before {
+  position: relative;
+  top: -1px;
+  /*rtl:ignore*/
+  left: -65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--vp-code-copy-code-hover-border-color);
+  /*rtl:ignore*/
+  border-right: 0;
+  border-radius: 4px 0 0 4px;
+  width: 64px;
+  height: 40px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vp-code-copy-code-active-text);
+  background-color: var(--vp-code-copy-code-hover-bg);
+  white-space: nowrap;
+  content: 'Copied';
+}
+
+.prose [class*='language-'] > span.lang {
+  position: absolute;
+  top: 2px;
+  /*rtl:ignore*/
+  right: 8px;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--vp-c-text-dark-3);
+  transition: color 0.4s, opacity 0.4s;
+}
+
+.prose [class*='language-']:hover > button.copy + span.lang,
+.prose [class*='language-'] > button.copy:focus + span.lang {
+  opacity: 0;
+}

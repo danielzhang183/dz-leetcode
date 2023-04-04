@@ -20,7 +20,7 @@ import SVG from 'vite-svg-loader'
 import TOC from 'markdown-it-table-of-contents'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import { slugify } from './scripts/slugify'
-import { containerPlugin } from './src/modules/markdown'
+import { containerPlugin, preWrapperPlugin } from './src/modules/markdown'
 
 export default defineConfig({
   resolve: {
@@ -99,6 +99,7 @@ export default defineConfig({
 
         // custom plugins
         md.use(containerPlugin)
+          .use(preWrapperPlugin)
       },
     }),
 

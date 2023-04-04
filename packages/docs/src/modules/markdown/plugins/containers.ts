@@ -1,8 +1,8 @@
 import type MarkdownIt from 'markdown-it'
 import type { RenderRule } from 'markdown-it/lib/renderer'
 import container from 'markdown-it-container'
-// import { nanoid } from 'nanoid'
-// import { extractTitle } from './preWrapper'
+import { nanoid } from './utils'
+import { extractTitle } from './preWrapper'
 
 export const containerPlugin = (md: MarkdownIt) => {
   md.use(...createContainer('tip', 'TIP', md))
@@ -10,7 +10,7 @@ export const containerPlugin = (md: MarkdownIt) => {
     .use(...createContainer('warning', 'WARNING', md))
     .use(...createContainer('danger', 'DANGER', md))
     .use(...createContainer('details', 'Details', md))
-    // .use(...createCodeGroup())
+    .use(...createCodeGroup())
 }
 
 type ContainerArgs = [typeof container, string, { render: RenderRule }]
@@ -41,41 +41,41 @@ function createContainer(
   ]
 }
 
-// function createCodeGroup(): ContainerArgs {
-//   return [
-//     container,
-//     'code-group',
-//     {
-//       render(tokens, idx) {
-//         if (tokens[idx].nesting === 1) {
-//           const name = nanoid(5)
-//           let tabs = ''
-//           let checked = 'checked="checked"'
+function createCodeGroup(): ContainerArgs {
+  return [
+    container,
+    'code-group',
+    {
+      render(tokens, idx) {
+        if (tokens[idx].nesting === 1) {
+          const name = nanoid(5)
+          let tabs = ''
+          let checked = 'checked="checked"'
 
-//           for (
-//             let i = idx + 1;
-//             !(
-//               tokens[i].nesting === -1
-//               && tokens[i].type === 'container_code-group_close'
-//             );
-//             ++i
-//           ) {
-//             if (tokens[i].type === 'fence' && tokens[i].tag === 'code') {
-//               const title = extractTitle(tokens[i].info)
-//               const id = nanoid(7)
-//               tabs += `<input type="radio" name="group-${name}" id="tab-${id}" ${checked}><label for="tab-${id}">${title}</label>`
+          for (
+            let i = idx + 1;
+            !(
+              tokens[i].nesting === -1
+              && tokens[i].type === 'container_code-group_close'
+            );
+            ++i
+          ) {
+            if (tokens[i].type === 'fence' && tokens[i].tag === 'code') {
+              const title = extractTitle(tokens[i].info)
+              const id = nanoid(7)
+              tabs += `<input type="radio" name="group-${name}" id="tab-${id}" ${checked}><label for="tab-${id}">${title}</label>`
 
-//               if (checked) {
-//                 tokens[i].info += ' active'
-//                 checked = ''
-//               }
-//             }
-//           }
+              if (checked) {
+                tokens[i].info += ' active'
+                checked = ''
+              }
+            }
+          }
 
-//           return `<div class="vp-code-group"><div class="tabs">${tabs}</div><div class="blocks">\n`
-//         }
-//         return '</div></div>\n'
-//       },
-//     },
-//   ]
-// }
+          return `<div class="vp-code-group"><div class="tabs">${tabs}</div><div class="blocks">\n`
+        }
+        return '</div></div>\n'
+      },
+    },
+  ]
+}

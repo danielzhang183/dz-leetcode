@@ -12,6 +12,8 @@ import './styles/markdown.css'
 import './styles/entry.css'
 import './styles/vars.css'
 import './styles/components/custom-block.css'
+import './styles/components/prose-custom.css'
+import './styles/components/vp-code-group.css'
 import 'uno.css'
 
 const routes = autoRoutes.map((i) => {
