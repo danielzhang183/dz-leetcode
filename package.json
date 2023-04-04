@@ -1,7 +1,6 @@
 {
   "name": "@dz-leetcode/monorepo",
   "version": "0.0.0",
-  "packageManager": "pnpm@7.13.5",
   "description": "300 questions of leetcode",
   "scripts": {
     "build": "pnpm -r run build",
@@ -15,25 +14,27 @@
     "typecheck": "pnpm -r run typecheck"
   },
   "dependencies": {
-    "dz-leetcode": "^0.0.0"
+    "dz-leetcode": "workspace:^"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
-    "@antfu/ni": "^0.18.3",
+    "@antfu/ni": "^0.18.8",
     "@antfu/utils": "^0.5.2",
     "@dz-leetcode/cli": "workspace:./packages/cli",
     "@types/debug": "^4.1.7",
-    "@types/node": "^18.11.9",
+    "@types/node": "^18.15.11",
     "bumpp": "^8.2.1",
     "debug": "^4.3.4",
-    "eslint": "^8.26.0",
+    "eslint": "^8.37.0",
     "esno": "^0.16.3",
-    "pnpm": "^7.14.2",
+    "pnpm": "^8.1.0",
     "rimraf": "^3.0.2",
-    "typescript": "^4.8.4",
+    "simple-git-hooks": "^2.8.1",
+    "typescript": "^4.9.5",
     "unbuild": "^0.8.11",
-    "vite": "^3.2.2",
+    "vite": "^4.2.1",
+    "vite-bundle-visualizer": "^0.6.0",
     "vitest": "^0.23.4",
-    "vue-tsc": "^1.0.9"
+    "vue-tsc": "^1.2.0"
   }
 }
