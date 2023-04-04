@@ -8,6 +8,7 @@ plum: true
 
 <SubNav module="structures" />
 
+::: details INTROS
 *In General, [heaps](/design/heap) are of two types:*
 
 **Max Heap**
@@ -17,5 +18,6 @@ In this heap, the value of the root node must be the `greatest` among all its ch
 **Min Heap**
 
 In this heap, the value of the root node must be the `smallest` among all its child nodes and the same thing must be done for its left ans right sub-tree also.
+:::
 
 <ListQuestions module="structures" tag="heap" />

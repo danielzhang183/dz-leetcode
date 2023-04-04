@@ -8,6 +8,7 @@ plum: true
 
 <SubNav module="algorithms" />
 
+::: details INTROS
 There are a lot of different types of sorting algorithms:
 
 * [Quick Sort](/design/quick-sort)
@@ -15,5 +16,6 @@ There are a lot of different types of sorting algorithms:
 * [Selection Sort](/design/slection-sort)
 * [Insertion Sort](/design/insertion-sort)
 * [Bubble Sort](/design/bubble-sort)
+:::
 
 <ListQuestions module="algorithms" tag="sort" />

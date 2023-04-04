@@ -66,9 +66,9 @@ Output: 8
 
 ### DP
 
-two-dimensional array
+::: code-group
 
-```ts
+```ts [2dimen array]
 function calcLaunchTime1(arr: number[][], k: number): number {
   const dp = Array.from({ length: k }, () => new Array(k).fill(0))
   dp[0][0] = arr[0][0]
@@ -86,9 +86,7 @@ function calcLaunchTime1(arr: number[][], k: number): number {
 }
 ```
 
-one-dimensional scroll array
-
-```ts
+```ts [scroll array]
 function calcLaunchTime(arr: number[][], k: number): number {
   const dp = [arr[0][0]]
   for (let i = 1; i < k; i++) {
@@ -103,6 +101,8 @@ function calcLaunchTime(arr: number[][], k: number): number {
   return dp[k - 1]
 }
 ```
+
+:::
 
 ### Webpack
 

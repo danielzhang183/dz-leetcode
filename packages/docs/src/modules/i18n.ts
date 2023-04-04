@@ -6,7 +6,6 @@ import { isEnglish } from '~/logics'
 export const i18n = createI18n({
   legacy: false,
   locale: '',
-  fallbackLocale: 'en',
   messages: {},
 })
 
@@ -27,7 +26,6 @@ export const availableLocales = Object.keys(localesMap)
 const loadedLanguages: string[] = []
 
 export async function loadLanguageAsync(lang: string | string[]): Promise<Locale> {
-  console.log(loadedLanguages, localesMap)
   lang = Array.isArray(lang) ? lang : [lang]
   const primaryLang = lang[0]
   if (i18n.global.locale.value === primaryLang)

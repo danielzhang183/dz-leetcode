@@ -7,4 +7,3 @@ plum: true
 ---
 
 <ListAllQuestions module="structures" />
-
