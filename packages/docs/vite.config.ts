@@ -76,6 +76,7 @@ export default defineConfig({
             dark: 'vitesse-dark',
           },
         })
+
         md.use(anchor, {
           slugify,
           permalink: anchor.permalink.linkInsideHeader({

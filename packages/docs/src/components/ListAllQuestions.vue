@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Module } from '~/types'
-import { MODE, getModules, mode } from '~/logics'
+import { MODE, getModules, mode } from '~/composables'
 
 const props = defineProps<{
   module: Module

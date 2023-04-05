@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { formatDate, getDifficultyColor, isEnglish } from '~/logics'
+import { formatDate, getDifficultyColor, isEnglish } from '~/composables'
 
 const { frontmatter } = defineProps({
   frontmatter: {

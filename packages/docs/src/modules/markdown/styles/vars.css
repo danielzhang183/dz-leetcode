@@ -2,7 +2,11 @@
  * Component: Color Base
  * -------------------------------------------------------------------------- */
 
-:root {
+ :root {
+  --fg: #555;
+  --fg-deep: #222;
+  --fg-deeper: #000;
+
   --c-bg: #fff;
   --c-scrollbar: #eee;
   --c-scrollbar-hover: #bbb;
@@ -30,6 +34,14 @@
 }
 
 .dark {
+  --fg: #bbb;
+  --fg-deep: #ddd;
+  --fg-deeper: #fff;
+
+  --c-bg: #050505;
+  --c-scrollbar: #111;
+  --c-scrollbar-hover: #222;
+
   --vp-c-border: rgba(82, 82, 89, 0.68);
   --vp-c-divider: rgba(82, 82, 89, 0.32);
 

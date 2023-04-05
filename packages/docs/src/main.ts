@@ -4,16 +4,10 @@ import LocalizedFormat from 'dayjs/plugin/localizedFormat.js'
 import autoRoutes from 'virtual:generated-pages'
 import App from './App.vue'
 import type { UserModule } from './types'
+import { useCodeGroups, useCopyCode } from './modules/markdown'
 
 import '@unocss/reset/tailwind.css'
-import './styles/main.css'
-import './styles/prose.css'
-import './styles/markdown.css'
-import './styles/entry.css'
-import './styles/vars.css'
-import './styles/components/custom-block.css'
-import './styles/components/prose-custom.css'
-import './styles/components/vp-code-group.css'
+import './styles/custom.css'
 import 'uno.css'
 
 const routes = autoRoutes.map((i) => {
@@ -37,6 +31,10 @@ export const createApp = ViteSSG(
   { routes, scrollBehavior },
   (ctx) => {
     dayjs.extend(LocalizedFormat)
+    // setup global copy code handler
+    useCopyCode()
+    // setup global code groups handler
+    useCodeGroups()
     Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true }))
       .forEach(i => i.install?.(ctx))
   },

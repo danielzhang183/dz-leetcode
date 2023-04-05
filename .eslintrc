@@ -1,3 +1,8 @@
 {
-  "extends": "@antfu"
+  "extends": "@antfu",
+  "ignorePatterns": [
+    "pnpm-lock.yaml",
+    "packages/code/**",
+    "packages/docs/**/markdown/styles/**"
+  ]
 }

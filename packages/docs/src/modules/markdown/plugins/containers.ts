@@ -1,7 +1,7 @@
 import type MarkdownIt from 'markdown-it'
 import type { RenderRule } from 'markdown-it/lib/renderer'
 import container from 'markdown-it-container'
-import { nanoid } from './utils'
+import { nanoid } from '../composables/nanoid'
 import { extractTitle } from './preWrapper'
 
 export const containerPlugin = (md: MarkdownIt) => {

@@ -8,6 +8,5 @@
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 200;
-  --un-text-opacity: 1;
-  color: rgba(59,130,246,var(--un-text-opacity));
+  color: rgba(59,130,246);
 }

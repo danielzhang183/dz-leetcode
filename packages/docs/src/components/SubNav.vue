@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Module, SubNav } from '../types'
-import { easy, getNavs, hard, medium, mode } from '~/logics'
+import { easy, getNavs, hard, medium, mode } from '~/composables'
 
 const props = defineProps<{
   module: Module

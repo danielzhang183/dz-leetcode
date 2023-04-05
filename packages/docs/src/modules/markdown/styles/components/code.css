@@ -1,46 +1,61 @@
 /**
-* Custom Block
+* Base
 * -------------------------------------------------------------------------- */
 
-.prose .custom-block {
-  margin: 16px 0;
-}
-
-.prose .custom-block p {
-  margin: 8px 0;
-  line-height: 24px;
-}
-
-.prose .custom-block p:first-child {
-  margin: 0;
-}
-
-.prose .custom-block a {
-  color: inherit;
+.prose code {
+  color: var(--fg-deep);
   font-weight: 600;
+  font-size: 0.875em;
 }
 
-.prose .custom-block a:hover {
-  text-decoration: underline;
+.prose code::before {
+  content: "`";
 }
 
-.prose .custom-block code {
-  font-size: var(--vp-custom-block-code-font-size);
-  font-weight: 700;
-  color: inherit;
-}
-
-.prose .custom-block div[class*='language-'] {
-  margin: 8px 0;
-}
-
-.prose .custom-block div[class*='language-'] code {
-  font-weight: 400;
-  background-color: transparent;
+.prose code::after {
+  content: "`";
 }
 
 /**
 * Code
+* -------------------------------------------------------------------------- */
+
+.prose pre {
+  color: #e5e7eb;
+  overflow-x: auto;
+  font-size: 0.875em;
+  line-height: 1.7142857;
+  margin-top: 1.7142857em;
+  margin-bottom: 1.7142857em;
+  border-radius: 0.375rem;
+  padding-top: 0.8571429em;
+  padding-right: 1.1428571em;
+  padding-bottom: 0.8571429em;
+  padding-left: 1.1428571em;
+}
+
+.prose pre code {
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  font-weight: 400;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+.prose pre code::before {
+  content: none;
+}
+
+.prose pre code::after {
+  content: none;
+}
+
+/**
+* Language
 * -------------------------------------------------------------------------- */
 
 .prose div[class*='language-'] {
@@ -216,3 +231,4 @@
 .prose [class*='language-'] > button.copy:focus + span.lang {
   opacity: 0;
 }
+

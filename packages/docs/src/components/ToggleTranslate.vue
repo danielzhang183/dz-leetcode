@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { isEnglish } from '~/logics'
+import { isEnglish } from '~/composables'
 import { setI18nLanguage } from '~/modules/i18n'
 
 function toggleTranslate() {

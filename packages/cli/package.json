@@ -47,7 +47,7 @@
     "cac": "^6.7.14",
     "cli-cursor": "^4.0.0",
     "cli-highlight": "^2.1.11",
-    "cli-progress": "^3.11.2",
+    "cli-progress": "^3.12.0",
     "debug": "^4.3.4",
     "log-update": "^5.0.1",
     "p-limit": "^4.0.0",
@@ -57,8 +57,8 @@
   "devDependencies": {
     "@types/cli-progress": "^3.11.0",
     "@types/debug": "^4.1.7",
-    "@types/node": "^18.11.9",
-    "@types/prompts": "^2.4.1"
+    "@types/node": "^18.15.11",
+    "@types/prompts": "^2.4.4"
   },
   "eslintConfig": {
     "extends": "@antfu",

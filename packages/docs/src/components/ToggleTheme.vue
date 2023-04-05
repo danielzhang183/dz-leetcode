@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { isDark } from '~/logics'
+import { isDark } from '~/composables'
 
 function toggleDark() {
   isDark.value = !isDark.value

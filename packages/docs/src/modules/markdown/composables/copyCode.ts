@@ -19,7 +19,7 @@ export function useCopyCode() {
         let text = ''
 
         sibling
-          .querySelectorAll('.shiki-dark span.line:not(.diff.remove)')
+          .querySelectorAll('.vitesse-dark span.line:not(.diff.remove)')
           .forEach(node => (text += `${node.textContent || ''}\n`))
         text = text.slice(0, -1)
 

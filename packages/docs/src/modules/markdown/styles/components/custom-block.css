@@ -100,10 +100,43 @@
   font-weight: 600;
 }
 
-.custom-block a:hover {
-  text-decoration: underline;
-}
-
 .custom-block code {
   font-size: var(--vp-custom-block-code-font-size);
+}
+
+/**
+* Custom Block
+* -------------------------------------------------------------------------- */
+
+.prose .custom-block {
+  margin: 16px 0;
+}
+
+.prose .custom-block p {
+  margin: 8px 0;
+  line-height: 24px;
+}
+
+.prose .custom-block p:first-child {
+  margin: 0;
+}
+
+.prose .custom-block a {
+  color: inherit;
+  font-weight: 600;
+}
+
+.prose .custom-block code {
+  font-size: var(--vp-custom-block-code-font-size);
+  font-weight: 700;
+  color: inherit;
+}
+
+.prose .custom-block div[class*='language-'] {
+  margin: 8px 0;
+}
+
+.prose .custom-block div[class*='language-'] code {
+  font-weight: 400;
+  background-color: transparent;
 }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Module, Question, Tag } from '~/types'
-import { easy, getDifficultyColor, getTagQuestions, hard, medium, mode } from '~/logics'
+import { easy, getDifficultyColor, getTagQuestions, hard, medium, mode } from '~/composables'
 
 const props = defineProps<{
   module: Module
