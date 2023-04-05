@@ -4,7 +4,7 @@
 
 [build]
   publish = "packages/docs/dist"
-  command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build:docs"
+  command = "npx pnpm i --no-frozen-lockfile && npx pnpm run build:docs"
 
 [[redirects]]
   from = "/*"
