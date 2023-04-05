@@ -1,7 +1,7 @@
 {
   "name": "@dz-leetcode/cli",
   "version": "0.0.0",
-  "packageManager": "pnpm@7.13.5",
+  "packageManager": "pnpm@8.1.1",
   "description": "dz-leetcode CLI",
   "author": "Daniel Zhang <danielzhang182@gmail.com>",
   "license": "MIT",
