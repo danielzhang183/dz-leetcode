@@ -107,6 +107,7 @@ questions:
     tag: hash-table
     category: structures
     series: SUM
+    done: true
   - name: Find Common Characters
     title: find-common-characters
     difficulty: Easy
