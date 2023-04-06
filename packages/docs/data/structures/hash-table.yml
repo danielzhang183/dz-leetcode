@@ -96,6 +96,8 @@ questions:
     link: /structures/hash-table/383
     origin: https://leetcode.cn/problems/ransom-note
     tag: hash-table
+    tags:
+      - partition + Map
     category: structures
     done: true
   - name: 4Sum II
@@ -116,3 +118,5 @@ questions:
     origin: https://leetcode.cn/problems/find-common-characters
     tag: hash-table
     category: structures
+    done: true
+

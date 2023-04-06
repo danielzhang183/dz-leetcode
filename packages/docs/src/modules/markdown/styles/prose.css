@@ -42,11 +42,11 @@
   background: transparent;
 }
 
-.vitesse-light {
+.shiki-light {
   background: #f8f8f8 !important;
 }
 
-.vitesse-dark {
+.shiki-dark {
   background: #0e0e0e !important;
 }
 
@@ -274,7 +274,7 @@
 }
 
 .prose ul ul,
-.prose ul ol, 
+.prose ul ol,
 .prose ol ul,
 .prose ol ol {
   margin-top: 0.75em;
@@ -497,5 +497,3 @@ h6:focus .header-anchor {
 .prose hr + * {
   margin-top: 0;
 }
-
-

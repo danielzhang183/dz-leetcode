@@ -11,11 +11,11 @@ html:not(.dark) [img-dark] {
   display: none;
 }
 
-html.dark .vitesse-light {
+html.dark .shiki-light {
   display: none;
 }
 
-html:not(.dark) .vitesse-dark {
+html:not(.dark) .shiki-dark {
   display: none;
 }
 
@@ -48,4 +48,3 @@ html:not(.dark) .vitesse-dark {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--c-scrollbar-hover);
 }
-
