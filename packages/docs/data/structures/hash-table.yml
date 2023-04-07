@@ -36,14 +36,6 @@ questions:
     category: structures
     series: SUM
     done: true
-  - name: Happy Number
-    title: happy-number
-    difficulty: Easy
-    id: 202
-    link: /structures/hash-table/202
-    origin: https://leetcode.cn/problems/happy-number
-    tag: hash-table
-    category: structures
   - name: Isomorphic Strings
     title: isomorphic-strings
     difficulty: Easy
@@ -119,4 +111,3 @@ questions:
     tag: hash-table
     category: structures
     done: true
-
