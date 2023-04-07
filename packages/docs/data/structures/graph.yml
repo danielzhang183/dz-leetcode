@@ -24,6 +24,15 @@ questions:
     category: structures
     series: Disjoint Sets
     done: true
+  - name: Course Schedule
+    title: course-schedule
+    difficulty: Medium
+    id: 207
+    link: /structures/graph/207
+    origin: https://leetcode.cn/problems/course-schedule
+    tag: graph
+    category: structures
+    series: Disjoint Sets
   - name: Island Perimeter
     title: island-perimeter
     difficulty: Easy
@@ -35,6 +44,34 @@ questions:
       - traversal
     category: structures
     done: true
+  - name: Redundant Connection
+    title: redundant-connection
+    difficulty: Medium
+    id: 684
+    link: /structures/union-find-disjoint-sets/684
+    origin: https://leetcode.cn/problems/redundant-connection
+    tag: graph
+    category: structures
+    series: Disjoint Sets
+    done: true
+  - name: Redundant Connection II
+    title: redundant-connection-ii
+    difficulty: Hard
+    id: 685
+    link: /structures/union-find-disjoint-sets/685
+    origin: https://leetcode.cn/problems/redundant-connection-ii
+    tag: graph
+    category: structures
+    series: Disjoint Sets
+  - name: Network Delay Time
+    title: network-delay-time
+    difficulty: Medium
+    id: 743
+    link: /structures/graph/743
+    origin: https://leetcode.cn/problems/network-delay-time
+    tag: graph
+    category: structures
+    series: Disjoint Sets
   - name: Keys and Rooms
     title: keys-and-rooms
     difficulty: Medium

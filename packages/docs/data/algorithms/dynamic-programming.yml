@@ -416,6 +416,14 @@ questions:
     category: algorithms
     series: NP 01
     done: true
+  - name: Smallest Sufficient Team
+    title: smallest-sufficient-team
+    difficulty: Hard
+    id: 1125
+    link: /algorithms/dynamic-programming/1125
+    origin: https://leetcode.cn/problems/smallest-sufficient-team
+    tag: dynamic-programming
+    category: algorithms
   - name: Longest Common Subsequence
     title: longest-common-subsequence
     difficulty: Medium

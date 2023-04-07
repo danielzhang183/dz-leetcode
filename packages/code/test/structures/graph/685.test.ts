@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { findRedundantDirectedConnection } from '../../../src/structures/union-find-disjoint-sets/685'
+import { findRedundantDirectedConnection } from '../../../src/structures/graph/685'
 
 describe('findRedundantDirectedConnection', () => {
   it('exported', () => {
