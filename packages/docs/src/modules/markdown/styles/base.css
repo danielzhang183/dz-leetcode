@@ -11,11 +11,11 @@ html:not(.dark) [img-dark] {
   display: none;
 }
 
-html.dark .shiki-light {
+html.dark .vitesse-light {
   display: none;
 }
 
-html:not(.dark) .shiki-dark {
+html:not(.dark) .vitesse-dark {
   display: none;
 }
 
