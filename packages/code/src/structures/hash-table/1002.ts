@@ -20,4 +20,4 @@ export function commonChars(words: string[]): string[] {
   return ans.split('')
 }
 
-commonChars(["acabcddd", "bcbdbcbd", "baddbadb", "cbdddcac", "aacbcccd", "ccccddda", "cababaab", "addcaccd"])
+commonChars(['acabcddd', 'bcbdbcbd', 'baddbadb', 'cbdddcac', 'aacbcccd', 'ccccddda', 'cababaab', 'addcaccd'])

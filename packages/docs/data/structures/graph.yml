@@ -1,4 +1,6 @@
-description: A non-linear data structure consisting of a finite set of vertices(or nodes) and a set of edges that connect a pair of nodes.
+description: >-
+  A non-linear data structure consisting of a finite set of vertices(or nodes)
+  and a set of edges that connect a pair of nodes.
 questions:
   - name: Word Ladder
     title: word-ladder
@@ -8,6 +10,20 @@ questions:
     origin: https://leetcode.cn/problems/word-ladder
     tag: graph
     category: structures
+  - name: Number of Islands
+    title: number-of-islands
+    difficulty: Medium
+    id: 200
+    link: /structures/graph/200
+    origin: https://leetcode.cn/problems/number-of-islands
+    tag: graph
+    tags:
+      - DFS
+      - BFS
+      - UnionFind
+    category: structures
+    series: Disjoint Sets
+    done: true
   - name: Island Perimeter
     title: island-perimeter
     difficulty: Easy
