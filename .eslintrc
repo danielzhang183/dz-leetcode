@@ -3,7 +3,6 @@
   "ignorePatterns": [
     "netlify.toml",
     "pnpm-lock.yaml",
-    "packages/code/**",
     "packages/docs/**/markdown/styles/**"
   ]
 }

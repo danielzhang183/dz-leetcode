@@ -5,13 +5,16 @@ questions:
     id: 684
     link: /structures/union-find-disjoint-sets/684
     origin: https://leetcode.cn/problems/redundant-connection
-    tag: union-find-disjoint-sets
+    tag: union-find-data-structure
     category: structures
+    series: Disjoint Sets
+    done: true
   - name: Redundant Connection II
     title: redundant-connection-ii
     difficulty: Hard
     id: 685
     link: /structures/union-find-disjoint-sets/685
     origin: https://leetcode.cn/problems/redundant-connection-ii
-    tag: union-find-disjoint-sets
+    tag: union-find-data-structure
     category: structures
+    series: Disjoint Sets
