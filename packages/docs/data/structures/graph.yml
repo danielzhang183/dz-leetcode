@@ -31,8 +31,12 @@ questions:
     link: /structures/graph/207
     origin: https://leetcode.cn/problems/course-schedule
     tag: graph
+    tags:
+      - DFS
+      - BFS
     category: structures
     series: Disjoint Sets
+    done: true
   - name: Island Perimeter
     title: island-perimeter
     difficulty: Easy
@@ -48,7 +52,7 @@ questions:
     title: redundant-connection
     difficulty: Medium
     id: 684
-    link: /structures/union-find-disjoint-sets/684
+    link: /structures/graph/684
     origin: https://leetcode.cn/problems/redundant-connection
     tag: graph
     category: structures
@@ -58,7 +62,7 @@ questions:
     title: redundant-connection-ii
     difficulty: Hard
     id: 685
-    link: /structures/union-find-disjoint-sets/685
+    link: /structures/graph/685
     origin: https://leetcode.cn/problems/redundant-connection-ii
     tag: graph
     category: structures
