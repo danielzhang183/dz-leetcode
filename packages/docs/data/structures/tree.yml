@@ -198,7 +198,11 @@ questions:
     link: /structures/tree/129
     origin: https://leetcode.cn/problems/sum-root-to-leaf-numbers
     tag: tree
+    tags:
+      - DFS
+      - BFS
     category: structures
+    done: true
   - name: Binary Tree Preorder Traversal
     title: binary-tree-preorder-traversal
     difficulty: Easy

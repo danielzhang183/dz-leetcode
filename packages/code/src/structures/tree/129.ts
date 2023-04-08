@@ -1,17 +1,53 @@
-export /**
- * Definition for a binary tree node.
- * class TreeNode {
- *     val: number
- *     left: TreeNode | null
- *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.left = (left===undefined ? null : left)
- *         this.right = (right===undefined ? null : right)
- *     }
- * }
- */
+import type { TreeNode } from './../../utils/tree'
 
-function sumNumbers(root: TreeNode | null): number {
+// DFS
+export function sumNumbers1(root: TreeNode | null): number {
+  if (root == null)
+    return 0
 
+  let sum = 0
+  const dfs = (root: TreeNode, carry: string) => {
+    if (root.left == null && root.right == null) {
+      sum += Number(carry)
+    }
+    else {
+      if (root.left)
+        dfs(root.left, carry + root.left.val)
+      if (root.right)
+        dfs(root.right, carry + root.right.val)
+    }
+  }
+
+  dfs(root, String(root.val))
+  return sum
+}
+
+// BFS
+export function sumNumbers(root: TreeNode | null): number {
+  if (root == null)
+    return 0
+
+  let sum = 0
+  const q: TreeNode[] = [root]
+  while (q.length) {
+    let size = q.length
+    while (size--) {
+      const curr = q.shift()!
+      if (curr.left == null && curr.right == null) {
+        sum += curr.val!
+      }
+      else {
+        if (curr.left) {
+          curr.left.val = curr.val! * 10 + curr.left.val!
+          q.push(curr.left)
+        }
+        if (curr.right) {
+          curr.right.val = curr.val! * 10 + curr.right.val!
+          q.push(curr.right)
+        }
+      }
+    }
+  }
+
+  return sum
 }
