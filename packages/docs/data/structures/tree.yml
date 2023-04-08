@@ -460,6 +460,7 @@ questions:
     origin: https://leetcode.cn/problems/n-ary-tree-level-order-traversal
     tag: tree
     category: structures
+    done: true
   - name: Balance a Binary Search Tree
     title: balance-a-binary-search-tree
     difficulty: Medium
