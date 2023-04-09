@@ -87,7 +87,10 @@ questions:
     link: /structures/linked-list/146
     origin: https://leetcode.cn/problems/lru-cache
     tag: linked-list
+    tags:
+      - Map + Double-end Linkedlist
     category: structures
+    done: true
   - name: Intersection of Two Linked Lists
     title: intersection-of-two-linked-lists
     difficulty: Easy
