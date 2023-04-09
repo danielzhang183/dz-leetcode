@@ -60,6 +60,7 @@ questions:
     origin: https://leetcode.cn/problems/sliding-window-maximum
     tag: stack
     category: structures
+    done: true
   - name: Top K Frequent Elements
     title: top-k-frequent-elements
     difficulty: Medium
