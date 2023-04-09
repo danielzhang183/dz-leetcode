@@ -325,8 +325,12 @@ questions:
     link: /structures/tree/501
     origin: https://leetcode.cn/problems/find-mode-in-binary-search-tree
     tag: tree
+    tags:
+      - DFS
+      - BFS
     category: structures
     series: bst character
+    done: true
   - name: Find Bottom Left Tree Value
     title: find-bottom-left-tree-value
     difficulty: Medium

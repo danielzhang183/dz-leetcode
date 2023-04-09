@@ -92,7 +92,7 @@ export function createBinaryTree<T = number | null>(value?: T[]): TreeNode<T> | 
   return new BinaryTree<T>(value).val!
 }
 
-export function covertBinaryTreeToArray<T = number>(root: TreeNode<T> | null) {
+export function covertBinaryTreeToArray<T = number>(root: TreeNode<T> | null): T[] {
   if (root == null)
     return []
 
