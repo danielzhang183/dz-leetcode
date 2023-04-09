@@ -326,8 +326,7 @@ questions:
     origin: https://leetcode.cn/problems/find-mode-in-binary-search-tree
     tag: tree
     tags:
-      - DFS
-      - BFS
+      - Inorder Traversal
     category: structures
     series: bst character
     done: true
@@ -363,8 +362,11 @@ questions:
     link: /structures/tree/530
     origin: https://leetcode.cn/problems/minimum-absolute-difference-in-bst
     tag: tree
+    tags:
+      - Inorder Traversal
     category: structures
     series: bst character
+    done: true
   - name: Convert BST to Greater Tree
     title: convert-bst-to-greater-tree
     difficulty: Medium
