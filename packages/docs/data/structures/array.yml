@@ -166,4 +166,8 @@ questions:
     origin: >-
       https://leetcode.cn/problems/how-many-numbers-are-smaller-than-the-current-number
     tag: array
+    tags:
+      - Sort
+      - Count Sort
     category: structures
+    done: true
