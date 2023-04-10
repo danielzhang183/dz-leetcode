@@ -35,7 +35,10 @@ questions:
     origin: >-
       https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array
     tag: array
+    tags:
+      - binary-search
     category: structures
+    done: true
   - name: Search Insert Position
     title: search-insert-position
     difficulty: Easy

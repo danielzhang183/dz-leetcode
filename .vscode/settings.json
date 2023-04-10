@@ -8,7 +8,8 @@
     "didi",
     "meituan",
     "huawei",
-    "navs"
+    "navs",
+    "nums"
   ],
   "prettier.enable": false,
   "editor.codeActionsOnSave": {
