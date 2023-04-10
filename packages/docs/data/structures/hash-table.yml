@@ -111,3 +111,13 @@ questions:
     tag: hash-table
     category: structures
     done: true
+  - name: Unique Number of Occurrences
+    title: unique-number-of-occurrences
+    difficulty: Easy
+    id: 1207
+    link: /structures/hash-table/1207
+    origin: https://leetcode.cn/problems/unique-number-of-occurrences
+    tag: hash-table
+    category: structures
+    series: HashMap
+    done: true

@@ -158,14 +158,6 @@ questions:
     origin: https://leetcode.cn/problems/valid-mountain-array
     tag: array
     category: structures
-  - name: Unique Number of Occurrences
-    title: unique-number-of-occurrences
-    difficulty: Easy
-    id: 1207
-    link: /structures/array/1207
-    origin: https://leetcode.cn/problems/unique-number-of-occurrences
-    tag: array
-    category: structures
   - name: How Many Numbers Are Smaller Than the Current Number
     title: how-many-numbers-are-smaller-than-the-current-number
     difficulty: Easy
