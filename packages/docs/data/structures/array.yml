@@ -75,7 +75,12 @@ questions:
     link: /structures/array/189
     origin: https://leetcode.cn/problems/rotate-array
     tag: array
+    tags:
+      - New Array
+      - Reverse
+      - Cycle Replacement
     category: structures
+    done: true
   - name: Minimum Size Subarray Sum
     title: minimum-size-subarray-sum
     difficulty: Medium
@@ -128,6 +133,7 @@ questions:
     origin: https://leetcode.cn/problems/fizz-buzz
     tag: array
     category: structures
+    done: true
   - name: Find Pivot Index
     title: find-pivot-index
     difficulty: Easy

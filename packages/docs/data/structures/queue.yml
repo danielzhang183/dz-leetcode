@@ -1,58 +1,58 @@
 description: A linear data structure which follows FIFO.
 questions:
-  - name: Valid Parentheses
-    title: valid-parentheses
-    difficulty: Easy
-    id: 20
-    link: /structures/queue/020
-    origin: https://leetcode.cn/problems/valid-parentheses
-    tag: queue
-    category: structures
-  - name: Evaluate Reverse Polish Notation
-    title: evaluate-reverse-polish-notation
-    difficulty: Medium
-    id: 150
-    link: /structures/queue/150
-    origin: https://leetcode.cn/problems/evaluate-reverse-polish-notation
-    tag: queue
-    category: structures
-  - name: Implement Stack using Queues
-    title: implement-stack-using-queues
-    difficulty: Easy
-    id: 225
-    link: /structures/queue/225
-    origin: https://leetcode.cn/problems/implement-stack-using-queues
-    tag: queue
-    category: structures
-  - name: Implement Queue using Stacks
-    title: implement-queue-using-stacks
-    difficulty: Easy
-    id: 232
-    link: /structures/queue/232
-    origin: https://leetcode.cn/problems/implement-queue-using-stacks
-    tag: queue
-    category: structures
-  - name: Sliding Window Maximum
-    title: sliding-window-maximum
-    difficulty: Hard
-    id: 239
-    link: /structures/queue/239
-    origin: https://leetcode.cn/problems/sliding-window-maximum
-    tag: queue
-    category: structures
-  - name: Top K Frequent Elements
-    title: top-k-frequent-elements
-    difficulty: Medium
-    id: 347
-    link: /structures/queue/347
-    origin: https://leetcode.cn/problems/top-k-frequent-elements
-    tag: queue
-    category: structures
-  - name: Remove All Adjacent Duplicates In String
-    title: remove-all-adjacent-duplicates-in-string
-    difficulty: Easy
-    id: 1047
-    link: /structures/queue/1047
-    origin: https://leetcode.cn/problems/remove-all-adjacent-duplicates-in-string
-    tag: queue
-    category: structures
+  # - name: Valid Parentheses
+  #   title: valid-parentheses
+  #   difficulty: Easy
+  #   id: 20
+  #   link: /structures/queue/020
+  #   origin: https://leetcode.cn/problems/valid-parentheses
+  #   tag: queue
+  #   category: structures
+  # - name: Evaluate Reverse Polish Notation
+  #   title: evaluate-reverse-polish-notation
+  #   difficulty: Medium
+  #   id: 150
+  #   link: /structures/queue/150
+  #   origin: https://leetcode.cn/problems/evaluate-reverse-polish-notation
+  #   tag: queue
+  #   category: structures
+  # - name: Implement Stack using Queues
+  #   title: implement-stack-using-queues
+  #   difficulty: Easy
+  #   id: 225
+  #   link: /structures/queue/225
+  #   origin: https://leetcode.cn/problems/implement-stack-using-queues
+  #   tag: queue
+  #   category: structures
+  # - name: Implement Queue using Stacks
+  #   title: implement-queue-using-stacks
+  #   difficulty: Easy
+  #   id: 232
+  #   link: /structures/queue/232
+  #   origin: https://leetcode.cn/problems/implement-queue-using-stacks
+  #   tag: queue
+  #   category: structures
+  # - name: Sliding Window Maximum
+  #   title: sliding-window-maximum
+  #   difficulty: Hard
+  #   id: 239
+  #   link: /structures/queue/239
+  #   origin: https://leetcode.cn/problems/sliding-window-maximum
+  #   tag: queue
+  #   category: structures
+  # - name: Top K Frequent Elements
+  #   title: top-k-frequent-elements
+  #   difficulty: Medium
+  #   id: 347
+  #   link: /structures/queue/347
+  #   origin: https://leetcode.cn/problems/top-k-frequent-elements
+  #   tag: queue
+  #   category: structures
+  # - name: Remove All Adjacent Duplicates In String
+  #   title: remove-all-adjacent-duplicates-in-string
+  #   difficulty: Easy
+  #   id: 1047
+  #   link: /structures/queue/1047
+  #   origin: https://leetcode.cn/problems/remove-all-adjacent-duplicates-in-string
+  #   tag: queue
+  #   category: structures
