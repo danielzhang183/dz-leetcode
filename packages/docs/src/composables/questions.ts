@@ -3,8 +3,6 @@ import type { Difficulty } from './../types'
 import { normalizeName } from './index'
 import type { Module, Question, SubNav, Tag } from '~/types'
 
-// const { t } = useI18n()
-
 export interface RawModuleMeta {
   description?: string
   questions: Question[]
@@ -57,6 +55,47 @@ export function getTagQuestions(module: Module, tag: Tag): Question[] {
   const modules = loadModules()
   const moduleKey = `../../data/${module}/${tag}.yml`
   return loadQuestions(modules[moduleKey])
+}
+
+export class QuestionRelation {
+  deps: string[] = []
+
+  constructor(
+    public id: string,
+    public group: 'category' | 'tag' | 'question',
+    dep?: string,
+  ) {
+    if (dep)
+      this.deps.push(dep)
+  }
+}
+
+export function getQuestionsRelations() {
+  const modules = loadModules()
+  const moduleMap = new Map<string, QuestionRelation>()
+  const tagMap = new Map<string, QuestionRelation>()
+  const questionSet = new Set<QuestionRelation>()
+
+  Object.keys(modules).forEach((i) => {
+    const [, module, tag] = i.match(/\/data(\/.*)(\/.*)\.yml/)!
+    if (!moduleMap.has(module))
+      moduleMap.set(module, new QuestionRelation(module, 'category', tag))
+    moduleMap.get(module)!.deps.push(tag)
+    tagMap.set(tag, new QuestionRelation(tag, 'tag'))
+  })
+
+  Object.values(modules).forEach((content) => {
+    loadQuestions(content).forEach((i) => {
+      tagMap.get(`/${i.tag}`)?.deps.push(i.link)
+      questionSet.add(new QuestionRelation(i.link, 'question'))
+    })
+  })
+
+  return [
+    ...moduleMap.values(),
+    ...tagMap.values(),
+    ...Array.from(questionSet),
+  ]
 }
 
 function loadModules() {

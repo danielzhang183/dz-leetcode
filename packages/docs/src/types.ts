@@ -46,7 +46,7 @@ export interface Question {
   difficulty: Difficulty
   category: Module | string
   tag: Tag
-  tags?: string[]
+  solutions?: string[]
   link: string
   origin: string
   series?: string

@@ -23,7 +23,7 @@ questions:
     link: /structures/heap/347
     origin: https://leetcode.cn/problems/top-k-frequent-elements
     tag: heap
-    tags: [sort, minHeap]
+    solutions: [sort, minHeap]
     category: structures
     done: true
   - name: IPO

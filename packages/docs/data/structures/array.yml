@@ -35,7 +35,7 @@ questions:
     origin: >-
       https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array
     tag: array
-    tags:
+    solutions:
       - binary-search
     category: structures
     done: true
@@ -46,7 +46,7 @@ questions:
     link: /structures/array/035
     origin: https://leetcode.cn/problems/search-insert-position
     tag: array
-    tags:
+    solutions:
       - binary-search
     category: structures
     done: true
@@ -75,7 +75,7 @@ questions:
     link: /structures/array/189
     origin: https://leetcode.cn/problems/rotate-array
     tag: array
-    tags:
+    solutions:
       - New Array
       - Reverse
       - Cycle Replacement
@@ -97,7 +97,7 @@ questions:
     link: /structures/array/283
     origin: https://leetcode.cn/problems/move-zeroes
     tag: array
-    tags:
+    solutions:
       - two-pointers
     category: structures
     done: true
@@ -108,7 +108,7 @@ questions:
     link: /structures/array/344
     origin: https://leetcode.cn/problems/reverse-string
     tag: array
-    tags:
+    solutions:
       - two-pointers
       - api
     category: structures
@@ -120,7 +120,7 @@ questions:
     link: /structures/array/349
     origin: https://leetcode.cn/problems/intersection-of-two-arrays
     tag: array
-    tags:
+    solutions:
       - set
       - sort + two-pointers
     category: structures
@@ -141,7 +141,7 @@ questions:
     link: /structures/array/724
     origin: https://leetcode.cn/problems/find-pivot-index
     tag: array
-    tags:
+    solutions:
       - prefix-sum
     category: structures
     done: true
@@ -152,7 +152,7 @@ questions:
     link: /structures/array/922
     origin: https://leetcode.cn/problems/sort-array-by-parity-ii
     tag: array
-    tags:
+    solutions:
       - Two Pointers
     category: structures
     done: true
@@ -172,7 +172,7 @@ questions:
     origin: >-
       https://leetcode.cn/problems/how-many-numbers-are-smaller-than-the-current-number
     tag: array
-    tags:
+    solutions:
       - Sort
       - Count Sort
     category: structures

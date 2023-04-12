@@ -9,7 +9,7 @@ questions:
     link: /structures/tree/094
     origin: https://leetcode.cn/problems/binary-tree-inorder-traversal
     tag: tree
-    tags:
+    solutions:
       - DFS
       - traversal
       - morris
@@ -23,7 +23,7 @@ questions:
     link: /structures/tree/098
     origin: https://leetcode.cn/problems/validate-binary-search-tree
     tag: tree
-    tags:
+    solutions:
       - DFS
       - Inorder Traversal
     category: structures
@@ -44,7 +44,7 @@ questions:
     link: /structures/tree/100
     origin: https://leetcode.cn/problems/same-tree
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -56,7 +56,7 @@ questions:
     link: /structures/tree/101
     origin: https://leetcode.cn/problems/symmetric-tree
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -69,7 +69,7 @@ questions:
     link: /structures/tree/102
     origin: https://leetcode.cn/problems/binary-tree-level-order-traversal
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -82,7 +82,7 @@ questions:
     link: /structures/tree/104
     origin: https://leetcode.cn/problems/maximum-depth-of-binary-tree
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -105,7 +105,7 @@ questions:
     link: /structures/tree/107
     origin: https://leetcode.cn/problems/binary-tree-level-order-traversal-ii
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -134,7 +134,7 @@ questions:
     link: /structures/tree/110
     origin: https://leetcode.cn/problems/balanced-binary-tree
     tag: tree
-    tags:
+    solutions:
       - DFS
       - DFS - bottom to top
     category: structures
@@ -147,7 +147,7 @@ questions:
     link: /structures/tree/111
     origin: https://leetcode.cn/problems/minimum-depth-of-binary-tree
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -160,7 +160,7 @@ questions:
     link: /structures/tree/112
     origin: https://leetcode.cn/problems/path-sum
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -198,7 +198,7 @@ questions:
     link: /structures/tree/129
     origin: https://leetcode.cn/problems/sum-root-to-leaf-numbers
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -210,7 +210,7 @@ questions:
     link: /structures/tree/144
     origin: https://leetcode.cn/problems/binary-tree-preorder-traversal
     tag: tree
-    tags:
+    solutions:
       - DFS
       - traversal
       - morris
@@ -224,7 +224,7 @@ questions:
     link: /structures/tree/145
     origin: https://leetcode.cn/problems/binary-tree-postorder-traversal
     tag: tree
-    tags:
+    solutions:
       - DFS
       - traversal
       - morris
@@ -238,7 +238,7 @@ questions:
     link: /structures/tree/199
     origin: https://leetcode.cn/problems/binary-tree-right-side-view
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -259,7 +259,7 @@ questions:
     link: /structures/tree/226
     origin: https://leetcode.cn/problems/invert-binary-tree
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -299,7 +299,7 @@ questions:
     link: /structures/tree/257
     origin: https://leetcode.cn/problems/binary-tree-paths
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -312,7 +312,7 @@ questions:
     link: /structures/tree/404
     origin: https://leetcode.cn/problems/sum-of-left-leaves
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -325,7 +325,7 @@ questions:
     link: /structures/tree/501
     origin: https://leetcode.cn/problems/find-mode-in-binary-search-tree
     tag: tree
-    tags:
+    solutions:
       - Inorder Traversal
     category: structures
     series: bst character
@@ -337,7 +337,7 @@ questions:
     link: /structures/tree/513
     origin: https://leetcode.cn/problems/find-bottom-left-tree-value
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -350,7 +350,7 @@ questions:
     link: /structures/tree/515
     origin: https://leetcode.cn/problems/find-largest-value-in-each-tree-row
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -362,7 +362,7 @@ questions:
     link: /structures/tree/530
     origin: https://leetcode.cn/problems/minimum-absolute-difference-in-bst
     tag: tree
-    tags:
+    solutions:
       - Inorder Traversal
     category: structures
     series: bst character
@@ -383,7 +383,7 @@ questions:
     link: /structures/tree/543
     origin: https://leetcode.cn/problems/diameter-of-binary-tree
     tag: tree
-    tags:
+    solutions:
       - DFS
     category: structures
     done: true
@@ -394,7 +394,7 @@ questions:
     link: /structures/tree/572
     origin: https://leetcode.cn/problems/subtree-of-another-tree
     tag: tree
-    tags:
+    solutions:
       - DFS
       - DFS + KMP
     category: structures
@@ -406,7 +406,7 @@ questions:
     link: /structures/tree/617
     origin: https://leetcode.cn/problems/merge-two-binary-trees
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -419,7 +419,7 @@ questions:
     link: /structures/tree/637
     origin: https://leetcode.cn/problems/average-of-levels-in-binary-tree
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -440,7 +440,7 @@ questions:
     link: /structures/tree/700
     origin: https://leetcode.cn/problems/search-in-a-binary-search-tree
     tag: tree
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -453,7 +453,7 @@ questions:
     link: /structures/tree/701
     origin: https://leetcode.cn/problems/insert-into-a-binary-search-tree
     tag: tree
-    tags:
+    solutions:
       - DFS
       - traversal
     category: structures

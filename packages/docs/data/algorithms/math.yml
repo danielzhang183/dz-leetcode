@@ -7,7 +7,7 @@ questions:
     link: /algorithms/math/018
     origin: https://leetcode.cn/problems/4sum
     tag: math
-    tags:
+    solutions:
       - sort + two-pointers
     category: algorithms
     done: true

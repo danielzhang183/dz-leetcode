@@ -6,7 +6,7 @@ questions:
     link: /interview/bytedance/045
     origin: https://leetcode.cn/problems/jump-game-ii
     tag: bytedance
-    tags:
+    solutions:
       - greedy
     category: interview
     done: true

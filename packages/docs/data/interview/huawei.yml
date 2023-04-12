@@ -6,7 +6,7 @@ questions:
     link: /interview/huawei/calc-launch-time
     origin: /interview/huawei/calc-launch-time
     tag: huawei
-    tags:
+    solutions:
       - DP
       - Webpack
     category: interview

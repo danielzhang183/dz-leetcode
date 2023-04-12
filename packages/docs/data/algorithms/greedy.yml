@@ -19,7 +19,7 @@ questions:
     link: /algorithms/greedy/053
     origin: https://leetcode.cn/problems/maximum-subarray
     tag: greedy
-    tags:
+    solutions:
       - Greedy
       - DP
     category: algorithms
@@ -52,7 +52,7 @@ questions:
     link: /algorithms/greedy/122
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii
     tag: greedy
-    tags:
+    solutions:
       - Greedy
       - DP
     category: algorithms
@@ -84,7 +84,7 @@ questions:
     link: /algorithms/greedy/300
     origin: https://leetcode.cn/problems/longest-increasing-subsequence
     tag: greedy
-    tags:
+    solutions:
       - Greedy
       - DP
     category: algorithms
@@ -97,7 +97,7 @@ questions:
     link: /algorithms/greedy/376
     origin: https://leetcode.cn/problems/wiggle-subsequence
     tag: greedy
-    tags:
+    solutions:
       - Greedy
       - DP
     category: algorithms
@@ -167,7 +167,7 @@ questions:
     origin: >-
       https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee
     tag: greedy
-    tags:
+    solutions:
       - Greedy
       - DP
     category: algorithms
@@ -210,7 +210,7 @@ questions:
     link: /algorithms/greedy/968
     origin: https://leetcode.cn/problems/binary-tree-cameras
     tag: greedy
-    tags:
+    solutions:
       - DFS
     category: algorithms
     series: hard

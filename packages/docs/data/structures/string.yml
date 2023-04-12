@@ -8,7 +8,7 @@ questions:
     origin: >-
       https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string
     tag: string
-    tags:
+    solutions:
       - KMP
       - Sunday
       - API
@@ -22,7 +22,7 @@ questions:
     link: /structures/string/151
     origin: https://leetcode.cn/problems/reverse-words-in-a-string
     tag: string
-    tags:
+    solutions:
       - two-pointers
       - API
     category: structures
@@ -35,7 +35,7 @@ questions:
     link: /structures/string/344
     origin: https://leetcode.cn/problems/reverse-string
     tag: string
-    tags:
+    solutions:
       - two-pointers
       - API
     category: structures
@@ -48,7 +48,7 @@ questions:
     link: /structures/string/459
     origin: https://leetcode.cn/problems/repeated-substring-pattern
     tag: string
-    tags:
+    solutions:
       - KMP
       - API
     category: structures
@@ -61,7 +61,7 @@ questions:
     link: /structures/string/541
     origin: https://leetcode.cn/problems/reverse-string-ii
     tag: string
-    tags:
+    solutions:
       - DFS
     category: structures
     series: reverse
@@ -73,7 +73,7 @@ questions:
     link: /structures/string/844
     origin: https://leetcode.cn/problems/backspace-string-compare
     tag: string
-    tags:
+    solutions:
       - stack
       - two-pointers
     category: structures
@@ -86,7 +86,7 @@ questions:
     link: /structures/string/925
     origin: https://leetcode.cn/problems/long-pressed-name
     tag: string
-    tags:
+    solutions:
       - two-pointers
     category: structures
     series: Two Pointers

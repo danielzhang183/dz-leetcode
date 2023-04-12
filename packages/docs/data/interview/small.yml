@@ -15,7 +15,7 @@ questions:
     link: /interview/small/217
     origin: https://leetcode.cn/problems/contains-duplicate
     tag: small
-    tags:
+    solutions:
       - Set
       - Traversal
       - API

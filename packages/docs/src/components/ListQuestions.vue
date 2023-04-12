@@ -84,10 +84,10 @@ function padZero(num: string | number, len = 3) {
           </a>
         </div>
         <div class="flex-auto">
-          <div cla ss="text-normal">{{ item.name }}</div>
-          <div v-if="item.tags && mode" class="tags flex gap-2 text-sm font-normal pt1">
+          <div class="text-normal">{{ item.name }}</div>
+          <div v-if="item.solutions && mode" class="solutions flex gap-2 text-sm font-normal pt1">
             <a
-              v-for="t in item.tags"
+              v-for="t in item.solutions"
               :key="t"
               :href="normalizeSolution(item.link, t)"
               :title="t"
@@ -132,7 +132,7 @@ function padZero(num: string | number, len = 3) {
   background: #88888808;
 }
 
-.tags a {
+.solutions a {
   cursor: pointer;
   text-decoration: none;
   transition: opacity 0.2s ease;
@@ -142,7 +142,7 @@ function padZero(num: string | number, len = 3) {
   border-bottom: unset;
 }
 
-.tags a:hover {
+.solutions a:hover {
   opacity: 1;
   text-decoration-color: unset;
   border-bottom: unset;

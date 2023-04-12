@@ -23,7 +23,7 @@ questions:
     link: /structures/monotone-stack/496
     origin: https://leetcode.cn/problems/next-greater-element-i
     tag: monotone-stack
-    tags:
+    solutions:
       - stack
       - queue
     category: structures
@@ -35,7 +35,7 @@ questions:
     link: /structures/monotone-stack/503
     origin: https://leetcode.cn/problems/next-greater-element-ii
     tag: monotone-stack
-    tags:
+    solutions:
       - loop array
     category: structures
     done: true

@@ -7,7 +7,7 @@ questions:
     link: /structures/linked-list/019
     origin: https://leetcode.cn/problems/remove-nth-node-from-end-of-list
     tag: linked-list
-    tags:
+    solutions:
       - fast-slow-pointer
       - stack
       - count
@@ -20,7 +20,7 @@ questions:
     link: /structures/linked-list/021
     origin: https://leetcode.cn/problems/merge-two-sorted-lists
     tag: linked-list
-    tags:
+    solutions:
       - recursive
       - traversal
     category: structures
@@ -41,7 +41,7 @@ questions:
     link: /structures/linked-list/092
     origin: https://leetcode.cn/problems/reverse-linked-list-ii
     tag: linked-list
-    tags:
+    solutions:
       - traversal
       - insert node from head
     category: structures
@@ -53,7 +53,7 @@ questions:
     link: /structures/linked-list/141
     origin: https://leetcode.cn/problems/linked-list-cycle
     tag: linked-list
-    tags:
+    solutions:
       - fast-slow-pointer
     category: structures
     done: true
@@ -64,7 +64,7 @@ questions:
     link: /structures/linked-list/142
     origin: https://leetcode.cn/problems/linked-list-cycle-ii
     tag: linked-list
-    tags:
+    solutions:
       - fast-slow-pointer
       - hashSet
     category: structures
@@ -76,7 +76,7 @@ questions:
     link: /structures/linked-list/143
     origin: https://leetcode.cn/problems/reorder-list
     tag: linked-list
-    tags:
+    solutions:
       - splite linkedlist
     category: structures
     done: true
@@ -87,7 +87,7 @@ questions:
     link: /structures/linked-list/146
     origin: https://leetcode.cn/problems/lru-cache
     tag: linked-list
-    tags:
+    solutions:
       - Map + Double-end Linkedlist
     category: structures
     done: true
@@ -98,7 +98,7 @@ questions:
     link: /structures/linked-list/160
     origin: https://leetcode.cn/problems/intersection-of-two-linked-lists
     tag: linked-list
-    tags:
+    solutions:
       - two-pointers
     category: structures
     done: true
@@ -109,7 +109,7 @@ questions:
     link: /structures/linked-list/203
     origin: https://leetcode.cn/problems/remove-linked-list-elements
     tag: linked-list
-    tags:
+    solutions:
       - recursive
       - traversal
     category: structures
@@ -121,7 +121,7 @@ questions:
     link: /structures/linked-list/206
     origin: https://leetcode.cn/problems/reverse-linked-list
     tag: linked-list
-    tags:
+    solutions:
       - recursive
       - traversal
     category: structures
@@ -133,7 +133,7 @@ questions:
     link: /structures/linked-list/234
     origin: https://leetcode.cn/problems/palindrome-linked-list
     tag: linked-list
-    tags:
+    solutions:
       - fast-slow pointers
       - dfs
     category: structures
@@ -145,7 +145,7 @@ questions:
     link: /structures/linked-list/707
     origin: https://leetcode.cn/problems/design-linked-list
     tag: linked-list
-    tags:
+    solutions:
       - a singly ll
       - doubly ll
     category: structures
@@ -157,7 +157,7 @@ questions:
     link: /structures/linked-list/876
     origin: https://leetcode.cn/problems/middle-of-the-linked-list
     tag: linked-list
-    tags:
+    solutions:
       - fast-slow-pointer
       - count
     category: structures

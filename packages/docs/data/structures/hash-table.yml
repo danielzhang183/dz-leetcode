@@ -7,7 +7,7 @@ questions:
     link: /structures/hash-table/001
     origin: https://leetcode.cn/problems/two-sum
     tag: hash-table
-    tags:
+    solutions:
       - HashMap
     category: structures
     series: SUM
@@ -19,7 +19,7 @@ questions:
     link: /structures/hash-table/015
     origin: https://leetcode.cn/problems/3sum
     tag: hash-table
-    tags:
+    solutions:
       - two-pointers
     category: structures
     series: SUM
@@ -31,7 +31,7 @@ questions:
     link: /structures/hash-table/018
     origin: https://leetcode.cn/problems/4sum
     tag: hash-table
-    tags:
+    solutions:
       - two-pointers
     category: structures
     series: SUM
@@ -43,7 +43,7 @@ questions:
     link: /structures/hash-table/205
     origin: https://leetcode.cn/problems/isomorphic-strings
     tag: hash-table
-    tags:
+    solutions:
       - HashMap
     category: structures
     series: HashMap
@@ -64,7 +64,7 @@ questions:
     link: /structures/hash-table/290
     origin: https://leetcode.cn/problems/word-pattern
     tag: hash-table
-    tags:
+    solutions:
       - HashMap
     category: structures
     series: HashMap
@@ -76,7 +76,7 @@ questions:
     link: /structures/hash-table/349
     origin: https://leetcode.cn/problems/intersection-of-two-arrays
     tag: hash-table
-    tags:
+    solutions:
       - HashSet
       - sort + two-pointers
     category: structures
@@ -88,7 +88,7 @@ questions:
     link: /structures/hash-table/383
     origin: https://leetcode.cn/problems/ransom-note
     tag: hash-table
-    tags:
+    solutions:
       - partition + Map
     category: structures
     done: true

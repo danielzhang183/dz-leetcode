@@ -17,7 +17,7 @@ questions:
     link: /structures/graph/200
     origin: https://leetcode.cn/problems/number-of-islands
     tag: graph
-    tags:
+    solutions:
       - DFS
       - BFS
       - UnionFind
@@ -31,7 +31,7 @@ questions:
     link: /structures/graph/207
     origin: https://leetcode.cn/problems/course-schedule
     tag: graph
-    tags:
+    solutions:
       - DFS
       - BFS
     category: structures
@@ -44,7 +44,7 @@ questions:
     link: /structures/graph/463
     origin: https://leetcode.cn/problems/island-perimeter
     tag: graph
-    tags:
+    solutions:
       - traversal
     category: structures
     done: true
@@ -83,7 +83,7 @@ questions:
     link: /structures/graph/841
     origin: https://leetcode.cn/problems/keys-and-rooms
     tag: graph
-    tags:
+    solutions:
       - BFS
       - DFS
     category: structures

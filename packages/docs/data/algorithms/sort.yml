@@ -7,7 +7,7 @@ questions:
     link: /algorithms/sort/015
     origin: https://leetcode.cn/problems/3sum
     tag: sort
-    tags:
+    solutions:
       - sort + two pointers
     category: algorithms
     done: true
@@ -18,7 +18,7 @@ questions:
     link: /algorithms/sort/912
     origin: https://leetcode.cn/problems/sort-an-array
     tag: sort
-    tags:
+    solutions:
       - quick sort
     category: algorithms
     done: true

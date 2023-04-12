@@ -9,7 +9,7 @@ questions:
     link: /algorithms/dynamic-programming/053
     origin: https://leetcode.cn/problems/maximum-subarray
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
       - Greedy
     category: algorithms
@@ -22,7 +22,7 @@ questions:
     link: /algorithms/dynamic-programming/062
     origin: https://leetcode.cn/problems/unique-paths
     tag: dynamic-programming
-    tags:
+    solutions:
       - DFS
       - DP
     category: algorithms
@@ -35,7 +35,7 @@ questions:
     link: /algorithms/dynamic-programming/063
     origin: https://leetcode.cn/problems/unique-paths-ii
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
     category: algorithms
     series: basic
@@ -47,7 +47,7 @@ questions:
     link: /algorithms/dynamic-programming/070
     origin: https://leetcode.cn/problems/climbing-stairs
     tag: dynamic-programming
-    tags:
+    solutions:
       - DFS
       - DP
       - scroll array
@@ -61,7 +61,7 @@ questions:
     link: /algorithms/dynamic-programming/072
     origin: https://leetcode.cn/problems/edit-distance
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
     category: algorithms
     series: subsequence
@@ -91,7 +91,7 @@ questions:
     link: /algorithms/dynamic-programming/121
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock
     tag: dynamic-programming
-    tags:
+    solutions:
       - Greedy
       - DP
     category: algorithms
@@ -104,7 +104,7 @@ questions:
     link: /algorithms/dynamic-programming/122
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
       - Greedy
     category: algorithms
@@ -117,7 +117,7 @@ questions:
     link: /algorithms/dynamic-programming/123
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
       - Greedy
     category: algorithms
@@ -139,7 +139,7 @@ questions:
     link: /algorithms/dynamic-programming/188
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
     category: algorithms
     series: stock
@@ -151,7 +151,7 @@ questions:
     link: /algorithms/dynamic-programming/198
     origin: https://leetcode.cn/problems/house-robber
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
       - scroll array
     category: algorithms
@@ -164,7 +164,7 @@ questions:
     link: /algorithms/dynamic-programming/213
     origin: https://leetcode.cn/problems/house-robber-ii
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
       - scroll array
     category: algorithms
@@ -187,7 +187,7 @@ questions:
     link: /algorithms/dynamic-programming/300
     origin: https://leetcode.cn/problems/longest-increasing-subsequence
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
       - Greedy
     category: algorithms
@@ -219,7 +219,7 @@ questions:
     link: /algorithms/dynamic-programming/337
     origin: https://leetcode.cn/problems/house-robber-iii
     tag: dynamic-programming
-    tags:
+    solutions:
       - DFS
     category: algorithms
     series: house robber
@@ -231,7 +231,7 @@ questions:
     link: /algorithms/dynamic-programming/343
     origin: https://leetcode.cn/problems/integer-break
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
     category: algorithms
     series: basic
@@ -253,7 +253,7 @@ questions:
     link: /algorithms/dynamic-programming/392
     origin: https://leetcode.cn/problems/is-subsequence
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
       - Traversal
     category: algorithms
@@ -286,7 +286,7 @@ questions:
     link: /algorithms/dynamic-programming/494
     origin: https://leetcode.cn/problems/target-sum
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
       - back-tracking
     category: algorithms
@@ -299,7 +299,7 @@ questions:
     link: /algorithms/dynamic-programming/509
     origin: https://leetcode.cn/problems/fibonacci-number
     tag: dynamic-programming
-    tags:
+    solutions:
       - DFS
       - DP
       - scroll array
@@ -332,7 +332,7 @@ questions:
     link: /algorithms/dynamic-programming/583
     origin: https://leetcode.cn/problems/delete-operation-for-two-strings
     tag: dynamic-programming
-    tags:
+    solutions:
       - longest-common-subsequence
       - DP
     category: algorithms
@@ -345,7 +345,7 @@ questions:
     link: /algorithms/dynamic-programming/647
     origin: https://leetcode.cn/problems/palindromic-substrings
     tag: dynamic-programming
-    tags:
+    solutions:
       - two-pointers
       - DP
     category: algorithms
@@ -368,7 +368,7 @@ questions:
     origin: >-
       https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
       - Greedy
     category: algorithms
@@ -390,7 +390,7 @@ questions:
     link: /algorithms/dynamic-programming/746
     origin: https://leetcode.cn/problems/min-cost-climbing-stairs
     tag: dynamic-programming
-    tags:
+    solutions:
       - DP
       - scroll array
     category: algorithms

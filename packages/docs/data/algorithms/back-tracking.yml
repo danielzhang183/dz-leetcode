@@ -9,7 +9,7 @@ questions:
     link: /algorithms/back-tracking/017
     origin: https://leetcode.cn/problems/letter-combinations-of-a-phone-number
     tag: back-tracking
-    tags:
+    solutions:
       - N-ary Tree
     category: algorithms
     series: combinaton
@@ -31,7 +31,7 @@ questions:
     link: /algorithms/back-tracking/039
     origin: https://leetcode.cn/problems/combination-sum
     tag: back-tracking
-    tags:
+    solutions:
       - N-ary Tree
       - Choose Tree
     category: algorithms
@@ -54,7 +54,7 @@ questions:
     link: /algorithms/back-tracking/046
     origin: https://leetcode.cn/problems/permutations
     tag: back-tracking
-    tags:
+    solutions:
       - N-ary Tree
     category: algorithms
     series: permutation
@@ -66,7 +66,7 @@ questions:
     link: /algorithms/back-tracking/047
     origin: https://leetcode.cn/problems/permutations-ii
     tag: back-tracking
-    tags:
+    solutions:
       - N-ary Tree
     category: algorithms
     series: permutation
@@ -98,7 +98,7 @@ questions:
     link: /algorithms/back-tracking/077
     origin: https://leetcode.cn/problems/combinations
     tag: back-tracking
-    tags:
+    solutions:
       - N-ary Tree
       - Choose Tree
     category: algorithms
@@ -111,7 +111,7 @@ questions:
     link: /algorithms/back-tracking/078
     origin: https://leetcode.cn/problems/subsets
     tag: back-tracking
-    tags:
+    solutions:
       - N-ary Tree
     category: algorithms
     series: subset
@@ -133,7 +133,7 @@ questions:
     link: /algorithms/back-tracking/090
     origin: https://leetcode.cn/problems/subsets-ii
     tag: back-tracking
-    tags:
+    solutions:
       - N-ary Tree
     category: algorithms
     series: subset
@@ -145,7 +145,7 @@ questions:
     link: /algorithms/back-tracking/093
     origin: https://leetcode.cn/problems/restore-ip-addresses
     tag: back-tracking
-    tags:
+    solutions:
       - N-ary Tree
     category: algorithms
     series: partition
@@ -157,7 +157,7 @@ questions:
     link: /algorithms/back-tracking/131
     origin: https://leetcode.cn/problems/palindrome-partitioning
     tag: back-tracking
-    tags:
+    solutions:
       - N-ary Tree
     category: algorithms
     series: partition
@@ -188,7 +188,7 @@ questions:
     link: /algorithms/back-tracking/491
     origin: https://leetcode.cn/problems/non-decreasing-subsequences
     tag: back-tracking
-    tags:
+    solutions:
       - N-ary Tree
     category: algorithms
     series: other
