@@ -8,6 +8,10 @@ questions:
     tag: small
     category: interview
     done: true
+    tags:
+      - recursion
+      - linked-list
+      - math
   - name: Contains Duplicate
     title: contains-duplicate
     difficulty: Easy
@@ -21,3 +25,7 @@ questions:
       - API
     category: interview
     done: true
+    tags:
+      - array
+      - hash-table
+      - sorting

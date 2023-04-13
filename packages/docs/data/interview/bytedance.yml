@@ -10,6 +10,10 @@ questions:
       - greedy
     category: interview
     done: true
+    tags:
+      - greedy
+      - array
+      - dynamic-programming
   - name: Design Browser History
     title: design-browser-history
     difficulty: Medium
@@ -19,3 +23,10 @@ questions:
     tag: bytedance
     category: interview
     done: true
+    tags:
+      - stack
+      - design
+      - array
+      - linked-list
+      - data-stream
+      - doubly-linked-list

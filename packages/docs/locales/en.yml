@@ -15,15 +15,15 @@ subnav:
   string: String
   tree: Tree
   union-find-disjoint-sets: UnionSet
-  back-tracking: BT
+  backtracking: BT
   binary-search: BS
-  bitwise: Bitwise
+  bit-manipulation: Bitwise
   divide-conquer: D&C
   dynamic-programming: DP
   greedy: Greedy
   math: Math
   recursion: Recur
-  sort: Sort
+  sorting: Sort
 easy: Easy
 medium: Medium
 hard: Hard
@@ -57,12 +57,12 @@ tree-desc: A non-linear data structure, there is only one path to go from any of
 union-find-disjoint-sets: Union Find Disjoint Sets
 union-find-disjoint-sets-desc: Union Find Disjoint Sets Desc
 # algorithm
-back-tracking: Back Tracking
-back-tracking-desc: Solving problems incrementally, Removing solutions that fail to satisfy the constraints of the problem at any point of time.
+backtracking: Back Tracking
+backtracking-desc: Solving problems incrementally, Removing solutions that fail to satisfy the constraints of the problem at any point of time.
 binary-search: Binary Search
 binary-search-desc: Break the data structure into two equal parts and try to decide in which half we need to find for the element.
-bitwise: Bitwise
-bitwise-desc: It is used to perform operations at the bit-level or to manipulate bits in different ways.
+bit-manipulation: Bitwise
+bit-manipulation-desc: It is used to perform operations at the bit-level or to manipulate bits in different ways.
 divide-conquer: Divide Conquer
 divide-conquer-desc: It breaks problem into parts, then solves each part and merges the solved subtasks until problem solved.
 dynamic-programming: Dynamic Programming
@@ -73,6 +73,5 @@ math: Math
 math-desc: Was designed to solve Mathematical and Number Theory problems.
 recursion: Recursion
 recursion-desc: It uses the concept of code reusability and repeated usage of the same piece of code.
-sort: Sort
-sort-desc: Regular sort, such as quick / merge sort...
-
+sorting: Sort
+sorting-desc: Regular sort, such as quick / merge sort...

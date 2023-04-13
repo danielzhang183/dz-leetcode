@@ -47,6 +47,7 @@ export interface Question {
   difficulty: Difficulty
   category: Category | string
   tag: Tag
+  tags: string[]
   link: string
   origin: string
 }

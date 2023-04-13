@@ -1,5 +1,4 @@
-import { existsSync, promises as fs } from 'fs'
-import { parse } from 'dz-leetcode'
+import { parse, readFile } from 'dz-leetcode'
 import type { TagMap } from '../types'
 
 export interface ImportableQuestionOptionBase {
@@ -28,20 +27,13 @@ export interface ImportableQuestions {
   questions: Array<ImportableQuestionOptions>
 }
 
-export async function loadCategories(file: string): Promise<Record<string, TagMap> | undefined> {
-  if (!existsSync(file))
-    return
-
-  const rawContent = await fs.readFile(file, 'utf-8')
-  if (!rawContent)
-    return
-
-  const content = await parse<ImportableQuestions>(rawContent)?.questions
-  if (!content)
+export async function loadCategories(filepath: string): Promise<Record<string, TagMap> | undefined> {
+  const questions = await loadQuestions(filepath)
+  if (!questions)
     return
 
   const categories: Record<string, TagMap> = {}
-  for (const question of content) {
+  for (const question of questions) {
     const {
       category = 'unknown-category',
       tag = 'unknown-tag',
@@ -62,3 +54,10 @@ export async function loadCategories(file: string): Promise<Record<string, TagMa
   return categories
 }
 
+export async function loadQuestions<T extends ImportableQuestions>(filepath: string): Promise<T['questions'] | undefined> {
+  const content = await readFile(filepath)
+  if (!content)
+    return
+
+  return await parse<T>(content)?.questions
+}

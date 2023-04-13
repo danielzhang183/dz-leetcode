@@ -8,6 +8,12 @@ questions:
     tag: tencent
     category: interview
     done: true
+    tags:
+      - linked-list
+      - two-pointers
+      - divide-and-conquer
+      - sorting
+      - merge-sort
   - name: Flatten Nested List Iterator
     title: flatten-nested-list-iterator
     difficulty: Medium
@@ -16,3 +22,10 @@ questions:
     origin: https://leetcode.cn/problems/flatten-nested-list-iterator
     tag: tencent
     category: interview
+    tags:
+      - stack
+      - tree
+      - depth-first-search
+      - design
+      - queue
+      - iterator

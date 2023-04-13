@@ -2,15 +2,21 @@
 import type { Data, Node, Options } from 'vis-network'
 import { Network } from 'vis-network'
 import type { QuestionRelation } from '../composables'
-import { getQuestionsRelations } from '../composables'
+import { getQuestionsRelations, useAppSettings } from '../composables'
 
 const container = ref<HTMLElement>()
 const colorMode = useColorMode()
 
 const selected = ref<{
   id: string
-  relationship: QuestionRelation[]
+  relationship?: QuestionRelation[]
 }>()
+
+const {
+  graphShowStructures: showStructures,
+  graphShowAlgorithms: showAlgorithms,
+  graphShowSeries: showSeries,
+} = useAppSettings()
 
 const relationships = ref(getQuestionsRelations())
 
@@ -47,7 +53,7 @@ const data = computed<Data>(() => {
       label: rel.id.split('/').splice(-1)[0],
       group: rel.group,
       shape,
-      size: 15 + Math.min(rel.deps.length / 2, 8),
+      size: 15 + Math.min(rel.deps.size / 2, 8),
       font: {
         color: colorMode.value === 'dark' ? 'white' : 'black',
       },
@@ -60,7 +66,7 @@ const data = computed<Data>(() => {
     }
   }).filter((x): x is Node => !!x)
 
-  const edges: Data['edges'] = entries.value.flatMap(rel => rel.deps.map(dep => ({
+  const edges: Data['edges'] = entries.value.flatMap(rel => Array.from(rel.deps).map(dep => ({
     from: rel.id,
     to: dep,
     arrows: {
@@ -122,10 +128,49 @@ onMounted(() => {
     network.setData(data.value)
   })
 })
+
+function setFilter() {
+  selectedFilter.value = selected.value?.relationship
+  selected.value = undefined
+}
 </script>
 
 <template>
-  <div relative h-600 w-full>
+  <Navbar ref="navbar" absolute left-0 right-0 top-0>
+    <template #search>
+      <!-- <NCheckbox v-model="showStructures" n="primary sm">
+        <span op75>Show structures</span>
+      </NCheckbox>
+      <NCheckbox v-model="showAlgorithms" n="primary sm">
+        <span op75>Show algorithms</span>
+      </NCheckbox>
+      <NCheckbox v-model="showSeries" n="primary sm">
+        <span op75>Show series</span>
+      </NCheckbox> -->
+      <button v-if="selectedFilter" flex="~ gap-1" items-center rounded-full bg-gray:20 py1 pl3 pr2 text-xs op50 hover:op100 @click="selectedFilter = undefined">
+        Clear filter <div i-carbon-close />
+      </button>
+      <div flex-auto />
+      <slot />
+    </template>
+  </Navbar>
+
+  <div relative h-full w-full>
     <div ref="container" h-full w-full />
+    <!-- <DrawerRight
+      :model-value="!!(selected && selected.component)"
+      :navbar="navbar"
+      w-80
+      @close="selected = undefined"
+    >
+      <div v-if="selected && selected.component" p4 pr10 pt4 flex="~ col gap4">
+        <ComponentDetails :component="selected.component" />
+        <div>
+          <NButton n="primary solid" @click="setFilter()">
+            Filter to this component
+          </NButton>
+        </div>
+      </div>
+    </DrawerRight> -->
   </div>
 </template>

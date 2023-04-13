@@ -1,6 +1,3 @@
-description: >-
-  A non-linear data structure consisting of a finite set of vertices(or nodes)
-  and a set of edges that connect a pair of nodes.
 questions:
   - name: Word Ladder
     title: word-ladder
@@ -10,6 +7,10 @@ questions:
     origin: https://leetcode.cn/problems/word-ladder
     tag: graph
     category: structures
+    tags:
+      - breadth-first-search
+      - hash-table
+      - string
   - name: Number of Islands
     title: number-of-islands
     difficulty: Medium
@@ -24,6 +25,12 @@ questions:
     category: structures
     series: Disjoint Sets
     done: true
+    tags:
+      - depth-first-search
+      - breadth-first-search
+      - union-find
+      - array
+      - matrix
   - name: Course Schedule
     title: course-schedule
     difficulty: Medium
@@ -37,6 +44,11 @@ questions:
     category: structures
     series: Disjoint Sets
     done: true
+    tags:
+      - depth-first-search
+      - breadth-first-search
+      - graph
+      - topological-sort
   - name: Island Perimeter
     title: island-perimeter
     difficulty: Easy
@@ -48,6 +60,11 @@ questions:
       - traversal
     category: structures
     done: true
+    tags:
+      - depth-first-search
+      - breadth-first-search
+      - array
+      - matrix
   - name: Redundant Connection
     title: redundant-connection
     difficulty: Medium
@@ -58,6 +75,11 @@ questions:
     category: structures
     series: Disjoint Sets
     done: true
+    tags:
+      - depth-first-search
+      - breadth-first-search
+      - union-find
+      - graph
   - name: Redundant Connection II
     title: redundant-connection-ii
     difficulty: Hard
@@ -67,6 +89,11 @@ questions:
     tag: graph
     category: structures
     series: Disjoint Sets
+    tags:
+      - depth-first-search
+      - breadth-first-search
+      - union-find
+      - graph
   - name: Network Delay Time
     title: network-delay-time
     difficulty: Medium
@@ -76,6 +103,12 @@ questions:
     tag: graph
     category: structures
     series: Disjoint Sets
+    tags:
+      - depth-first-search
+      - breadth-first-search
+      - graph
+      - shortest-path
+      - heap-priority-queue
   - name: Keys and Rooms
     title: keys-and-rooms
     difficulty: Medium
@@ -88,3 +121,7 @@ questions:
       - DFS
     category: structures
     done: true
+    tags:
+      - depth-first-search
+      - breadth-first-search
+      - graph

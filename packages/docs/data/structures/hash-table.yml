@@ -1,4 +1,3 @@
-description: An index or location for the storage of an item in a data structure.
 questions:
   - name: Two Sum
     title: two-sum
@@ -12,6 +11,9 @@ questions:
     category: structures
     series: SUM
     done: true
+    tags:
+      - array
+      - hash-table
   - name: 3Sum
     title: 3sum
     difficulty: Medium
@@ -24,6 +26,10 @@ questions:
     category: structures
     series: SUM
     done: true
+    tags:
+      - array
+      - two-pointers
+      - sorting
   - name: 4Sum
     title: 4sum
     difficulty: Medium
@@ -36,6 +42,10 @@ questions:
     category: structures
     series: SUM
     done: true
+    tags:
+      - array
+      - two-pointers
+      - sorting
   - name: Isomorphic Strings
     title: isomorphic-strings
     difficulty: Easy
@@ -48,6 +58,9 @@ questions:
     category: structures
     series: HashMap
     done: true
+    tags:
+      - hash-table
+      - string
   - name: Valid Anagram
     title: valid-anagram
     difficulty: Easy
@@ -57,6 +70,10 @@ questions:
     tag: hash-table
     category: structures
     done: true
+    tags:
+      - hash-table
+      - string
+      - sorting
   - name: Word Pattern
     title: word-pattern
     difficulty: Easy
@@ -69,6 +86,9 @@ questions:
     category: structures
     series: HashMap
     done: true
+    tags:
+      - hash-table
+      - string
   - name: Intersection of Two Arrays
     title: intersection-of-two-arrays
     difficulty: Easy
@@ -81,6 +101,12 @@ questions:
       - sort + two-pointers
     category: structures
     done: true
+    tags:
+      - array
+      - hash-table
+      - two-pointers
+      - binary-search
+      - sorting
   - name: Ransom Note
     title: ransom-note
     difficulty: Easy
@@ -92,6 +118,10 @@ questions:
       - partition + Map
     category: structures
     done: true
+    tags:
+      - hash-table
+      - string
+      - counting
   - name: 4Sum II
     title: 4sum-ii
     difficulty: Medium
@@ -102,6 +132,9 @@ questions:
     category: structures
     series: SUM
     done: true
+    tags:
+      - array
+      - hash-table
   - name: Find Common Characters
     title: find-common-characters
     difficulty: Easy
@@ -111,6 +144,10 @@ questions:
     tag: hash-table
     category: structures
     done: true
+    tags:
+      - array
+      - hash-table
+      - string
   - name: Unique Number of Occurrences
     title: unique-number-of-occurrences
     difficulty: Easy
@@ -121,3 +158,6 @@ questions:
     category: structures
     series: HashMap
     done: true
+    tags:
+      - array
+      - hash-table

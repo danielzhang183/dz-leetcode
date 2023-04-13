@@ -1,7 +1,7 @@
 import type { SingleBar } from 'cli-progress'
 import c from 'picocolors'
 import { resolveCategory, resolveQuestion } from '../io/resolves'
-import { createMultiProgresBar } from '../log'
+import { createMultiProgressBar } from '../log'
 import type { CategoryMeta, CommandOptions, GenerateEventCallbacks } from '../types'
 import { renderCategory, renderOutcomes, renderSingleQuestion } from './render'
 
@@ -25,7 +25,7 @@ export async function generateSingle(options: CommandOptions) {
 }
 
 export async function generateMulti(options: CommandOptions) {
-  const bars = createMultiProgresBar()
+  const bars = createMultiProgressBar()
   let questionBar: SingleBar | undefined
 
   const resolveCate = await generateCategory(options, {
@@ -69,12 +69,12 @@ export async function generateCategory(options: CommandOptions, callbacks: Gener
   }
 
   callbacks.beforeCategoryStart?.(cate)
-  const reslovedCategory = await resolveCategory(
+  const resolvedCategory = await resolveCategory(
     cate,
     options,
     callbacks.onQuestionResolved,
   )
   callbacks.beforeCategoryStart?.(cate)
 
-  return reslovedCategory
+  return resolvedCategory
 }

@@ -18,4 +18,4 @@ There are a lot of different types of sorting algorithms:
 * [Bubble Sort](/design/bubble-sort)
 :::
 
-<ListQuestions module="algorithms" tag="sort" />
+<ListQuestions module="algorithms" tag="sorting" />

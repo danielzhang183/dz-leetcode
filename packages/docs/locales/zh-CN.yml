@@ -15,15 +15,15 @@ subnav:
   string: 字符串
   tree: 树
   union-find-disjoint-sets: 不相交集
-  back-tracking: 回溯
+  backtracking: 回溯
   binary-search: 二分
-  bitwise: 位运算
+  bit-manipulation: 位运算
   divide-conquer: 分治
   dynamic-programming: 动规
   greedy: 贪心
   math: 数学
   recursion: 递归
-  sort: 排序
+  sorting: 排序
 easy: 简单
 medium: 中等
 hard: 困难
@@ -58,12 +58,12 @@ tree-desc: 非线性数据结构，从它的任何节点到任何其他节点只
 union-find-disjoint-sets: 联合查找不相交集
 union-find-disjoint-sets-desc: 联合查找不相交集 描述
 # algorithm
-back-tracking: 回溯算法
-back-tracking-desc: 逐步解决问题，移除在任何时间点不能满足问题约束的解决方案。
+backtracking: 回溯算法
+backtracking-desc: 逐步解决问题，移除在任何时间点不能满足问题约束的解决方案。
 binary-search: 二分查找
 binary-search-desc: 将数据结构分成两个相等的部分，并尝试决定我们需要在哪一半中找到元素。
-bitwise: 位运算
-bitwise-desc: 它用于在位级别执行操作或以不同方式操作位。
+bit-manipulation: 位运算
+bit-manipulation-desc: 它用于在位级别执行操作或以不同方式操作位。
 divide-conquer: 分治算法
 divide-conquer-desc: 它将问题分解成多个部分，然后解决每个部分并合并已解决的子任务，直到问题解决。
 dynamic-programming: 动态规划
@@ -74,5 +74,5 @@ math: 数学
 math-desc: 旨在解决数学和数论问题。
 recursion: 递归算法
 recursion-desc: 它使用代码可重用性和重复使用同一段代码的概念。
-sort: 排序
-sort-desc: 常见排序，如快排、归并...
+sorting: 排序
+sorting-desc: 常见排序，如快排、归并...

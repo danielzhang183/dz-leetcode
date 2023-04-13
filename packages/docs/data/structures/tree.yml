@@ -1,6 +1,3 @@
-description: >-
-  A non-linear data structure, there is only one path to go from any of its
-  nodes to any other node.
 questions:
   - name: Binary Tree Inorder Traversal
     title: binary-tree-inorder-traversal
@@ -16,6 +13,11 @@ questions:
     category: structures
     series: traversal
     done: true
+    tags:
+      - stack
+      - tree
+      - depth-first-search
+      - binary-tree
   - name: Validate Binary Search Tree
     title: validate-binary-search-tree
     difficulty: Medium
@@ -29,6 +31,11 @@ questions:
     category: structures
     series: bst character
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - binary-search-tree
+      - binary-tree
   - name: Recover Binary Search Tree
     title: recover-binary-search-tree
     difficulty: Medium
@@ -37,6 +44,11 @@ questions:
     origin: https://leetcode.cn/problems/recover-binary-search-tree
     tag: tree
     category: structures
+    tags:
+      - tree
+      - depth-first-search
+      - binary-search-tree
+      - binary-tree
   - name: Same Tree
     title: same-tree
     difficulty: Easy
@@ -49,6 +61,11 @@ questions:
       - BFS
     category: structures
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - binary-tree
   - name: Symmetric Tree
     title: symmetric-tree
     difficulty: Easy
@@ -62,6 +79,11 @@ questions:
     category: structures
     series: bs character
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - binary-tree
   - name: Binary Tree Level Order Traversal
     title: binary-tree-level-order-traversal
     difficulty: Medium
@@ -75,6 +97,10 @@ questions:
     category: structures
     series: traversal
     done: true
+    tags:
+      - tree
+      - breadth-first-search
+      - binary-tree
   - name: Maximum Depth of Binary Tree
     title: maximum-depth-of-binary-tree
     difficulty: Easy
@@ -88,6 +114,11 @@ questions:
     category: structures
     series: bs character
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - binary-tree
   - name: Construct Binary Tree from Inorder and Postorder Traversal
     title: construct-binary-tree-from-inorder-and-postorder-traversal
     difficulty: Medium
@@ -98,6 +129,12 @@ questions:
     tag: tree
     category: structures
     series: bs modify
+    tags:
+      - tree
+      - array
+      - hash-table
+      - divide-and-conquer
+      - binary-tree
   - name: Binary Tree Level Order Traversal II
     title: binary-tree-level-order-traversal-ii
     difficulty: Medium
@@ -110,6 +147,10 @@ questions:
       - BFS
     category: structures
     done: true
+    tags:
+      - tree
+      - breadth-first-search
+      - binary-tree
   - name: Convert Sorted Array to Binary Search Tree
     title: convert-sorted-array-to-binary-search-tree
     difficulty: Easy
@@ -119,6 +160,12 @@ questions:
     tag: tree
     category: structures
     series: bst modify
+    tags:
+      - tree
+      - binary-search-tree
+      - array
+      - divide-and-conquer
+      - binary-tree
   - name: Convert Sorted List to Binary Search Tree
     title: convert-sorted-list-to-binary-search-tree
     difficulty: Medium
@@ -127,6 +174,12 @@ questions:
     origin: https://leetcode.cn/problems/convert-sorted-list-to-binary-search-tree
     tag: tree
     category: structures
+    tags:
+      - tree
+      - binary-search-tree
+      - linked-list
+      - divide-and-conquer
+      - binary-tree
   - name: Balanced Binary Tree
     title: balanced-binary-tree
     difficulty: Easy
@@ -140,6 +193,10 @@ questions:
     category: structures
     series: bs character
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - binary-tree
   - name: Minimum Depth of Binary Tree
     title: minimum-depth-of-binary-tree
     difficulty: Easy
@@ -153,6 +210,11 @@ questions:
     category: structures
     series: bs character
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - binary-tree
   - name: Path Sum
     title: path-sum
     difficulty: Easy
@@ -166,6 +228,11 @@ questions:
     category: structures
     series: bs character
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - binary-tree
   - name: Flatten Binary Tree to Linked List
     title: flatten-binary-tree-to-linked-list
     difficulty: Medium
@@ -174,6 +241,12 @@ questions:
     origin: https://leetcode.cn/problems/flatten-binary-tree-to-linked-list
     tag: tree
     category: structures
+    tags:
+      - stack
+      - tree
+      - depth-first-search
+      - linked-list
+      - binary-tree
   - name: Populating Next Right Pointers in Each Node
     title: populating-next-right-pointers-in-each-node
     difficulty: Medium
@@ -182,6 +255,12 @@ questions:
     origin: https://leetcode.cn/problems/populating-next-right-pointers-in-each-node
     tag: tree
     category: structures
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - linked-list
+      - binary-tree
   - name: Populating Next Right Pointers in Each Node II
     title: populating-next-right-pointers-in-each-node-ii
     difficulty: Medium
@@ -191,6 +270,12 @@ questions:
       https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii
     tag: tree
     category: structures
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - linked-list
+      - binary-tree
   - name: Sum Root to Leaf Numbers
     title: sum-root-to-leaf-numbers
     difficulty: Medium
@@ -203,6 +288,10 @@ questions:
       - BFS
     category: structures
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - binary-tree
   - name: Binary Tree Preorder Traversal
     title: binary-tree-preorder-traversal
     difficulty: Easy
@@ -217,6 +306,11 @@ questions:
     category: structures
     series: traversal
     done: true
+    tags:
+      - stack
+      - tree
+      - depth-first-search
+      - binary-tree
   - name: Binary Tree Postorder Traversal
     title: binary-tree-postorder-traversal
     difficulty: Easy
@@ -231,6 +325,11 @@ questions:
     category: structures
     series: traversal
     done: true
+    tags:
+      - stack
+      - tree
+      - depth-first-search
+      - binary-tree
   - name: Binary Tree Right Side View
     title: binary-tree-right-side-view
     difficulty: Medium
@@ -243,6 +342,11 @@ questions:
       - BFS
     category: structures
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - binary-tree
   - name: Count Complete Tree Nodes
     title: count-complete-tree-nodes
     difficulty: Medium
@@ -252,6 +356,11 @@ questions:
     tag: tree
     category: structures
     series: bs character
+    tags:
+      - tree
+      - depth-first-search
+      - binary-search
+      - binary-tree
   - name: Invert Binary Tree
     title: invert-binary-tree
     difficulty: Easy
@@ -265,6 +374,11 @@ questions:
     category: structures
     series: bs modify
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - binary-tree
   - name: Kth Smallest Element in a BST
     title: kth-smallest-element-in-a-bst
     difficulty: Medium
@@ -273,6 +387,11 @@ questions:
     origin: https://leetcode.cn/problems/kth-smallest-element-in-a-bst
     tag: tree
     category: structures
+    tags:
+      - tree
+      - depth-first-search
+      - binary-search-tree
+      - binary-tree
   - name: Lowest Common Ancestor of a Binary Search Tree
     title: lowest-common-ancestor-of-a-binary-search-tree
     difficulty: Medium
@@ -283,6 +402,11 @@ questions:
     tag: tree
     category: structures
     series: ancestor
+    tags:
+      - tree
+      - depth-first-search
+      - binary-search-tree
+      - binary-tree
   - name: Lowest Common Ancestor of a Binary Tree
     title: lowest-common-ancestor-of-a-binary-tree
     difficulty: Medium
@@ -292,6 +416,10 @@ questions:
     tag: tree
     category: structures
     series: ancestor
+    tags:
+      - tree
+      - depth-first-search
+      - binary-tree
   - name: Binary Tree Paths
     title: binary-tree-paths
     difficulty: Easy
@@ -305,6 +433,12 @@ questions:
     category: structures
     series: bs character
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - string
+      - backtracking
+      - binary-tree
   - name: Sum of Left Leaves
     title: sum-of-left-leaves
     difficulty: Easy
@@ -318,6 +452,11 @@ questions:
     category: structures
     series: bs character
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - binary-tree
   - name: Find Mode in Binary Search Tree
     title: find-mode-in-binary-search-tree
     difficulty: Easy
@@ -330,6 +469,11 @@ questions:
     category: structures
     series: bst character
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - binary-search-tree
+      - binary-tree
   - name: Find Bottom Left Tree Value
     title: find-bottom-left-tree-value
     difficulty: Medium
@@ -343,6 +487,11 @@ questions:
     category: structures
     series: bs character
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - binary-tree
   - name: Find Largest Value in Each Tree Row
     title: find-largest-value-in-each-tree-row
     difficulty: Medium
@@ -355,6 +504,11 @@ questions:
       - BFS
     category: structures
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - binary-tree
   - name: Minimum Absolute Difference in BST
     title: minimum-absolute-difference-in-bst
     difficulty: Easy
@@ -367,6 +521,12 @@ questions:
     category: structures
     series: bst character
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - binary-search-tree
+      - binary-tree
   - name: Convert BST to Greater Tree
     title: convert-bst-to-greater-tree
     difficulty: Medium
@@ -376,6 +536,11 @@ questions:
     tag: tree
     category: structures
     series: bst character
+    tags:
+      - tree
+      - depth-first-search
+      - binary-search-tree
+      - binary-tree
   - name: Diameter of Binary Tree
     title: diameter-of-binary-tree
     difficulty: Easy
@@ -387,6 +552,10 @@ questions:
       - DFS
     category: structures
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - binary-tree
   - name: Subtree of Another Tree
     title: subtree-of-another-tree
     difficulty: Easy
@@ -399,6 +568,12 @@ questions:
       - DFS + KMP
     category: structures
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - binary-tree
+      - string-matching
+      - hash-function
   - name: Merge Two Binary Trees
     title: merge-two-binary-trees
     difficulty: Easy
@@ -412,6 +587,11 @@ questions:
     category: structures
     series: bs modify
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - binary-tree
   - name: Average of Levels in Binary Tree
     title: average-of-levels-in-binary-tree
     difficulty: Easy
@@ -424,6 +604,11 @@ questions:
       - BFS
     category: structures
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - breadth-first-search
+      - binary-tree
   - name: Maximum Binary Tree
     title: maximum-binary-tree
     difficulty: Medium
@@ -433,6 +618,13 @@ questions:
     tag: tree
     category: structures
     series: bs modify
+    tags:
+      - stack
+      - tree
+      - array
+      - divide-and-conquer
+      - binary-tree
+      - monotonic-stack
   - name: Search in a Binary Search Tree
     title: search-in-a-binary-search-tree
     difficulty: Easy
@@ -446,6 +638,10 @@ questions:
     category: structures
     series: bst character
     done: true
+    tags:
+      - tree
+      - binary-search-tree
+      - binary-tree
   - name: Insert into a Binary Search Tree
     title: insert-into-a-binary-search-tree
     difficulty: Medium
@@ -458,6 +654,10 @@ questions:
       - traversal
     category: structures
     done: true
+    tags:
+      - tree
+      - binary-search-tree
+      - binary-tree
   - name: N-ary Tree Level Order Traversal
     title: n-ary-tree-level-order-traversal
     difficulty: Medium
@@ -467,6 +667,9 @@ questions:
     tag: tree
     category: structures
     done: true
+    tags:
+      - tree
+      - breadth-first-search
   - name: Balance a Binary Search Tree
     title: balance-a-binary-search-tree
     difficulty: Medium
@@ -475,3 +678,10 @@ questions:
     origin: https://leetcode.cn/problems/balance-a-binary-search-tree
     tag: tree
     category: structures
+    tags:
+      - greedy
+      - tree
+      - depth-first-search
+      - binary-search-tree
+      - divide-and-conquer
+      - binary-tree

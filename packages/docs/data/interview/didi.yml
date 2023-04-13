@@ -10,3 +10,6 @@ questions:
       - Map
     category: interview
     done: true
+    tags:
+      - design
+      - hash-table

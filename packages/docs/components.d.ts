@@ -8,7 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppLink: typeof import('./src/components/AppLink.vue')['default']
-    Detail: typeof import('./src/components/Detail.vue')['default']
+    DrawerRight: typeof import('./src/components/DrawerRight.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     GraphQuestions: typeof import('./src/components/GraphQuestions.vue')['default']
     ListAllQuestions: typeof import('./src/components/ListAllQuestions.vue')['default']
@@ -17,9 +17,11 @@ declare module '@vue/runtime-core' {
     ListQuestions: typeof import('./src/components/ListQuestions.vue')['default']
     'Mdi:translate': typeof import('~icons/mdi/translate')['default']
     'Mdi:translateOff': typeof import('~icons/mdi/translate-off')['default']
+    Navbar: typeof import('./src/components/Navbar.vue')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     Plum: typeof import('./src/components/Plum.vue')['default']
     Post: typeof import('./src/components/Post.vue')['default']
+    Questions: typeof import('./src/components/Questions.vue')['default']
     RiMoonLine: typeof import('~icons/ri/moon-line')['default']
     RiSunLine: typeof import('~icons/ri/sun-line')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

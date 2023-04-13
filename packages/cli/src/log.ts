@@ -3,7 +3,7 @@ import { MultiBar, Presets } from 'cli-progress'
 import type { TableOptions } from './types'
 import { visualLength, visualPadEnd, visualPadStart } from './render'
 
-export function createMultiProgresBar() {
+export function createMultiProgressBar() {
   return new MultiBar({
     clearOnComplete: true,
     hideCursor: true,

@@ -52,7 +52,7 @@ const { t } = useI18n()
       </div>
       <div class="flex-auto">
         <div class="mt-0">{{ t(`${item.key}`) ?? item.name }}</div>
-        <div v-if="item.description" class="text-sm opacity-50 min-h-10">
+        <div class="text-sm opacity-50 min-h-10">
           {{ t(`${item.key}-desc`) ?? item.description }}
         </div>
         <div class="flex gap2 desc text-sm font-normal justify-end items-center">

@@ -58,7 +58,7 @@ export function getTagQuestions(module: Module, tag: Tag): Question[] {
 }
 
 export class QuestionRelation {
-  deps: string[] = []
+  deps = new Set<string>()
 
   constructor(
     public id: string,
@@ -66,7 +66,7 @@ export class QuestionRelation {
     dep?: string,
   ) {
     if (dep)
-      this.deps.push(dep)
+      this.deps.add(dep)
   }
 }
 
@@ -80,26 +80,38 @@ export function getQuestionsRelations() {
     const [, module, tag] = i.match(/\/data(\/.*)(\/.*)\.yml/)!
     if (!moduleMap.has(module))
       moduleMap.set(module, new QuestionRelation(module, 'category', tag))
-    moduleMap.get(module)!.deps.push(tag)
-    tagMap.set(tag, new QuestionRelation(tag, 'tag'))
+    moduleMap.get(module)!.deps.add(tag)
   })
 
+  function addToTagSet(tag: string, dep: string) {
+    if (tagMap.has(tag))
+      tagMap.get(tag)!.deps.add(dep)
+    else
+      tagMap.set(tag, new QuestionRelation(tag, 'tag', dep))
+  }
   Object.values(modules).forEach((content) => {
     loadQuestions(content).forEach((i) => {
-      tagMap.get(`/${i.tag}`)?.deps.push(i.link)
+      addToTagSet(`/${i.tag}`, i.link)
+      i.tags?.forEach(t => addToTagSet(`/${t}`, i.link))
       questionSet.add(new QuestionRelation(i.link, 'question'))
     })
   })
 
   return [
-    ...moduleMap.values(),
-    ...tagMap.values(),
+    ...Array.from(moduleMap.values()),
+    ...Array.from(tagMap.values()),
     ...Array.from(questionSet),
   ]
 }
 
 function loadModules() {
-  return import.meta.glob('../../data/**/*.yml', { as: 'raw', eager: true })
+  return import.meta.glob(
+    [
+      '../../data/**/*.yml',
+      '!../../data/interview/*.yml',
+    ],
+    { as: 'raw', eager: true },
+  )
 }
 
 function loadModule(content: string): RawModuleMeta {

@@ -3,7 +3,7 @@ export * from './date'
 export * from './language'
 export * from './questions'
 export * from './difficulty'
-export * from './mode'
+export * from './storage'
 export * from './sort'
 
 const simplifyRE = /(\w)\w+-(\w)\w+/g

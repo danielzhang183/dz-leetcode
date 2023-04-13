@@ -8,4 +8,4 @@ plum: true
 
 <SubNav module="algorithms" />
 
-<ListQuestions module="algorithms" tag="back-tracking"/>
+<ListQuestions module="algorithms" tag="backtracking"/>

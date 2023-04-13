@@ -1,6 +1,3 @@
-description: >-
-  Use the previously calculated result to avoid repeated calculations of the
-  same subtask which helps in reducing the time complexity.
 questions:
   - name: Maximum Subarray
     title: maximum-subarray
@@ -15,6 +12,9 @@ questions:
     category: algorithms
     series: subsequence
     done: true
+    tags:
+      - array
+      - divide-and-conquer
   - name: Unique Paths
     title: unique-paths
     difficulty: Medium
@@ -28,6 +28,9 @@ questions:
     category: algorithms
     series: basic
     done: true
+    tags:
+      - math
+      - combinatorics
   - name: Unique Paths II
     title: unique-paths-ii
     difficulty: Medium
@@ -40,6 +43,9 @@ questions:
     category: algorithms
     series: basic
     done: true
+    tags:
+      - array
+      - matrix
   - name: Climbing Stairs
     title: climbing-stairs
     difficulty: Easy
@@ -54,6 +60,9 @@ questions:
     category: algorithms
     series: NP complete
     done: true
+    tags:
+      - memoization
+      - math
   - name: Edit Distance
     title: edit-distance
     difficulty: Hard
@@ -66,6 +75,8 @@ questions:
     category: algorithms
     series: subsequence
     done: true
+    tags:
+      - string
   - name: Unique Binary Search Trees
     title: unique-binary-search-trees
     difficulty: Medium
@@ -75,6 +86,11 @@ questions:
     tag: dynamic-programming
     category: algorithms
     series: basic
+    tags:
+      - tree
+      - binary-search-tree
+      - math
+      - binary-tree
   - name: Distinct Subsequences
     title: distinct-subsequences
     difficulty: Hard
@@ -84,6 +100,8 @@ questions:
     tag: dynamic-programming
     category: algorithms
     series: subsequence
+    tags:
+      - string
   - name: Best Time to Buy and Sell Stock
     title: best-time-to-buy-and-sell-stock
     difficulty: Easy
@@ -97,6 +115,8 @@ questions:
     category: algorithms
     series: stock
     done: true
+    tags:
+      - array
   - name: Best Time to Buy and Sell Stock II
     title: best-time-to-buy-and-sell-stock-ii
     difficulty: Medium
@@ -110,6 +130,9 @@ questions:
     category: algorithms
     series: stock
     done: true
+    tags:
+      - greedy
+      - array
   - name: Best Time to Buy and Sell Stock III
     title: best-time-to-buy-and-sell-stock-iii
     difficulty: Hard
@@ -123,6 +146,8 @@ questions:
     category: algorithms
     series: stock
     done: true
+    tags:
+      - array
   - name: Word Break
     title: word-break
     difficulty: Medium
@@ -132,6 +157,12 @@ questions:
     tag: dynamic-programming
     category: algorithms
     series: NP complete
+    tags:
+      - trie
+      - memoization
+      - array
+      - hash-table
+      - string
   - name: Best Time to Buy and Sell Stock IV
     title: best-time-to-buy-and-sell-stock-iv
     difficulty: Hard
@@ -144,6 +175,8 @@ questions:
     category: algorithms
     series: stock
     done: true
+    tags:
+      - array
   - name: House Robber
     title: house-robber
     difficulty: Medium
@@ -157,6 +190,8 @@ questions:
     category: algorithms
     series: house robber
     done: true
+    tags:
+      - array
   - name: House Robber II
     title: house-robber-ii
     difficulty: Medium
@@ -170,6 +205,8 @@ questions:
     category: algorithms
     series: house robber
     done: true
+    tags:
+      - array
   - name: Perfect Squares
     title: perfect-squares
     difficulty: Medium
@@ -180,6 +217,9 @@ questions:
     category: algorithms
     series: NP complete
     done: true
+    tags:
+      - breadth-first-search
+      - math
   - name: Longest Increasing Subsequence
     title: longest-increasing-subsequence
     difficulty: Medium
@@ -193,6 +233,9 @@ questions:
     category: algorithms
     series: subsequence
     done: true
+    tags:
+      - array
+      - binary-search
   - name: Best Time to Buy and Sell Stock with Cooldown
     title: best-time-to-buy-and-sell-stock-with-cooldown
     difficulty: Medium
@@ -202,6 +245,8 @@ questions:
     tag: dynamic-programming
     category: algorithms
     series: stock
+    tags:
+      - array
   - name: Coin Change
     title: coin-change
     difficulty: Medium
@@ -212,6 +257,9 @@ questions:
     category: algorithms
     series: NP complete
     done: true
+    tags:
+      - breadth-first-search
+      - array
   - name: House Robber III
     title: house-robber-iii
     difficulty: Medium
@@ -224,6 +272,10 @@ questions:
     category: algorithms
     series: house robber
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - binary-tree
   - name: Integer Break
     title: integer-break
     difficulty: Medium
@@ -236,6 +288,8 @@ questions:
     category: algorithms
     series: basic
     done: true
+    tags:
+      - math
   - name: Combination Sum IV
     title: combination-sum-iv
     difficulty: Medium
@@ -246,6 +300,8 @@ questions:
     category: algorithms
     series: NP complete
     done: true
+    tags:
+      - array
   - name: Is Subsequence
     title: is-subsequence
     difficulty: Easy
@@ -259,6 +315,9 @@ questions:
     category: algorithms
     series: subsequence
     done: true
+    tags:
+      - two-pointers
+      - string
   - name: Partition Equal Subset Sum
     title: partition-equal-subset-sum
     difficulty: Medium
@@ -269,6 +328,8 @@ questions:
     category: algorithms
     series: NP 01
     done: true
+    tags:
+      - array
   - name: Ones and Zeroes
     title: ones-and-zeroes
     difficulty: Medium
@@ -279,6 +340,9 @@ questions:
     category: algorithms
     series: NP 01
     done: true
+    tags:
+      - array
+      - string
   - name: Target Sum
     title: target-sum
     difficulty: Medium
@@ -288,10 +352,13 @@ questions:
     tag: dynamic-programming
     solutions:
       - DP
-      - back-tracking
+      - backtracking
     category: algorithms
     series: NP 01
     done: true
+    tags:
+      - array
+      - backtracking
   - name: Fibonacci Number
     title: fibonacci-number
     difficulty: Easy
@@ -306,6 +373,10 @@ questions:
     category: algorithms
     series: basic
     done: true
+    tags:
+      - recursion
+      - memoization
+      - math
   - name: Longest Palindromic Subsequence
     title: longest-palindromic-subsequence
     difficulty: Medium
@@ -315,6 +386,8 @@ questions:
     tag: dynamic-programming
     category: algorithms
     series: subsequence
+    tags:
+      - string
   - name: Coin Change II
     title: coin-change-ii
     difficulty: Medium
@@ -325,6 +398,8 @@ questions:
     category: algorithms
     series: NP complete
     done: true
+    tags:
+      - array
   - name: Delete Operation for Two Strings
     title: delete-operation-for-two-strings
     difficulty: Medium
@@ -338,6 +413,8 @@ questions:
     category: algorithms
     series: subsequence
     done: true
+    tags:
+      - string
   - name: Palindromic Substrings
     title: palindromic-substrings
     difficulty: Medium
@@ -351,6 +428,8 @@ questions:
     category: algorithms
     series: subsequence
     done: true
+    tags:
+      - string
   - name: Longest Continuous Increasing Subsequence
     title: longest-continuous-increasing-subsequence
     difficulty: Easy
@@ -360,6 +439,8 @@ questions:
     tag: dynamic-programming
     category: algorithms
     series: subsequence
+    tags:
+      - array
   - name: Best Time to Buy and Sell Stock with Transaction Fee
     title: best-time-to-buy-and-sell-stock-with-transaction-fee
     difficulty: Medium
@@ -374,6 +455,9 @@ questions:
     category: algorithms
     series: stock
     done: true
+    tags:
+      - greedy
+      - array
   - name: Maximum Length of Repeated Subarray
     title: maximum-length-of-repeated-subarray
     difficulty: Medium
@@ -383,6 +467,12 @@ questions:
     tag: dynamic-programming
     category: algorithms
     series: subsequence
+    tags:
+      - array
+      - binary-search
+      - rolling-hash
+      - sliding-window
+      - hash-function
   - name: Min Cost Climbing Stairs
     title: min-cost-climbing-stairs
     difficulty: Easy
@@ -396,6 +486,8 @@ questions:
     category: algorithms
     series: basic
     done: true
+    tags:
+      - array
   - name: Uncrossed Lines
     title: uncrossed-lines
     difficulty: Medium
@@ -406,6 +498,8 @@ questions:
     category: algorithms
     series: subsequence
     done: true
+    tags:
+      - array
   - name: Last Stone Weight II
     title: last-stone-weight-ii
     difficulty: Medium
@@ -416,6 +510,8 @@ questions:
     category: algorithms
     series: NP 01
     done: true
+    tags:
+      - array
   - name: Smallest Sufficient Team
     title: smallest-sufficient-team
     difficulty: Hard
@@ -424,6 +520,10 @@ questions:
     origin: https://leetcode.cn/problems/smallest-sufficient-team
     tag: dynamic-programming
     category: algorithms
+    tags:
+      - bit-manipulation
+      - array
+      - bitmask
   - name: Longest Common Subsequence
     title: longest-common-subsequence
     difficulty: Medium
@@ -434,3 +534,5 @@ questions:
     category: algorithms
     series: subsequence
     done: true
+    tags:
+      - string

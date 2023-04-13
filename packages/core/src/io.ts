@@ -1,6 +1,7 @@
-import { existsSync, promises as fs } from 'fs'
+// import { existsSync, promises as fs } from 'fs'
 import { dirname } from 'path'
 import YAML from 'js-yaml'
+import fs from 'fs-extra'
 import type { WritableQuestions } from './types'
 
 export function parse<T>(raw: string): T | undefined {
@@ -25,7 +26,7 @@ export function stringify(obj: WritableQuestions, useYaml = true) {
 }
 
 export async function readFile(file: string) {
-  if (!existsSync(file))
+  if (!fs.existsSync(file))
     return
 
   return await fs.readFile(file, 'utf-8')
@@ -33,7 +34,7 @@ export async function readFile(file: string) {
 
 export async function writeFile(outFile: string, content: string) {
   const dir = dirname(outFile)
-  if (!existsSync(dir))
+  if (!fs.existsSync(dir))
     await fs.mkdir(dir, { recursive: true })
   await fs.writeFile(outFile, content, 'utf-8')
 }

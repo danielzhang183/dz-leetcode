@@ -7,3 +7,7 @@ questions:
     origin: https://leetcode.cn/problems/shuffle-an-array
     tag: netease
     category: interview
+    tags:
+      - array
+      - math
+      - randomized

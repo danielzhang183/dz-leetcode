@@ -8,3 +8,7 @@ questions:
     tag: ali
     category: interview
     done: true
+    tags:
+      - design
+      - queue
+      - data-stream

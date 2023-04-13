@@ -1,4 +1,3 @@
-description: It can be interpreted as an array of characters.
 questions:
   - name: Find the Index of the First Occurrence in a String
     title: find-the-index-of-the-first-occurrence-in-a-string
@@ -15,6 +14,10 @@ questions:
     category: structures
     series: KMP
     done: true
+    tags:
+      - two-pointers
+      - string
+      - string-matching
   - name: Reverse Words in a String
     title: reverse-words-in-a-string
     difficulty: Medium
@@ -28,6 +31,9 @@ questions:
     category: structures
     series: reverse
     done: true
+    tags:
+      - two-pointers
+      - string
   - name: Reverse String
     title: reverse-string
     difficulty: Easy
@@ -41,6 +47,9 @@ questions:
     category: structures
     series: reverse
     done: true
+    tags:
+      - two-pointers
+      - string
   - name: Repeated Substring Pattern
     title: repeated-substring-pattern
     difficulty: Easy
@@ -54,6 +63,9 @@ questions:
     category: structures
     series: KMP
     done: true
+    tags:
+      - string
+      - string-matching
   - name: Reverse String II
     title: reverse-string-ii
     difficulty: Easy
@@ -66,6 +78,9 @@ questions:
     category: structures
     series: reverse
     done: true
+    tags:
+      - two-pointers
+      - string
   - name: Backspace String Compare
     title: backspace-string-compare
     difficulty: Easy
@@ -79,6 +94,11 @@ questions:
     category: structures
     series: Two Pointers
     done: true
+    tags:
+      - stack
+      - two-pointers
+      - string
+      - simulation
   - name: Long Pressed Name
     title: long-pressed-name
     difficulty: Easy
@@ -91,3 +111,6 @@ questions:
     category: structures
     series: Two Pointers
     done: true
+    tags:
+      - two-pointers
+      - string

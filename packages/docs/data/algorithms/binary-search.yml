@@ -1,6 +1,3 @@
-description: >-
-  Break the data structure into two equal parts and try to decide in which half
-  we need to find for the element.
 questions:
   - name: Search Insert Position
     title: search-insert-position
@@ -13,6 +10,8 @@ questions:
       - binary-search
     category: algorithms
     done: true
+    tags:
+      - array
   - name: Sqrt(x)
     title: sqrtx
     difficulty: Easy
@@ -21,6 +20,8 @@ questions:
     origin: https://leetcode.cn/problems/sqrtx
     tag: binary-search
     category: algorithms
+    tags:
+      - math
   - name: Find Minimum in Rotated Sorted Array
     title: find-minimum-in-rotated-sorted-array
     difficulty: Medium
@@ -32,6 +33,8 @@ questions:
       - binary-search
     category: algorithms
     done: true
+    tags:
+      - array
   - name: Binary Search
     title: binary-search
     difficulty: Easy
@@ -43,6 +46,8 @@ questions:
       - binary-search
     category: algorithms
     done: true
+    tags:
+      - array
   - name: Squares of a Sorted Array
     title: squares-of-a-sorted-array
     difficulty: Easy
@@ -52,3 +57,7 @@ questions:
     tag: binary-search
     category: algorithms
     done: true
+    tags:
+      - array
+      - two-pointers
+      - sorting

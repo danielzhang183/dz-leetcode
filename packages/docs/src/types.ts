@@ -19,12 +19,12 @@ export type Module =
   | 'design'
 
 export type AlgorithmTag =
-  | 'back-tracking'
+  | 'backtracking'
   | 'binary-search'
   | 'dynamic-programming'
   | 'greedy'
   | 'math'
-  | 'sort'
+  | 'sorting'
 
 export type StructureTag =
   | 'hash-table'
@@ -46,6 +46,7 @@ export interface Question {
   difficulty: Difficulty
   category: Module | string
   tag: Tag
+  tags: string[]
   solutions?: string[]
   link: string
   origin: string

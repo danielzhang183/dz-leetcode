@@ -1,13 +1,13 @@
 import type { SingleBar } from 'cli-progress'
 import c from 'picocolors'
-import { loadCategories } from '../io/load'
+import { loadCategories } from '../io/loader'
 import { resolveCategory } from '../io/resolves'
-import { createMultiProgresBar } from '../log'
+import { createMultiProgressBar } from '../log'
 import type { CategoryMeta, FileOptions, GenerateEventCallbacks } from '../types'
 import { renderCategories, renderOutcomes } from './render'
 
 export async function generateFromFile(options: FileOptions) {
-  const bars = createMultiProgresBar()
+  const bars = createMultiProgressBar()
   let categoriesBar: SingleBar | undefined
   const questionBar = bars.create(1, 0)
 

@@ -1,6 +1,3 @@
-description: >-
-  The problems where choosing locally optimal also leads to the global solutions
-  are best fit for Greedy.
 questions:
   - name: Jump Game II
     title: jump-game-ii
@@ -12,6 +9,9 @@ questions:
     category: algorithms
     series: interval
     done: true
+    tags:
+      - array
+      - dynamic-programming
   - name: Maximum Subarray
     title: maximum-subarray
     difficulty: Medium
@@ -20,11 +20,14 @@ questions:
     origin: https://leetcode.cn/problems/maximum-subarray
     tag: greedy
     solutions:
-      - Greedy
       - DP
     category: algorithms
     series: hard
     done: true
+    tags:
+      - array
+      - divide-and-conquer
+      - dynamic-programming
   - name: Jump Game
     title: jump-game
     difficulty: Medium
@@ -35,6 +38,9 @@ questions:
     category: algorithms
     series: interval
     done: true
+    tags:
+      - array
+      - dynamic-programming
   - name: Merge Intervals
     title: merge-intervals
     difficulty: Medium
@@ -45,6 +51,9 @@ questions:
     category: algorithms
     series: interval
     done: true
+    tags:
+      - array
+      - sorting
   - name: Best Time to Buy and Sell Stock II
     title: best-time-to-buy-and-sell-stock-ii
     difficulty: Medium
@@ -53,11 +62,13 @@ questions:
     origin: https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii
     tag: greedy
     solutions:
-      - Greedy
       - DP
     category: algorithms
     series: stock
     done: true
+    tags:
+      - array
+      - dynamic-programming
   - name: Gas Station
     title: gas-station
     difficulty: Medium
@@ -67,6 +78,8 @@ questions:
     tag: greedy
     category: algorithms
     series: hard
+    tags:
+      - array
   - name: Candy
     title: candy
     difficulty: Hard
@@ -77,6 +90,8 @@ questions:
     category: algorithms
     series: balance
     done: true
+    tags:
+      - array
   - name: Longest Increasing Subsequence
     title: longest-increasing-subsequence
     difficulty: Medium
@@ -85,11 +100,14 @@ questions:
     origin: https://leetcode.cn/problems/longest-increasing-subsequence
     tag: greedy
     solutions:
-      - Greedy
       - DP
     category: algorithms
     series: subsequence
     done: true
+    tags:
+      - array
+      - binary-search
+      - dynamic-programming
   - name: Wiggle Subsequence
     title: wiggle-subsequence
     difficulty: Medium
@@ -98,11 +116,13 @@ questions:
     origin: https://leetcode.cn/problems/wiggle-subsequence
     tag: greedy
     solutions:
-      - Greedy
       - DP
     category: algorithms
     series: subsequence
     done: true
+    tags:
+      - array
+      - dynamic-programming
   - name: Queue Reconstruction by Height
     title: queue-reconstruction-by-height
     difficulty: Medium
@@ -113,6 +133,11 @@ questions:
     category: algorithms
     series: balance
     done: true
+    tags:
+      - binary-indexed-tree
+      - segment-tree
+      - array
+      - sorting
   - name: Non-overlapping Intervals
     title: non-overlapping-intervals
     difficulty: Medium
@@ -123,6 +148,10 @@ questions:
     category: algorithms
     series: interval
     done: true
+    tags:
+      - array
+      - dynamic-programming
+      - sorting
   - name: Minimum Number of Arrows to Burst Balloons
     title: minimum-number-of-arrows-to-burst-balloons
     difficulty: Medium
@@ -133,6 +162,9 @@ questions:
     category: algorithms
     series: interval
     done: true
+    tags:
+      - array
+      - sorting
   - name: Assign Cookies
     title: assign-cookies
     difficulty: Easy
@@ -143,6 +175,10 @@ questions:
     category: algorithms
     series: basic
     done: true
+    tags:
+      - array
+      - two-pointers
+      - sorting
   - name: Task Scheduler
     title: task-scheduler
     difficulty: Medium
@@ -151,6 +187,12 @@ questions:
     origin: https://leetcode.cn/problems/task-scheduler
     tag: greedy
     category: algorithms
+    tags:
+      - array
+      - hash-table
+      - counting
+      - sorting
+      - heap-priority-queue
   - name: Dota2 Senate
     title: dota2-senate
     difficulty: Medium
@@ -159,6 +201,9 @@ questions:
     origin: https://leetcode.cn/problems/dota2-senate
     tag: greedy
     category: algorithms
+    tags:
+      - queue
+      - string
   - name: Best Time to Buy and Sell Stock with Transaction Fee
     title: best-time-to-buy-and-sell-stock-with-transaction-fee
     difficulty: Medium
@@ -168,11 +213,13 @@ questions:
       https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee
     tag: greedy
     solutions:
-      - Greedy
       - DP
     category: algorithms
     series: stock
     done: true
+    tags:
+      - array
+      - dynamic-programming
   - name: Monotone Increasing Digits
     title: monotone-increasing-digits
     difficulty: Medium
@@ -183,6 +230,8 @@ questions:
     category: algorithms
     series: subsequence
     done: true
+    tags:
+      - math
   - name: Partition Labels
     title: partition-labels
     difficulty: Medium
@@ -193,6 +242,10 @@ questions:
     category: algorithms
     series: interval
     done: true
+    tags:
+      - hash-table
+      - two-pointers
+      - string
   - name: Lemonade Change
     title: lemonade-change
     difficulty: Easy
@@ -203,6 +256,8 @@ questions:
     category: algorithms
     series: basic
     done: true
+    tags:
+      - array
   - name: Binary Tree Cameras
     title: binary-tree-cameras
     difficulty: Hard
@@ -215,6 +270,11 @@ questions:
     category: algorithms
     series: hard
     done: true
+    tags:
+      - tree
+      - depth-first-search
+      - dynamic-programming
+      - binary-tree
   - name: Maximize Sum Of Array After K Negations
     title: maximize-sum-of-array-after-k-negations
     difficulty: Easy
@@ -225,6 +285,9 @@ questions:
     category: algorithms
     series: basic
     done: true
+    tags:
+      - array
+      - sorting
   - name: Minimum Number of Taps to Open to Water a Garden
     title: minimum-number-of-taps-to-open-to-water-a-garden
     difficulty: Hard
@@ -234,6 +297,9 @@ questions:
       https://leetcode.cn/problems/minimum-number-of-taps-to-open-to-water-a-garden
     tag: greedy
     category: algorithms
+    tags:
+      - array
+      - dynamic-programming
   - name: Minimum Number of Removals to Make Mountain Array
     title: minimum-number-of-removals-to-make-mountain-array
     difficulty: Hard
@@ -243,3 +309,7 @@ questions:
       https://leetcode.cn/problems/minimum-number-of-removals-to-make-mountain-array
     tag: greedy
     category: algorithms
+    tags:
+      - array
+      - binary-search
+      - dynamic-programming

@@ -1,4 +1,3 @@
-description: A special Tree-based data structure - a complete binary tree.'
 questions:
   - name: Kth Largest Element in an Array
     title: kth-largest-element-in-an-array
@@ -8,6 +7,12 @@ questions:
     origin: https://leetcode.cn/problems/kth-largest-element-in-an-array
     tag: heap
     category: structures
+    tags:
+      - array
+      - divide-and-conquer
+      - quickselect
+      - sorting
+      - heap-priority-queue
   - name: Find Median from Data Stream
     title: find-median-from-data-stream
     difficulty: Hard
@@ -16,6 +21,12 @@ questions:
     origin: https://leetcode.cn/problems/find-median-from-data-stream
     tag: heap
     category: structures
+    tags:
+      - design
+      - two-pointers
+      - data-stream
+      - sorting
+      - heap-priority-queue
   - name: Top K Frequent Elements
     title: top-k-frequent-elements
     difficulty: Medium
@@ -23,9 +34,20 @@ questions:
     link: /structures/heap/347
     origin: https://leetcode.cn/problems/top-k-frequent-elements
     tag: heap
-    solutions: [sort, minHeap]
+    solutions:
+      - sort
+      - minHeap
     category: structures
     done: true
+    tags:
+      - array
+      - hash-table
+      - divide-and-conquer
+      - bucket-sort
+      - counting
+      - quickselect
+      - sorting
+      - heap-priority-queue
   - name: IPO
     title: ipo
     difficulty: Hard
@@ -34,3 +56,8 @@ questions:
     origin: https://leetcode.cn/problems/ipo
     tag: heap
     category: structures
+    tags:
+      - greedy
+      - array
+      - sorting
+      - heap-priority-queue

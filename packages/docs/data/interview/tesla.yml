@@ -7,3 +7,6 @@ questions:
     origin: https://github.com/himanshuarora05/Codility-FrogJump
     tag: tesla
     category: interview
+    tags:
+      - array
+      - dynamic-programming

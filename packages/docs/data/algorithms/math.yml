@@ -1,4 +1,3 @@
-description: Was designed to solve Mathematical and Number Theory problems.
 questions:
   - name: 4Sum
     title: 4sum
@@ -11,6 +10,10 @@ questions:
       - sort + two-pointers
     category: algorithms
     done: true
+    tags:
+      - array
+      - two-pointers
+      - sorting
   - name: Nim Game
     title: nim-game
     difficulty: Easy
@@ -19,6 +22,10 @@ questions:
     origin: https://leetcode.cn/problems/nim-game
     tag: math
     category: algorithms
+    tags:
+      - brainteaser
+      - math
+      - game-theory
   - name: Power of Three
     title: power-of-three
     difficulty: Easy
@@ -27,6 +34,9 @@ questions:
     origin: https://leetcode.cn/problems/power-of-three
     tag: math
     category: algorithms
+    tags:
+      - recursion
+      - math
   - name: Stone Game
     title: stone-game
     difficulty: Medium
@@ -35,3 +45,8 @@ questions:
     origin: https://leetcode.cn/problems/stone-game
     tag: math
     category: algorithms
+    tags:
+      - array
+      - math
+      - dynamic-programming
+      - game-theory

@@ -3,7 +3,7 @@ import { writeFile } from '../io'
 import { getQuestionById, getQuestionByTitle, normalizeRawQuestion } from '../question'
 import type { CommonOptions, GenerateError, GenerateOptions, GenerateReturn, ResolvedQuestion } from '../types'
 import { isNumber } from '../utils'
-import { genCatelog, genCode, genMarkdown, genTestCase } from './gen'
+import { genCatalog, genCode, genMarkdown, genTestCase } from './gen'
 
 export async function generate(options: GenerateOptions): Promise<GenerateReturn> {
   options = await resolveConfig(options)
@@ -58,7 +58,7 @@ export async function writeQuestion<T extends CommonOptions>(question: ResolvedQ
 
   const gens = [
     genMarkdown(question, paths.doc),
-    genCatelog(question, paths.doc),
+    genCatalog(question, paths.doc),
   ]
   if (!onlyDoc) {
     gens.push(...[

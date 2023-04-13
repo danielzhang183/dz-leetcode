@@ -21,3 +21,5 @@ export function toArray<T>(a: T | T[] | undefined | null): T[] {
 
   return Array.isArray(a) ? a : [a]
 }
+
+export * from './sort'

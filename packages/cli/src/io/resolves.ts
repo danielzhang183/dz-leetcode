@@ -1,9 +1,13 @@
+import path from 'path'
 import createDebug from 'debug'
-import { generate, isNumber } from 'dz-leetcode'
-import type { CommonOptions, GenerateOptions, ResolvedQuestion } from 'dz-leetcode'
+import { generate, getQuestionByTitle, isNumber, stringify, writeFile } from 'dz-leetcode'
+import type { CommonOptions, GenerateOptions, ResolvedQuestion, WritableQuestions } from 'dz-leetcode'
 import pLimit from 'p-limit'
+import fg from 'fast-glob'
+import c from 'picocolors'
 import type { CategoryMeta, QuestionIdentifier, QuestionResolvedCallback, TagMap } from '../types'
 import { isUnknown } from '../utils'
+import { loadQuestions } from './loader'
 
 export const debug = {
   category: createDebug('dz-leetcode:category'),
@@ -42,7 +46,7 @@ export async function resolveTags(
   let counter = 0
 
   for (const tag of tags) {
-    debug.tag(`resloving tag ${tag}`)
+    debug.tag(`resolving tag ${tag}`)
 
     options.category = category
     options.tag = tag
@@ -117,3 +121,36 @@ export function resolveQuestion<T extends CommonOptions & { write?: boolean }>(o
 
   return generate(normalizedOptions)
 }
+
+const QUESTION_ROOT = path.resolve(__dirname, '../../../docs/data')
+
+export async function resolveQuestionsTags(cwd = QUESTION_ROOT) {
+  const dirs = await fg('**/*.yml', { cwd })
+  console.log(c.magenta('update question tags...'))
+  console.log()
+  await Promise.all(
+    dirs.map(async dir => await resolveQuestionTags(path.join(cwd, dir))),
+  )
+  console.log()
+  console.log(`${c.inverse(c.bold(c.green(' Done ')))} ${c.green('without any error')}`)
+}
+
+async function resolveQuestionTags(filepath: string) {
+  const questions = await loadQuestions<WritableQuestions>(filepath)
+  if (!questions)
+    return
+
+  const limit = pLimit(1)
+  const questionsWithTags = await Promise.all(
+    questions.map(question => limit(async (question) => {
+      const q = await getQuestionByTitle(question.title)
+      if (q)
+        question.tags = q.topicTags.map(i => i.slug)
+      return question
+    }, question)),
+  )
+  await writeFile(filepath, stringify({ questions: questionsWithTags })!)
+  console.log(filepath)
+}
+
+resolveQuestionsTags()

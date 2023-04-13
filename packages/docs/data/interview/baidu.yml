@@ -7,3 +7,8 @@ questions:
     origin: https://leetcode.cn/problems/merge-k-sorted-lists
     tag: baidu
     category: interview
+    tags:
+      - linked-list
+      - divide-and-conquer
+      - heap-priority-queue
+      - merge-sort

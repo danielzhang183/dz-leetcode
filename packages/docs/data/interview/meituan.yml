@@ -10,3 +10,9 @@ questions:
       - Map + Array
     category: interview
     done: true
+    tags:
+      - design
+      - array
+      - hash-table
+      - math
+      - randomized

@@ -1,4 +1,3 @@
-description: A linear data structure with contiguous memory.
 questions:
   - name: Two Sum
     title: two-sum
@@ -9,6 +8,9 @@ questions:
     tag: array
     category: structures
     done: true
+    tags:
+      - array
+      - hash-table
   - name: Remove Duplicates from Sorted Array
     title: remove-duplicates-from-sorted-array
     difficulty: Easy
@@ -18,6 +20,9 @@ questions:
     tag: array
     category: structures
     done: true
+    tags:
+      - array
+      - two-pointers
   - name: Remove Element
     title: remove-element
     difficulty: Easy
@@ -27,6 +32,9 @@ questions:
     tag: array
     category: structures
     done: true
+    tags:
+      - array
+      - two-pointers
   - name: Find First and Last Position of Element in Sorted Array
     title: find-first-and-last-position-of-element-in-sorted-array
     difficulty: Medium
@@ -39,6 +47,9 @@ questions:
       - binary-search
     category: structures
     done: true
+    tags:
+      - array
+      - binary-search
   - name: Search Insert Position
     title: search-insert-position
     difficulty: Easy
@@ -50,6 +61,9 @@ questions:
       - binary-search
     category: structures
     done: true
+    tags:
+      - array
+      - binary-search
   - name: Valid Palindrome
     title: valid-palindrome
     difficulty: Easy
@@ -59,6 +73,9 @@ questions:
     tag: array
     category: structures
     done: true
+    tags:
+      - two-pointers
+      - string
   - name: Two Sum II - Input Array Is Sorted
     title: two-sum-ii-input-array-is-sorted
     difficulty: Medium
@@ -68,6 +85,10 @@ questions:
     tag: array
     category: structures
     done: true
+    tags:
+      - array
+      - two-pointers
+      - binary-search
   - name: Rotate Array
     title: rotate-array
     difficulty: Medium
@@ -81,6 +102,10 @@ questions:
       - Cycle Replacement
     category: structures
     done: true
+    tags:
+      - array
+      - math
+      - two-pointers
   - name: Minimum Size Subarray Sum
     title: minimum-size-subarray-sum
     difficulty: Medium
@@ -90,6 +115,11 @@ questions:
     tag: array
     category: structures
     done: true
+    tags:
+      - array
+      - binary-search
+      - prefix-sum
+      - sliding-window
   - name: Move Zeroes
     title: move-zeroes
     difficulty: Easy
@@ -101,6 +131,9 @@ questions:
       - two-pointers
     category: structures
     done: true
+    tags:
+      - array
+      - two-pointers
   - name: Reverse String
     title: reverse-string
     difficulty: Easy
@@ -113,6 +146,9 @@ questions:
       - api
     category: structures
     done: true
+    tags:
+      - two-pointers
+      - string
   - name: Intersection of Two Arrays
     title: intersection-of-two-arrays
     difficulty: Easy
@@ -125,6 +161,12 @@ questions:
       - sort + two-pointers
     category: structures
     done: true
+    tags:
+      - array
+      - hash-table
+      - two-pointers
+      - binary-search
+      - sorting
   - name: Fizz Buzz
     title: fizz-buzz
     difficulty: Easy
@@ -134,6 +176,10 @@ questions:
     tag: array
     category: structures
     done: true
+    tags:
+      - math
+      - string
+      - simulation
   - name: Find Pivot Index
     title: find-pivot-index
     difficulty: Easy
@@ -145,6 +191,9 @@ questions:
       - prefix-sum
     category: structures
     done: true
+    tags:
+      - array
+      - prefix-sum
   - name: Sort Array By Parity II
     title: sort-array-by-parity-ii
     difficulty: Easy
@@ -156,6 +205,10 @@ questions:
       - Two Pointers
     category: structures
     done: true
+    tags:
+      - array
+      - two-pointers
+      - sorting
   - name: Valid Mountain Array
     title: valid-mountain-array
     difficulty: Easy
@@ -164,6 +217,8 @@ questions:
     origin: https://leetcode.cn/problems/valid-mountain-array
     tag: array
     category: structures
+    tags:
+      - array
   - name: How Many Numbers Are Smaller Than the Current Number
     title: how-many-numbers-are-smaller-than-the-current-number
     difficulty: Easy
@@ -177,3 +232,8 @@ questions:
       - Count Sort
     category: structures
     done: true
+    tags:
+      - array
+      - hash-table
+      - counting
+      - sorting

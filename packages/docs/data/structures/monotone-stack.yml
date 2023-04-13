@@ -8,6 +8,12 @@ questions:
     tag: monotone-stack
     category: structures
     done: true
+    tags:
+      - stack
+      - array
+      - two-pointers
+      - dynamic-programming
+      - monotonic-stack
   - name: Largest Rectangle in Histogram
     title: largest-rectangle-in-histogram
     difficulty: Hard
@@ -16,6 +22,10 @@ questions:
     origin: https://leetcode.cn/problems/largest-rectangle-in-histogram
     tag: monotone-stack
     category: structures
+    tags:
+      - stack
+      - array
+      - monotonic-stack
   - name: Next Greater Element I
     title: next-greater-element-i
     difficulty: Easy
@@ -28,6 +38,11 @@ questions:
       - queue
     category: structures
     done: true
+    tags:
+      - stack
+      - array
+      - hash-table
+      - monotonic-stack
   - name: Next Greater Element II
     title: next-greater-element-ii
     difficulty: Medium
@@ -39,6 +54,10 @@ questions:
       - loop array
     category: structures
     done: true
+    tags:
+      - stack
+      - array
+      - monotonic-stack
   - name: Daily Temperatures
     title: daily-temperatures
     difficulty: Medium
@@ -48,3 +67,7 @@ questions:
     tag: monotone-stack
     category: structures
     done: true
+    tags:
+      - stack
+      - array
+      - monotonic-stack

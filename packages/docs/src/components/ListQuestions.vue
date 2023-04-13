@@ -97,6 +97,16 @@ function padZero(num: string | number, len = 3) {
               {{ t }}
             </a>
           </div>
+          <div v-if="item.tags && !mode" class="solutions text-sm font-normal pt1" flex="~ wrap gap2">
+            <a
+              v-for="t in item.tags"
+              :key="t"
+              :title="t"
+              class="rounded-3 badge-square-blue text-sm px-2 py-0.5"
+            >
+              {{ t }}
+            </a>
+          </div>
         </div>
         <div
           v-if="item.done && mode"

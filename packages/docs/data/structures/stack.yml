@@ -1,4 +1,3 @@
-description: A linear data structure which follows FILO.
 questions:
   - name: Valid Parentheses
     title: valid-parentheses
@@ -9,6 +8,9 @@ questions:
     tag: stack
     category: structures
     done: true
+    tags:
+      - stack
+      - string
   - name: Simplify Path
     title: simplify-path
     difficulty: Medium
@@ -18,6 +20,9 @@ questions:
     tag: stack
     category: structures
     done: true
+    tags:
+      - stack
+      - string
   - name: Evaluate Reverse Polish Notation
     title: evaluate-reverse-polish-notation
     difficulty: Medium
@@ -27,6 +32,10 @@ questions:
     tag: stack
     category: structures
     done: true
+    tags:
+      - stack
+      - array
+      - math
   - name: Reverse Words in a String
     title: reverse-words-in-a-string
     difficulty: Medium
@@ -36,6 +45,9 @@ questions:
     tag: stack
     category: structures
     done: true
+    tags:
+      - two-pointers
+      - string
   - name: Implement Stack using Queues
     title: implement-stack-using-queues
     difficulty: Easy
@@ -44,6 +56,10 @@ questions:
     origin: https://leetcode.cn/problems/implement-stack-using-queues
     tag: stack
     category: structures
+    tags:
+      - stack
+      - design
+      - queue
   - name: Implement Queue using Stacks
     title: implement-queue-using-stacks
     difficulty: Easy
@@ -52,6 +68,10 @@ questions:
     origin: https://leetcode.cn/problems/implement-queue-using-stacks
     tag: stack
     category: structures
+    tags:
+      - stack
+      - design
+      - queue
   - name: Sliding Window Maximum
     title: sliding-window-maximum
     difficulty: Hard
@@ -61,6 +81,12 @@ questions:
     tag: stack
     category: structures
     done: true
+    tags:
+      - queue
+      - array
+      - sliding-window
+      - monotonic-queue
+      - heap-priority-queue
   - name: Top K Frequent Elements
     title: top-k-frequent-elements
     difficulty: Medium
@@ -69,6 +95,15 @@ questions:
     origin: https://leetcode.cn/problems/top-k-frequent-elements
     tag: stack
     category: structures
+    tags:
+      - array
+      - hash-table
+      - divide-and-conquer
+      - bucket-sort
+      - counting
+      - quickselect
+      - sorting
+      - heap-priority-queue
   - name: Remove All Adjacent Duplicates In String
     title: remove-all-adjacent-duplicates-in-string
     difficulty: Easy
@@ -78,3 +113,6 @@ questions:
     tag: stack
     category: structures
     done: true
+    tags:
+      - stack
+      - string

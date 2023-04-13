@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { genCatelog, genCode, genMarkdown, genTestCase } from '../src/generate/gen'
+import { genCatalog, genCode, genMarkdown, genTestCase } from '../src/generate/gen'
 import { resolvedQuestion } from './fixture'
 
 describe('generate content', () => {
@@ -43,7 +43,7 @@ describe('generate content', () => {
   })
 
   it('catelog', async () => {
-    const catelog = await genCatelog(resolvedQuestion)
+    const catelog = await genCatalog(resolvedQuestion)
     expect(catelog).toMatchSnapshot('catelog')
     const { outFile, content } = catelog
     expect(content).toMatchInlineSnapshot(`

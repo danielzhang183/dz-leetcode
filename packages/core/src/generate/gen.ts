@@ -86,7 +86,7 @@ export function genMarkdown(question: ResolvedQuestion, genPath = pathDoc): Gene
   }
 }
 
-export async function genCatelog(question: ResolvedQuestion, genPath = pathDoc): Promise<GenerateOutcomes> {
+export async function genCatalog(question: ResolvedQuestion, genPath = pathDoc): Promise<GenerateOutcomes> {
   const path = join(genPath, 'data', `${question.path.replace(/(\/\d+$)/g, '')}.yml`)
   const content = parse<WritableQuestions>(await readFile(path) || '') || { questions: [] }
   if (!content.questions.find(i => i.title === question.titleSlug))

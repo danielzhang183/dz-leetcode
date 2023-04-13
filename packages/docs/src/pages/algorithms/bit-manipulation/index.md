@@ -8,4 +8,4 @@ plum: true
 
 <SubNav module="algorithms" />
 
-<ListQuestions module="algorithms" tag="bitwise"/>
+<ListQuestions module="algorithms" tag="bit-manipulation"/>
