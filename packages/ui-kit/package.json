@@ -1,0 +1,40 @@
+{
+  "name": "@dz-leetcode/ui-kit",
+  "type": "module",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "danielzhang183/dz-leetcode",
+  "exports": {
+    ".": {
+      "require": "./module.cjs",
+      "import": "./dist/module.mjs"
+    },
+    "./module": {
+      "require": "./module.cjs",
+      "import": "./dist/module.mjs"
+    },
+    "./unocss": {
+      "import": "./dist/unocss.mjs"
+    }
+  },
+  "main": "./dist/module.mjs",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && unbuild",
+    "stub": "unbuild --stub",
+    "dev": "pnpm -C playground run dev",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@unocss/preset-attributify": "^0.51.4",
+    "@unocss/preset-icons": "^0.51.4",
+    "@unocss/preset-mini": "^0.51.4",
+    "@unocss/reset": "^0.45.30",
+    "unocss": "^0.50.6"
+  },
+  "dependencies": {
+    "vite": "^4.2.1"
+  }
+}
