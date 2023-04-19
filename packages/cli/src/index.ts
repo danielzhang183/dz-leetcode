@@ -1,4 +1,4 @@
-export * from './generate'
+export * from './commands'
 export * from './io/loader'
 export * from './io/resolves'
 export * from './log'

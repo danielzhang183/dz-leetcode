@@ -152,5 +152,3 @@ async function resolveQuestionTags(filepath: string) {
   await writeFile(filepath, stringify({ questions: questionsWithTags })!)
   console.log(filepath)
 }
-
-resolveQuestionsTags()

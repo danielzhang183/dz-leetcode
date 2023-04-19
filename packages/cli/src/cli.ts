@@ -1,7 +1,13 @@
 import cac from 'cac'
 import { resolveConfig } from 'dz-leetcode'
 import { version } from '../package.json'
-import { generateFromCommand, generateFromFile, generateFromRandom } from './generate'
+import {
+  cleanup as cleanupFromCommand,
+  generateFromCommand,
+  generateFromFile,
+  generateFromRandom,
+  reset as resetFromCommand,
+} from './commands'
 import type { CommandOptions, FileOptions, RandomOptions } from './types'
 
 const cli = cac('dz-leetcode')
@@ -30,6 +36,14 @@ cli
   .action(random)
 
 cli
+  .command('cleanup')
+  .action(cleanup)
+
+cli
+  .command('reset')
+  .action(reset)
+
+cli
   .command('')
   .action(() => {
     cli.outputHelp()
@@ -52,4 +66,12 @@ async function random(options: RandomOptions) {
   await generateFromRandom(
     await resolveConfig(options),
   )
+}
+
+async function cleanup(options: { root: string }) {
+  await cleanupFromCommand(options.root)
+}
+
+async function reset(options: { root: string }) {
+  await resetFromCommand(options.root)
 }

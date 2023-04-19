@@ -254,6 +254,7 @@ export function normalizeRawQuestion(question: RawQuestion, options: CommonOptio
     questionId: question.questionId,
     category: normalizedCategory,
     tag: normalizedTag,
+    tags: question.topicTags as any as string[],
     title: isTranslated ? question.translatedTitle : question.title,
     titleSlug: question.titleSlug,
     content: isTranslated ? question.translatedContent : question.content,
@@ -278,6 +279,7 @@ export function normalizeResolvedQuestion(question: ResolvedQuestion): Question 
     link: `/${question.path}`,
     origin: question.origin,
     tag: question.tag as Tag,
+    tags: question.tags,
     category: question.category,
   }
 }

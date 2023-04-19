@@ -4,7 +4,6 @@
   "packageManager": "pnpm@8.1.1",
   "scripts": {
     "dev": "vite --open",
-    "build": "vite build",
     "preview": "vite preview",
     "preview-https": "serve dist",
     "typecheck": "vue-tsc --noEmit",

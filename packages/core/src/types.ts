@@ -77,6 +77,7 @@ export interface ResolvedQuestion {
   code: string
   functionName: string
   tag: Tag | string
+  tags: string[]
   path: string
   origin: string
   outFiles: string[]
