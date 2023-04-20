@@ -2,13 +2,15 @@ import cac from 'cac'
 import { resolveConfig } from 'dz-leetcode'
 import { version } from '../package.json'
 import {
+  PACKAGE_ROOT,
   cleanup as cleanupFromCommand,
   generateFromCommand,
   generateFromFile,
   generateFromRandom,
+  patchQuestionsTags,
   reset as resetFromCommand,
 } from './commands'
-import type { CommandOptions, FileOptions, RandomOptions } from './types'
+import type { CleanupOptions, CommandOptions, FileOptions, RandomOptions } from './types'
 
 const cli = cac('dz-leetcode')
 
@@ -44,6 +46,10 @@ cli
   .action(reset)
 
 cli
+  .command('tags')
+  .action(patchTags)
+
+cli
   .command('')
   .action(() => {
     cli.outputHelp()
@@ -52,7 +58,9 @@ cli
 cli.parse()
 
 async function file(options: FileOptions) {
-  await generateFromFile(await resolveConfig(options))
+  await generateFromFile(
+    await resolveConfig(options),
+  )
 }
 
 async function pick(identifier: string, options: CommandOptions) {
@@ -68,10 +76,16 @@ async function random(options: RandomOptions) {
   )
 }
 
-async function cleanup(options: { root: string }) {
+async function cleanup(options: CleanupOptions) {
   await cleanupFromCommand(options.root)
 }
 
-async function reset(options: { root: string }) {
-  await resetFromCommand(options.root)
+async function reset(options: CleanupOptions) {
+  await resetFromCommand(
+    await resolveConfig(options),
+  )
+}
+
+async function patchTags() {
+  await patchQuestionsTags()
 }

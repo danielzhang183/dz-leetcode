@@ -42,7 +42,6 @@ export function genMarkdown(question: ResolvedQuestion, genPath = pathDoc): Gene
       '```ts',
       code,
       '```\n',
-      `[${isTranslated ? '查看原题' : 'view source'}](${origin})`,
     ]
       .forEach(str => s.append(`${str}\n`))
   }

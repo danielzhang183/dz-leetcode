@@ -1,7 +1,7 @@
 import { join } from 'path'
 import { $fetch } from 'ohmyfetch'
-import { hyphenate, pad, toArray } from './utils'
-import type { CodeSnippet, CommonOptions, Question, RawQuestion, ResolvedQuestion, Tag, TestCase, TopicTag } from './types'
+import { hyphenate, isNumber, pad, toArray } from './utils'
+import type { CodeSnippet, CommonOptions, Question, QuestionIdentifier, RawQuestion, ResolvedQuestion, Tag, TestCase, TopicTag } from './types'
 
 const LEETCODE_FETCH_URL = 'https://leetcode.cn/graphql/'
 const LEETCODE_QUESTION_URL = 'https://leetcode.cn/problems'
@@ -116,6 +116,12 @@ export function getCategoryMaps(): Promise<CategoryMap[]> {
   )
 }
 
+export async function getQuestion(identifier: QuestionIdentifier) {
+  return isNumber(identifier)
+    ? await getQuestionById(identifier)
+    : await getQuestionByTitle(identifier)
+}
+
 export function getQuestionsByFilter(options: FilterOptions): Promise<RandomQuestion[]> {
   const {
     category,
@@ -213,12 +219,22 @@ export function normalizeRawQuestion(question: RawQuestion, options: CommonOptio
     : ['typescript', 'javascript']
 
   function normalizeTestCases(exampleTestcases: string): TestCase[] {
-    const res: TestCase[] = []
-    const testcases = exampleTestcases.split('\n')
-    for (let i = 0; i < testcases.length - 1; i += 2)
-      res.push({ expect: testcases[i], toBe: testcases[i + 1] })
+    const regex = /<strong>Input:<\/strong> \w+ = (.*?)(, target = (.*?))?\s*<strong>Output:<\/strong> (\[*[\w\d,]+\]*)/gm
+    const testcases: TestCase[] = []
+    let m
+    // eslint-disable-next-line no-cond-assign
+    while ((m = regex.exec(exampleTestcases)) !== null) {
+      // This is necessary to avoid infinite loops with zero-width matches
+      if (m.index === regex.lastIndex)
+        regex.lastIndex++
 
-    return res
+      const hasTarget = !!m[3]
+      hasTarget
+        ? testcases.push({ expect: `${m[1]}, ${m[3]}`, toBe: m[4] })
+        : testcases.push({ expect: m[1], toBe: m[4] })
+    }
+
+    return testcases
   }
 
   function normalizeCode(codeSnippets: CodeSnippet[]): { code: string; lang: string } {
@@ -254,12 +270,12 @@ export function normalizeRawQuestion(question: RawQuestion, options: CommonOptio
     questionId: question.questionId,
     category: normalizedCategory,
     tag: normalizedTag,
-    tags: question.topicTags as any as string[],
+    tags: question.topicTags.map(i => isTranslated ? i.translatedName : i.slug),
     title: isTranslated ? question.translatedTitle : question.title,
     titleSlug: question.titleSlug,
     content: isTranslated ? question.translatedContent : question.content,
     difficulty: question.difficulty,
-    testcases: normalizeTestCases(question.exampleTestcases),
+    testcases: normalizeTestCases(question.content),
     code,
     functionName: normalizeFunctionName(code),
     path: getQuestionPath(normalizedCategory, normalizedTag, question.questionId),

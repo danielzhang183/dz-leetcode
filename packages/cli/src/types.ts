@@ -9,6 +9,7 @@ export interface TableOptions {
 
 export interface FileOptions extends CommonOptions {
   file: string
+  isReset?: boolean
 }
 
 export interface CommandOptions extends CommonOptions {
@@ -18,6 +19,10 @@ export interface CommandOptions extends CommonOptions {
 export interface RandomOptions extends CommonOptions {
   skip?: number
   difficulty?: string
+}
+
+export interface CleanupOptions extends CommandOptions {
+  root: string
 }
 
 export type QuestionIdentifier = string | number

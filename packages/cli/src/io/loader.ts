@@ -18,10 +18,15 @@ export interface ImportableQuestionOption3 extends ImportableQuestionOptionBase 
   name: string
 }
 
+export interface ImportableQuestionOption4 extends ImportableQuestionOptionBase {
+  title: string
+}
+
 export type ImportableQuestionOptions =
   | ImportableQuestionOption1
   | ImportableQuestionOption2
   | ImportableQuestionOption3
+  | ImportableQuestionOption4
 
 export interface ImportableQuestions {
   questions: Array<ImportableQuestionOptions>
@@ -45,10 +50,12 @@ export async function loadCategories(filepath: string): Promise<Record<string, T
 
     if ('questions' in question)
       categories[category][tag].push(...question.questions)
-    else if ('id' in question)
-      categories[category][tag].push(question.id)
-    else
+    else if ('title' in question)
+      categories[category][tag].push(question.title)
+    else if ('name' in question)
       categories[category][tag].push(question.name)
+    else
+      categories[category][tag].push(question.id)
   }
 
   return categories
