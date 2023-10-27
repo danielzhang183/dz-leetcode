@@ -28,13 +28,13 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@unocss/preset-attributify": "^0.51.4",
-    "@unocss/preset-icons": "^0.51.4",
-    "@unocss/preset-mini": "^0.51.4",
+    "@unocss/preset-attributify": "^0.51.13",
+    "@unocss/preset-icons": "^0.51.13",
+    "@unocss/preset-mini": "^0.51.13",
     "@unocss/reset": "^0.45.30",
-    "unocss": "^0.50.6"
+    "unocss": "^0.50.8"
   },
   "dependencies": {
-    "vite": "^4.2.1"
+    "vite": "^4.5.0"
   }
 }

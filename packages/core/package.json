@@ -2,7 +2,7 @@
   "name": "dz-leetcode",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@8.1.1",
+  "packageManager": "pnpm@8.9.2",
   "description": "",
   "author": "Daniel Zhang",
   "license": "MIT",
@@ -47,10 +47,10 @@
     "js-yaml": "^4.1.0",
     "magic-string": "^0.26.7",
     "ohmyfetch": "^0.4.21",
-    "unconfig": "^0.3.7"
+    "unconfig": "^0.3.11"
   },
   "devDependencies": {
-    "@types/js-yaml": "^4.0.5",
-    "@types/prompts": "^2.4.4"
+    "@types/js-yaml": "^4.0.8",
+    "@types/prompts": "^2.4.7"
   }
 }
