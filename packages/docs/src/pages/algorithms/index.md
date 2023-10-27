@@ -6,4 +6,5 @@ subtitleZh: 算法被定义为一个过程或一组明确定义的指令，通�
 plum: true
 ---
 
-<Questions />
+<!-- <Questions /> -->
+<ListAllQuestions module="algorithms" />
